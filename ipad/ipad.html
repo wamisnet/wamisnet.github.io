@@ -13,110 +13,6 @@
         text-align: center;
         background-color: #fafafa;
       }
-      #main {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 200%;
-    top: 0px;
-    background: #34495e;
-}
-
-#meter {
-    position: absolute;
-    width: 100%;
-    height: 0%;
-    bottom: 0px;
-    left: 0px;
-//    background: #e74c3c;
-    background: #36F23D;
-}
-
-#value {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    width: 300px;
-    height: 300px;
-    margin-top: -150px;
-    margin-left: -150px;
-    font-size: 60px;
-//    font-size: 20px;
-    line-height: 300px;
-    text-align: center;
-}
-#value1 {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    width: 300px;
-    height: 300px;
-    margin-top: 70px;
-    margin-left: -150px;
-    font-size: 60px;
-//    font-size: 20px;
-    line-height: 300px;
-    text-align: center;
-}
-
-#num {
-    font-size: 100px;
-//    font-size: 20px;
-//    font-size: 10px;
-    margin: 0px -15px;
-}
-#aionum {
-//    font-size: 100px;
-    font-size: 20px;
-    margin: 0px -15px;
-}
-#canvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-//    width: 300px;
-//    height: 80px;
-    margin-top: -150px;
-    margin-left: -128px;
-//    background: #e74c3c;
-//    text-align: center;
-//    line-height: 80px;
-//    font-size: 25px;
-//    cursor: pointer;
-//    border:1px solid #225588;
-//    -khtml-user-select: none:
-}
-
-#btnpio1 {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    width: 160px;
-    height: 60px;
-    margin-top: -30px;
-    margin-left: -80px;
-    background: #e74c3c;
-    text-align: center;
-    line-height: 60px;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-
-#title {
-    position: absolute;
-    top: 40px;
-    left: 20px;
-    font-size: 25px;
-}
-
-#title_icon {
-    font-family: "icomoon";
-}
-
-#title_icon:before {
-	content: "\e000";
-}
     </style>
   </head>
   <body>
@@ -143,23 +39,9 @@
           <p>b: <span id="rr-b"></span></p>
           <p>g: <span id="rr-g"></span></p>
         </div>
-      
-     
-    </div>
+      </div>
     </main>
-     <div id="main">
-        <div id="meter"></div>
-        <canvas id="canvas" width="256" height="256"></canvas>
-        <div id="value1">
-            <span></span>
-            <span id="aionum">0.000</span>
-            <span></span>
-        </div>
-        <div id="title">
-            <span id="title_icon"></span>
-            <span>加速度センサー</span>
-        </div>
-</div>
+    
     <script>
       (function() {
         window.addEventListener("devicemotion", function(e){
@@ -170,28 +52,15 @@
           var z = obj2NumberFix(acc.z, 5);
           //傾き(重力加速度)
           var acc_g = e.accelerationIncludingGravity;
-          var xg = obj2NumberFix(acc_g.x, 5);
-          var yg = obj2NumberFix(acc_g.y, 5);
-          var zg = obj2NumberFix(acc_g.z, 5);
-         
+          var gx = obj2NumberFix(acc_g.x, 5);
+          var gy = obj2NumberFix(acc_g.y, 5);
+          var gz = obj2NumberFix(acc_g.z, 5);
           //回転値
           var rota_r = e.rotationRate;
           var a = obj2NumberFix(rota_r.alpha, 5); //z方向
           var b = obj2NumberFix(rota_r.beta, 5); //x方向
           var g = obj2NumberFix(rota_r.gamma, 5); // y方向
           //表示
-          var angle={};
-angle.x = 0;
-angle.y = 0;
-angle.z = 0;
-          angle.y = Math.sin(Math.atan2(yg,zg));       // -1.0 ～　1.0　に変換
-  angle.x = Math.sin(Math.atan2(xg,zg));
-  angle.z = Math.sin(Math.atan2(yg,xg));
-  ACCEL = [angle.x, angle.y, angle.z];
-  document.getElementById("aionum").innerHTML = "傾きｘ:"+angle.x.toFixed(3)+" y:"+angle.y.toFixed(3)+" z:"+angle.z.toFixed(3);
-
-          
-          
           print3('acc-x', x, 'acc-y', y, 'acc-z', z); //加速度
           print3('acc-gx', gx, 'acc-gy', gy, 'acc-gz', gz); //傾き
           print3('rr-a', a, 'rr-b', b, 'rr-g', g); //回転値
