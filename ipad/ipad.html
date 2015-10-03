@@ -173,9 +173,9 @@
           //var gx = obj2NumberFix(acc_g.x, 5);
           //var gy = obj2NumberFix(acc_g.y, 5);
           //var gz = obj2NumberFix(acc_g.z, 5);
-           var xg = evt.accelerationIncludingGravity.x; // 横方向の傾斜
-  var yg = evt.accelerationIncludingGravity.y; // 縦方向の傾斜
-  var zg = evt.accelerationIncludingGravity.z; // 上下方向の傾斜  
+           var xg =e.accelerationIncludingGravity.x; // 横方向の傾斜
+  var yg = e.accelerationIncludingGravity.y; // 縦方向の傾斜
+  var zg = e.accelerationIncludingGravity.z; // 上下方向の傾斜  
           //回転値
           var rota_r = e.rotationRate;
           var a = obj2NumberFix(rota_r.alpha, 5); //z方向
