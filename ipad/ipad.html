@@ -179,6 +179,10 @@
           var b = obj2NumberFix(rota_r.beta, 5); //x方向
           var g = obj2NumberFix(rota_r.gamma, 5); // y方向
           //表示
+          var angle={};
+angle.x = 0;
+angle.y = 0;
+angle.z = 0;
           angle.y = Math.sin(Math.atan2(yg,zg));       // -1.0 ～　1.0　に変換
   angle.x = Math.sin(Math.atan2(xg,zg));
   angle.z = Math.sin(Math.atan2(yg,xg));
