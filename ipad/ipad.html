@@ -40,6 +40,20 @@
           <p>g: <span id="rr-g"></span></p>
         </div>
       </div>
+      <div id="main">
+        <div id="meter"></div>
+        <canvas id="canvas" width="256" height="256"></canvas>
+        <div id="value1">
+            <span></span>
+            <span id="aionum">0.000</span>
+            <span></span>
+        </div>
+        <div id="title">
+            <span id="title_icon"></span>
+            <span>加速度センサー</span>
+        </div>
+
+    </div>
     </main>
     
     <script>
@@ -61,6 +75,14 @@
           var b = obj2NumberFix(rota_r.beta, 5); //x方向
           var g = obj2NumberFix(rota_r.gamma, 5); // y方向
           //表示
+          angle.y = Math.sin(Math.atan2(yg,zg));       // -1.0 ～　1.0　に変換
+  angle.x = Math.sin(Math.atan2(xg,zg));
+  angle.z = Math.sin(Math.atan2(yg,xg));
+  ACCEL = [angle.x, angle.y, angle.z];
+  document.getElementById("aionum").innerHTML = "傾きｘ:"+angle.x.toFixed(3)+" y:"+angle.y.toFixed(3)+" z:"+angle.z.toFixed(3);
+
+          
+          
           print3('acc-x', x, 'acc-y', y, 'acc-z', z); //加速度
           print3('acc-gx', gx, 'acc-gy', gy, 'acc-gz', gz); //傾き
           print3('rr-a', a, 'rr-b', b, 'rr-g', g); //回転値
