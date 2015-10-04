@@ -25,12 +25,17 @@ and open the template in the editor.
     output.innerHTML
     = 'x方向: '+gravity.x
     + '<br>y方向: '+gravity.y;
-
-    sendModeFromGravityValue(gravity);
+var gx = obj2NumberFix(gravity.x, 0);
+var gy = obj2NumberFix(gravity.y, 0);
+ds.push({gxs:gx});
+ds.push({gys:gy});
+for( var i = 0; i < 10000; i++ );
 
   },true);
 
-
+ function obj2NumberFix(obj, fix_deg)
+          {return Number(obj).toFixed(fix_deg);
+          }
   function sendModeFromGravityValue(g){
 
     // 絶対値を取得
@@ -40,7 +45,7 @@ and open the template in the editor.
     // portrait -> landscape
     ////if(currentMode === 'portrait' && x > 8.5 && y < 1.5){
       currentMode = 'landscape';
-      ds.push({xg:x});
+      ds.push({xg:g.x});
     //}
 
     // landscape -> portrait
