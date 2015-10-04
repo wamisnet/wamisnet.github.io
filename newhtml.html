@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            window.onload = function(){
+
+  var currentMode = 'portrait';
+  var output = document.getElementById('output');
+
+  // app_idは自分のものに書き換えてください
+  var milkcocoa = new MilkCocoa("readidztqm2w.mlkcca.com");
+  var ds = milkcocoa.dataStore('wami');
+
+  window.addEventListener('devicemotion', function(e){
+    gravity = e.accelerationIncludingGravity;
+
+    output.innerHTML
+    = 'x方向: '+gravity.x
+    + '<br>y方向: '+gravity.y;
+
+    sendModeFromGravityValue(gravity);
+
+  },true);
+
+
+  function sendModeFromGravityValue(g){
+
+    // 絶対値を取得
+    var x = Math.sqrt(g.x * g.x);
+    var y = Math.sqrt(g.y * g.y);
+
+    // portrait -> landscape
+    if(currentMode === 'portrait' && x > 8.5 && y < 1.5){
+      currentMode = 'landscape';
+      ds.send({mode: currentMode});
+    }
+
+    // landscape -> portrait
+    if(currentMode === 'landscape' && x < 1.5 && y > 8.5){
+      currentMode = 'portrait';
+      ds.send({mode: currentMode});
+    }
+  }
+};
+    </head>
+<body>
+<div id="output"></div>
+<script src='https://cdn.mlkcca.com/v2.0.0/milkcocoa.js'></script>
+<script src="main-sp.js"></script>
+</body>
+</html>
