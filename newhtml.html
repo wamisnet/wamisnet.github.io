@@ -29,12 +29,12 @@ var gx = obj2NumberFix(gravity.x, 0);
 var gy = obj2NumberFix(gravity.y, 0);
 ds.push({gxs:gx});
 ds.push({gys:gy});
-for( var i = 0; i < 10000; i++ );
+
+setTimeout("nullx()", 300);
 
   },true);
 
- function obj2NumberFix(obj, fix_deg)
-          {return Number(obj).toFixed(fix_deg);
+ function nullx(){
           }
   function sendModeFromGravityValue(g){
 
