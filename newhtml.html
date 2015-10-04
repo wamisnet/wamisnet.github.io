@@ -38,9 +38,9 @@ and open the template in the editor.
     var y = Math.sqrt(g.y * g.y);
 
     // portrait -> landscape
-    if(currentMode === 'portrait' && x > 8.5 && y < 1.5){
+    ////if(currentMode === 'portrait' && x > 8.5 && y < 1.5){
       currentMode = 'landscape';
-      ds.push({mode: currentMode});
+      ds.push({xg:x}{xg:y});
     }
 
     // landscape -> portrait
