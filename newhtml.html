@@ -40,13 +40,13 @@ and open the template in the editor.
     // portrait -> landscape
     if(currentMode === 'portrait' && x > 8.5 && y < 1.5){
       currentMode = 'landscape';
-      ds.send({mode: currentMode});
+      ds.push({mode: currentMode});
     }
 
     // landscape -> portrait
     if(currentMode === 'landscape' && x < 1.5 && y > 8.5){
       currentMode = 'portrait';
-      ds.send({mode: currentMode});
+      ds.push({mode: currentMode});
     }
   }
 };</script>
