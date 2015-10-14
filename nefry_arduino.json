@@ -19,7 +19,7 @@
         },
         {
           "name":"nefry"
-        },
+        }
       ],
       "toolsDependencies":[ {
         "packager":"esp8266",
