@@ -6,7 +6,7 @@
     "email":"wamiwami@live.jp",
     "platforms": [ {
       "name":"Nefry",
-      "architecture":"nefry",
+      "architecture":"esp8266",
       "version":"0.9.20151014",
       "category":"Nefry",
       "url":"http://wamisnet.github.io/Nefry0.9.20151014.zip",
