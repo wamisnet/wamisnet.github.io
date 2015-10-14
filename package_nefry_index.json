@@ -12,7 +12,7 @@
       "url":"http://wamisnet.github.io/Nefry0.9.20151014.zip",
       "archiveFileName":"Nefry0.9.20151014.zip",
       "checksum":"SHA-256:0edb5d6d9a82f29f993c81d091f9e8b0b61b2dcac439f227691e5cf300a44ac2",
-      "size":"4001697",
+      "size":"4001792",
       "boards":[
         {
           "name":"nefry"
