@@ -15,9 +15,6 @@
       "size":"4001697",
       "boards":[
         {
-          "name":"Generic ESP8266 Module"
-        },
-        {
           "name":"nefry"
         },
       ],
