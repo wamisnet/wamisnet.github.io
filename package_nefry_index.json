@@ -1,7 +1,7 @@
 {
   "packages": [ {
     "name":"nefry",
-    "maintainer":"ESP8266 Community",
+    "maintainer":"nefry",
     "websiteURL":"https://github.com/esp8266/Arduino",
     "email":"ivan@esp8266.com",
     "help":{
@@ -37,7 +37,7 @@
           "name":"Adafruit HUZZAH ESP8266 (ESP-12)"
         },
         {
-          "name":"SweetPea ESP-210"
+          "name":"Nefry"
         }
       ],
       "toolsDependencies":[ {
