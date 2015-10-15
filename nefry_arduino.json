@@ -1,24 +1,43 @@
 {
   "packages": [ {
-    "name":"nefry",
-    "maintainer":"wami",
-    "websiteURL":"https://github.com/wamisnet/Nefry",
-    "email":"wamiwami@live.jp",
+    "name":"esp8266",
+    "maintainer":"ESP8266 Community",
+    "websiteURL":"https://github.com/esp8266/Arduino",
+    "email":"ivan@esp8266.com",
+    "help":{
+      "online":"http://arduino.esp8266.com/versions/1.6.5-947-g39819f0/doc/reference.html"
+    },
+
     "platforms": [ {
-      "name":"Nefry",
-      "architecture":"nefry",
-      "version":"0.9.20151014",
-      "category":"Nefry",
-      "url":"http://wamisnet.github.io/Nefry0.9.20151014.zip",
-      "archiveFileName":"Nefry0.9.20151014.zip",
-      "checksum":"SHA-256:0edb5d6d9a82f29f993c81d091f9e8b0b61b2dcac439f227691e5cf300a44ac2",
-      "size":"4001697",
+      "name":"esp8266",
+      "architecture":"esp8266",
+      "version":"1.6.5-947-g39819f0",
+      "category":"ESP8266",
+      "url":"http://arduino.esp8266.com/versions/1.6.5-947-g39819f0/esp8266-1.6.5-947-g39819f0.zip",
+      "archiveFileName":"esp8266-1.6.5-947-g39819f0.zip",
+      "checksum":"SHA-256:79a395801a94c77f4855f3921b9cc127d679d961ec207e7fb89f90754123d66a",
+      "size":"2295584",
+      "help":{
+        "online":"http://arduino.esp8266.com/versions/1.6.5-947-g39819f0/doc/reference.html"
+      },
       "boards":[
         {
           "name":"Generic ESP8266 Module"
         },
         {
-          "name":"nefry"
+          "name":"Olimex MOD-WIFI-ESP8266(-DEV)"
+        },
+        {
+          "name":"NodeMCU 0.9 (ESP-12 Module)"
+        },
+        {
+          "name":"NodeMCU 1.0 (ESP-12E Module)"
+        },
+        {
+          "name":"Adafruit HUZZAH ESP8266 (ESP-12)"
+        },
+        {
+          "name":"SweetPea ESP-210"
         }
       ],
       "toolsDependencies":[ {
