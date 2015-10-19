@@ -11,7 +11,7 @@
     "platforms": [ {
       "name":"esp8266",
       "architecture":"esp8266",
-      "version":"1",
+      "version":"1.0",
       "category":"ESP8266",
       "url":"http://arduino.esp8266.com/versions/1.6.5-947-g39819f0/esp8266-1.6.5-947-g39819f0.zip",
       "archiveFileName":"esp8266-1.6.5-947-g39819f0.zip",
@@ -53,7 +53,7 @@
       "systems": [
         {
             "host":"i686-mingw32",
-            "url":"http://wamisnet.github.io/esptool-0.4.5-win32.zip",
+            "url":"https://github.com/igrr/esptool-ck/releases/download/0.4.5/esptool-0.4.5-win32.zip",
             "archiveFileName":"esptool-0.4.5-win32.zip",
             "checksum":"SHA-256:1b0a7d254e74942d820a09281aa5dc2af1c8314ae5ee1a5abb0653d0580e531b",
             "size":"17408"
@@ -94,7 +94,7 @@
       "systems": [
         {
            "host":"i686-mingw32",
-           "url":"http://wamisnet.github.io/esptool-0.4.5-win32.zip",
+           "url":"http://arduino.esp8266.com/win32-xtensa-lx106-elf-gb404fb9.tar.gz",
            "archiveFileName":"win32-xtensa-lx106-elf-gb404fb9.tar.gz",
            "checksum":"SHA-256:1561ec85cc58cab35cc48bfdb0d0087809f89c043112a2c36b54251a13bf781f",
            "size":"153807368"
