@@ -44,11 +44,6 @@
         "packager":"esp8266",
         "name":"esptool",
         "version":"0.4.5"
-      },
-      {
-        "packager":"esp8266",
-        "name":"xtensa-lx106-elf-gcc",
-        "version":"1.20.0-26-gb404fb9"
       } ]
     } ],
 
@@ -58,7 +53,7 @@
       "systems": [
         {
             "host":"i686-mingw32",
-            "url":"https://github.com/igrr/esptool-ck/releases/download/0.4.5/esptool-0.4.5-win32.zip",
+            "url":"http://wamisnet.github.io/esptool-0.4.5-win32.zip",
             "archiveFileName":"esptool-0.4.5-win32.zip",
             "checksum":"SHA-256:1b0a7d254e74942d820a09281aa5dc2af1c8314ae5ee1a5abb0653d0580e531b",
             "size":"17408"
