@@ -99,7 +99,7 @@
       "systems": [
         {
            "host":"i686-mingw32",
-           "url":"http://arduino.esp8266.com/win32-xtensa-lx106-elf-gb404fb9.tar.gz",
+           "url":"http://wamisnet.github.io/esptool-0.4.5-win32.zip",
            "archiveFileName":"win32-xtensa-lx106-elf-gb404fb9.tar.gz",
            "checksum":"SHA-256:1561ec85cc58cab35cc48bfdb0d0087809f89c043112a2c36b54251a13bf781f",
            "size":"153807368"
