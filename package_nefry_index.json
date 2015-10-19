@@ -11,7 +11,7 @@
     "platforms": [ {
       "name":"esp8266",
       "architecture":"esp8266",
-      "version":"1.6.5-947-g39819f0",
+      "version":"1",
       "category":"ESP8266",
       "url":"http://arduino.esp8266.com/versions/1.6.5-947-g39819f0/esp8266-1.6.5-947-g39819f0.zip",
       "archiveFileName":"esp8266-1.6.5-947-g39819f0.zip",
