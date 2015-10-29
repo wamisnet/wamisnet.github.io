@@ -9,7 +9,7 @@
     },
 
     "platforms": [ {
-      "name":"esp8266",
+      "name":"Nefry",
       "architecture":"esp8266",
       "version":"1.6.5-947-g39819f0",
       "category":"ESP8266",
