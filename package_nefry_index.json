@@ -11,11 +11,11 @@
     "platforms": [ {
       "name":"Nefry",
       "architecture":"esp8266",
-      "version":"1.6.5-947-g39819f0",
+     "version":"1.6.5-947-g39819f0",
       "category":"ESP8266",
       "url":"http://arduino.esp8266.com/versions/1.6.5-947-g39819f0/esp8266-1.6.5-947-g39819f0.zip",
-      "archiveFileName": "esp8266-1.6.5-947-g39819f0.zip",
-      "checksum": "SHA-256:17054adb39bdfd1c71344838434d5b4372b5107cb7c16b5e440525fe7751a4d7",
+      "archiveFileName":"esp8266-1.6.5-947-g39819f0.zip",
+      "checksum":"SHA-256:79a395801a94c77f4855f3921b9cc127d679d961ec207e7fb89f90754123d66a",
       "size":"2295584",
       "help":{
         "online":"http://arduino.esp8266.com/versions/1.6.5-947-g39819f0/doc/reference.html"
