@@ -2,11 +2,8 @@
   "packages": [ {
     "name":"Nefry",
     "maintainer":"Nefry Community",
-    "websiteURL":"https://github.com/esp8266/Arduino",
-    "email":"ivan@esp8266.com",
-    "help":{
-      "online":"http://arduino.esp8266.com/versions/1.6.5-947-g39819f0/doc/reference.html"
-    },
+    "websiteURL":"",
+    "email":"wamiwami@live.jp",
 
     "platforms": [ {
       "name":"Nefry",
