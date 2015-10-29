@@ -1,7 +1,7 @@
 {
   "packages": [ {
     "name":"Nefry",
-    "maintainer":"ESP8266 Community",
+    "maintainer":"Nefry Community",
     "websiteURL":"https://github.com/esp8266/Arduino",
     "email":"ivan@esp8266.com",
     "help":{
@@ -21,6 +21,9 @@
         "online":"http://arduino.esp8266.com/versions/1.6.5-947-g39819f0/doc/reference.html"
       },
       "boards":[
+     	 {
+          "name":"Nefry"
+        },
         {
           "name":"Generic ESP8266 Module"
         },
