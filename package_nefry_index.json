@@ -13,10 +13,10 @@
       "architecture":"esp8266",
      "version":"0.9.20151029",
       "category":"ESP8266",
-      "url":"http://wamisnet.github.io/nefry0.9.20151029.zip",
-      "archiveFileName":"nefry0.9.20151029.zip",
-      "checksum":"SHA-256:869e2416ab07de541957a8d0b6000166115f5d73e72d1ba971299196d1843fa8",
-      "size":"2295584",
+      "url":"http://wamisnet.github.io/Nefry0.9.20151029.zip",
+      "archiveFileName":"Nefry0.9.20151029.zip",
+      "checksum":"8a0c954a394399c485e3f9bd52f42317005ab93cf4f9b050bb7b3466aeee7ce9",
+      "size":"1683456",
       "help":{
         "online":"http://arduino.esp8266.com/versions/1.6.5-947-g39819f0/doc/reference.html"
       },
