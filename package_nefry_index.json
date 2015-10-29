@@ -26,21 +26,6 @@
         },
         {
           "name":"Generic ESP8266 Module"
-        },
-        {
-          "name":"Olimex MOD-WIFI-ESP8266(-DEV)"
-        },
-        {
-          "name":"NodeMCU 0.9 (ESP-12 Module)"
-        },
-        {
-          "name":"NodeMCU 1.0 (ESP-12E Module)"
-        },
-        {
-          "name":"Adafruit HUZZAH ESP8266 (ESP-12)"
-        },
-        {
-          "name":"SweetPea ESP-210"
         }
       ],
       "toolsDependencies":[ {
