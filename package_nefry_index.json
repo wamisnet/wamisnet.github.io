@@ -5,7 +5,7 @@
     "websiteURL":"",
     "email":"wamiwami@live.jp",
 
-    "platforms": [ {
+    "platforms": [
       {
         "name":"Nefry",
         "architecture":"esp8266",
