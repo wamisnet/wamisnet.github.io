@@ -68,12 +68,12 @@
       {
         "name":"Nefry",
         "architecture":"esp8266",
-        "version":"0.9.20151114",
+        "version":"0.92.20151121",
         "category":"ESP8266",
-        "url":"http://wamisnet.github.io/nefry0.9.20151114.zip",
-        "archiveFileName":"nefry0.9.20151114.zip",
-        "checksum":"SHA-256:99132bbafe7a203069ead3026d28f8d25dc6c0d77e503dc2e57a9c2a2b82edb2",
-        "size":"1683456",
+        "url":"http://wamisnet.github.io/nefry0.92.20151121.zip",
+        "archiveFileName":"nefry0.92.20151121.zip",
+        "checksum":"SHA-256:d9bfa322f13606842bdeac96e04e5bb88d936fe7bd24c8b97731a09e3349b74f",
+        "size":"1797523 ",
         "boards":[
           {
             "name":"Nefry"
