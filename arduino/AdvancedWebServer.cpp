@@ -118,7 +118,7 @@ void setup ( void ) {
 		Serial.println ( "MDNS responder started" );
 	}
 
-	server.on ( "/active", handleRoot );
+	server.on ( "/active/", handleRoot );
 	server.on ( "/test.svg", drawGraph );
 	server.on ( "/inline", []() {
 		server.send ( 200, "text/plain", "this works as well" );
