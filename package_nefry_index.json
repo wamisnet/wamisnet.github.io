@@ -117,6 +117,31 @@
             "name":"xtensa-lx106-elf-gcc",
             "version":"1.20.0-26-gb404fb9"
           } ]
+      },
+      {
+        "name":"Nefry",
+        "architecture":"esp8266",
+        "version":"0.91.20151212",
+        "category":"ESP8266",
+        "url":"http://wamisnet.github.io/nefry0.91.20151212.zip",
+        "archiveFileName":"nefry0.91.20151212.zip",
+        "checksum":"SHA-256:44a8deab61a6bd41244111167a53f36526107afd165628e38c0423e953f37149",
+        "size":"3723546",
+        "boards":[
+          {
+            "name":"Nefry"
+          }
+        ],
+        "toolsDependencies":[ {
+          "packager":"Nefry",
+          "name":"esptool",
+          "version":"0.4.5"
+        },
+          {
+            "packager":"Nefry",
+            "name":"xtensa-lx106-elf-gcc",
+            "version":"1.20.0-26-gb404fb9"
+          } ]
       }
     ],
     "tools": [ {
