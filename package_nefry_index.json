@@ -10,7 +10,6 @@
                 {
                     "name": "Nefry",
                     "architecture": "esp8266",
-<<<<<<< HEAD
                     "version": "1.0.0",
                     "category": "ESP8266",
                     "url": "http://wamisnet.github.io/nefry1.0.0.zip",
@@ -43,8 +42,6 @@
                 {
                     "name": "Nefry",
                     "architecture": "esp8266",
-=======
->>>>>>> parent of db4058e... no message
                     "version": "0.92.20151219",
                     "category": "ESP8266",
                     "url": "http://wamisnet.github.io/nefry0.92.20151219.zip",
