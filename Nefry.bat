@@ -25,6 +25,7 @@ exit /B
 del platform.txt
 ren dump.txt platform.txt
 echo, 
+echo 注意：Arduino IDEを閉じてから実行してください!
 echo --------------------------------------------------
 echo Nefryで使うファイルの保存場所を決めます。
 echo Nefryフォルダを作成し、そこにファイルを保存します。

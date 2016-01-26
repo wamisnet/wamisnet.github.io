@@ -13,7 +13,7 @@
                     "version": "1.0.0",
                     "category": "ESP8266",
                     "url": "http://wamisnet.github.io/nefry1.0.0.zip",
-                    "archiveFileName": "1.0.0.zip",
+                    "archiveFileName": "nefry1.0.0.zip",
                     "checksum": "SHA-256:7fdc81a291696204250ce15dddf01888a030532c627a78417441d97bc3d68c39",
                     "size": "5926662",
                     "boards": [
