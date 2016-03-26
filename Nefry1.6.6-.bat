@@ -69,6 +69,11 @@ find /v "nefry.path=" < platform.txt >dump.txt
 del platform.txt
 ren dump.txt platform.txt
 echo nefry.path= %USR_INPUT%\Nefry>>platform.txt
+cd %USERPROFILE%\AppData\Local\Arduino15
+find /v "nefry.path=" < preferences.txt >dump.txt
+del preferences.txt
+ren dump.txt preferences.txt
+echo nefry.path= %USR_INPUT%\Nefry>>preferences.txt
 exit /B
 
 :end
