@@ -18,17 +18,17 @@
           ], 
           "toolsDependencies": [
             {
-              "packager": "esp8266", 
+              "packager": "Nefry",
               "version": "0.4.8", 
               "name": "esptool"
             }, 
             {
-              "packager": "esp8266", 
+              "packager": "Nefry",
               "version": "1.20.0-26-gb404fb9-2", 
               "name": "xtensa-lx106-elf-gcc"
             }, 
             {
-              "packager": "esp8266", 
+              "packager": "Nefry",
               "version": "0.1.2", 
               "name": "mkspiffs"
             }
