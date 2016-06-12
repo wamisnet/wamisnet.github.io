@@ -6,6 +6,38 @@
       "websiteURL": "",
       "email": "wamiwami@live.jp",
       "platforms": [
+      {
+          "name": "Nefry",
+          "architecture": "esp8266",
+          "version": "1.2.0",
+          "category": "ESP8266",
+          "url": "http://wamisnet.github.io/nefry1.2.0.zip",
+          "archiveFileName": "nefry1.2.0.zip",
+          "checksum": "SHA-256:d0f458e611b72c6a9bca38fcd6919a95545516a7dbc2b68abb70a466d28f7dfb",
+          "size": "5793200",
+          "boards": [
+            {
+              "name": "Nefry"
+            }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "Nefry",
+              "version": "0.4.6",
+              "name": "esptool"
+            },
+            {
+              "packager": "Nefry",
+              "version": "1.20.0-26-gb404fb9-2",
+              "name": "xtensa-lx106-elf-gcc"
+            },
+            {
+              "packager": "Nefry",
+              "version": "0.1.2",
+              "name": "mkspiffs"
+            }
+          ]
+        },
         {
           "name": "Nefry",
           "architecture": "esp8266",
