@@ -52,6 +52,12 @@
           "boards": [
             {
               "name": "Nefry"
+            },
+            {
+              "name": "Nefry V2"
+            },
+            {
+              "name": "CocoaBit"
             }
           ],
           "toolsDependencies": [
