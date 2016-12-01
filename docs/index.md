@@ -12,5 +12,4 @@
 拡張モジュール
 
 - [USB Type C変換基板](device/USB%20Type%20C%20変換基板/)　ーー　[Switch Science](https://www.switch-science.com/catalog/2456/)さんで販売中
-- [ELワイヤ制御基板](device/EL%20wire制御基板/)
 - [4つのモータを同時に制御する基板(モータドライバー)](device/4モータ制御基板/)
