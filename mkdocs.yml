@@ -1,0 +1,38 @@
+# Project information
+site_name: 'wamisnet'
+site_description: 'わみのホームページ'
+site_author: 'wami'
+site_url: 'http://wamisnet.github.io/'
+
+extra_css: ['extra.css']
+
+
+# Copyright
+copyright: 'Copyright (c) 2016 wami'
+
+# Documentation and theme
+docs_dir: 'docs'
+theme: 'material'
+
+# Options
+extra:
+
+  palette:
+    primary: 'Light Blue'
+    accent: 'Orange'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  i18n:
+    prev: 'Previous'
+    next: 'Next'
+  author:
+    github: 'wamisnet'
+    twitter: 'wamisnet'
+
+# Extensions
+markdown_extensions:
+  - codehilite(css_class=code)
+  - admonition
+  - toc:
+      permalink: '#'
