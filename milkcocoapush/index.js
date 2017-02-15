@@ -40,7 +40,7 @@ var playSound = function(buffer) {
     ds.on('push', function(pushed) {
         if(pushed.value.sw=='1'){        
            document.getElementById("cb").checked = true;
-           getAudioBuffer('se.mp3', function(buffer) {playSound(buffer);});
+           getAudioBuffer('fm.mp3', function(buffer) {playSound(buffer);});
         }else if(pushed.value.sw=='0'){
             document.getElementById("cb").checked = false;
         }
