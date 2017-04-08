@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "name": "Nefry",
+      "name": "NefryIcing",
       "maintainer": "Nefry Community",
       "websiteURL": "",
       "email": "wamiwami@live.jp",
@@ -9,9 +9,9 @@
         {
           "name": "NefryIcing",
           "architecture": "esp32",
-          "version": "",
+          "version": "0.5.0",
           "category": "ESP32",
-          "url": "https://nefry.studio/driver/nefryicing0.5.0.zip",
+          "url": "https://wamisnet.github.io/nefryicing0.5.0.zip",
           "archiveFileName": "nefryicing0.5.0.zip",
           "checksum": "SHA-256:897020F0F1844E0A25599B34052BDFA291DB8A4B415579099C1C54B96ACDC740",
           "size": "30095970",
@@ -22,12 +22,12 @@
           ],
           "toolsDependencies": [
             {
-              "packager": "esp32",
+              "packager": "NefryIcing",
               "name": "xtensa-esp32-elf-gcc",
               "version": "1.22.0-61-gab8375a-5.2.0"
             },
             {
-              "packager": "esp32",
+              "packager": "NefryIcing",
               "name": "esptool",
               "version": "fe69994"
             }
