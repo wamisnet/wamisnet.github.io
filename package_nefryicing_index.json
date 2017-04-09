@@ -77,8 +77,8 @@
               "host": "i686-mingw32",
               "url": "https://wamisnet.github.io/cm/esptool-9072736-windows.zip",
               "archiveFileName": "esptool-9072736-windows.zip",
-              "checksum": "SHA-256:EAC14998DF3FED9998943ACE5C2F07114B678869F143C3316F4FF26CC851E268",
-              "size": "3390935"
+              "checksum": "SHA-256:A9905C0A7438BC23A9B2B2C35B7810FE34A6A087F430DEE5B0C67A338BAFF32C",
+              "size": "3390483"
             },
             {
               "host": "x86_64-apple-darwin",
