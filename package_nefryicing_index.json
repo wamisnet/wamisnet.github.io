@@ -13,7 +13,7 @@
           "category": "ESP32",
           "url": "https://wamisnet.github.io/nefryicing0.5.1.zip",
           "archiveFileName": "nefryicing0.5.1.zip",
-          "checksum": "058CE5AF5272B389EFEA411A9212362C48D542369BC0DA6F618D3F8E186B7C56",
+          "checksum": "SHA-256:058CE5AF5272B389EFEA411A9212362C48D542369BC0DA6F618D3F8E186B7C56",
           "size": "26706566",
           "boards": [
             {
