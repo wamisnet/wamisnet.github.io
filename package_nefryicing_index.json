@@ -9,10 +9,10 @@
         {
           "name": "Nefry",
           "architecture": "esp32",
-          "version": "0.5.1",
+          "version": "0.5.2",
           "category": "ESP32",
-          "url": "https://wamisnet.github.io/nefryicing0.5.1.zip",
-          "archiveFileName": "nefryicing0.5.1.zip",
+          "url": "https://wamisnet.github.io/nefryicing0.5.2.zip",
+          "archiveFileName": "nefryicing0.5.2.zip",
           "checksum": "SHA-256:A5C2D024E78FA7C8A6E62538527ADB72EDE945FEFA2B3A1880E0FF5C18887D06",
           "size": "26706656",
           "boards": [
