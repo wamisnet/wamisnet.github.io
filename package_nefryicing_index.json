@@ -1,13 +1,13 @@
 {
   "packages": [
     {
-      "name": "NefryIcing",
+      "name": "Nefry",
       "maintainer": "Nefry Community",
       "websiteURL": "",
       "email": "wamiwami@live.jp",
       "platforms": [
         {
-          "name": "NefryIcing",
+          "name": "Nefry",
           "architecture": "esp32",
           "version": "0.5.0",
           "category": "ESP32",
@@ -22,12 +22,12 @@
           ],
           "toolsDependencies": [
             {
-              "packager": "NefryIcing",
+              "packager": "Nefry",
               "name": "xtensa-esp32-elf-gcc",
               "version": "1.22.0-61-gab8375a-5.2.0"
             },
             {
-              "packager": "NefryIcing",
+              "packager": "Nefry",
               "name": "esptool",
               "version": "9072736"
             }
