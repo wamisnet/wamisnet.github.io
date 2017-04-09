@@ -41,28 +41,28 @@
           "systems": [
             {
               "host": "i686-mingw32",
-              "url": "http://dl.espressif.com/dl/xtensa-esp32-elf-win32-1.22.0-61-gab8375a-5.2.0-2.zip",
+              "url": "https://wamisnet.github.io/cm/xtensa-esp32-elf-win32-1.22.0-61-gab8375a-5.2.0-2.zip",
               "archiveFileName": "xtensa-esp32-elf-win32-1.22.0-61-gab8375a-5.2.0-2.zip",
               "checksum": "SHA-256:C00DBDAB8E8ACC273D4AA319A74F7BB1D9496C843159823201D685359174168F",
               "size": "76346909"
             },
             {
               "host": "x86_64-apple-darwin",
-              "url": "http://dl.espressif.com/dl/xtensa-esp32-elf-osx-1.22.0-61-gab8375a-5.2.0.tar.gz",
+              "url": "https://wamisnet.github.io/cm/xtensa-esp32-elf-osx-1.22.0-61-gab8375a-5.2.0.tar.gz",
               "archiveFileName": "xtensa-esp32-elf-osx-1.22.0-61-gab8375a-5.2.0.tar.gz",
               "checksum": "SHA-256:89A9A6084EC032DDCD4BDAE37B428E533ED5FD0C0AB6B66DDF703E4B3F83D6E4",
               "size": "40481812"
             },
             {
               "host": "x86_64-pc-linux-gnu",
-              "url": "http://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz",
+              "url": "https://wamisnet.github.io/cm/xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz",
               "archiveFileName": "xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz",
               "checksum": "SHA-256:B74333FD7F622F035FEE7C4E0CA57C3E2CCB2515DE5D901F33E87E79CDF0D4F9",
               "size": "37674568"
             },
             {
               "host": "i686-pc-linux-gnu",
-              "url": "http://dl.espressif.com/dl/xtensa-esp32-elf-linux32-1.22.0-61-gab8375a-5.2.0.tar.gz",
+              "url": "https://wamisnet.github.io/cm/xtensa-esp32-elf-linux32-1.22.0-61-gab8375a-5.2.0.tar.gz",
               "archiveFileName": "xtensa-esp32-elf-linux32-1.22.0-61-gab8375a-5.2.0.tar.gz",
               "checksum": "SHA-256:DBB342B7C377A7C3A1FCCCC60FA1193332D0C37E6A90C5075D3471C13C9E94AD",
               "size": "41032647"
@@ -75,14 +75,14 @@
           "systems": [
             {
               "host": "i686-mingw32",
-              "url": "http://dl.espressif.com/dl/esptool-9072736-windows.zip",
+              "url": "https://wamisnet.github.io/cm/esptool-9072736-windows.zip",
               "archiveFileName": "esptool-9072736-windows.zip",
               "checksum": "SHA-256:EAC14998DF3FED9998943ACE5C2F07114B678869F143C3316F4FF26CC851E268",
               "size": "3390935"
             },
             {
               "host": "x86_64-apple-darwin",
-              "url": "http://dl.espressif.com/dl/esptool-9072736-macos.tar.gz",
+              "url": "https://wamisnet.github.io/cm/esptool-9072736-macos.tar.gz",
               "archiveFileName": "esptool-9072736-macos.tar.gz",
               "checksum": "SHA-256:2B88CE516719F8B54C22AE637109B1437F3AB5F81A1E6260EF14799E4DD3B355",
               "size": "3805789"
