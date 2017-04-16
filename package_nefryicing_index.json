@@ -192,8 +192,8 @@
               "host": "x86_64-apple-darwin",
               "url": "https://wamisnet.github.io/cm/esptool-9072736-macos.tar.gz",
               "archiveFileName": "esptool-9072736-macos.tar.gz",
-              "checksum": "SHA-256:2B88CE516719F8B54C22AE637109B1437F3AB5F81A1E6260EF14799E4DD3B355",
-              "size": "3805789"
+              "checksum": "SHA-256:55A1AC2F84664E000D7406A183B947052206D8A6EC130648361EB21803C85E96",
+              "size": "3805717"
             }
           ]
         }
