@@ -286,15 +286,15 @@
               "host": "i686-mingw32",
               "url": "https://wamisnet.github.io/cm/esptool-96698a3-windows.zip",
               "archiveFileName": "esptool-96698a3-windows.zip",
-              "checksum": "SHA-256:12F026C84869F0BD2F6A863191EC84D27B91F21D17E2E2E9E11C79BE50F2D0FC",
-              "size": "3391875"
+              "checksum": "SHA-256:41B83733E1C7B7000446D4898564263DCBF66BF5F3D9B18ABD23F164AB05731D",
+              "size": "3391143"
             },
             {
               "host": "x86_64-apple-darwin",
               "url": "https://wamisnet.github.io/cm/esptool-96698a3-macos.tar.gz",
               "archiveFileName": "esptool-96698a3-macos.tar.gz",
-              "checksum": "SHA-256:E3154DBF32C3BA5E5EBD45E913178B167CF761E5CE0152B2BB069A2453F6839B",
-              "size": "3806673"
+              "checksum": "SHA-256:3E191E84C11E95620B04FB25F0683D0B3DD2EF876A33C164BA81F9C3A6585C60",
+              "size": "3806845"
             }
           ]
         }
