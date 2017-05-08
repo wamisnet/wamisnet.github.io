@@ -6,15 +6,42 @@
       "websiteURL": "",
       "email": "wamiwami@live.jp",
       "platforms": [
-          {
+         {
           "name": "Nefry",
           "architecture": "esp32",
-          "version": "0.6.1",
+          "version": "0.7.0",
           "category": "ESP32",
-          "url": "https://wamisnet.github.io/nefryicing0.6.1.zip",
-          "archiveFileName": "nefryicing0.6.1.zip",
-          "checksum": "SHA-256:864CFC1EE8BF28B0EB8B6EFEAA786E0730BD2912DF0D8D81D5B53B033BDAD000",
-          "size": "26802365",
+          "url": "https://wamisnet.github.io/driver/nefryicing0.7.0.zip",
+          "archiveFileName": "nefryicing0.7.0.zip",
+          "checksum": "SHA-256:D56B08460BA9012050B8B312BBE25EE13BB5A6543FB2B96FE46F2D8F6B2B93B2",
+          "size": "28068897",
+          "boards": [
+            {
+              "name": "Nefry BT"
+            }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "Nefry",
+              "name": "xtensa-esp32-elf-gcc",
+              "version": "1.22.0-61-gab8375a-5.2.0"
+            },
+            {
+              "packager": "Nefry",
+              "name": "esptool",
+              "version": "96698a3"
+            }
+          ]
+        },
+        {
+          "name": "Nefry",
+          "architecture": "esp32",
+          "version": "0.6.2",
+          "category": "ESP32",
+          "url": "https://wamisnet.github.io/driver/nefryicing0.6.2.zip",
+          "archiveFileName": "nefryicing0.6.2.zip",
+          "checksum": "SHA-256:406E84D58E5470AD26D2EE49138A4738C55B8FB19876A4ED62EE6FA2C843CAF7",
+          "size": "26824811",
           "boards": [
             {
               "name": "Nefry BT"
@@ -248,6 +275,26 @@
               "archiveFileName": "esptool-9072736-macos.tar.gz",
               "checksum": "SHA-256:55A1AC2F84664E000D7406A183B947052206D8A6EC130648361EB21803C85E96",
               "size": "3805717"
+            }
+          ]
+        },
+        {
+          "name": "esptool",
+          "version": "96698a3",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://wamisnet.github.io/cm/esptool-96698a3-windows.zip",
+              "archiveFileName": "esptool-96698a3-windows.zip",
+              "checksum": "SHA-256:12F026C84869F0BD2F6A863191EC84D27B91F21D17E2E2E9E11C79BE50F2D0FC",
+              "size": "3391875"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://wamisnet.github.io/cm/esptool-96698a3-macos.tar.gz",
+              "archiveFileName": "esptool-96698a3-macos.tar.gz",
+              "checksum": "SHA-256:E3154DBF32C3BA5E5EBD45E913178B167CF761E5CE0152B2BB069A2453F6839B",
+              "size": "3806673"
             }
           ]
         }
