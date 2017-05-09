@@ -9,6 +9,33 @@
          {
           "name": "Nefry",
           "architecture": "esp32",
+          "version": "0.7.1",
+          "category": "ESP32",
+          "url": "https://wamisnet.github.io/driver/nefryicing0.7.1.zip",
+          "archiveFileName": "nefryicing0.7.1.zip",
+          "checksum": "SHA-256:65FB3742CEC0F9DCDD426E8DA08436C5CF1EDC129EC87EAAF6E758F5283CD08F",
+          "size": "28068899",
+          "boards": [
+            {
+              "name": "Nefry BT"
+            }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "Nefry",
+              "name": "xtensa-esp32-elf-gcc",
+              "version": "1.22.0-61-gab8375a-5.2.0"
+            },
+            {
+              "packager": "Nefry",
+              "name": "esptool32",
+              "version": "96698a3"
+            }
+          ]
+        },
+        {
+          "name": "Nefry",
+          "architecture": "esp32",
           "version": "0.7.0",
           "category": "ESP32",
           "url": "https://wamisnet.github.io/driver/nefryicing0.7.0.zip",
@@ -28,7 +55,7 @@
             },
             {
               "packager": "Nefry",
-              "name": "esptool",
+              "name": "esptool32",
               "version": "96698a3"
             }
           ]
@@ -279,15 +306,15 @@
           ]
         },
         {
-          "name": "esptool",
+          "name": "esptool32",
           "version": "96698a3",
           "systems": [
             {
               "host": "i686-mingw32",
               "url": "https://wamisnet.github.io/cm/esptool-96698a3-windows.zip",
               "archiveFileName": "esptool-96698a3-windows.zip",
-              "checksum": "SHA-256:41B83733E1C7B7000446D4898564263DCBF66BF5F3D9B18ABD23F164AB05731D",
-              "size": "3391143"
+              "checksum": "SHA-256:1A826E8C74A952F2BCDE0E131AB3E8E897488F0BA4BD826AA584FA2E8ABF238F",
+              "size": "3391147"
             },
             {
               "host": "x86_64-apple-darwin",
