@@ -13,8 +13,8 @@
           "category": "ESP32",
           "url": "https://wamisnet.github.io/driver/nefryicing0.7.1.zip",
           "archiveFileName": "nefryicing0.7.1.zip",
-          "checksum": "SHA-256:65FB3742CEC0F9DCDD426E8DA08436C5CF1EDC129EC87EAAF6E758F5283CD08F",
-          "size": "28068899",
+          "checksum": "SHA-256:E7BC85D69451E121558F0844890652671F244D5FB65D01DE4BA6CDD0B042C11F",
+          "size": "28069797",
           "boards": [
             {
               "name": "Nefry BT"
@@ -320,8 +320,8 @@
               "host": "x86_64-apple-darwin",
               "url": "https://wamisnet.github.io/cm/esptool-96698a3-macos.tar.gz",
               "archiveFileName": "esptool-96698a3-macos.tar.gz",
-              "checksum": "SHA-256:3E191E84C11E95620B04FB25F0683D0B3DD2EF876A33C164BA81F9C3A6585C60",
-              "size": "3806845"
+              "checksum": "SHA-256:A816044102F06738A64A8C0CCCAAD95D0B5F0BAACC95390E3AECD299039F46FE",
+              "size": "3806849"
             }
           ]
         }
