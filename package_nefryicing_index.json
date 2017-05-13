@@ -331,14 +331,14 @@
           "systems": [
             {
               "host": "i686-mingw32",
-              "url": "https://wamisnet.github.io/cm/esptool-9072736-1-windows.zip",
+              "url": "https://wamisnet.github.io/cm/esptool-9072737-windows.zip",
               "archiveFileName": "esptool-9072736-1-windows.zip",
               "checksum": "SHA-256:B51B0CA0F45E9B1BE2170D0A2FAD22E8CF9761AC0FC3E53A1F917D8540202A53",
               "size": "3390487"
             },
             {
               "host": "x86_64-apple-darwin",
-              "url": "https://wamisnet.github.io/cm/esptool-9072736-1-macos.tar.gz",
+              "url": "https://wamisnet.github.io/cm/esptool-9072737-macos.tar.gz",
               "archiveFileName": "esptool-9072736-1-macos.tar.gz",
               "checksum": "SHA-256:84D568CE61E3BC9B813774A5F6CFFB44CAE0CD7A812F86DCA7775240E586CDE5",
               "size": "3805975"
