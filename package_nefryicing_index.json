@@ -326,7 +326,7 @@
           ]
         },
         {
-          "name": "esptool",
+          "name": "esptool32",
           "version": "9072737",
           "systems": [
             {
