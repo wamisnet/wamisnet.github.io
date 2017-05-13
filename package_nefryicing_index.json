@@ -1,13 +1,13 @@
 {
   "packages": [
     {
-      "name": "Nefry",
+      "name": "Nefry(ESP32)",
       "maintainer": "Nefry Community",
       "websiteURL": "",
       "email": "wamiwami@live.jp",
       "platforms": [
          {
-          "name": "Nefry",
+          "name": "Nefry(ESP32)",
           "architecture": "esp32",
           "version": "0.7.1",
           "category": "ESP32",
@@ -28,8 +28,8 @@
             },
             {
               "packager": "Nefry",
-              "name": "esptool32",
-              "version": "9072737"
+              "name": "esptool",
+              "version": "9072736"
             }
           ]
         },
