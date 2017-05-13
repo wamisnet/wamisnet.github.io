@@ -22,46 +22,20 @@
           ],
           "toolsDependencies": [
             {
-              "packager": "Nefry",
+              "packager": "Nefry(ESP32)",
               "name": "xtensa-esp32-elf-gcc",
               "version": "1.22.0-61-gab8375a-5.2.0"
             },
             {
-              "packager": "Nefry",
+              "packager": "Nefry(ESP32)",
               "name": "esptool",
               "version": "9072736"
             }
           ]
         },
+       
         {
-          "name": "Nefry",
-          "architecture": "esp32",
-          "version": "0.7.0",
-          "category": "ESP32",
-          "url": "https://wamisnet.github.io/driver/nefryicing0.7.0.zip",
-          "archiveFileName": "nefryicing0.7.0.zip",
-          "checksum": "SHA-256:D56B08460BA9012050B8B312BBE25EE13BB5A6543FB2B96FE46F2D8F6B2B93B2",
-          "size": "28068897",
-          "boards": [
-            {
-              "name": "Nefry BT"
-            }
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "Nefry",
-              "name": "xtensa-esp32-elf-gcc",
-              "version": "1.22.0-61-gab8375a-5.2.0"
-            },
-            {
-              "packager": "Nefry",
-              "name": "esptool32",
-              "version": "96698a3"
-            }
-          ]
-        },
-        {
-          "name": "Nefry",
+          "name": "Nefry(ESP32)",
           "architecture": "esp32",
           "version": "0.6.2",
           "category": "ESP32",
@@ -76,174 +50,12 @@
           ],
           "toolsDependencies": [
             {
-              "packager": "Nefry",
+              "packager": "Nefry(ESP32)",
               "name": "xtensa-esp32-elf-gcc",
               "version": "1.22.0-61-gab8375a-5.2.0"
             },
             {
-              "packager": "Nefry",
-              "name": "esptool",
-              "version": "9072736"
-            }
-          ]
-        },
-        {
-          "name": "Nefry",
-          "architecture": "esp32",
-          "version": "0.6.0",
-          "category": "ESP32",
-          "url": "https://wamisnet.github.io/nefryicing0.6.0.zip",
-          "archiveFileName": "nefryicing0.6.0.zip",
-          "checksum": "SHA-256:69E414EEA6B5AA3C04225B37D3A197F23E56621B3A0AB25960BE984F16DE71C7",
-          "size": "26798570",
-          "boards": [
-            {
-              "name": "Nefry Icing"
-            }
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "Nefry",
-              "name": "xtensa-esp32-elf-gcc",
-              "version": "1.22.0-61-gab8375a-5.2.0"
-            },
-            {
-              "packager": "Nefry",
-              "name": "esptool",
-              "version": "9072736"
-            }
-          ]
-        },
-        {
-          "name": "Nefry",
-          "architecture": "esp32",
-          "version": "0.5.4",
-          "category": "ESP32",
-          "url": "https://wamisnet.github.io/nefryicing0.5.4.zip",
-          "archiveFileName": "nefryicing0.5.4.zip",
-          "checksum": "SHA-256:429EA07A7582FAD52777F3EEF67122C90D3AED8747CFC3E5547C5E797B8B36C4",
-          "size": "26813121",
-          "boards": [
-            {
-              "name": "Nefry Icing"
-            }
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "Nefry",
-              "name": "xtensa-esp32-elf-gcc",
-              "version": "1.22.0-61-gab8375a-5.2.0"
-            },
-            {
-              "packager": "Nefry",
-              "name": "esptool",
-              "version": "9072736"
-            }
-          ]
-        },
-        {
-          "name": "Nefry",
-          "architecture": "esp32",
-          "version": "0.5.3",
-          "category": "ESP32",
-          "url": "https://wamisnet.github.io/nefryicing0.5.3.zip",
-          "archiveFileName": "nefryicing0.5.3.zip",
-          "checksum": "SHA-256:B75CF1C42E50FC2196753D2E24B1846990A3300B4DE3E72F71EE687C036010D8",
-          "size": "27067263",
-          "boards": [
-            {
-              "name": "Nefry Icing"
-            }
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "Nefry",
-              "name": "xtensa-esp32-elf-gcc",
-              "version": "1.22.0-61-gab8375a-5.2.0"
-            },
-            {
-              "packager": "Nefry",
-              "name": "esptool",
-              "version": "9072736"
-            }
-          ]
-        },
-        {
-          "name": "Nefry",
-          "architecture": "esp32",
-          "version": "0.5.2",
-          "category": "ESP32",
-          "url": "https://wamisnet.github.io/nefryicing0.5.2.zip",
-          "archiveFileName": "nefryicing0.5.2.zip",
-          "checksum": "SHA-256:A5C2D024E78FA7C8A6E62538527ADB72EDE945FEFA2B3A1880E0FF5C18887D06",
-          "size": "26706656",
-          "boards": [
-            {
-              "name": "Nefry Icing"
-            }
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "Nefry",
-              "name": "xtensa-esp32-elf-gcc",
-              "version": "1.22.0-61-gab8375a-5.2.0"
-            },
-            {
-              "packager": "Nefry",
-              "name": "esptool",
-              "version": "9072736"
-            }
-          ]
-        },
-        {
-          "name": "Nefry",
-          "architecture": "esp32",
-          "version": "0.5.1",
-          "category": "ESP32",
-          "url": "https://wamisnet.github.io/nefryicing0.5.1.zip",
-          "archiveFileName": "nefryicing0.5.1.zip",
-          "checksum": "SHA-256:058CE5AF5272B389EFEA411A9212362C48D542369BC0DA6F618D3F8E186B7C56",
-          "size": "26706566",
-          "boards": [
-            {
-              "name": "Nefry Icing"
-            }
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "Nefry",
-              "name": "xtensa-esp32-elf-gcc",
-              "version": "1.22.0-61-gab8375a-5.2.0"
-            },
-            {
-              "packager": "Nefry",
-              "name": "esptool",
-              "version": "9072736"
-            }
-          ]
-        },
-        {
-          "name": "Nefry",
-          "architecture": "esp32",
-          "version": "0.5.0",
-          "category": "ESP32",
-          "url": "https://wamisnet.github.io/nefryicing0.5.0.zip",
-          "archiveFileName": "nefryicing0.5.0.zip",
-          "checksum": "SHA-256:897020F0F1844E0A25599B34052BDFA291DB8A4B415579099C1C54B96ACDC740",
-          "size": "30095970",
-          "boards": [
-            {
-              "name": "NefryIcing"
-            }
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "Nefry",
-              "name": "xtensa-esp32-elf-gcc",
-              "version": "1.22.0-61-gab8375a-5.2.0"
-            },
-            {
-              "packager": "Nefry",
+              "packager": "Nefry(ESP32)",
               "name": "esptool",
               "version": "9072736"
             }
@@ -322,26 +134,6 @@
               "archiveFileName": "esptool-96698a3-macos.tar.gz",
               "checksum": "SHA-256:A816044102F06738A64A8C0CCCAAD95D0B5F0BAACC95390E3AECD299039F46FE",
               "size": "3806849"
-            }
-          ]
-        },
-        {
-          "name": "esptool32",
-          "version": "9072737",
-          "systems": [
-            {
-              "host": "i686-mingw32",
-              "url": "https://wamisnet.github.io/cm/esptool-9072737-windows.zip",
-              "archiveFileName": "esptool-9072737-windows.zip",
-              "checksum": "SHA-256:B51B0CA0F45E9B1BE2170D0A2FAD22E8CF9761AC0FC3E53A1F917D8540202A53",
-              "size": "3390487"
-            },
-            {
-              "host": "x86_64-apple-darwin",
-              "url": "https://wamisnet.github.io/cm/esptool-9072737-macos.tar.gz",
-              "archiveFileName": "esptool-9072737-macos.tar.gz",
-              "checksum": "SHA-256:84D568CE61E3BC9B813774A5F6CFFB44CAE0CD7A812F86DCA7775240E586CDE5",
-              "size": "3805975"
             }
           ]
         }
