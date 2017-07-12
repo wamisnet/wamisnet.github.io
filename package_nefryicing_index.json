@@ -9,7 +9,7 @@
                 {
           "name": "Nefry(ESP32)",
           "architecture": "esp32",
-          "version": "0.9.2.1",
+          "version": "0.9.3",
           "category": "ESP32",
           "url": "https://wamisnet.github.io/driver/nefryicing0.9.2.1.zip",
           "archiveFileName": "nefryicing0.9.2.1.zip",
