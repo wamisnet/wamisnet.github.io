@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Itemized on わみめも</title>
-    <link>/itemized/</link>
+    <link>https://wamisnet.github.io/itemized/</link>
     <description>Recent content in Itemized on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 07 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/itemized/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wamisnet.github.io/itemized/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Nefry</title>
-      <link>/itemized/nefry/</link>
+      <link>https://wamisnet.github.io/itemized/nefry/</link>
       <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/itemized/nefry/</guid>
+      <guid>https://wamisnet.github.io/itemized/nefry/</guid>
       <description> Nefryシリーズ フリスクサイズのIoTデバイス。
 サイトリンク
  Nefry dotstuido販売ページ Nefryドキュメント Nefry本販売サイト Nefryコミュニティ  </description>
@@ -24,19 +24,19 @@
     
     <item>
       <title>Sofmo</title>
-      <link>/itemized/sofmo/</link>
+      <link>https://wamisnet.github.io/itemized/sofmo/</link>
       <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/itemized/sofmo/</guid>
+      <guid>https://wamisnet.github.io/itemized/sofmo/</guid>
       <description>Sofmo 公式サイト</description>
     </item>
     
     <item>
       <title>4モータ制御ドライバー</title>
-      <link>/itemized/motor/</link>
+      <link>https://wamisnet.github.io/itemized/motor/</link>
       <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/itemized/motor/</guid>
+      <guid>https://wamisnet.github.io/itemized/motor/</guid>
       <description>DRV8830使用4モーター管理可能モータドライバ なにができるの？ ラジコンなどモーターを4つ制御したいときに便利な基盤です。
 I2Cでモーターの速度をそれぞれコントロールする事ができます！
 仕様          電源電圧範囲 7V以下   最大連続駆動電流 1A   モータへの動作電源電圧範囲 2.75V～6.8V   通信方法 I2C   使用IC DRV8830    ICについての詳細情報
@@ -46,10 +46,10 @@ I2Cでモーターの速度をそれぞれコントロールする事ができ�
     
     <item>
       <title>USB Type C変換基板</title>
-      <link>/itemized/usbtypec/</link>
+      <link>https://wamisnet.github.io/itemized/usbtypec/</link>
       <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/itemized/usbtypec/</guid>
+      <guid>https://wamisnet.github.io/itemized/usbtypec/</guid>
       <description>USB Type C変換基板 なにができるの？ USB Type CのソケットからUSB2.0で使われるピンをブレットボードなどで使いやすい2.54mmピッチに変換する基板です。
 ピンソケットをつけない場合
 ピンソケットをつけた場合

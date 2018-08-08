@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nefry on わみめも</title>
-    <link>/categories/nefry/</link>
+    <link>https://wamisnet.github.io/categories/nefry/</link>
     <description>Recent content in Nefry on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 07 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/nefry/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wamisnet.github.io/categories/nefry/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Nefry</title>
-      <link>/itemized/nefry/</link>
+      <link>https://wamisnet.github.io/itemized/nefry/</link>
       <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/itemized/nefry/</guid>
+      <guid>https://wamisnet.github.io/itemized/nefry/</guid>
       <description> Nefryシリーズ フリスクサイズのIoTデバイス。
 サイトリンク
  Nefry dotstuido販売ページ Nefryドキュメント Nefry本販売サイト Nefryコミュニティ  </description>
