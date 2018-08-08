@@ -14,5 +14,5 @@ git config --global user.email "wamiwami@live.jp"
 git config --global user.name "wami"
 
 git add --all
-git commit -m "[auto] commit LibraryDocument"
+git commit -m "Update [ci skip]"
 git push origin master
