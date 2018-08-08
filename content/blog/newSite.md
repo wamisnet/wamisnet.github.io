@@ -1,6 +1,6 @@
 +++
 author = "wami"
-categories = ["Nefry"]
+categories = [""]
 tags = [""]
 date = "2018-08-08"
 description = "hugoでブログ始めました"
