@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: chmod permissions
+          command: chmod +x ./ReViewDeploy.sh
+      - run:
+          name: Upload to ReViewDeploy
+          command: ./ReViewDeploy.sh
