@@ -1,0 +1,996 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "/"
+        },
+        "articleSection" : "itemized",
+        "name" : "4モータ制御ドライバー",
+        "headline" : "4モータ制御ドライバー",
+        "description" : "DRV8830使用したモータドライバー",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-08-06 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-08-06 00:00:00 &#43;0000 UTC",
+        "url" : "/itemized/motor/",
+        "wordCount" : "121",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            
+                <title>4モータ制御ドライバー</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.47-DEV" />
+        
+
+
+        
+            <meta name="author" content="wami">
+        
+        
+            <meta name="description" content="DRV8830使用したモータドライバー">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="4モータ制御ドライバー"/>
+<meta name="twitter:description" content="DRV8830使用したモータドライバー"/>
+<meta name="twitter:site" content="@wamisnet"/>
+
+        <meta property="og:title" content="4モータ制御ドライバー" />
+<meta property="og:description" content="DRV8830使用したモータドライバー" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/itemized/motor/" />
+
+
+
+<meta property="article:published_time" content="2018-08-06T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-08-06T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="4モータ制御ドライバー">
+<meta itemprop="description" content="DRV8830使用したモータドライバー">
+
+
+<meta itemprop="datePublished" content="2018-08-06T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-08-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="121">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-62256925-7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">itemized</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/itemized/">
+                            <i class="fa fa-list">&nbsp;</i>Product
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/itemized/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Product
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/newsite/">hugo始めました</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-08'>
+                                    August 8, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fitemized%2fmotor%2f&amp;text=4%e3%83%a2%e3%83%bc%e3%82%bf%e5%88%b6%e5%be%a1%e3%83%89%e3%83%a9%e3%82%a4%e3%83%90%e3%83%bc&amp;via=wamisnet" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fitemized%2fmotor%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fitemized%2fmotor%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by wami&amp;body=%2fitemized%2fmotor%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/itemized/motor/">4モータ制御ドライバー</a></h1>
+            
+        
+        
+            <p>DRV8830使用したモータドライバー</p>
+        
+    </div>
+    <div class="meta">
+
+      <span class="author">wami</span>
+      <span class="author">Arduino</span>
+      
+        <a href="#" target="_blank"></a>
+      
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fitemized%2fmotor%2f&amp;text=4%e3%83%a2%e3%83%bc%e3%82%bf%e5%88%b6%e5%be%a1%e3%83%89%e3%83%a9%e3%82%a4%e3%83%90%e3%83%bc&amp;via=wamisnet" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fitemized%2fmotor%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fitemized%2fmotor%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by wami&amp;body=%2fitemized%2fmotor%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+  <div id="content">
+    
+
+<h1 id="drv8830使用4モーター管理可能モータドライバ">DRV8830使用4モーター管理可能モータドライバ</h1>
+
+<p><img src="/img/item/motor.jpg" alt="motor" /></p>
+
+<h2 id="なにができるの">なにができるの？</h2>
+
+<p>ラジコンなどモーターを4つ制御したいときに便利な基盤です。</p>
+
+<p>I2Cでモーターの速度をそれぞれコントロールする事ができます！</p>
+
+<h2 id="仕様">仕様</h2>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">電源電圧範囲</td>
+<td align="center">7V以下</td>
+</tr>
+
+<tr>
+<td align="center">最大連続駆動電流</td>
+<td align="center">1A</td>
+</tr>
+
+<tr>
+<td align="center">モータへの動作電源電圧範囲</td>
+<td align="center">2.75V～6.8V</td>
+</tr>
+
+<tr>
+<td align="center">通信方法</td>
+<td align="center">I2C</td>
+</tr>
+
+<tr>
+<td align="center">使用IC</td>
+<td align="center">DRV8830</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="https://strawberry-linux.com/pub/drv8830j.pdf">ICについての詳細情報</a></p>
+
+<h2 id="サンプルプログラム">サンプルプログラム</h2>
+
+<p><a href="./driver/DRV8830MotorDriver.zip">DRV8830ドライバーはこちらからダウンロードしてください</a></p>
+
+<pre><code>#include &lt;Arduino.h&gt;
+#include &lt;Wire.h&gt;
+#include &lt;DRV8830MotorDriver.h&gt;
+
+DRV8830MotorDriver motor1(DRV8830_A1_A0_0_0);
+DRV8830MotorDriver motor2(DRV8830_A1_A0_0_1);
+DRV8830MotorDriver motor3(DRV8830_A1_A0_1_1);
+DRV8830MotorDriver motor4(DRV8830_A1_A0_1_0);
+
+#define FAULTn  7
+
+void setup()
+{
+  Serial.begin(115200);
+  Wire.begin();
+  Serial.println(&quot;Hello,DRV8830 I2C MotorDriver&quot;);
+
+  motor1.setSpeed(0);
+  motor2.setSpeed(0);
+  motor3.setSpeed(0);
+  motor4.setSpeed(0);
+}
+
+int spd = 0;
+
+void loop()
+{
+  char c;
+
+  if (Serial.available())
+  {
+    c = Serial.read();
+    if (c == '+')
+    {
+      spd++;
+      motor1.setSpeed(spd);
+      motor2.setSpeed(spd);
+      motor3.setSpeed(spd);
+      motor4.setSpeed(spd);
+      spd = motor1.getSpeed();
+      Serial.println(spd);
+    }
+    else if (c == '-')
+    {
+      spd--;
+      motor1.setSpeed(spd);
+      motor2.setSpeed(spd);
+      motor3.setSpeed(spd);
+      motor4.setSpeed(spd);
+      spd = motor1.getSpeed();
+      Serial.println(spd);
+    }
+    else if (c == 'b')
+    {
+      spd = 0;
+      motor1.setSpeed(spd);
+      motor2.setSpeed(spd);
+      motor3.setSpeed(spd);
+      motor4.setSpeed(spd);
+      motor1.brake();
+      motor2.brake();
+      motor3.brake();
+      motor4.brake();
+      spd = motor1.getSpeed();
+      Serial.println(spd);
+    }
+  }
+}
+</code></pre>
+
+<h2 id="設計情報">設計情報</h2>
+
+<p>回路図</p>
+
+<p><img src="/img/item/motor回路図.png" alt="回路図" /></p>
+
+<p>配線図</p>
+
+<p><img src="/img/item/motor配線図.png" alt="配線図" /></p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-sitemap">&nbsp;</i>
+                    
+
+                    
+                        Category
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/'></a></li>
+    
+</ul>
+
+  </footer>
+</article>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/main/wami.jpg" alt="わみ" /></a>
+      
+    
+    
+      <header>
+        <h2>わみめも</h2>
+        <p>私が作ったソフトウエアやハードウエアのはなしをするつもり</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/wamisnet" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/wamisnet" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:wamiwami@live.jp" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/newsite/">hugo始めました</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-08'>
+                August 8, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                Uncategorized
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/nefry/">Nefry</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/wamisnet" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/wamisnet" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:wamiwami@live.jp" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          わみめも
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+
