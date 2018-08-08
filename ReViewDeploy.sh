@@ -4,7 +4,7 @@ go get -v github.com/spf13/hugo
 hugo
 git clone https://github.com/wamisnet/wamisnet.github.io.git
 
-cp -rp public/ wamisnet.github.io/
+cp -rp public/* wamisnet.github.io/
 
 cd wamisnet.github.io
 
