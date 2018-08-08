@@ -1,13 +1,14 @@
 +++
-author = ""
+title = "{{ replace .Name "-" " " | title }}"
+date = {{ .Date }}
+draft = true
+author = "wami"
 categories = [""]
-date = ""
 description = ""
 featured = ""
 featuredalt = ""
 featuredpath = ""
 linktitle = ""
-title = ""
 type = "post"
 
 +++
