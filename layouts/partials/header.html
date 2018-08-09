@@ -33,14 +33,33 @@
             {{ end }}
         {{ end }}
 
-        {{ template "_internal/twitter_cards.html" . }}
-        {{ template "_internal/opengraph.html" . }}
-        <meta property="og:image" content="{{ .Site.BaseURL }}/images/logo.png">
-        <meta property="og:image:type" content="image/png">
+ 
+        {{ if and (isset .Params "featuredpath") (ne .Params.featuredpath "") }}
+                {{ $.Scratch.Set "path" .Params.featuredpath }}
+                {{ if and (isset .Params "featured") (ne .Params.featuredpath "") }}
+                    {{ $.Scratch.Set "structType" "page" }}
+                    {{ partial "img-path" . }}
+                    {{ $path := $.Scratch.Get "path" }}
+                    {{ $alt := $.Scratch.Get "alt" }}
+                    {{ $img := $.Scratch.Get "img" }}
+                    {{ template "_internal/twitter_cards.html" . }}
+                    {{ template "_internal/opengraph.html" . }}
+                    <meta property="og:image" content="{{ .Site.BaseURL }}{{ $path}}/{{ .Params.featured }}">
+                    <meta property="og:image:type" content="image/png">
+                    {{ template "_internal/schema.html" . }}
+                    {{ template "_internal/google_news.html" . }}
+                {{ end }}    
+        {{ else }}
+            {{ template "_internal/twitter_cards.html" . }}
+            {{ template "_internal/opengraph.html" . }}
+                <meta property="og:image" content="{{ .Site.BaseURL }}/img/main/wami.jpg">
+                <meta property="og:image:type" content="image/jpg">
+            {{ template "_internal/schema.html" . }}
+            {{ template "_internal/google_news.html" . }}
+        {{ end }}
+
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        {{ template "_internal/schema.html" . }}
-        {{ template "_internal/google_news.html" . }}
 
         {{ if isset .Site.Params "customcss" }}
             {{ $.Scratch.Set "cssFiles" .Site.Params.customCSS }}

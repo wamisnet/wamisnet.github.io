@@ -1,4 +1,4 @@
-baseurl = "https://wamisnet.github.io/"
+baseurl = "https://wamisnet.github.io"
 languageCode = "ja"
 title = "わみめも"
 theme = "hugo-future"
