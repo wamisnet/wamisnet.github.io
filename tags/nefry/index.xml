@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nefry on わみめも</title>
-    <link>https://wamisnet.github.io/categories/nefry/</link>
+    <link>https://wamisnet.github.io/tags/nefry/</link>
     <description>Recent content in Nefry on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 11 Aug 2018 00:40:17 +0900</lastBuildDate>
     
-	<atom:link href="https://wamisnet.github.io/categories/nefry/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wamisnet.github.io/tags/nefry/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -36,17 +36,6 @@ connpassページ
 初イベントは13人の方に来ていただいて、6人の人に発表して頂きました！ ホントにありがたい限りです！
 イベントの様子の画像を何枚か貼っておきます！
 ちなみに次のイベントは来月頃の予定らしい…</description>
-    </item>
-    
-    <item>
-      <title>Nefry</title>
-      <link>https://wamisnet.github.io/itemized/nefry/</link>
-      <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://wamisnet.github.io/itemized/nefry/</guid>
-      <description> Nefryシリーズ フリスクサイズのIoTデバイス。
-サイトリンク
- Nefry dotstuido販売ページ Nefryドキュメント Nefry本販売サイト Nefryコミュニティ  </description>
     </item>
     
   </channel>
