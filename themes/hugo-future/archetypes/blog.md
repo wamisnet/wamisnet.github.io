@@ -3,11 +3,12 @@ title = "{{ replace .Name "-" " " | title }}"
 date = {{ .Date }}
 draft = true
 author = "wami"
-categories = [""]
+categories = ["Nefry"]
+tags = ["Nefry"]
 description = ""
-featured = ""
-featuredalt = ""
-featuredpath = ""
+featured = "1.png"
+featuredalt = "集合写真"
+featuredpath = "img/2018/nefry_ug_2"
 linktitle = ""
 type = "post"
 

@@ -4,6 +4,7 @@ date = "2018-08-08"
 draft = false
 author = "wami"
 categories = ["Nefry"]
+tags = ["Nefry"]
 description = "Nefryユーザグループイベントに参加してきました！"
 featured = "1.png"
 featuredalt = "集合写真"
