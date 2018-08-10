@@ -4,18 +4,18 @@ author = "wami"
 date = "2018-08-06"
 title = "4モータ制御ドライバー"
 description = "DRV8830使用したモータドライバー"
-featured = ""
-featuredpath = ""
-featuredalt = ""
+featured = "motor.png"
+featuredalt = "モータドライバー"
+featuredpath = "img/item"
 categories = [""]
-linktitle = ""
+linktitle = "4モータ制御ドライバー"
 format = "Arduino"
 link = "#"
 +++
 
 # DRV8830使用4モーター管理可能モータドライバ
 
-![motor](/img/item/motor.jpg)
+![motor](/img/item/motor.png)
 
 ## なにができるの？
 ラジコンなどモーターを4つ制御したいときに便利な基盤です。

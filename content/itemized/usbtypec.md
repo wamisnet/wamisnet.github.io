@@ -4,17 +4,17 @@ author = "wami"
 date = "2018-08-05"
 title = "USB Type C変換基板"
 description = "ブレットボードに差しやすい2.54mmに変換します。"
-featured = ""
-featuredpath = ""
-featuredalt = ""
+featured = "usb.png"
+featuredalt = "USB Type C変換基板"
+featuredpath = "img/item"
 categories = [""]
-linktitle = ""
+linktitle = "USB Type C変換基板"
 format = "other"
 link = "#"
 +++
 
 # USB Type C変換基板
-![usb](/img/item/usb.jpg)
+![usb](/img/item/usb.png)
 
 ## なにができるの？
 USB Type CのソケットからUSB2.0で使われるピンをブレットボードなどで使いやすい2.54mmピッチに変換する基板です。
