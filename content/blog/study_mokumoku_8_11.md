@@ -1,15 +1,15 @@
 +++
 title = "公民館勉強会のすすめ"
-date = 2018-08-12T22:27:19+09:00
+date = 2018-08-12T01:27:19+09:00
 draft = false
 author = "wami"
 categories = ["勉強会"]
 tags = ["勉強会"]
-description = ""
+description = "公民館での勉強会をメモがてらおすすめしてみます！"
 featured = "1.png"
 featuredalt = "集合写真"
 featuredpath = "img/2018/study_mokumoku_8_11"
-linktitle = ""
+linktitle = "公民館勉強会のすすめ"
 type = "post"
 
 +++
