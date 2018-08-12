@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on わみめも</title>
-    <link>https://wamisnet.github.io/blog/</link>
-    <description>Recent content in Blog on わみめも</description>
+    <title>勉強会 on わみめも</title>
+    <link>https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/</link>
+    <description>Recent content in 勉強会 on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 12 Aug 2018 01:27:19 +0900</lastBuildDate>
     
-	<atom:link href="https://wamisnet.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -44,44 +44,6 @@
 会場の枠さえ空いていれば一日（9:00-21:00）いけるのでプチハッカソン的なことも全然できそうで夢が広がるｗ（会場費:3250円（やばさ））
 まとめ IT系のイベントであれば、企業のオフィスを使うことが多いと思うのですが、時には公民館で勉強会もありなんじゃないかなと思いました。（いろいろ難しい点があるけどね）
 どちらかというと友達同士や同じ企業の仲間どうしで会場どうしよう？みたいなことを考えるときに公民館を使うのはかなりありなんじゃないでしょうか？</description>
-    </item>
-    
-    <item>
-      <title>9/2 NefryUGもくもく会イベント開催します！！</title>
-      <link>https://wamisnet.github.io/blog/nefry_ug_2/</link>
-      <pubDate>Sat, 11 Aug 2018 00:40:17 +0900</pubDate>
-      
-      <guid>https://wamisnet.github.io/blog/nefry_ug_2/</guid>
-      <description>Nefry ユーザグループイベント 2回目開催決定 9/2（日）に開催しますので、ぜひ遊びにきてください。
-ナゾ枠で私が質問を受け付ける枠があるのでぜひ（だれもいないと寂しい）
-イベントページはこちら！</description>
-    </item>
-    
-    <item>
-      <title>NefryUG参加レポ</title>
-      <link>https://wamisnet.github.io/blog/nefry_ug_1/</link>
-      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://wamisnet.github.io/blog/nefry_ug_1/</guid>
-      <description>8/7にdotstudioで開催された、Nefryユーザグループイベントに参加してきました。
-（一応主催　ちゃんとくさんにほとんどやっていただいた。ありがとうございます。）
-connpassページ
-ちゃんとくさんも言っていたけど、UGイベント初なんですよね。
-これから大きく育っていってほしいです。
-初イベントは13人の方に来ていただいて、6人の人に発表して頂きました！ ホントにありがたい限りです！
-イベントの様子の画像を何枚か貼っておきます！
-ちなみに次のイベントは来月頃の予定らしい…</description>
-    </item>
-    
-    <item>
-      <title>hugo始めました</title>
-      <link>https://wamisnet.github.io/blog/newsite/</link>
-      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://wamisnet.github.io/blog/newsite/</guid>
-      <description>いままでのサイトはかなり手抜き感もあったのでちゃんとしたものを作ることにしました。
-せっかく個人事業主としての活動もあるのでそのあたりも今後につながればいいなと思います。
-Nefryの作例やTips、そのほかのハードウエアについても気軽にまとめていくつもりなのでよろしくお願いします。</description>
     </item>
     
   </channel>
