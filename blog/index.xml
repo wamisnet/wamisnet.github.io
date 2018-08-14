@@ -6,10 +6,21 @@
     <description>Recent content in Blog on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 12 Aug 2018 01:27:19 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 Aug 2018 02:45:17 +0900</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nefry BTと連携できるFirebaseライブラリの解説記事を寄稿しました</title>
+      <link>https://wamisnet.github.io/blog/nefry_firebase_repo/</link>
+      <pubDate>Tue, 14 Aug 2018 02:45:17 +0900</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/nefry_firebase_repo/</guid>
+      <description>DotstudioさんにFirebaseとNefryを連携方法を説明する記事を寄稿しました。
+ぜひご覧ください！
+https://dotstud.io/docs/nefrybt-firebase-library/</description>
+    </item>
     
     <item>
       <title>公民館勉強会のすすめ</title>

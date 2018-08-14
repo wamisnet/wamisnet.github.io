@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firebase on わみめも</title>
+    <link>https://wamisnet.github.io/tags/firebase/</link>
+    <description>Recent content in Firebase on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 14 Aug 2018 02:45:17 +0900</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/tags/firebase/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nefry BTと連携できるFirebaseライブラリの解説記事を寄稿しました</title>
+      <link>https://wamisnet.github.io/blog/nefry_firebase_repo/</link>
+      <pubDate>Tue, 14 Aug 2018 02:45:17 +0900</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/nefry_firebase_repo/</guid>
+      <description>DotstudioさんにFirebaseとNefryを連携方法を説明する記事を寄稿しました。
+ぜひご覧ください！
+https://dotstud.io/docs/nefrybt-firebase-library/</description>
+    </item>
+    
+  </channel>
+</rss>
