@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WiFi on わみめも</title>
+    <link>https://wamisnet.github.io/tags/wifi/</link>
+    <description>Recent content in WiFi on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 28 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/tags/wifi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nefry Tips 無線LAN接続について</title>
+      <link>https://wamisnet.github.io/blog/nefry_tips_2018_08_28/</link>
+      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/nefry_tips_2018_08_28/</guid>
+      <description>Nefryを使ったいろんな作品が見られて幸せなわみさんです。
+今回は無線LANのプチTipsを共有したいと思っています。
+Nefryには、Webページ上で設定した無線LANから自動的にもっとも電波強度が強いものに接続するような機能があります。
+ただ、基本的には起動時に接続しにいくのみで、起動したあとに切断された場合再接続処理が上手くいかず接続できないことがあります。
+デモのような短時間の動作であれば上記のような現象は気にならないと思いますが、長時間のモニタリングなどでなってしまうとなかなか辛いことがあると思いますので今回のTipsを試してもらえればと思います！
+#include&amp;lt;Nefry.h&amp;gt;void setup() { // 何か処理 } void loop() { // なんか処理a  if(WiFi.status() != WL_CONNECTED){ //無線LANが接続されていないとき  Nefry.reset(); } } 上記のコードが今回のTipsです。
+無線LANに接続していないときにNefryをリセットするコードになります。
+Nefryがネットワークにつながらなくなっても再起動して無線LAN接続が正常に行えるはずです！！
+ぜひ試してみてください！</description>
+    </item>
+    
+  </channel>
+</rss>
