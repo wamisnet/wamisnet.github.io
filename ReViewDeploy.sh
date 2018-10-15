@@ -1,6 +1,5 @@
 #!/bin/sh
 
-go get -v github.com/spf13/hugo
 hugo
 git clone https://github.com/wamisnet/wamisnet.github.io.git
 
