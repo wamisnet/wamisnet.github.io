@@ -1,5 +1,5 @@
 +++
-title = "技術書典5で発注ミスをしましたｗ＆Flutte本振り返り"
+title = "技術書典5で発注ミスをしましたｗ＆Flutter本振り返り"
 date = 2018-10-15
 draft = false
 author = "wami"
