@@ -52,6 +52,8 @@ Flutterまだまだ情報少ないのでこういう勉強会で情報を得て�
 
 ## Flutterのlifecycle @ slime_a
 
+ライフサイクルの話あまりきかないので、すごく為になった！
+
 資料これから…？
 
 ## Flutterを広めるために技術同人誌を作った話 @ ota42y
@@ -64,7 +66,19 @@ Flutterまだまだ情報少ないのでこういう勉強会で情報を得て�
 
 ## Flutter + Bitrise + DeployGateでAndroid/iOS用テストアプリを配信してみた話 @ D_R_1009
 
+話聞く限りめっちゃよさそう！普通につかってみたい
+
+資料はまだっぽい
+
 ## Flutter で WebView をいい感じにする @ sesta
+
+WebView使うときあるあるを説明してくれてる！！初心者枠！？
+
+コード：https://github.com/sesta/be_cool_webview
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">今日の発表の資料ですー <a href="https://twitter.com/hashtag/flutter_meetup_tokyo?src=hash&amp;ref_src=twsrc%5Etfw">#flutter_meetup_tokyo</a><a href="https://t.co/O25wHVocIM">https://t.co/O25wHVocIM</a></p>&mdash; sesta (@se_sta) <a href="https://twitter.com/se_sta/status/1052529809807433734?ref_src=twsrc%5Etfw">2018年10月17日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 ## FlutterでiOSアプリを作ってIn-House配布した @ espresso3389
 
