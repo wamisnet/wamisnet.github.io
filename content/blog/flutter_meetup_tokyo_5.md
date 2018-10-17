@@ -82,5 +82,14 @@ WebView使うときあるあるを説明してくれてる！！初心者枠！�
 
 ## FlutterでiOSアプリを作ってIn-House配布した @ espresso3389
 
+BLE話だ！強い初心者のひと
+
+BLE、Flutterでやってみたいなぁ
+
+BLEのライブラリ : https://github.com/pauldemarco/flutter_blue
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Flutter Meetup Tokyo #5 <a href="https://twitter.com/hashtag/flutter_meetup_tokyo?src=hash&amp;ref_src=twsrc%5Etfw">#flutter_meetup_tokyo</a> で、「FlutterでiOSアプリを作ってIn-House配布した」という内容で発表しますー。<a href="https://t.co/MzRD7xiqQX">https://t.co/MzRD7xiqQX</a></p>&mdash; Takashi Kawasaki (@espresso3389) <a href="https://twitter.com/espresso3389/status/1052530849667678210?ref_src=twsrc%5Etfw">2018年10月17日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 順次アップデートしていきます！
