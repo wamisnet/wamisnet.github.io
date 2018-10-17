@@ -48,9 +48,20 @@ Flutterまだまだ情報少ないのでこういう勉強会で情報を得て�
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">これから発表するスライドになります。<br>緊張していますが、よろしくお願いいたしますm(__)m<a href="https://t.co/Ir61jKIdvd">https://t.co/Ir61jKIdvd</a><a href="https://twitter.com/hashtag/flutter_meetup_tokyo?src=hash&amp;ref_src=twsrc%5Etfw">#flutter_meetup_tokyo</a></p>&mdash; taxman (@_txmn) <a href="https://twitter.com/_txmn/status/1052519437654360064?ref_src=twsrc%5Etfw">2018年10月17日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-## Flutterのlifecycle
+## Flutterのlifecycle @ slime_a
 
 資料これから…？
+
+## Flutterを広めるために技術同人誌を作った話 @ ota42y
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">今日の資料です！！！ “ Flutterを広めるために技術同人誌を作った話 - Speaker Deck <a href="https://t.co/5Cg0kuDfJn">https://t.co/5Cg0kuDfJn</a> <a href="https://twitter.com/hashtag/flutter_meetup_tokyo?src=hash&amp;ref_src=twsrc%5Etfw">#flutter_meetup_tokyo</a></p>&mdash; おおた@10/5にサーバレス本　技術書典5か13 (@ota42y) <a href="https://twitter.com/ota42y/status/1052526995622391808?ref_src=twsrc%5Etfw">2018年10月17日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## Flutter + Bitrise + DeployGateでAndroid/iOS用テストアプリを配信してみた話 @ D_R_1009
+
+## Flutter で WebView をいい感じにする @ sesta
+
+## FlutterでiOSアプリを作ってIn-House配布した @ espresso3389
 
 
 順次アップデートしていきます！
