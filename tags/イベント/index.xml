@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>イベント on わみめも</title>
+    <link>https://wamisnet.github.io/tags/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/</link>
+    <description>Recent content in イベント on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 17 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/tags/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Flutter Meetup Tokyo #5いってきた</title>
+      <link>https://wamisnet.github.io/blog/flutter_meetup_tokyo_5/</link>
+      <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/flutter_meetup_tokyo_5/</guid>
+      <description>前回の技術書典5でFlutter本を書いたのもあり、今回「Flutter Meetup Tokyo #5」に参加しました。 本を書いている間ずっと気になってたので今回来れてよかったです。
+ 一応、本の販売リンクを張っておきます！！！よろしければ！！！
+ちょっと仕事が終わらなくて、初めから参加できなかったのですが、YouTubeのほうで配信していたので（マジ神）ちらちら見ながら会場に向かえましたｗ
+配信再開しました。 #flutter_meetup_tokyohttps://t.co/NrMci2I5FE
+&amp;mdash; Flutter Tokyo (@FlutterTokyo) 2018年10月17日 
+Flutterまだまだ情報少ないのでこういう勉強会で情報を得ていきたいですね。
+発表資料 個人でFlutterアプリをリリースした所感 @ shogo.yamada 今日の発表資料になります！
+もし見にくかったらこちらをご覧ください。https://t.co/Oyku6rCby6
+#flutter_meetup_tokyo
+&amp;mdash; shogo.yamada@Flutterが好き (@yshogo87) 2018年10月17日 
+Redux in Flutter: An Introduction @ Jeroen Meijer 資料見つけられず…
+Flutter Engineことはじめ @ nankiti 資料みつけられず…
+画像取得とpermission @ txmn これから発表するスライドになります。
+緊張していますが、よろしくお願いいたしますm(__)mhttps://t.co/Ir61jKIdvd#flutter_meetup_tokyo
+&amp;mdash; taxman (@_txmn) 2018年10月17日 
+Flutterのlifecycle 資料これから…？
+順次アップデートしていきます！</description>
+    </item>
+    
+  </channel>
+</rss>
