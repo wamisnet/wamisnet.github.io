@@ -15,6 +15,7 @@ date = "2018-08-08"
 
 * [Twitter](https://twitter.com/wamisnet)
 * [SpeakerDeck](https://speakerdeck.com/wamisnet)
+* [SlideShare](https://www.slideshare.net/wamisnet)
 * [Nefry](http://nefry.studio/)
 * [Sofmo](https://sofmo.pw/)
 * [GitHub](https://github.com/wamisnet).
