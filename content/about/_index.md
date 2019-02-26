@@ -18,7 +18,7 @@ date = "2018-08-08"
 * [SlideShare](https://www.slideshare.net/wamisnet)
 * [Nefry](http://nefry.studio/)
 * [Sofmo](https://sofmo.pw/)
-* [GitHub](https://github.com/wamisnet).
+* [GitHub](https://github.com/wamisnet)
 
 ## スキル
 
