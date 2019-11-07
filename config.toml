@@ -146,6 +146,11 @@ canonifyURLs = true
   identifier = "fa fa-envelope-o"
   weight = 6
 
+[[menu.main]]
+  name = "Small Business"
+  url = "/business/"
+  identifier = "fa fa-id-card"
+  weight = 7
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
 # and socialAppearAtBottom.
