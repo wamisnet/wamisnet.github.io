@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wamisnet.github.io/blog/iot_sharehouse/</loc>
+    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wamisnet.github.io/blog/jobchange/</loc>
     <lastmod>2019-07-07T00:00:00+00:00</lastmod>
   </url>
@@ -96,7 +101,7 @@
   
   <url>
     <loc>https://wamisnet.github.io/blog/</loc>
-    <lastmod>2019-07-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -131,6 +136,18 @@
   <url>
     <loc>https://wamisnet.github.io/categories/flutter/</loc>
     <lastmod>2018-10-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/tags/iot/</loc>
+    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/categories/iot/</loc>
+    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -190,7 +207,7 @@
   
   <url>
     <loc>https://wamisnet.github.io/</loc>
-    <lastmod>2019-07-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iot on わみめも</title>
+    <link>https://wamisnet.github.io/categories/iot/</link>
+    <description>Recent content in Iot on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 07 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/categories/iot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IoT的シェアハウスのすすめ</title>
+      <link>https://wamisnet.github.io/blog/iot_sharehouse/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/iot_sharehouse/</guid>
+      <description> こんにちは、ギークハウス新宿に住んでいるわみです。
+今回はIoT的シェアハウスのススメとして、こんな感じにうちのシェアハウスは便利になるよっていう話をしていこうとおもいます。
+レジシステム https://qiita.com/wamisnet/items/1c6f809be7c4847a900d
+お風呂場監視システム https://qiita.com/retoruto_carry/items/00ec51a94d819925fad1
+Remo </description>
+    </item>
+    
+  </channel>
+</rss>
