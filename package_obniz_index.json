@@ -43,13 +43,6 @@
           "size": "36853332"
         }
           ],
-          "boards": [
-            {
-              "name": "obniz"
-            }
-          ]
-        }
-      ],
       "tools": [
         {
           "version": "2.6.1",
