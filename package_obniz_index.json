@@ -9,15 +9,16 @@
       "platforms": [
         {
           "category": "ESP32",
-          "name": "esp32",
+          "name": "obniz",
           "url": "http://wamisnet.github.io/obniz-v0.0.1.zip",
-          "checksum": "SHA-256:21D55C69140893E326305E028EE9D7D4FE4C1EFC8D446C87E8AB06A03CA73D73",
+          "checksum": "SHA-256:3390a65d9a32de88beb67af73f05821e8de4625283f2734749d9c55ebc66abc4",
+          "size": "50601568",
+          "archiveFileName": "obniz-v0.0.1.zip",
+          "version": "0.0.1",
+          "architecture": "esp32",
           "help": {
             "online": ""
           },
-          "version": "0.0.1",
-          "architecture": "esp32",
-          "archiveFileName": "obniz-v0.0.1.zip",
           "boards": [
             {
               "name": "obniz"
@@ -39,8 +40,7 @@
               "version": "0.2.3",
               "name": "mkspiffs"
             }
-          ],
-          "size": "36853332"
+          ]
         }
           ],
       "tools": [
