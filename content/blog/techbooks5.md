@@ -8,7 +8,7 @@ tags = ["技術書典","本","技術書典5","Flutter","Firebase"]
 description = "技術書典5の振り返りをします"
 featured = "booth.jpg"
 featuredalt = ""
-featuredpath = "img/2018/techbooks5"
+featuredpath = "2018/techbooks5"
 linktitle = "技術書典5で発注ミスをしましたｗ＆振り返り"
 type = "post"
 

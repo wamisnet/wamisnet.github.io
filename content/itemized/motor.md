@@ -6,7 +6,7 @@ title = "4モータ制御ドライバー"
 description = "DRV8830使用したモータドライバー"
 featured = "motor.png"
 featuredalt = "モータドライバー"
-featuredpath = "img/item"
+featuredpath = "item"
 categories = [""]
 linktitle = "4モータ制御ドライバー"
 format = "Arduino"
@@ -14,8 +14,6 @@ link = "#"
 +++
 
 # DRV8830使用4モーター管理可能モータドライバ
-
-![motor](/img/item/motor.png)
 
 ## なにができるの？
 ラジコンなどモーターを4つ制御したいときに便利な基盤です。

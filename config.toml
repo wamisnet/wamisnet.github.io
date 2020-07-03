@@ -1,161 +1,142 @@
 baseurl = "https://wamisnet.github.io"
-languageCode = "ja"
+languageCode = "ja-jp"
 title = "わみめも"
-theme = "hugo-future"
+theme = "hugo-future-imperfect-slim"
 preserveTaxonomyNames = true
-paginate = 10
+paginate = 10.0
 disqusShortname = "wamisnet"
 googleAnalytics = "UA-62256925-7"
 pluralizeListTitles = false
-# Set the followings to true as part of your site SEO
 enableRobotsTXT = true
 canonifyURLs = true
+DefaultContentLanguage  = "ja"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+home = [
+  "html",
+  "json"
+]
 
 [params]
-  # Sets the meta tag description
-  description          = "私が作ったコードやハードウエアのはなし"
-  # Sets the navbarTitle that appears in the top left of the navigation bar
-  navbarTitle          = "わみめも"
-  # Sets where "View More Posts" links
-  viewMorePostLink     = "/blog/"
+description = "私が作ったコードやハードウエアのはなし"
+navbarTitle = "わみめも"
+viewMorePostLink = "/blog/"
+enableCDN = false
+cssFiles = ["default"]
+jsFiles = ["default"]
+highlightjs = true
+highlightjsTheme = "github"
+highlightjsLang = [
+  "html",
+  "css",
+  "js",
+  "c",
+  "c++"
+]
+viewMorePostsLink = "/blog/"
+readingTime = true
+socialShare = [
+  "twitter",
+  "facebook",
+  "email"
+]
 
-# Optional Params
-  # Sets navbarTitle to match the section of the website
-  dynamicTitles        = true
-  # Sets RSS icons to appear on the sidebar with the social media buttons
-  rssAppearAtTop       = true
-  rssAppearAtBottom    = true
-  # Sets Social Media icons to appear on the sidebar
-  socialAppearAtTop    = true
-  socialAppearAtBottom = true
-  # Sets Categories to sort by number of posts instead of alphabetical
-  categoriesByCount    = true
-  # set to show or to hide categories in the sidebar
-  showSidebarCategories = true
-  # Sets Estimated Reading Time to appear in post headers
-  includeReadingTime   = true
-  # Sets the Favicon and Version for the site. Default support is for
-  # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
-  # These are stored in the favicon folder. See the following for more information:
-  # https://github.com/audreyr/favicon-cheat-sheet
-  loadFavicon          = false
-  faviconVersion       = ""
-  # Sets Social Share links to appear on posts
-  socialShare          = true
-  # Sets specific share to appear on posts (default behavior is to appear)
-  socialShareTwitter   = true
-  socialShareGoogleplus = true
-  socialShareFacebook  = true
-  socialShareReddit    = false
-  socialShareLinkedin  = false
-  socialShareStumbleupon = false
-  socialSharePinterest = false
-  socialShareEmail     = true
+  [params.meta]
+  description = "NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。"
+  author = "wami"
+  favicon = false
+  svg = true
+  faviconVersion = "1"
+  msColor = "#ffffff"
+  iOSColor = "#ffffff"
 
-  # Load custom CSS or JavaScript files. The variable is an array so that you
-  # can load multiple files if necessary. You can also load the standard theme
-  # files by adding the value, "default".
-  # customCSS            = ["default", "/path/to/file"]
-  # customJS             = ["default", "/path/to/file"]
-  customCSS            = ["default"]
-  customJS             = ["default"]
+  [params.header]
+  navbarTitle = "わみめも"
+  dynamicTitles = false
+  searchMenu = false
+  shareMenu = false
+  languageMenu = false
 
-  # options for highlight.js (version, additional languages, and theme)
-  disable_highlight = false # set to true to disable Highlight
-  highlightjsVersion = "9.11.0"
-  highlightjsCDN = "//cdn.bootcss.com"
-  highlightjsLang = ["r", "yaml", "css"]
-  highlightjsTheme = "github"
-  MathJaxCDN = "//cdn.bootcss.com"
-  MathJaxVersion = "2.7.1"
+  [params.intro]
+  header = "わみめも"
+  paragraph = "私が作ったソフトウエアやハードウエアのはなしをします"
+  rssIntro = true
+  socialIntro = true
+  hideWhenSingleColumn = false
+  alwaysOnHomepage = false
 
-# Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
-# due to its ease of use. Feel free to check out both and decide what you would
-# prefer to use. See Staticman.yml for additional settings.
-[params.staticman]
-  # Sets Statiman to be active
-  staticman = false
-  # Sets the location for Staticman to connect to
-  username  = ""
-  repo      = ""
-  branch    = ""
+    [params.intro.pic]
+    src = "/img/main/wami.jpg"
+    shape = "circle"
+    width = "100"
+    alt = "wami"
 
-  [params.staticman.recaptcha]
-    sitekey = ""
-    secret  = ""
+  [params.sidebar]
+  about = "NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。"
+  postAmount = 8.0
+  categories = true
+  categoriesByCount = true
 
-  # These are optional params related to the sidebar. They are recommended, but not
-  # required for proper functionality. HTML is supported within the params.
-[params.intro]
-  header    = "わみめも"
+  [params.footer]
+  rssFooter = true
+  socialFooter = true
 
-  paragraph = "私が作ったソフトウエアやハードウエアのはなしをするつもり"
+  [params.staticman]
+  enabled = false
+  api = ""
+  gitProvider = ""
+  username = ""
+  repo = ""
+  branch = ""
 
-  about     = "NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。"
+    [params.staticman.recaptcha]
+    siteKey = ""
+    encryptedKey = ""
 
-  # This appears at the top of the sidebar above params.intro.header.
-  # A width of less than 100px is recommended from a design perspective.
-  [params.intro.pic]
-    src       = "/img/main/wami.jpg"
-    # Sets Image to be a cirlce
-    circle    = false
-    # Sets Image to be Future Imperfect's hexagon
-    imperfect = true
-    width     = ""
-    alt       = "わみ"
+[menu]
 
-[params.postAmount]
-# Sets the number of recent posts to show in the sidebar. The default value is 5.
-    sidebar = 5
-
-# Sets the menu items in the navigation bar
-# Identifier prepends a Font Awesome icon to the menu item
-[[menu.main]]
+  [[menu.main]]
   name = "Home"
   url = "/"
-  identifier = "fa fa-home"
-  weight = 1
+  pre = "<i class='fa fa-home'></i>"
+  weight = 1.0
 
-[[menu.main]]
+  [[menu.main]]
   name = "About"
   url = "/about/"
-  identifier = "fa fa-id-card-o"
-  weight = 2
+  pre = "<i class='fa fa-id-card'></i>"
+  weight = 2.0
 
-[[menu.main]]
+  [[menu.main]]
   name = "Blog"
   url = "/blog/"
-  identifier = "fa fa-newspaper-o"
-  weight = 3
+  pre = "<i class='far fa-newspaper'></i>"
+  weight = 3.0
 
-[[menu.main]]
+  [[menu.main]]
   name = "Product"
   url = "/itemized/"
-  identifier = "fa fa-list"
-  weight = 4
+  pre = "<i class='fa fa-list'></i>"
+  weight = 4.0
 
-[[menu.main]]
-  name = "Categories"
-  url = "/categories/"
-  identifier = "fa fa-sitemap"
-  weight = 5
-
-[[menu.main]]
+  [[menu.main]]
   name = "Contact"
   url = "/contact/"
-  identifier = "fa fa-envelope-o"
-  weight = 6
+  pre = "<i class='far fa-envelope'></i>"
+  weight = 5.0
 
-[[menu.main]]
+  [[menu.main]]
   name = "Small Business"
   url = "/business/"
-  identifier = "fa fa-id-card"
-  weight = 7
-# Sets Social Media icons to appear and link to your account. Value should be your
-# username unless otherwise noted. These are the icons affected by socialAppearAtTop
-# and socialAppearAtBottom.
+  pre = "<i class='fa fa-id-card'></i>"
+  weight = 6.0
+
 [social]
-  # Coding Communities
-  github           = "wamisnet"
-  twitter          = "wamisnet"
-  email            = "wamiwami@live.jp"
+github = "wamisnet"
+twitter = "wamisnet"
+email = "wamiwami@live.jp"
