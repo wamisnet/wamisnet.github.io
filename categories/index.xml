@@ -1,65 +1,103 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>わみめも</title>
+    <title>Categories on わみめも</title>
     <link>https://wamisnet.github.io/categories/</link>
-    <description>Recent content on わみめも</description>
+    <description>Recent content in Categories on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>hugo始めました</title>
-      <link>https://wamisnet.github.io/blog/newsite/</link>
-      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      <title>iot</title>
+      <link>https://wamisnet.github.io/categories/iot/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://wamisnet.github.io/blog/newsite/</guid>
-      <description>いままでのサイトはかなり手抜き感もあったのでちゃんとしたものを作ることにしました。
-せっかく個人事業主としての活動もあるのでそのあたりも今後につながればいいなと思います。
-Nefryの作例やTips、そのほかのハードウエアについても気軽にまとめていくつもりなのでよろしくお願いします。</description>
+      <guid>https://wamisnet.github.io/categories/iot/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Sofmo</title>
-      <link>https://wamisnet.github.io/itemized/sofmo/</link>
-      <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
+      <title>退職エントリ</title>
+      <link>https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://wamisnet.github.io/itemized/sofmo/</guid>
-      <description>Sofmo 公式サイト</description>
+      <guid>https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>4モータ制御ドライバー</title>
-      <link>https://wamisnet.github.io/itemized/motor/</link>
-      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
+      <title>Flutter</title>
+      <link>https://wamisnet.github.io/categories/flutter/</link>
+      <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://wamisnet.github.io/itemized/motor/</guid>
-      <description>DRV8830使用4モーター管理可能モータドライバ なにができるの？ ラジコンなどモーターを4つ制御したいときに便利な基盤です。
-I2Cでモーターの速度をそれぞれコントロールする事ができます！
-仕様          電源電圧範囲 7V以下   最大連続駆動電流 1A   モータへの動作電源電圧範囲 2.75V～6.8V   通信方法 I2C   使用IC DRV8830    ICについての詳細情報
-サンプルプログラム DRV8830ドライバーはこちらからダウンロードしてください
-#include &amp;lt;Arduino.h&amp;gt; #include &amp;lt;Wire.h&amp;gt; #include &amp;lt;DRV8830MotorDriver.h&amp;gt; DRV8830MotorDriver motor1(DRV8830_A1_A0_0_0); DRV8830MotorDriver motor2(DRV8830_A1_A0_0_1); DRV8830MotorDriver motor3(DRV8830_A1_A0_1_1); DRV8830MotorDriver motor4(DRV8830_A1_A0_1_0); #define FAULTn 7 void setup() { Serial.begin(115200); Wire.begin(); Serial.println(&amp;quot;Hello,DRV8830 I2C MotorDriver&amp;quot;); motor1.setSpeed(0); motor2.setSpeed(0); motor3.setSpeed(0); motor4.setSpeed(0); } int spd = 0; void loop() { char c; if (Serial.</description>
+      <guid>https://wamisnet.github.io/categories/flutter/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>USB Type C変換基板</title>
-      <link>https://wamisnet.github.io/itemized/usbtypec/</link>
-      <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
+      <title>イベント</title>
+      <link>https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/</link>
+      <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://wamisnet.github.io/itemized/usbtypec/</guid>
-      <description>USB Type C変換基板 なにができるの？ USB Type CのソケットからUSB2.0で使われるピンをブレットボードなどで使いやすい2.54mmピッチに変換する基板です。
-ピンソケットをつけない場合
-ピンソケットをつけた場合
-仕様          接続端子 USB Type C   サイズ(㎜) 15×15    設計情報 回路図
-配線図
-USB type Cケーブル Type A to Type CタイプのUSB2.0ケーブル、長さ100cmのケーブルです。</description>
+      <guid>https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/</guid>
+      <description></description>
     </item>
     
-  </channel>
-</rss>isnet.github.io/categories/%E6%9C%AC/</guid>
+    <item>
+      <title>Firebase</title>
+      <link>https://wamisnet.github.io/categories/firebase/</link>
+      <pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/firebase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技術書典</title>
+      <link>https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/</link>
+      <pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>本</title>
+      <link>https://wamisnet.github.io/categories/%E6%9C%AC/</link>
+      <pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/%E6%9C%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nefry</title>
+      <link>https://wamisnet.github.io/categories/nefry/</link>
+      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/nefry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nefry Tips</title>
+      <link>https://wamisnet.github.io/categories/nefry-tips/</link>
+      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/nefry-tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WiFi</title>
+      <link>https://wamisnet.github.io/categories/wifi/</link>
+      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/wifi/</guid>
       <description></description>
     </item>
     
@@ -73,11 +111,11 @@ USB type Cケーブル Type A to Type CタイプのUSB2.0ケーブル、長さ10
     </item>
     
     <item>
-      <title>退職エントリ</title>
-      <link>https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/</link>
-      <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
+      <title>勉強会</title>
+      <link>https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/</link>
+      <pubDate>Sun, 12 Aug 2018 01:27:19 +0900</pubDate>
       
-      <guid>https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/</guid>
+      <guid>https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/</guid>
       <description></description>
     </item>
     

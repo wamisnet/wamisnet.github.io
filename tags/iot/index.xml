@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Iot on わみめも</title>
+    <title>iot on わみめも</title>
     <link>https://wamisnet.github.io/tags/iot/</link>
-    <description>Recent content in Iot on わみめも</description>
+    <description>Recent content in iot on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 07 Dec 2019 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/iot_sharehouse/</guid>
-      <description>12&amp;frasl;24 ハンズオン資料はこちら
+      <description>12/24 ハンズオン資料はこちら
 こんにちは、ギークハウス新宿に住んでいるわみです。
 今回はIoT的シェアハウスのススメとして、こんな感じにうちのシェアハウスは便利になるよっていう話をしていこうとおもいます。
 レジシステム シェアハウスで食べ物などまとめ買いして、それをシェアしたいという要望はあると思います。
