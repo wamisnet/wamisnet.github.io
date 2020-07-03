@@ -3,12 +3,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: felicianotech/docker-hugo:latest
+      - image: klakegg/hugo:latest
     steps:
       - checkout
       - run:
           name: chmod permissions
-          command: chmod +x ./ReViewDeploy.sh
+          command: chmod +x ./Deploy.sh
       - run:
-          name: Upload to ReViewDeploy
-          command: ./ReViewDeploy.sh
+          name: Upload to Deploy
+          command: ./Deploy.sh
