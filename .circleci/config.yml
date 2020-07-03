@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: klakegg/hugo:latest
+      - image: cibuilds/hugo:latest
     steps:
       - checkout
       - run:
