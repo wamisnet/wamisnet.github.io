@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/</loc>
+    <lastmod>2020-07-03T12:24:48+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wamisnet.github.io/blog/iot_sharehouse/</loc>
     <lastmod>2019-12-07T00:00:00+00:00</lastmod>
   </url>
@@ -88,20 +93,20 @@
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/</loc>
-    <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://wamisnet.github.io/categories/</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://wamisnet.github.io/tags/</loc>
+    <lastmod>2018-08-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://wamisnet.github.io/blog/</loc>
-    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-03T12:24:48+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -116,20 +121,14 @@
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/firebase/</loc>
-    <lastmod>2018-10-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://wamisnet.github.io/categories/firebase/</loc>
     <lastmod>2018-10-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/flutter/</loc>
-    <lastmod>2018-10-17T00:00:00+00:00</lastmod>
+    <loc>https://wamisnet.github.io/tags/firebase/</loc>
+    <lastmod>2018-10-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -140,13 +139,19 @@
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/iot/</loc>
-    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
+    <loc>https://wamisnet.github.io/tags/flutter/</loc>
+    <lastmod>2018-10-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://wamisnet.github.io/categories/iot/</loc>
+    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/tags/iot/</loc>
     <lastmod>2019-12-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -158,13 +163,13 @@
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/nefry/</loc>
+    <loc>https://wamisnet.github.io/categories/nefry/</loc>
     <lastmod>2018-08-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/categories/nefry/</loc>
+    <loc>https://wamisnet.github.io/tags/nefry/</loc>
     <lastmod>2018-08-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -176,13 +181,13 @@
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/nefry-tips/</loc>
+    <loc>https://wamisnet.github.io/categories/nefry-tips/</loc>
     <lastmod>2018-08-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/categories/nefry-tips/</loc>
+    <loc>https://wamisnet.github.io/tags/nefry-tips/</loc>
     <lastmod>2018-08-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -194,26 +199,20 @@
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/wifi/</loc>
-    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://wamisnet.github.io/categories/wifi/</loc>
     <lastmod>2018-08-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/</loc>
-    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
+    <loc>https://wamisnet.github.io/tags/wifi/</loc>
+    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/</loc>
-    <lastmod>2018-10-17T00:00:00+00:00</lastmod>
+    <loc>https://wamisnet.github.io/</loc>
+    <lastmod>2020-07-03T12:24:48+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -224,8 +223,8 @@
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/%E5%8B%89%E5%BC%B7%E4%BC%9A/</loc>
-    <lastmod>2018-08-12T01:27:19+09:00</lastmod>
+    <loc>https://wamisnet.github.io/tags/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/</loc>
+    <lastmod>2018-10-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -236,13 +235,19 @@
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/</loc>
-    <lastmod>2018-10-15T00:00:00+00:00</lastmod>
+    <loc>https://wamisnet.github.io/tags/%E5%8B%89%E5%BC%B7%E4%BC%9A/</loc>
+    <lastmod>2018-08-12T01:27:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/</loc>
+    <lastmod>2018-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/tags/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/</loc>
     <lastmod>2018-10-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -254,20 +259,14 @@
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/%E6%9C%AC/</loc>
-    <lastmod>2018-10-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://wamisnet.github.io/categories/%E6%9C%AC/</loc>
     <lastmod>2018-10-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/%E7%84%A1%E7%B7%9Alan/</loc>
-    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
+    <loc>https://wamisnet.github.io/tags/%E6%9C%AC/</loc>
+    <lastmod>2018-10-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -278,13 +277,19 @@
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/</loc>
-    <lastmod>2019-07-07T00:00:00+00:00</lastmod>
+    <loc>https://wamisnet.github.io/tags/%E7%84%A1%E7%B7%9Alan/</loc>
+    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/</loc>
+    <lastmod>2019-07-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/tags/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/</loc>
     <lastmod>2019-07-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
