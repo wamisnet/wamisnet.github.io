@@ -25,10 +25,10 @@ collections:
         name: "tags"
         widget: "list"
         allow_add: true
-      - label: "Categories"
-          name: "categories"
-          widget: "list"
-          allow_add: true
+      - label: "categories"
+        name: "Categories"
+        widget: "list"
+        allow_add: true
       - { label: "Slug", name: "slug", widget: "string"}
   - name: 'product'
     label: 'Product'
@@ -43,16 +43,16 @@ collections:
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'about'
-      label: 'About'
-      folder: 'content/about'
-      editor:
-        preview: true
-      fields:
-        - { label: 'Body', name: 'body', widget: 'markdown' }
+    label: 'About'
+    folder: 'content/about'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'business'
-      label: 'Business'
-      folder: 'content/business'
-      editor:
-        preview: true
-      fields:
-        - { label: 'Body', name: 'body', widget: 'markdown' }
+    label: 'Business'
+    folder: 'content/business'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Body', name: 'body', widget: 'markdown' }
