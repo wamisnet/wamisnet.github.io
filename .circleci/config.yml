@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: klakegg/hugo:0.73.0-ext-ubuntu-onbuild
+      - image: cibuilds/hugo:latest
     steps:
       - checkout
       - run:
