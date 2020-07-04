@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on わみめも</title>
+    <link>https://wamisnet.github.io/tags/react/</link>
+    <description>Recent content in React on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Fri, 26 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】</title>
+      <link>https://wamisnet.github.io/blog/2019-07-26-regi/</link>
+      <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-07-26-regi/</guid>
+      <description>こんにちわ、ギークハウス新宿（ぎーじゅく）の住民のわみです。 先日開発合宿で作った物々交換システムができたので仕組みや機能などをまとめてみます。
+なにを作ったか こんな感じで動くよhttps://t.co/BZj1i65I0y pic.twitter.com/qtmRp2mfiH
+&amp;mdash; わみ@NefryとかFlutter本とか (@wamisnet) July 26, 2019  こんな感じのバーコードを使ったPOSシステム的なもの
+どうして作ったか シェアハウスであるある（？）な悩みの一つ、例えばカップヌードルとかドクペをまとめ買いをしてくれて、それを必要なタイミングでみんなで分けるということ。（他だと多めにカレーとかおかずを作ったりしたときにシェアしたいときもめんどい
+まとめ買いすることで安く買えるのはすごくいいのですが、それをいい感じに分けるのは至難の業。購入時にまとめてやるとか方法はいろいろあると思いますが、できたら欲しいときに分けてもらえるとよいなーと
+そんなことをしていたぎーじゅくの過去の写真がこちら
+それぞれ買ってきた人のボールにお金を入れるという方式（一番手前が私、奥のオレンジや右の封筒が入っているのは別のひとのやつ）
+数が少なければこれでもいいんですが、数が増やすと訳が分からなくなったり、新しい住民が増えたときには一からこの商品は誰々のだよといった説明が必要になってきました。
+これを解決するために一つシステムを作りました！
+物々交換システムの歴史 このシステムには少々歴史があります。
+物々交換システムv1　（2019年2月頃）の概要 Flutterで今回の下地となるAndroidアプリを作成しました。
+完成写真
+技術構成 次のような構成で作成しました。
+ バーコードリーダー タブレット（Flutterアプリ入り） Slack Node-RED(RedMobile) Elasticsearch Kibana  図にするとこんな感じです。
+問題点 ここまで3日ぐらいでつくったものでFlutterのバーコード入力処理にかなり泥臭い対応が一部あったり、Node-REDに依存する部分があったりとなかなか保守しにくいシステムになっていたり、データの作成に手動でいろいろ行わないといけない感じでした。
+手動で行わないといけない作業
+ 商品登録 商品編集 商品削除 在庫管理 取引削除 週単位で決済処理 ユーザ追加  この中でも商品登録と決済は手動で行う作業でも大変な作業でした。（2月の頭から5か月以上稼働しているのだから自動化すればいいのに…ｗ
+商品登録 Elasticsearchにデータを入れるためにNode-REDからわざわざ手打ちでJSONを作るｗ
+週単位で決済処理 毎週どれぐらい使ったかKibanaで集計されたデータを使ってユーザに人力で通知していきます。
+（数字は生々しいのでね…
+こんな感じにがんばってる
+今回作成したシステム いろいろと問題のあったFlutterとNode-REDからReactで新規に作り直しました！
+完成写真
+GIF小さいけどこんな感じ
+技術構成 次のような構成で作成しました。
+ バーコードリーダー タブレット（React PWA入り） Slack Firebase Elasticsearch(分析用　おまけ) Kibana(分析用　おまけ)  図にするとこんな感じです。</description>
+    </item>
+    
+  </channel>
+</rss>

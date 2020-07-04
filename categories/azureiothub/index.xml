@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AzureIoTHub on わみめも</title>
+    <link>https://wamisnet.github.io/categories/azureiothub/</link>
+    <description>Recent content in AzureIoTHub on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 10 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/categories/azureiothub/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UniboでAzure IoTHubと連携させてみる</title>
+      <link>https://wamisnet.github.io/blog/2017-05-10-unibo_iothub/</link>
+      <pubDate>Wed, 10 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2017-05-10-unibo_iothub/</guid>
+      <description>AzureIoTHubでメッセージを送受信してみる。 Azure IoTHubとUniboのメッセージをやりとりしてみましょう。
+##全体図
+[{&amp;quot;id&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;tab&amp;quot;,&amp;quot;label&amp;quot;:&amp;quot;iothub&amp;quot;},{&amp;quot;id&amp;quot;:&amp;quot;1adc54aae1.2cb078&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;inject&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;開始&amp;quot;,&amp;quot;topic&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;payload&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;payloadType&amp;quot;:&amp;quot;date&amp;quot;,&amp;quot;repeat&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;crontab&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;once&amp;quot;:false,&amp;quot;x&amp;quot;:320,&amp;quot;y&amp;quot;:324.888916015625,&amp;quot;wires&amp;quot;:[[&amp;quot;1a50458b29.daf934&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a5b568748.b15d28&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;azureiothub&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Azure IoT Hub&amp;quot;,&amp;quot;protocol&amp;quot;:&amp;quot;mqtt&amp;quot;,&amp;quot;x&amp;quot;:958.1041870117188,&amp;quot;y&amp;quot;:325,&amp;quot;wires&amp;quot;:[[&amp;quot;1a452ce6f4.4d1838&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a6872e007.3f029&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;template&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Azure IoTHubに接続情報&amp;quot;,&amp;quot;field&amp;quot;:&amp;quot;payload&amp;quot;,&amp;quot;fieldType&amp;quot;:&amp;quot;msg&amp;quot;,&amp;quot;format&amp;quot;:&amp;quot;json&amp;quot;,&amp;quot;syntax&amp;quot;:&amp;quot;mustache&amp;quot;,&amp;quot;template&amp;quot;:&amp;quot;{\n \&amp;quot;deviceId\&amp;quot;: \&amp;quot;unibo\&amp;quot;,\n \&amp;quot;key\&amp;quot;: \&amp;quot;SharedAccessKey=以下のものを貼る\&amp;quot;,\n \&amp;quot;protocol\&amp;quot;: \&amp;quot;mqtt\&amp;quot;,\n \&amp;quot;data\&amp;quot;: \&amp;quot;{value1: 0, value2: \\\&amp;quot;test\\\&amp;quot;}\&amp;quot;\n}&amp;quot;,&amp;quot;x&amp;quot;:718.1041870117188,&amp;quot;y&amp;quot;:325,&amp;quot;wires&amp;quot;:[[&amp;quot;1a5b568748.b15d28&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1ad307ac75.70343&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;motion&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;target&amp;quot;:&amp;quot;other&amp;quot;,&amp;quot;motion&amp;quot;:&amp;quot;happy&amp;quot;,&amp;quot;x&amp;quot;:1042.1041870117188,&amp;quot;y&amp;quot;:561,&amp;quot;wires&amp;quot;:[[]]},{&amp;quot;id&amp;quot;:&amp;quot;1a9501606e.fe849&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;debug&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;active&amp;quot;:true,&amp;quot;console&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;complete&amp;quot;:&amp;quot;payload&amp;quot;,&amp;quot;x&amp;quot;:747.1041870117188,&amp;quot;y&amp;quot;:432,&amp;quot;wires&amp;quot;:[]},{&amp;quot;id&amp;quot;:&amp;quot;1a50458b29.daf934&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;led&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;color&amp;quot;:&amp;quot;black&amp;quot;,&amp;quot;version&amp;quot;:1,&amp;quot;x&amp;quot;:499.10418701171875,&amp;quot;y&amp;quot;:325,&amp;quot;wires&amp;quot;:[[&amp;quot;1a6872e007.3f029&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a452ce6f4.4d1838&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;function&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;データ整形&amp;quot;,&amp;quot;edit&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;func&amp;quot;:&amp;quot;msg.payload = msg.payload.toString();\nreturn msg;&amp;quot;,&amp;quot;outputs&amp;quot;:1,&amp;quot;dummy&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;noerr&amp;quot;:0,&amp;quot;x&amp;quot;:336.10418701171875,&amp;quot;y&amp;quot;:485,&amp;quot;wires&amp;quot;:[[&amp;quot;1a513c662f.d3f0a8&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a513c662f.d3f0a8&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;switch&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;送受信分岐&amp;quot;,&amp;quot;property&amp;quot;:&amp;quot;payload&amp;quot;,&amp;quot;propertyType&amp;quot;:&amp;quot;msg&amp;quot;,&amp;quot;rules&amp;quot;:[{&amp;quot;t&amp;quot;:&amp;quot;eq&amp;quot;,&amp;quot;v&amp;quot;:&amp;quot;Message sent.&amp;quot;,&amp;quot;vt&amp;quot;:&amp;quot;str&amp;quot;},{&amp;quot;t&amp;quot;:&amp;quot;neq&amp;quot;,&amp;quot;v&amp;quot;:&amp;quot;Message sent.&amp;quot;,&amp;quot;vt&amp;quot;:&amp;quot;str&amp;quot;}],&amp;quot;checkall&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;outputs&amp;quot;:2,&amp;quot;x&amp;quot;:521.1041870117188,&amp;quot;y&amp;quot;:485,&amp;quot;wires&amp;quot;:[[&amp;quot;1a9501606e.fe849&amp;quot;],[&amp;quot;1a14de07ea.ded998&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a14de07ea.ded998&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;delay&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;pauseType&amp;quot;:&amp;quot;rate&amp;quot;,&amp;quot;timeout&amp;quot;:&amp;quot;5&amp;quot;,&amp;quot;timeoutUnits&amp;quot;:&amp;quot;seconds&amp;quot;,&amp;quot;rate&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;nbRateUnits&amp;quot;:&amp;quot;30&amp;quot;,&amp;quot;rateUnits&amp;quot;:&amp;quot;second&amp;quot;,&amp;quot;randomFirst&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;randomLast&amp;quot;:&amp;quot;5&amp;quot;,&amp;quot;randomUnits&amp;quot;:&amp;quot;seconds&amp;quot;,&amp;quot;drop&amp;quot;:false,&amp;quot;x&amp;quot;:764.1041870117188,&amp;quot;y&amp;quot;:526,&amp;quot;wires&amp;quot;:[[&amp;quot;1ad307ac75.70343&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a7c821ed2.91754&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;delay&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;pauseType&amp;quot;:&amp;quot;timed&amp;quot;,&amp;quot;timeout&amp;quot;:&amp;quot;5&amp;quot;,&amp;quot;timeoutUnits&amp;quot;:&amp;quot;seconds&amp;quot;,&amp;quot;rate&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;nbRateUnits&amp;quot;:&amp;quot;30&amp;quot;,&amp;quot;rateUnits&amp;quot;:&amp;quot;second&amp;quot;,&amp;quot;randomFirst&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;randomLast&amp;quot;:&amp;quot;5&amp;quot;,&amp;quot;randomUnits&amp;quot;:&amp;quot;seconds&amp;quot;,&amp;quot;drop&amp;quot;:false,&amp;quot;x&amp;quot;:771.1041870117188,&amp;quot;y&amp;quot;:621,&amp;quot;wires&amp;quot;:[[&amp;quot;1ad307ac75.70343&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a289d2a8d.919826&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;comment&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;AzureIoTHubで必要となる情報を入力します。&amp;quot;,&amp;quot;info&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;x&amp;quot;:736.1041870117188,&amp;quot;y&amp;quot;:275,&amp;quot;wires&amp;quot;:[]},{&amp;quot;id&amp;quot;:&amp;quot;1af14fac81.3eab5&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;comment&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;３０秒毎に順番に処理をします&amp;quot;,&amp;quot;info&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;x&amp;quot;:774.1041870117188,&amp;quot;y&amp;quot;:485,&amp;quot;wires&amp;quot;:[]},{&amp;quot;id&amp;quot;:&amp;quot;1a63ab930e.7d0b8c&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;comment&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;３０秒の間に届いた最新のメッセージの処理をします&amp;quot;,&amp;quot;info&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;x&amp;quot;:767.1041870117188,&amp;quot;y&amp;quot;:672,&amp;quot;wires&amp;quot;:[]}] 前提条件  Azureに登録できていること  手順 AzureのIoTHubに登録するところから説明していきます。
+##Azure IoTHubの設定 それでは、AzureにログインしてIoTHubを実際に作っていきましょう！
+Azure ポータルを開いていきます。
+新規からモノのインターネット(IoT)をクリックして、IoTHubをクリックします。これから必要な設定を行っていきます。 無事にIoTHubが開かれると複数の入力欄が出るので写真を参考に入力欄を埋めていきましょう。 それでは、必須項目であるIoTHubの名前を入力してください。この名前はドメインでも使われますので他の方と重複するとエラーが出ます。入力欄の右端が緑のチェックが入れば大丈夫です。 次に、価格とスケールティアを変更していきます。この際にFreeを必ず選んでください。Standardを選んだまま作成してしまうと、後からFreeに変更することができず、再度作り直すことになります。
+Freeを選択したらクリックして反映させてください。
+リソースグループは既存ものがあれば、それを使って頂いてもかまいませんが、今回は初めてだという前提で、新規作成で好きなグループ名を入力してください。
+Azureサーバーがある場所を指定することができます。東日本、西日本と選べますのでお好みでどうぞ。
+ここまで問題なくできていれば、作成ボタンをクリックしてIoTHubをデプロイしていきます。 数分かかりますのでしばしお待ちを… 無事にIoTHubのデプロイが終わるとこのような画面が表示されます。 この画面では先ほど設定した内容が見れるほか、IoTHubの使用状態を確認することができます。
+デバイスを繋げるために必要な設定を行っていきます。 共有アクセスポリシーからiothubownerをクリックし、プライマリキーをコピーします。 このとき写真で示してある部分をクリックすると簡単にキーをコピーすることができます。
+このプライマリキーは次の作業で使用します。 この作業からDevice Explorerというツールを使っていきます。 このツールはWindows専用になります。MacやLinuxの場合iothub-explorerを使うようですが、今回は取り扱いません。
+###Device Explorerのダウンロード こちらの**リンク**からダウンロードしてインストールをよろしくお願いします。
+インストールが終わったところでDevice Explorerを使っていこうと思います。
+このツールでIoTHubに接続できる端末の登録、削除、ほかにはデバイスからIoTHubへの通信モニターになったり、IoTHubからデバイスにデータを送ることができるなどIoTHubに必須のものとなっております。
+説明が長くなりましたが、それではこのDevice Explorerに先ほどのプライマリキーを入力してUpdateをクリックしてください。 プライマリキーが合っていれば、このような表示がされます。この表示がでれば先ほど作ったIoTHubと連携ができるようになります。 これからIoTHubに接続できるデバイスの設定をしていこうと思います。
+この作業はデバイスごとにIDを割り振る作業になります。 ManagementからCreateをクリックします。 Createをクリックするとこのような画面が出ますので、Device IDに接続するデバイス名を入力してください。
+入力が終わったらCreateをクリックしてください。 無事にデバイスが作れると先ほどのDevice IDを持ったものが増えているはずです。 無事に作成できていれば、次はデバイスに必要な情報をコピーしておきましょう。 今回作成したDevice IDをクリックすると青色の欄が移動しますので、選択された状態で右クリックするとCopy connection string for selected deviceを選んでクリックしてください。</description>
+    </item>
+    
+    <item>
+      <title>Azure IoT HubをESP8266で使おう！</title>
+      <link>https://wamisnet.github.io/blog/2016-09-05-azure/</link>
+      <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-09-05-azure/</guid>
+      <description>日本での発売から一年がたち多数の作例が出てくる「ESP8266」(ESP-WROOM-02)をもっと使いこなしてみませんか？
+今回はAzureのサービスの一つであるIoTHub、それを簡単に扱えるライブラリーを作ったので紹介してみようと思います。
+ちょこっと宣伝 ところどころで出てくるESP8266の基板ですが、私が作成した「Nefry」(ねふりー)という基板を使っています。
+dotstudioさんにて販売中です！！
+USBに直接繋げられたり、Webページ上でWiFiの設定やESP8266の端末設定ができるようになっていたりとESP8266をより簡単に扱えるものになっています。
+詳しくはLigブログで記事をいくつか載せていますのでご覧ください。
+自作したオリジナルIoTデバイス「Nefry」とインターネットを繋いでみた
+Webサービス同士を連携できる「IFTTT」と自作IoTデバイスを繋いで生活を便利にしてみた
+Azure IoT Hub って？ IoT Hubは、その名の通りIoTデバイスとクラウドを繋ぐHubとなるサービスです。 似たようなサービスとして「Event Hubs」がありますが、Event Hubsとの大きな違いは2つあります。
+IoTHubの優れた点
+ デバイスとクラウドとの双方向通信が可能。(Event Hubsはデバイス→クラウドの一方のみ) デバイス毎にIDを登録して認証する為、よりセキュアに利用できる。(Event HubsはEvent Hubsごとの許可)  
+http://qiita.com/hiiyan0402/items/9c93d9673114675a57d4
+用意するもの  ESP8266(ESP-WROOM-02) Azure アカウント ArduinoIDE Arduino core for ESP8266 WiFi chip(https://github.com/esp8266/Arduino) AzureIoTHubライブラリー(https://github.com/wamisnet/Azure-iothub-mqtt-esp8266)  IoTHubで通信をしてみる 今回はESP8266からIoTHubで通信するところまでを作っていきます。
+Azure IoTHubの設定 それでは、AzureにログインしてIoTHubを実際に作っていきましょう！
+Azure ポータルを開いていきます。
+新規からモノのインターネット(IoT)をクリックして、IoTHubをクリックします。これから必要な設定を行っていきます。
+無事にIoTHubが開かれると複数の入力欄が出るので写真を参考に入力欄を埋めていきましょう。 それでは、必須項目であるIoTHubの名前を入力してください。この名前はドメインでも使われますので他の方と重複するとエラーが出ます。入力欄の右端が緑のチェックが入れば大丈夫です。 次に、価格とスケールティアを変更していきます。この際にFreeを必ず選んでください。Standardを選んだまま作成してしまうと、後からFreeに変更することができず、再度作り直すことになります。
+Freeを選択したらクリックして反映させてください。
+リソースグループは既存ものがあれば、それを使って頂いてもかまいませんが、今回は初めてだという前提で、新規作成で好きなグループ名を入力してください。
+Azureサーバーがある場所を指定することができます。東日本、西日本と選べますのでお好みでどうぞ。
+ここまで問題なくできていれば、作成ボタンをクリックしてIoTHubをデプロイしていきます。
+数分かかりますのでしばしお待ちを…
+無事にIoTHubのデプロイが終わるとこのような画面が表示されます。 この画面では先ほど設定した内容が見れるほか、IoTHubの使用状態を確認することができます。
+デバイスを繋げるために必要な設定を行っていきます。 共有アクセスポリシーからiothubownerをクリックし、プライマリキーをコピーします。 このとき写真で示してある部分をクリックすると簡単にキーをコピーすることができます。
+このプライマリキーは次の作業で使用します。 この作業からDevice Explorerというツールを使っていきます。 このツールはWindows専用になります。MacやLinuxの場合iothub-explorerを使うようですが、今回は取り扱いません。
+Device Explorerのダウンロード こちらの**リンク**からダウンロードしてインストールをよろしくお願いします。</description>
+    </item>
+    
+  </channel>
+</rss>

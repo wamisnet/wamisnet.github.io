@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+<title>Suicaで開けられるスマートロックを作ってみた - わみめも</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.73.0" /><meta itemprop="name" content="Suicaで開けられるスマートロックを作ってみた">
+<meta itemprop="description" content="Suicaで開けられるスマートロックを作ってみた">
+<meta itemprop="datePublished" content="2020-01-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-01-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="905">
+
+
+
+<meta itemprop="keywords" content="スマートロック,obniz," /><meta property="og:title" content="Suicaで開けられるスマートロックを作ってみた" />
+<meta property="og:description" content="Suicaで開けられるスマートロックを作ってみた" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wamisnet.github.io/blog/2020-01-03-smartlock/" />
+<meta property="article:published_time" content="2020-01-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-03T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Suicaで開けられるスマートロックを作ってみた"/>
+<meta name="twitter:description" content="Suicaで開けられるスマートロックを作ってみた"/>
+<meta name="twitter:site" content="@wamisnet"/>
+<link rel="stylesheet" href="https://wamisnet.github.io/css/bundle.min.c77e84bad6f641316aaae9404d7b57577c00ac1217fc1a1e8a9d30300328d836.css" integrity="sha256-x36Eutb2QTFqqulATXtXV3wArBIX/Boeip0wMAMo2DY="><link rel="stylesheet" href="https://wamisnet.github.io/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://wamisnet.github.io/" class="nav">
+        
+          わみめも
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/" class="nav link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/about/" class="nav link"><i class='fa fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/itemized/" class="nav link"><i class='fa fa-list'></i> Product</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/business/" class="nav link"><i class='fa fa-id-card'></i> Small Business</a>
+          
+        
+      
+      
+      
+    </menu>
+    
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="https://wamisnet.github.io/"><img src="https://wamisnet.github.io/img/main/wami.jpg" class="circle" width="100" alt="wami" /></a>
+  <header>
+    <h1>わみめも</h1>
+  </header>
+  <main>
+    <p>私が作ったソフトウエアやハードウエアのはなしをします</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="https://wamisnet.github.io/blog/2020-01-03-smartlock/">Suicaで開けられるスマートロックを作ってみた</a></h2>
+    
+    
+      <p>Suicaで開けられるスマートロックを作ってみた</p>
+    
+  </div>
+  <div class="meta">
+    <time class="published" datetime="2020-01-03 00:00:00 &#43;0000 UTC">
+      2020-01-03
+    </time>
+    <span class="author">wami</span>
+    
+  </div>
+</header>
+
+    <section id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Suica%e3%81%a7%e9%96%8b%e3%81%91%e3%82%89%e3%82%8c%e3%82%8b%e3%82%b9%e3%83%9e%e3%83%bc%e3%83%88%e3%83%ad%e3%83%83%e3%82%af%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f&amp;url=https%3a%2f%2fwamisnet.github.io%2fblog%2f2020-01-03-smartlock%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwamisnet.github.io%2fblog%2f2020-01-03-smartlock%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e3%81%93%e3%81%ae%e6%8a%95%e7%a8%bf%e3%82%92%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%99%e3%82%8b wami&amp;body=https%3a%2f%2fwamisnet.github.io%2fblog%2f2020-01-03-smartlock%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </section>
+    
+
+    <div class="content">
+      <p>こんにちは！わみです。</p>
+<p>私が住むギークハウス新宿がついにアップデートされました。</p>
+<p>少し前にはスマートロックを壊したこともありましたが…
+(その時の記事 :<a href="https://qiita.com/wamisnet/items/a07ca183dd97d2cdb483">
+スマートロックが壊れたのでobnizを使ってハックしてみた</a>)</p>
+<p>Sesameをもう一台新たに購入して、ついに完成をしました！</p>
+<h1 id="なにをしたのか">なにをしたのか</h1>
+<p>音が鳴るよ！</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/fukubaka0825?ref_src=twsrc%5Etfw">@fukubaka0825</a> さんと <a href="https://twitter.com/retoruto_carry?ref_src=twsrc%5Etfw">@retoruto_carry</a> さんと作った鍵システムがついに動いたああああ！ <a href="https://t.co/uQZ44INF93">pic.twitter.com/uQZ44INF93</a></p>&mdash; わみ@NefryとかFlutter本とか (@wamisnet) <a href="https://twitter.com/wamisnet/status/1212385075385401344?ref_src=twsrc%5Etfw">January 1, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p><img src="../../img/2020/smartlock/5_2.png" alt=""></p>
+<p>登録されていないSuicaの場合はエラー音を、登録されたSuicaの場合は効果音の後、obnizからBLE経由でSesameをコントロールします。</p>
+<p>早いときだとタッチして、すぐに鍵が開くのでめちゃくちゃ便利です。</p>
+<h1 id="きっかけ">きっかけ</h1>
+<p><a href="https://qiita.com/wamisnet/items/a07ca183dd97d2cdb483">スマートロックが壊れたのでobnizを使ってハックしてみた</a></p>
+<p>上記の記事でも書いているのですが、7月の開発合宿で作りかけのまま止まっていたスマートロックの制御をしたいと思っていて、ただSesame API経由だと鍵が開くまで時間がかかりすぎる。</p>
+<p>その解決で前回、私はハードウエアのハックをしたわけですが、安定動作を担保するのはなかなかめんどくさいので結局本番反映はしませんでした。</p>
+<p>今回は安定稼働はSesameを信用し、BLEで制御をするように変更してこっちのスマートロック制御が壊れても問題ないようにしました。</p>
+<h1 id="技術構成">技術構成</h1>
+<p>今回はギークハウス新宿に住む3人の力を合わせて作りました。
+メインの担当箇所はこんな感じです。</p>
+<p>@fukubaka0825 : Suica認証、Sesame開錠指示　（記事 : <a href="https://qiita.com/fukubaka0825/items/979a02a93e1ebcac31f1">Raspberry pi とGoとMackerelでシェアハウスの運用しやすい鍵システムを作る </a> ）
+@retoruto_carry : Suica登録用Webページ（記事 : <a href="https://qiita.com/retoruto_carry/items/d59b9edc94475c5f2396">【おうちハック】開発合宿で3人でシェアハウスの鍵管理システムを作った【チーム開発】</a>）
+@wamisnet : Sesame開錠デバイス作成、ハードウエア（記事 : 本記事）</p>
+<p>全体構成はすこし大きめですが、次の画像の通りです。</p>
+<p><img src="../../img/2020/smartlock/10_6.png" alt=""></p>
+<p>せっかくなので私の担当箇所について深堀していきます。</p>
+<h2 id="sesameハック">Sesameハック</h2>
+<p><a href="https://qiita.com/odetarou/items/9628d66d4d94290b5f2d">https://qiita.com/odetarou/items/9628d66d4d94290b5f2d</a></p>
+<p>上記の方の手順を参考に設定値を取得します。</p>
+<p>AndroidのRoot化だったり、しれっとやってますが普通に一日がかりかかるようなやつでいろいろ私も初めてでしたが、頑張ってSesameのBLEキーを取得します。
+Xposedモジュールつくるのも個人的にはハマったり…</p>
+<p>取得できれば、ほぼほぼ完成です。</p>
+<p>上記の記事だと、Macで接続していますがMacを持っていないもしくはバージョンが違うとうまく動かなかったです。（これだから…</p>
+<p>めんどくさいなぁ…そんなことを思っていたら、そういえばobnizもnobleライブラリ出していたなと…</p>
+<p><a href="https://qiita.com/wicket/items/16622097b8e6b5758d80">https://qiita.com/wicket/items/16622097b8e6b5758d80</a></p>
+<p>これに書かれているように、nobleを呼び出しているところを変更しました。
+一応、全体のコードをGithubに上げておきましたのでぜひ。</p>
+<p><a href="https://github.com/wamisnet/obniz_sesame_noble">https://github.com/wamisnet/obniz_sesame_noble</a></p>
+<h3 id="obniz">obniz</h3>
+<p>今回みたいなnobleで動かしたいときに、パソコンを置いておくみたいなことはなかなか難しい…</p>
+<p>そんなときにはobniz!!</p>
+<p><img src="../../img/2020/smartlock/8_5.jpeg" alt=""></p>
+<p>6000円ぐらいでNode.jsで動かせるデバイスをゲットできます。</p>
+<h2 id="プログラム">プログラム</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">crypto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;crypto&#39;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Peripheral</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;obniz-noble/lib/peripheral&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">noble</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;obniz-noble&#34;</span>)(<span style="color:#e6db74">&#34;OBNIZ_ID_&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">events</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;events&#39;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">os</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;os&#39;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">log4js</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;log4js&#39;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">logger</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">log4js</span>.<span style="color:#a6e22e">getLogger</span>();
+<span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">level</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;debug&#39;</span>;
+
+<span style="color:#75715e">// config block start
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">userId</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Sesameログインメールアドレス&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Sesameアプリから取得したHmacSHA256&#39;</span>;
+
+<span style="color:#75715e">// 下記はoption。指定したほうがscanがskipできるため早くなる。
+</span><span style="color:#75715e">// Scanで取得する
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">deviceId</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;スキャンで見つけたID&#39;</span>;<span style="color:#75715e">//ff00ff00ff00
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">address</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Macアドレス&#39;</span>;<span style="color:#75715e">//ff:00:ff:00:ff:00
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">manufacturerDataMacData</span> <span style="color:#f92672">=</span> []; <span style="color:#75715e">// [0x00,0x00...]のように配列で指定する
+</span><span style="color:#75715e">// config block end
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CODE_LOCK</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CODE_UNLOCK</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">serviceOperationUuid</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;000015231212efde1523785feabcd123&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">characteristicCommandUuid</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;000015241212efde1523785feabcd123&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">characteristicStatusUuid</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;000015261212efde1523785feabcd123&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">characteristicAngleStatusUuid</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;000015251212efde1523785feabcd123&#39;</span>;
+<span style="color:#75715e">// 接続後ロック系コマンドを打たないと10秒で切断される。
+</span><span style="color:#75715e">// ロック系コマンド実行から1分で切断される。
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; waiting on adapter state change&#39;</span>);
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">status</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">cmd</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">angleStatus</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">peripheral</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lockStatus</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">event</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">events</span>.<span style="color:#a6e22e">EventEmitter</span>;
+
+<span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;stateChange&#39;</span>, (<span style="color:#a6e22e">state</span>) =&gt; {
+    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; adapter state change&#39;</span>, <span style="color:#a6e22e">state</span>);
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;poweredOn&#39;</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">address</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;&#39;</span>) {
+            <span style="color:#75715e">// scanする場合
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; start scanning&#39;</span>, [<span style="color:#a6e22e">serviceOperationUuid</span>]);
+            <span style="color:#75715e">//noble.startScanning([], true); // 都度advertisementパケット届き次第結果がでるが、余計なのがでたりうまく動かなかった。但し各BLE機器の送出間隔がわかるので一度見るのもよいかも。
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">startScanning</span>();
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#75715e">// 直接接続する場合
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">connectSesame</span>();
+        }
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">stopScanning</span>();
+    }
+});
+
+<span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;discover&#39;</span>, (<span style="color:#a6e22e">peripheral</span>) =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">deviceId</span>) {
+        <span style="color:#75715e">//logger.info(`BLE Device Found: ${peripheral.advertisement.localName}(${peripheral.uuid}) RSSI${peripheral.rssi}`);
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;peripheral discovered; id mismatch. peripheral.id:&#39;</span>, <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">id</span>, <span style="color:#e6db74">&#34;localName:&#34;</span>, <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">advertisement</span>.<span style="color:#a6e22e">localName</span>, <span style="color:#e6db74">&#34;address:&#34;</span>, <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">address</span>, <span style="color:#e6db74">&#34;addressType:&#34;</span>, <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">addressType</span>);
+        <span style="color:#75715e">//logger.info(peripheral);
+</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;ok. peripheral discovered; id match. peripheral.id:&#39;</span>, <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">id</span>, <span style="color:#e6db74">&#34;localName:&#34;</span>, <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">advertisement</span>.<span style="color:#a6e22e">localName</span>, <span style="color:#e6db74">&#34;address:&#34;</span>, <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">address</span>, <span style="color:#e6db74">&#34;addressType:&#34;</span>, <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">addressType</span>, <span style="color:#e6db74">&#34;manufacturerData:&#34;</span>, <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">advertisement</span>.<span style="color:#a6e22e">manufacturerData</span>);
+        <span style="color:#75715e">//logger.info(peripheral);
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">stopScanning</span>();
+        <span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">peripheral</span>);
+    }
+});
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">connectSesame</span>() {
+    <span style="color:#a6e22e">advertisement</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">manufacturerData</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Buffer</span>.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">manufacturerDataMacData</span>),
+        <span style="color:#a6e22e">serviceUuids</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;1523&#39;</span>]
+    }
+    <span style="color:#75715e">//peripheral = new Peripheral(noble, deviceId, address, addressType, connectable, advertisement, rssi);
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">peripheral</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Peripheral</span>(<span style="color:#a6e22e">noble</span>, <span style="color:#a6e22e">deviceId</span>, <span style="color:#a6e22e">address</span>, <span style="color:#e6db74">&#39;random&#39;</span>, <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">advertisement</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">84</span>);
+    <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">_peripherals</span>[<span style="color:#a6e22e">deviceId</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">peripheral</span>;
+    <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">_services</span>[<span style="color:#a6e22e">deviceId</span>] <span style="color:#f92672">=</span> {};
+    <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">_characteristics</span>[<span style="color:#a6e22e">deviceId</span>] <span style="color:#f92672">=</span> {};
+    <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">_descriptors</span>[<span style="color:#a6e22e">deviceId</span>] <span style="color:#f92672">=</span> {};
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">platform</span>() <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;darwin&#39;</span>) {
+        <span style="color:#75715e">// linuxの場合は下記も必要とのことでした。thx! warpzoneさん
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">_bindings</span>.<span style="color:#a6e22e">_addresses</span>[<span style="color:#a6e22e">deviceId</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">address</span>;
+        <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">_bindings</span>.<span style="color:#a6e22e">_addresseTypes</span>[<span style="color:#a6e22e">deviceId</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;random&#39;</span>;
+    }
+
+    <span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">peripheral</span>);
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">disconnect</span>() {
+    <span style="color:#a6e22e">peripheral</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Peripheral</span>(<span style="color:#a6e22e">noble</span>, <span style="color:#a6e22e">deviceId</span>, <span style="color:#a6e22e">address</span>, <span style="color:#e6db74">&#39;random&#39;</span>, <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">advertisement</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">84</span>);
+    <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">_peripherals</span>[<span style="color:#a6e22e">deviceId</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">peripheral</span>;
+    <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">_services</span>[<span style="color:#a6e22e">deviceId</span>] <span style="color:#f92672">=</span> {};
+    <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">_characteristics</span>[<span style="color:#a6e22e">deviceId</span>] <span style="color:#f92672">=</span> {};
+    <span style="color:#a6e22e">noble</span>.<span style="color:#a6e22e">_descriptors</span>[<span style="color:#a6e22e">deviceId</span>] <span style="color:#f92672">=</span> {};
+
+    <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">disconnect</span>((<span style="color:#a6e22e">error</span>)=&gt;{
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
+            <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; Failed to disconnect:&#39;</span>, <span style="color:#a6e22e">error</span>);
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; disconnected&#39;</span>);
+        }
+    });
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">peripheral</span>) {
+    <span style="color:#75715e">//logger.info(&#39;==&gt; connecting to&#39;, peripheral.id);
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; connecting start&#39;</span>);
+    <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">connect</span>((<span style="color:#a6e22e">error</span>) =&gt; {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
+            <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; Failed to connect:&#39;</span>, <span style="color:#a6e22e">error</span>);
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; connected&#39;</span>);
+            <span style="color:#a6e22e">discoverService</span>(<span style="color:#a6e22e">peripheral</span>);
+        }
+    });
+
+    <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">once</span>(<span style="color:#e6db74">&#39;disconnect&#39;</span>, <span style="color:#66d9ef">function</span>() {
+        <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; disconnect&#39;</span>);
+    });
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">discoverService</span>(<span style="color:#a6e22e">peripheral</span>) {
+    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; discovering services&#39;</span>);
+    <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">once</span>(<span style="color:#e6db74">&#39;servicesDiscover&#39;</span>, (<span style="color:#a6e22e">services</span>) =&gt; {
+        <span style="color:#75715e">//services.map((s) =&gt; logger.info(&#34;uuid:&#34;+s.uuid));
+</span><span style="color:#75715e"></span>
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">opServices</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">services</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">s</span>) =&gt; <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">uuid</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">serviceOperationUuid</span>);
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">opServices</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">1</span>) {
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#39;unexpected number of operation services&#39;</span>);
+        }
+
+        <span style="color:#a6e22e">discoverCharacteristic</span>(<span style="color:#a6e22e">peripheral</span>, <span style="color:#a6e22e">opServices</span>[<span style="color:#ae81ff">0</span>]);
+    });
+    <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">discoverServices</span>();
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">discoverCharacteristic</span>(<span style="color:#a6e22e">peripheralLocal</span>, <span style="color:#a6e22e">opService</span>) {
+    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; discovering characteristics&#39;</span>);
+    <span style="color:#a6e22e">opService</span>.<span style="color:#a6e22e">once</span>(<span style="color:#e6db74">&#39;characteristicsDiscover&#39;</span>, (<span style="color:#a6e22e">characteristics</span>) =&gt; {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">charStatus</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">characteristics</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">c</span>) =&gt; <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">uuid</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">characteristicStatusUuid</span>);
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">charCmd</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">characteristics</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">c</span>) =&gt; <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">uuid</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">characteristicCommandUuid</span>);
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">charAngleStatus</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">characteristics</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">c</span>) =&gt; <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">uuid</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">characteristicAngleStatusUuid</span>);
+
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">charStatus</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">charCmd</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">charAngleStatus</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">1</span>) {
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#39;unexpected number of command/status/angleStatus characteristics&#39;</span>);
+        }
+        <span style="color:#a6e22e">characteristics</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">c</span>) =&gt; <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;info uuid:&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">uuid</span>));
+
+        <span style="color:#a6e22e">characteristics</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">c</span>) =&gt; {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">uuid</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">characteristicStatusUuid</span>
+                <span style="color:#f92672">||</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">uuid</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">characteristicCommandUuid</span>
+                <span style="color:#f92672">||</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">uuid</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">characteristicAngleStatusUuid</span>)
+            {
+                <span style="color:#66d9ef">return</span>
+            }
+            <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;data&#39;</span>, (<span style="color:#a6e22e">data</span>) =&gt; {
+                <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;unknown uuid:&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">uuid</span>);
+                <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#a6e22e">data</span>);
+            });
+            <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">subscribe</span>();
+        });
+
+        <span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">charStatus</span>[<span style="color:#ae81ff">0</span>];
+        <span style="color:#a6e22e">cmd</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">charCmd</span>[<span style="color:#ae81ff">0</span>];
+        <span style="color:#a6e22e">angleStatus</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">charAngleStatus</span>[<span style="color:#ae81ff">0</span>];
+        <span style="color:#a6e22e">peripheral</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">peripheralLocal</span>;
+
+        <span style="color:#a6e22e">angleStatus</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;data&#39;</span>, (<span style="color:#a6e22e">data</span>) =&gt; {
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">angleRaw</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>).<span style="color:#a6e22e">readUInt16LE</span>(<span style="color:#ae81ff">0</span>);
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">angle</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>((<span style="color:#a6e22e">angleRaw</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">360</span>));
+
+            <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;angle: &#34;</span>, <span style="color:#a6e22e">data</span>, <span style="color:#e6db74">&#34;angle:&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">angle</span>);
+
+            <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">emit</span>(<span style="color:#e6db74">&#39;lock_status_set&#39;</span>);
+
+        });
+        <span style="color:#a6e22e">angleStatus</span>.<span style="color:#a6e22e">subscribe</span>();
+        <span style="color:#a6e22e">status</span>.<span style="color:#a6e22e">subscribe</span>();
+
+        <span style="color:#75715e">// lock(0)だとErrorUnknownCmdになるが、認証することで現在の角度がわかるため実行する
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">lock</span>(<span style="color:#ae81ff">0</span>); <span style="color:#75715e">// 0だとErrorUnknownCmd。3だとErrorLength。4だとErrorUnknownCmd。3は何かできそう。
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 起動時にtoggleしてlock, unlockする場合は下記をコメントアウト
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// event.once(&#39;lock_status_set&#39;, () =&gt; {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//   lock(lockStatus ? CODE_UNLOCK : CODE_LOCK);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// });
+</span><span style="color:#75715e"></span>    });
+    <span style="color:#a6e22e">opService</span>.<span style="color:#a6e22e">discoverCharacteristics</span>();
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">lock</span>(<span style="color:#a6e22e">cmdValue</span>) {
+    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; reading serial number&#39;</span>);
+    <span style="color:#a6e22e">status</span>.<span style="color:#a6e22e">read</span>((<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">data</span>) =&gt; {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) { <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#a6e22e">error</span>); <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">exit</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>); }
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>) {
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">macData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">peripheral</span>.<span style="color:#a6e22e">advertisement</span>.<span style="color:#a6e22e">manufacturerData</span>;
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">10</span>).<span style="color:#a6e22e">readUInt32LE</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">payload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_sign</span>(<span style="color:#a6e22e">cmdValue</span>, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">password</span>, <span style="color:#a6e22e">macData</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">3</span>), <span style="color:#a6e22e">userId</span>, <span style="color:#a6e22e">sn</span>);
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">cmdName</span>;
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">cmdValue</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">CODE_LOCK</span>) {
+                <span style="color:#a6e22e">cmdName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cmdValue:lock&#34;</span>;
+            } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">cmdValue</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">CODE_UNLOCK</span>) {
+                <span style="color:#a6e22e">cmdName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cmdValue:unlock&#34;</span>;
+            } <span style="color:#66d9ef">else</span> {
+                <span style="color:#a6e22e">cmdName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cmdValue:&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">cmdValue</span>;
+            }
+            <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;==&gt; &#39;</span>, <span style="color:#a6e22e">cmdName</span>, <span style="color:#a6e22e">sn</span>);
+            <span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">cmd</span>, <span style="color:#a6e22e">payload</span>);
+        }
+    });
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">_sign</span>(<span style="color:#a6e22e">code</span>, <span style="color:#a6e22e">payload</span>, <span style="color:#a6e22e">password</span>, <span style="color:#a6e22e">macData</span>, <span style="color:#a6e22e">userId</span>, <span style="color:#a6e22e">nonce</span>) {
+    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;macData: &#34;</span>, <span style="color:#a6e22e">macData</span>);
+    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;pass: &#34;</span>, <span style="color:#a6e22e">Buffer</span>.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">password</span>, <span style="color:#e6db74">&#39;hex&#39;</span>));
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hmac</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">crypto</span>.<span style="color:#a6e22e">createHmac</span>(<span style="color:#e6db74">&#39;sha256&#39;</span>, <span style="color:#a6e22e">Buffer</span>.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">password</span>, <span style="color:#e6db74">&#39;hex&#39;</span>));
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hash</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">crypto</span>.<span style="color:#a6e22e">createHash</span>(<span style="color:#e6db74">&#39;md5&#39;</span>);
+    <span style="color:#a6e22e">hash</span>.<span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">userId</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">buf</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Buffer</span>.<span style="color:#a6e22e">alloc</span>(<span style="color:#a6e22e">payload</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">59</span>);
+    <span style="color:#a6e22e">macData</span>.<span style="color:#a6e22e">copy</span>(<span style="color:#a6e22e">buf</span>, <span style="color:#ae81ff">32</span>); <span style="color:#75715e">// len = 6
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">md5</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hash</span>.<span style="color:#a6e22e">digest</span>();
+    <span style="color:#a6e22e">md5</span>.<span style="color:#a6e22e">copy</span>(<span style="color:#a6e22e">buf</span>, <span style="color:#ae81ff">38</span>); <span style="color:#75715e">// len = 16
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;md5: &#39;</span>, <span style="color:#a6e22e">md5</span>);
+    <span style="color:#a6e22e">buf</span>.<span style="color:#a6e22e">writeUInt32LE</span>(<span style="color:#a6e22e">nonce</span>, <span style="color:#ae81ff">54</span>); <span style="color:#75715e">// len = 4
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">buf</span>.<span style="color:#a6e22e">writeUInt8</span>(<span style="color:#a6e22e">code</span>, <span style="color:#ae81ff">58</span>); <span style="color:#75715e">// len = 1
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Buffer</span>.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">payload</span>).<span style="color:#a6e22e">copy</span>(<span style="color:#a6e22e">buf</span>, <span style="color:#ae81ff">59</span>);
+    <span style="color:#a6e22e">hmac</span>.<span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">buf</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">32</span>));
+    <span style="color:#a6e22e">hmac</span>.<span style="color:#a6e22e">digest</span>().<span style="color:#a6e22e">copy</span>(<span style="color:#a6e22e">buf</span>, <span style="color:#ae81ff">0</span>);
+    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;buf: &#39;</span>, <span style="color:#a6e22e">buf</span>);
+    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;buf: &#39;</span>, <span style="color:#a6e22e">buf</span>.<span style="color:#a6e22e">toString</span>(<span style="color:#e6db74">&#34;hex&#34;</span>));
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">buf</span>;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">write</span>(<span style="color:#66d9ef">char</span>, <span style="color:#a6e22e">payload</span>) {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">writes</span> <span style="color:#f92672">=</span> [];
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">payload</span>.<span style="color:#a6e22e">length</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">+=</span><span style="color:#ae81ff">19</span>) {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sz</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">payload</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">19</span>);
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">buf</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Buffer</span>.<span style="color:#a6e22e">alloc</span>(<span style="color:#a6e22e">sz</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">sz</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">19</span>) {
+            <span style="color:#a6e22e">buf</span>.<span style="color:#a6e22e">writeUInt8</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>);
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+            <span style="color:#a6e22e">buf</span>.<span style="color:#a6e22e">writeUInt8</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">buf</span>.<span style="color:#a6e22e">writeUInt8</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>);
+        }
+
+        <span style="color:#a6e22e">payload</span>.<span style="color:#a6e22e">copy</span>(<span style="color:#a6e22e">buf</span>, <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">19</span>);
+        <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;&lt;== writing:&#39;</span>, <span style="color:#a6e22e">buf</span>.<span style="color:#a6e22e">toString</span>(<span style="color:#e6db74">&#39;hex&#39;</span>).<span style="color:#a6e22e">toUpperCase</span>());
+        <span style="color:#66d9ef">char</span>.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">buf</span>, <span style="color:#66d9ef">false</span>);
+    }
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;readline&#39;</span>)
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rli</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rl</span>.<span style="color:#a6e22e">createInterface</span>(<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">stdin</span>, <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">stdout</span>)
+<span style="color:#a6e22e">rli</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;line&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">line</span>) {
+    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#a6e22e">line</span>);
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">line</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;l&#39;</span>) {
+        <span style="color:#a6e22e">lock</span>(<span style="color:#a6e22e">CODE_LOCK</span>);
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">line</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;u&#39;</span>) {
+        <span style="color:#a6e22e">lock</span>(<span style="color:#a6e22e">CODE_UNLOCK</span>);
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">line</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;t&#39;</span>) {
+        <span style="color:#a6e22e">lock</span>(<span style="color:#a6e22e">lockStatus</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">CODE_UNLOCK</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">CODE_LOCK</span>);
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">line</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;c&#39;</span>) {
+        <span style="color:#a6e22e">connectSesame</span>();
+    }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">line</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;d&#39;</span>){
+        <span style="color:#a6e22e">disconnect</span>();
+    }
+    <span style="color:#a6e22e">rli</span>.<span style="color:#a6e22e">prompt</span>();
+}).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;close&#39;</span>, <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;close&#39;</span>);
+    <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">stdin</span>.<span style="color:#a6e22e">destroy</span>();
+});
+<span style="color:#a6e22e">rli</span>.<span style="color:#a6e22e">prompt</span>();
+
+</code></pre></div><h2 id="api化">API化</h2>
+<p>ベースは上のコードでできているのでちょちょっとExpressでAPIを作るだけです。</p>
+<h2 id="試してみる">試してみる</h2>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">obniz経由でsesameコントロールできた！！ <a href="https://t.co/WXF4omm4bj">pic.twitter.com/WXF4omm4bj</a></p>&mdash; わみ@NefryとかFlutter本とか (@wamisnet) <a href="https://twitter.com/wamisnet/status/1212227568692129793?ref_src=twsrc%5Etfw">January 1, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<h2 id="ケースにいれる">ケースにいれる</h2>
+<p>基本的にはタカチのケースに収めておけばいい感じにみえるはず</p>
+<p><a href="https://www.takachi-el.co.jp/">https://www.takachi-el.co.jp/</a></p>
+<p>ケースがあれば安心。</p>
+<h1 id="今後の検討">今後の検討</h1>
+<ul>
+<li>指紋認証で開けられるようにしたい</li>
+<li>ゲストでも開けられるようにしたい（時間で認可を出す）</li>
+<li>カメラもあるので顔認証だったり？</li>
+</ul>
+<h1 id="まとめ">まとめ</h1>
+<p>ギークハウス新宿にSuicaで開けられるスマートロックが取り付けられました。</p>
+<p>シェアハウスのメンバーでこうやったモノづくりができるのは幸せだなぁと思います。</p>
+<p>ギークハウス新宿では定期的にゆるめしという緩いイベントをやっているので実際に見てみたい方がいればぜひ遊びにきてください。
+内見等もできるので、私にTwitter等でメッセージいただければ！</p>
+<p><a href="https://geekhouse-shinjuku.connpass.com/">https://geekhouse-shinjuku.connpass.com/</a></p>
+<p><strong>シェアハウス住民の紹介記事を載せておきますので是非！</strong>
+<a href="https://qiita.com/retoruto_carry/items/00ec51a94d819925fad1">Node-REDでシェアハウスのお風呂を爆速でハッキングする方法 - Qiita</a>
+<a href="https://qiita.com/wamisnet/items/1c6f809be7c4847a900d">Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】 - Qiita</a>
+<a href="https://qiita.com/wamisnet/items/a07ca183dd97d2cdb483">スマートロックが壊れたのでobnizを使ってハックしてみた</a></p>
+
+    </div>
+    <footer>
+      <ul class="stats">
+  <li class="categories">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/%e3%82%b9%e3%83%9e%e3%83%bc%e3%83%88%e3%83%ad%e3%83%83%e3%82%af/">スマートロック</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/obniz/">obniz</a></li>
+        
+      
+    
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/%e3%82%b9%e3%83%9e%e3%83%bc%e3%83%88%e3%83%ad%e3%83%83%e3%82%af/">スマートロック</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/obniz/">obniz</a></li>
+        
+      
+    
+    </ul>
+  </li>
+</ul>
+
+    </footer>
+  </article>
+  
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wamisnet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  <div class="pagination">
+  
+    <a href="https://wamisnet.github.io/blog/2019-12-14-obniz_eddystone/" class="button"><div class="previous"><div>obniz で BLEを使ってEddystoneを出してみた</div></div></a>
+  
+  
+    <a href="https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/" class="button"><div class="next"><div>NetlifyCMSから投稿テスト</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/firebase_login/">Firebase使ってログインできるようになったよ！</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/">NetlifyCMSから投稿テスト</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://wamisnet.github.io/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nefry/">nefry<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99/">説明資料<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/obniz/">obniz<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86/">リンク集<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp8266/">esp8266<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot/">iot<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/arduino/">arduino<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp32/">esp32<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/firebase/">firebase<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/flutter/">flutter<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/">作品<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E7%84%A1%E7%B7%9Alan/">無線lan<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azureiothub/">azureiothub<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp-idf/">esp-idf<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/">iot可視化ツールレビュー<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nodered/">nodered<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/unibo/">unibo<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/">スマートロック<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/">技術書典<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%9C%AC/">本<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azure/">azure<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/bg96/">bg96<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/cocoabit/">cocoabit<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/m5stickc/">m5stickc<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/monacoin/">monacoin<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/react/">react<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/serverless/">serverless<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/ssd1306/">ssd1306<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/">イベント<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/">ポートフォリオ<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/">勉強会<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%A8%98%E4%BA%8B/">記事<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/">退職エントリ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。</p>
+      <footer>
+        <a href="https://wamisnet.github.io/about" class="button">もっと知る</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        わみめも
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.73.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://wamisnet.github.io/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.31224010c6a183ff135369ca15ae671b02a26296a0507f2b674d4ecd086b11da.js" integrity="sha256-MSJAEMahg/8TU2nKFa5nGwKiYpagUH8rZ01OzQhrEdo="></script>
+    <script src="https://wamisnet.github.io/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62256925-7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

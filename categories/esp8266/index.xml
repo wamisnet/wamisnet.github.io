@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ESP8266 on わみめも</title>
+    <link>https://wamisnet.github.io/categories/esp8266/</link>
+    <description>Recent content in ESP8266 on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 21 Dec 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/categories/esp8266/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CocoaBitというオリジナルBitを作った話</title>
+      <link>https://wamisnet.github.io/blog/2016-12-21-cocoabit_create/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-12-21-cocoabit_create/</guid>
+      <description>CocoaBitというlittleBits拡張モジュールを作ってみて気がついたことを書き連ねておきます。
+CocoaBitとは まずはカンタンにCocoaBitについて説明していこうと思います。
+CocoaBitとは、cloudBitと呼ばれるインターネットと通信ができるモジュールが日本では技適のため使えないため、開発された拡張モジュール(拡張Bit)です。
+私が作成しているNefryをベースとしており、NefryのメリットであるWiFiやモジュールの設定を簡単に出来る点を引き継ぎ、littleBits向けにさらにカスタマイズしています。
+(CocoaBitはまだ販売されてませんが、反響があれば…
+CocoaBitのサイトはこちら
+カンタンにCloudBitがどのようなものか分かったところで作ってみて気が付いたメリットデメリットについて話してみようと思います。
+メリット 手軽に試せる なんといってもこれが一番のlittleBitsと繋げられるメリットだと思います！
+普通の電子工作であると半田付けが必要だったり、ブレッドボードにピンを何本も刺さないといけなかったりするのが、littleBitsなら繋ぐだけでいけます！磁石で繋がるので間違えることもない！
+子どもでもあそべる 向きを間違えないため、こどもに任せてしまっても問題なく作ることができます！
+子どもももちろんですが大人でもロジックBitなどもあるので充分に遊ぶことが出来ます！
+デメリット とりあえずお高い　 littleBits自体セットで販売などもされているため若干安くなったりしますが、それでもお高い…
+これは特に多数のBitがあるとより楽しめるのですが、揃えるまでが…
+ときどき接触がわるいときがある 磁石で接続しているため仕方無いのですがカンタンにとれてしまいます。それはlittleBitsの手軽に繋げられるとこと関わるので難しいところです…
+(Bitを留められるボードもあるのでそれで解決するところですが…
+bitの形に制限がある これもlittleBitsの世界なので仕方無いところですが、公式からこのようなサイズで作るといいよ、という情報が出ています。
+(これも無視して作ることも出来ますが、littleBits同士キレイに揃うといいので出来るだけ合わせましょう。
+オリジナルのBitをつくるまで！ 私の備忘録を兼ねて今回のCocoaBitを作成した流れを説明していこうと思います。
+まずは、どんなものを作るのか検討しよう。 どんなものを作るのか検討すれば、必要な部品数が判明すると思われます。その部品から必要となるであろうサイズを割り出します。
+そのサイズからその部品が収まるBitのサイズを選びます。
+こちらのサイト内にあるHDK manualのリンクをクリックします。
+ よりプロフェッショナルなTIPSについてはHDK manual やTips &amp;amp; Tricks もチェックして下さい。
+ ファイルがダウンロードされるのを待って、Design\Design Manual\PDFsの中にあるUser Interface Considerations for littleBits Module Design.pdfを開き部品が収まるサイズを探します。
+無事に見つかったら図の下にある英語の文字を覚えておきましょう。
+さくっと回路を起こしていこう eagleのテンプレートファイルがGitHubで公開されているのでそれをベースに作成するのがお勧めです。
+私はKicadの方が好きなので、採寸をまねて作成しました。 こんな感じにできれば、問題ありません。
+回路ができれば、SeeedStudioさんやElecrowさんを作成してもらいましょう！
+##　部品をそろえよう
+まずは、littleBitsの公式サイトからBITSNAPSというlittleBitsの両端を購入しましょう。
+もしくは、littleBitsのHardware Development Kitを日本の代理店であるKORGさんから購入することもできます。
+あとはほかに必要な部品を購入していてください。
+組み立てよう！ BITSNAPSともろもろの部品をつければ、無事にオリジナルの拡張Bitが出来上がりました！
+このあたりもSeeedStudioさんやElecrowさんの部品実装サービスを使うと大変便利です。 CocoaBitも作成していただいています。
+#まとめ
+そもそも、littleBitsの拡張することができるなんて思いませんでした。 BitSnaps自体がちょっと高価ではありますが、自分好みのものをつくれるメリットは大きいと思います。
+回路を作成するなど難易度は高めですが、完成度も高いので是非お勧めします！ よいlittleBitsライフを！</description>
+    </item>
+    
+    <item>
+      <title>Azure IoT HubをESP8266で使おう！</title>
+      <link>https://wamisnet.github.io/blog/2016-09-05-azure/</link>
+      <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-09-05-azure/</guid>
+      <description>日本での発売から一年がたち多数の作例が出てくる「ESP8266」(ESP-WROOM-02)をもっと使いこなしてみませんか？
+今回はAzureのサービスの一つであるIoTHub、それを簡単に扱えるライブラリーを作ったので紹介してみようと思います。
+ちょこっと宣伝 ところどころで出てくるESP8266の基板ですが、私が作成した「Nefry」(ねふりー)という基板を使っています。
+dotstudioさんにて販売中です！！
+USBに直接繋げられたり、Webページ上でWiFiの設定やESP8266の端末設定ができるようになっていたりとESP8266をより簡単に扱えるものになっています。
+詳しくはLigブログで記事をいくつか載せていますのでご覧ください。
+自作したオリジナルIoTデバイス「Nefry」とインターネットを繋いでみた
+Webサービス同士を連携できる「IFTTT」と自作IoTデバイスを繋いで生活を便利にしてみた
+Azure IoT Hub って？ IoT Hubは、その名の通りIoTデバイスとクラウドを繋ぐHubとなるサービスです。 似たようなサービスとして「Event Hubs」がありますが、Event Hubsとの大きな違いは2つあります。
+IoTHubの優れた点
+ デバイスとクラウドとの双方向通信が可能。(Event Hubsはデバイス→クラウドの一方のみ) デバイス毎にIDを登録して認証する為、よりセキュアに利用できる。(Event HubsはEvent Hubsごとの許可)  
+http://qiita.com/hiiyan0402/items/9c93d9673114675a57d4
+用意するもの  ESP8266(ESP-WROOM-02) Azure アカウント ArduinoIDE Arduino core for ESP8266 WiFi chip(https://github.com/esp8266/Arduino) AzureIoTHubライブラリー(https://github.com/wamisnet/Azure-iothub-mqtt-esp8266)  IoTHubで通信をしてみる 今回はESP8266からIoTHubで通信するところまでを作っていきます。
+Azure IoTHubの設定 それでは、AzureにログインしてIoTHubを実際に作っていきましょう！
+Azure ポータルを開いていきます。
+新規からモノのインターネット(IoT)をクリックして、IoTHubをクリックします。これから必要な設定を行っていきます。
+無事にIoTHubが開かれると複数の入力欄が出るので写真を参考に入力欄を埋めていきましょう。 それでは、必須項目であるIoTHubの名前を入力してください。この名前はドメインでも使われますので他の方と重複するとエラーが出ます。入力欄の右端が緑のチェックが入れば大丈夫です。 次に、価格とスケールティアを変更していきます。この際にFreeを必ず選んでください。Standardを選んだまま作成してしまうと、後からFreeに変更することができず、再度作り直すことになります。
+Freeを選択したらクリックして反映させてください。
+リソースグループは既存ものがあれば、それを使って頂いてもかまいませんが、今回は初めてだという前提で、新規作成で好きなグループ名を入力してください。
+Azureサーバーがある場所を指定することができます。東日本、西日本と選べますのでお好みでどうぞ。
+ここまで問題なくできていれば、作成ボタンをクリックしてIoTHubをデプロイしていきます。
+数分かかりますのでしばしお待ちを…
+無事にIoTHubのデプロイが終わるとこのような画面が表示されます。 この画面では先ほど設定した内容が見れるほか、IoTHubの使用状態を確認することができます。
+デバイスを繋げるために必要な設定を行っていきます。 共有アクセスポリシーからiothubownerをクリックし、プライマリキーをコピーします。 このとき写真で示してある部分をクリックすると簡単にキーをコピーすることができます。
+このプライマリキーは次の作業で使用します。 この作業からDevice Explorerというツールを使っていきます。 このツールはWindows専用になります。MacやLinuxの場合iothub-explorerを使うようですが、今回は取り扱いません。
+Device Explorerのダウンロード こちらの**リンク**からダウンロードしてインストールをよろしくお願いします。</description>
+    </item>
+    
+    <item>
+      <title>ESP8266で静的なIPをわりふってみる</title>
+      <link>https://wamisnet.github.io/blog/2016-04-27-esp8266_staticip/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-04-27-esp8266_staticip/</guid>
+      <description>家のネット環境によってはDHCPでIPアドレスを取得するより、静的（static）なIPで割り振りたいという要望を聞きましたのでソースコードを公開します。
+#表示内容
+ESP8266のlocalIP ゲートウェイのIP サブネットマスク ESP8266のmacAddress
+#コード
+#include &amp;lt;ESP8266WiFi.h&amp;gt;#define debug Serial /* IPアドレスをDHCPではなく手動で割り振ることをすることができる。 localIP:moduleのIP gateway:デフォルトゲートウエイ subnet:サブネットマスク DNSは指定しなくてよい。 config(IPAddress local_ip, IPAddress gateway, IPAddress subnet, IPAddress dns1 = (uint32_t)0x00000000, IPAddress dns2 = (uint32_t)0x00000000) */ void setup(){ debug.begin(115200); WiFi.config(IPAddress(192,168,1,2),IPAddress(192,168,1,1),IPAddress(255,255,255,0)); debug.print(&amp;#34;Local IP :&amp;#34;);debug.println(address(WiFi.localIP())); debug.print(&amp;#34;Gateway IP:&amp;#34;);debug.println(address(WiFi.gatewayIP())); debug.print(&amp;#34;SubnetMask:&amp;#34;);debug.println(address(WiFi.subnetMask())); debug.print(&amp;#34;macAddress:&amp;#34;);debug.println(WiFi.macAddress()); } void loop(){ } String address(IPAddress ip){ String ipStr = String(ip[0]) + &amp;#39;.&amp;#39; + String(ip[1]) + &amp;#39;.&amp;#39; + String(ip[2]) + &amp;#39;.&amp;#39; + String(ip[3]); return ipStr; } </description>
+    </item>
+    
+    <item>
+      <title>ESP8266でWPSを実装してみる</title>
+      <link>https://wamisnet.github.io/blog/2016-04-22-esp8266_wps/</link>
+      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-04-22-esp8266_wps/</guid>
+      <description>http://bbs.espressif.com/viewtopic.php?t=1096
+ソース元はこちら
+ESP-WROOM-02にはWPSでWiFiの設定をすることができる環境がつくられているようなのでその解説と結果を報告します。
+環境 Arduino IDE 1.6.7 Arduino core for ESP8266 WiFi chip (https://github.com/esp8266/Arduino) v2.2.0
+Arduino coreのバージョンが古いと実装されてない可能性があります。
+コード #include &amp;lt;ESP8266WiFi.h&amp;gt; void Wifi_wait(); void setup() { Serial.begin(115200); WiFi.mode(WIFI_STA); //WiFi.begin(&amp;#34;&amp;#34;,&amp;#34;&amp;#34;)このようにすることでWPSで保存したデータがある場合そちらに接続するようになる  WiFi.begin(&amp;#34;&amp;#34;, &amp;#34;&amp;#34;); Wifi_wait(); // Wifiに接続していないときにはWPSを開始します  if (WiFi.status() != WL_CONNECTED) { Serial.println(&amp;#34;\nAttempting connection ...&amp;#34;); WiFi.beginWPSConfig(); Wifi_wait(); if (WiFi.status() == WL_CONNECTED) { Serial.println(&amp;#34;Connected!&amp;#34;); Serial.println(WiFi.localIP()); Serial.println(WiFi.SSID()); Serial.println(WiFi.macAddress()); } else { Serial.println(&amp;#34;Connection failed!&amp;#34;); } } else { Serial.println(&amp;#34;\nConnection already established.&amp;#34;); } } void loop() { } void Wifi_wait() { int wait=0; Serial.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -34,5 +34,84 @@ Google Home VUIでもろもろのIoTデバイスの状態を確認できる
 まとめ ちょっとづつだとしても、IoTを導入することで便利なシェアハウスにすることはできる</description>
     </item>
     
+    <item>
+      <title>【IoT可視化ツールレビュー】 thinger.io</title>
+      <link>https://wamisnet.github.io/blog/2019-06-27-thingspeak/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-06-27-thingspeak/</guid>
+      <description>thinger.io 次の記事が使い方がまとまっていてわかりやすかったです。
+http://www.esploradores.com/empezando/hello-world-thinger-io-blink/
+何を目的としたサービスか IoTでよくある機能を簡単に試すことができるサービス
+データの可視化やデバイスをこのサービス経由のAPIで制御できる
+何と何ができるのか Webやアプリ上でのセンサーデータの可視化（ダッシュボード） LEDのONOFFやサーボの制御などをWebやアプリ、APIで操作できる データ保存機能（バケット） エンドポイント機能（デバイスからトリガーがあったときにメールや特定のURLを叩ける） それがいくらなのか     無料 500円/月 2500円/月     接続台数 2台 20台 100台   ダッシュボード 4 20 100   バケット（何秒に一度データを保存できるか） 60s 30s 15s   エンドポイント 4 20 100    使った感じどうだったか 接続するときにひと手間ありそうですが可視化の部分を使用できるとよさそうです。
+生のESP32で使用する際にはよいサービスだと思います。
+https://github.com/thinger-io/Arduino-Library/tree/master
+簡単にダッシュボードがつくれるところもよく、自分でインスタンス立てて制御することもできるようです。 ダッシュボードのレスポンスもよかったです。
+https://thinger.io/downloads/ Blynkに似ていますが、アプリのみでなくWebでコントロールできるところが優れています。</description>
+    </item>
+    
+    <item>
+      <title>【IoT可視化ツールレビュー】 ThingSpeak</title>
+      <link>https://wamisnet.github.io/blog/2019-06-27-thinger/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-06-27-thinger/</guid>
+      <description>ThingSpeak 何を目的としたサービスか データの保存やグラフ化できるサービス。
+MATLABとの連携がメインの特徴（むしろMATLAB使えないとほぼ意味がない）
+何と何ができるのか センサーデータの可視化（ダッシュボード） MATLAB連携 ThinhSpeakアプリ https://jp.mathworks.com/help/thingspeak/thingspeak-apps.html?s_tid=CRUX_lftnav
+それがいくらなのか     無料 約800円/月 約7300円/月     接続台数 3台 50台 50台   ダッシュボード 4 10 250   送信間隔（何秒に一度データを保存できるか） 15s 1s 1s   商用利用 不可 不可 可    使った感じどうだったか 正直MATLABを使用したい意図がない限り選択するメリットは少ないと思っています。
+フリープランだと15秒に一度しかはじかれるのでなかなか使いずらいです。
+同様なことであれば、Ambientで十分だと思います。</description>
+    </item>
+    
+    <item>
+      <title>IoT事例リンク集</title>
+      <link>https://wamisnet.github.io/blog/2019-06-14-iot_monitoring_link/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-06-14-iot_monitoring_link/</guid>
+      <description>IoTについてまとめる機会があったので、リンク集を公開します
+IoTによるモニタリング 家庭編 家で考えるモニタリング
+スマートロック https://jp.candyhouse.co/
+CANDY HOUSE SESAME mini
+いろいろと数あるスマートロックだが、（家庭向けのデバイスでは）他社製品と比べAPIで開錠で開錠できる特徴が一押し。
+スマートロックの誰の開閉かログをとったり、ゲストに開閉権限を渡すなど基礎的な機能も十分。
+室温管理 https://nest.com/
+nest
+日本では多くありませんが、海外に多くある家まるごと温度をコントロールするもの。
+人の有無を学習し、意識せずに効率よく扱えるようになるのがIoTとして優秀だと思います。
+窓管理 https://www.ykkap.co.jp/products/window/mimott/
+YKK AP株式会社 ミモット
+窓の閉め忘れを無くすことができるデバイス。技術屋としては、電池レスなのがポイントが高い。
+うっかりミスを防ぐことは難しいのでこういったデバイスが普及するとよい。
+睡眠 https://www.kddi.com/with-home/device/uss01a/
+KDDI 睡眠モニター 01
+睡眠状態をロギングできるデバイス。最近話題になっている睡眠改善に使用する。
+IoTで簡単にセンシングできるようになったからこそのデバイス
+宅配ポスト https://www.lixil.co.jp/lineup/gate_fence/smartpost/
+株式会社 LIXIL スマート宅配ポスト
+実証実験で一時期話題になった宅配ボックス。
+値段との兼ね合いでなかなかIoTに対応したデバイスが多くないがゆえに期待している。
+自動発注 https://bungu.plus.co.jp/special/st/2019/octotas/
+プラス株式会社 Octotas
+Amazonのダッシュボタンは有名ですが、重さで自動発注できるのはあまり認知されていないと思う。
+完全にユーザが意識せずにできるもので最もIoTらしいと思っています。
+ペット https://petelect.jp/lp/karikarimachinesp/
+株式会社アクセスライン カリカリマシーンSP
+家族の一員ともいえるペットの自動餌やり機、餌を与えるのはもちろんご飯を食べていないことを確認でき、なにか問題があったことに反応できる
+植物 https://foop.cestec.jp/
+アドトロンテクノロジー株式会社 foop
+水耕栽培キット、適切なタイミングをデバイスからスマートフォンに教えてくれるのでだれでも育てることができるところがよい。
+忘れ物 https://mamorio.jp/
+MAMORIO株式会社 MAMORIO
+「なくすを、なくす」というテーマで開発された落とし物を探すことができるデバイス。
+有名ですが、BLEをうまく使っていて素晴らしいと思います。
+赤ちゃん https://unkobtn.com/
+株式会社144Lab うんこボタン
+前項までのデバイスと比べると異色ですが、ボタンを押したことをメモできるデバイス。
+デバイスとしてはシンプルだが、子育てで忙しい人にピッタリ合っていてIoTである意味がある良い商品だと思います。</description>
+    </item>
+    
   </channel>
 </rss>

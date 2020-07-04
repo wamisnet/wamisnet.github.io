@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+<title>obniz OSをESP32(NefryBT)に入れて動かそう！ - わみめも</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.73.0" /><meta itemprop="name" content="obniz OSをESP32(NefryBT)に入れて動かそう！">
+<meta itemprop="description" content="obniz OSをESP32(NefryBT)に入れて動かそう！">
+<meta itemprop="datePublished" content="2019-08-20T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-08-20T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="226">
+
+
+
+<meta itemprop="keywords" content="obniz,nefry," /><meta property="og:title" content="obniz OSをESP32(NefryBT)に入れて動かそう！" />
+<meta property="og:description" content="obniz OSをESP32(NefryBT)に入れて動かそう！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wamisnet.github.io/blog/2019-08-20-obniz_install_nefry/" />
+<meta property="article:published_time" content="2019-08-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-08-20T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="obniz OSをESP32(NefryBT)に入れて動かそう！"/>
+<meta name="twitter:description" content="obniz OSをESP32(NefryBT)に入れて動かそう！"/>
+<meta name="twitter:site" content="@wamisnet"/>
+<link rel="stylesheet" href="https://wamisnet.github.io/css/bundle.min.c77e84bad6f641316aaae9404d7b57577c00ac1217fc1a1e8a9d30300328d836.css" integrity="sha256-x36Eutb2QTFqqulATXtXV3wArBIX/Boeip0wMAMo2DY="><link rel="stylesheet" href="https://wamisnet.github.io/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://wamisnet.github.io/" class="nav">
+        
+          わみめも
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/" class="nav link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/about/" class="nav link"><i class='fa fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/itemized/" class="nav link"><i class='fa fa-list'></i> Product</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/business/" class="nav link"><i class='fa fa-id-card'></i> Small Business</a>
+          
+        
+      
+      
+      
+    </menu>
+    
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="https://wamisnet.github.io/"><img src="https://wamisnet.github.io/img/main/wami.jpg" class="circle" width="100" alt="wami" /></a>
+  <header>
+    <h1>わみめも</h1>
+  </header>
+  <main>
+    <p>私が作ったソフトウエアやハードウエアのはなしをします</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="https://wamisnet.github.io/blog/2019-08-20-obniz_install_nefry/">obniz OSをESP32(NefryBT)に入れて動かそう！</a></h2>
+    
+    
+      <p>obniz OSをESP32(NefryBT)に入れて動かそう！</p>
+    
+  </div>
+  <div class="meta">
+    <time class="published" datetime="2019-08-20 00:00:00 &#43;0000 UTC">
+      2019-08-20
+    </time>
+    <span class="author">wami</span>
+    
+  </div>
+</header>
+
+    <section id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=obniz%20OS%e3%82%92ESP32%28NefryBT%29%e3%81%ab%e5%85%a5%e3%82%8c%e3%81%a6%e5%8b%95%e3%81%8b%e3%81%9d%e3%81%86%ef%bc%81&amp;url=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-08-20-obniz_install_nefry%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-08-20-obniz_install_nefry%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e3%81%93%e3%81%ae%e6%8a%95%e7%a8%bf%e3%82%92%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%99%e3%82%8b wami&amp;body=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-08-20-obniz_install_nefry%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </section>
+    
+
+    <div class="content">
+      <p>こんにちは！わみです！
+今日は先日リリースされたobnizOSを使い始めてみたので、どんな感じなのかも合わせて書いていこうと思います。</p>
+<p>そもそも「obniz」ってなに？って方は「<a href="https://qiita.com/wicket/items/546c2900bda7c8c85a60">arduinoとは全く違う、IoTツールobnizのしくみ</a>」をご覧ください。</p>
+<h1 id="なにができるのか">なにができるのか</h1>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">NefryでobnizOS動いた！！ <a href="https://t.co/YAbw8ggR5B">pic.twitter.com/YAbw8ggR5B</a></p>&mdash; わみ@NefryとかFlutter本とか (@wamisnet) <a href="https://twitter.com/wamisnet/status/1162662514829565953?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>HTML+JSでハードウエア(ESP32(NefryBT))を動かしてみた動画です！</p>
+<p>JavaScriptやpythonでハードウエアを動かすことができる「obniz」ただ、6000円近くするので少々お値段がします…</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/5d7decc2-74b6-0f2b-55c5-a019b84833a0.jpeg" alt=""></p>
+<p>その技術をお店で1500円ぐらいで売っているESP32のボードにインストールができるのが先日発表された「obnizOS」なのです！</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/9543988c-f5b3-188f-8062-721bae769a7b.png" alt=""></p>
+<p>私が作っている「Nefry BT」というデバイスにインストールしてみたのでその方法とどんな感じなのかをまとめてみようと思います。
+ESP32を搭載したボードであれば、同じような手順で行うことができるのでぜひお試しください。</p>
+<p>（ESP32-picoについては未サポート（具体例：M5stickC））</p>
+<h1 id="インストール">インストール</h1>
+<h2 id="ライセンスを購入する">ライセンスを購入する</h2>
+<p><a href="https://obniz.io/ja/console">https://obniz.io/ja/console</a>
+上記ページから「デバイス」を選択し、「obniz OSのライセンスを新規購入」をクリックします。</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/2d1e5fc8-e161-2d70-a31f-a38b3909231c.png" alt=""></p>
+<p>ライセンスの選択画面で「Hobby」ライセンス、「新規にobnizIDを発行」、個数を選び、「金額を確認」をクリックします。
+カードの情報がない場合、このタイミングで入力します。</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/f1c39a86-4f57-3020-bbba-04b84fc32d91.png" alt=""></p>
+<p>確認画面が表示されて、問題なければ「ライセンスを購入」を押します。</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/b25db3e9-40fd-83ef-484f-529a6df57479.png" alt=""></p>
+<p>購入が完了すると、「DeviceKey」をダウンロードできます。
+これはインストール時に使用するので必ずダウンロードしておいてください。
+（画像取り忘れたので公式ドキュメントの画像…）</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/d2ff5985-e1b3-98b9-1df0-9a23882d96f3.png" alt=""></p>
+<h2 id="前提条件">前提条件</h2>
+<p>obniz cliを使用しますのでpython3.4以上のものをインストールしておいてください。</p>
+<p><code>py -3 -V</code>でバージョン情報を確認することができます。
+インストールされていれば、上記のコマンドをターミナルで実行すると次のようにバージョンが表示されます。</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/8fa7428c-ac2c-7e35-85a1-0543e5904219.png" alt=""></p>
+<p>表示されない場合は、インストールされているか確認したり、pathが通っているか確認してください。</p>
+<h2 id="obniz_cliをインストール">obniz_cliをインストール</h2>
+<p>obniz_cliとは、簡単にobnizOSをインストールするために作られたアプリになります。それを使って、セットアップを行っていきたいと思います。</p>
+<p>ターミナルで<code>pip3 install obniz_cli</code>と入力します。</p>
+<p>インストールが開始されるはずです！「Successfully installed obniz_cli」とでれば大丈夫です。</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/6321e9b7-24e4-0433-030d-3590fb2ff816.png" alt=""></p>
+<h2 id="nefry-btにobnizosをインストール">Nefry BTにobnizOSをインストール</h2>
+<p>Nefry BTをPCと接続し、obnizOSをインストールしていこうと思います。</p>
+<p>ターミナルで<code>obniz_cli flashos</code>と入力します。</p>
+<p>ESP32を接続しているポートを選択画面がでるので、ポートの横に書かれている数字（今回なら0）を入力します。ここで選んだポート名（今回ならCOM5）を覚えておいてください。</p>
+<p>入力するとインストールが開始されます。</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/4ca4afb0-04a9-3f85-d3de-aa023d6fa9d2.png" alt=""></p>
+<p>しばらくするとインストールが完了します。</p>
+<p>次に無線LANの設定とライセンスの適用を行っていきます。</p>
+<p>ターミナルで<code>python -m serial.tools.miniterm ポート名 115200</code>と入力します。</p>
+<p>ポート名は先ほど選んだものに変更しておいてください。</p>
+<p>指示に従って、次の項目を入力します。</p>
+<ul>
+<li>DeviceKey:購入時に取得したファイルに書かれた文字列</li>
+<li>SSID:接続したい無線LANのもの</li>
+<li>PASS:接続したい無線LANのもの</li>
+<li>固定IP or DHCP:基本的にはDHCPの「0」を選択する
+<ul>
+<li>固定IPの場合 下記の項目を設定する
+<ul>
+<li>IP Address</li>
+<li>Subnetmask</li>
+<li>Default gateway</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/a15e03f1-0c68-2b41-5998-d833870ca9c3.png" alt=""></p>
+<p>設定された項目が正しければ、最後に「Online」と表示されます。</p>
+<p>正しくない場合、再度正しいデータを入力されるように求められるので再度行ってください。</p>
+<h1 id="javascriptでコードを書いてみる">JavaScriptでコードを書いてみる</h1>
+<p>JavaScriptでハードウエアが動かせるので少しコードを書いてみました。</p>
+<p>なにがよいか私なりのメリットを挙げてみます。</p>
+<ul>
+<li>HTMLと合わせて簡単に操作画面をつくれるところ</li>
+<li>開発環境を作成しなくてよいところ（公式サイトにエディタがある）</li>
+<li>いくつかの部品のライブラリがあるのも始めやすいところ
+<a href="https://obniz.io/ja/sdk/parts/LED/README.md">https://obniz.io/ja/sdk/parts/LED/README.md</a>
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/6d20e84e-4e37-ef18-84a6-a3cacd11587b.png" alt=""></li>
+</ul>
+<p>みたいなところですかね！ここもメリットだよってのがあれば教えてもらえると！</p>
+<h2 id="動かしてみる">動かしてみる</h2>
+<p>「Nefry BT」で動かせるようにボタンとフルカラーLEDをコントロールするプログラムをJavaScriptで書いてみたので試してみましょう！</p>
+<p><a href="http://obniz.io/ja/console/program">http://obniz.io/ja/console/program</a></p>
+<p>上記のURLをクリックすると、購入したobniz idが選択できるはずです。</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/ba566780-550d-e53a-930c-079e7dc5d9cd.png" alt=""></p>
+<p>選択して、「開く」を押してみましょう！</p>
+<p>NefryBTではない別のESP32ボードの場合はそのままサンプルプログラムを動かしてみましょう！</p>
+<p>サンプルプログラムがあるので一旦削除して、次のコードを貼りましょう！
+コード内にある「your obniz id」と書かれたところを先ほど選んだobniz idに置き換えることを忘れないでください！</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1&#34;</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&#34;</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://obniz.io/js/jquery-3.2.1.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/obniz@2.2.0/obniz.js&#34;</span> <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;obniz-debug&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">h3</span>&gt;obnizOS on Nefry&lt;/<span style="color:#f92672">h3</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary m5&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;on&#34;</span>&gt;ON&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary m5&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;off&#34;</span>&gt;OFF&lt;/<span style="color:#f92672">button</span>&gt;
+
+    &lt;<span style="color:#f92672">script</span>&gt;
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obniz</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Obniz</span>(<span style="color:#e6db74">&#34;your obniz id&#34;</span>);
+
+      <span style="color:#a6e22e">obniz</span>.<span style="color:#a6e22e">onconnect</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span> () {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obniz</span>.<span style="color:#a6e22e">wired</span>(<span style="color:#e6db74">&#34;WS2812&#34;</span>, {<span style="color:#a6e22e">din</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">16</span>});
+        <span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">rgb</span>(<span style="color:#ae81ff">0xFF</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>);
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">led</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obniz</span>.<span style="color:#a6e22e">wired</span>(<span style="color:#e6db74">&#34;LED&#34;</span>, {<span style="color:#a6e22e">anode</span><span style="color:#f92672">:</span><span style="color:#ae81ff">26</span>}); <span style="color:#75715e">// io0 is anode. cathode is connected obniz GND other way.
+</span><span style="color:#75715e"></span>
+        <span style="color:#a6e22e">obniz</span>.<span style="color:#a6e22e">getIO</span>(<span style="color:#ae81ff">4</span>).<span style="color:#a6e22e">pull</span>(<span style="color:#e6db74">&#34;3v&#34;</span>);
+        <span style="color:#a6e22e">obniz</span>.<span style="color:#a6e22e">getIO</span>(<span style="color:#ae81ff">4</span>).<span style="color:#a6e22e">input</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">value</span>){
+          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;changed to &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">value</span>);
+          <span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">rgb</span>(Math.<span style="color:#a6e22e">floor</span>( Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> (<span style="color:#ae81ff">256</span>) ), Math.<span style="color:#a6e22e">floor</span>( Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> (<span style="color:#ae81ff">256</span>) ), Math.<span style="color:#a6e22e">floor</span>( Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> (<span style="color:#ae81ff">256</span>) ));
+        });
+        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#on&#34;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#66d9ef">function</span>(){
+          <span style="color:#a6e22e">led</span>.<span style="color:#a6e22e">on</span>();
+        })
+
+        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#off&#34;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#66d9ef">function</span>(){
+          <span style="color:#a6e22e">led</span>.<span style="color:#a6e22e">off</span>();
+        })
+      }
+
+    &lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/95b1b8e2-d2b5-8cb9-5f37-c1bc25bfff80.png" alt=""></p>
+<p>貼り付けたら、右上の「実行」ボタンを押してください。</p>
+<p>Nefry BTのSWを押すと、フルカラーLEDがランダムに光ります。
+HTMLのボタンを押すと、26ピンに接続されたLEDが点灯したり、消灯したりします。</p>
+<h3 id="ピンの指定">ピンの指定</h3>
+<p>ESP32のピン番号を直接指定します。</p>
+<p>Nefryの場合、直接基板上に書かれていないので、次の画像を参考にしてください。</p>
+<ul>
+<li>Nefry BT(無印)</li>
+</ul>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/84c35176-f56e-2813-568f-44ef80122c4e.png" alt="nefrybt_pinmap.png"></p>
+<ul>
+<li>Nefry BT R2/R3</li>
+</ul>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/97208/29718b0d-2560-747b-97d6-04f0803938dc.png" alt="NefryBTr2_r3_pinmap.png"></p>
+<h1 id="まとめ">まとめ</h1>
+<p>obniz OSでこれからもっと便利にIoTを始められるようになるのではないでしょうか？</p>
+<p>コードの使い勝手としては、obnizボードと大差ない気がします。ただ、ReadOnlyのIOやアナログ入力など制約があるところやモータドライバーがついていないのでモータを直接動かせないところもあるのでそのあたりはobnizボードのところが優れてるかなと思います。</p>
+<p>Nefry BTではArduinoでコードを書くのが普通ですが、JavaScriptであったとしても私としてはハードウエアが好きになって、いろんなものが生まれてくるとすごくいいなと思っています。</p>
+<h1 id="ここまで読んでくれた方へ">ここまで読んでくれた方へ</h1>
+<p>ここまで読んでくださりありがとうございます。</p>
+<p>いいねやコメント、SNSでの共有等をしてくださると、今後の励みになります。よろしくお願いします。</p>
+<p>良かったら<a href="https://twitter.com/wamisnet">Twitter</a>もフォローしてね</p>
+
+    </div>
+    <footer>
+      <ul class="stats">
+  <li class="categories">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/obniz/">obniz</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/nefry/">nefry</a></li>
+        
+      
+    
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/obniz/">obniz</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/nefry/">nefry</a></li>
+        
+      
+    
+    </ul>
+  </li>
+</ul>
+
+    </footer>
+  </article>
+  
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wamisnet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  <div class="pagination">
+  
+    <a href="https://wamisnet.github.io/blog/2019-07-26-regi/" class="button"><div class="previous"><div>Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】</div></div></a>
+  
+  
+    <a href="https://wamisnet.github.io/blog/2019-08-27_smartlock/" class="button"><div class="next"><div>スマートロックが壊れたのでobnizを使ってハックしてみた</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/firebase_login/">Firebase使ってログインできるようになったよ！</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/">NetlifyCMSから投稿テスト</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://wamisnet.github.io/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nefry/">nefry<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99/">説明資料<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/obniz/">obniz<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86/">リンク集<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp8266/">esp8266<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot/">iot<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/arduino/">arduino<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp32/">esp32<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/firebase/">firebase<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/flutter/">flutter<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/">作品<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E7%84%A1%E7%B7%9Alan/">無線lan<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azureiothub/">azureiothub<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp-idf/">esp-idf<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/">iot可視化ツールレビュー<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nodered/">nodered<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/unibo/">unibo<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/">スマートロック<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/">技術書典<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%9C%AC/">本<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azure/">azure<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/bg96/">bg96<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/cocoabit/">cocoabit<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/m5stickc/">m5stickc<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/monacoin/">monacoin<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/react/">react<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/serverless/">serverless<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/ssd1306/">ssd1306<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/">イベント<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/">ポートフォリオ<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/">勉強会<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%A8%98%E4%BA%8B/">記事<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/">退職エントリ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。</p>
+      <footer>
+        <a href="https://wamisnet.github.io/about" class="button">もっと知る</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        わみめも
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.73.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://wamisnet.github.io/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.31224010c6a183ff135369ca15ae671b02a26296a0507f2b674d4ecd086b11da.js" integrity="sha256-MSJAEMahg/8TU2nKFa5nGwKiYpagUH8rZ01OzQhrEdo="></script>
+    <script src="https://wamisnet.github.io/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62256925-7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

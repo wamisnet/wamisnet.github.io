@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>obniz on わみめも</title>
+    <link>https://wamisnet.github.io/categories/obniz/</link>
+    <description>Recent content in obniz on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/categories/obniz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Suicaで開けられるスマートロックを作ってみた</title>
+      <link>https://wamisnet.github.io/blog/2020-01-03-smartlock/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2020-01-03-smartlock/</guid>
+      <description>こんにちは！わみです。
+私が住むギークハウス新宿がついにアップデートされました。
+少し前にはスマートロックを壊したこともありましたが… (その時の記事 :スマートロックが壊れたのでobnizを使ってハックしてみた)
+Sesameをもう一台新たに購入して、ついに完成をしました！
+なにをしたのか 音が鳴るよ！
+@fukubaka0825 さんと @retoruto_carry さんと作った鍵システムがついに動いたああああ！ pic.twitter.com/uQZ44INF93
+&amp;mdash; わみ@NefryとかFlutter本とか (@wamisnet) January 1, 2020  登録されていないSuicaの場合はエラー音を、登録されたSuicaの場合は効果音の後、obnizからBLE経由でSesameをコントロールします。
+早いときだとタッチして、すぐに鍵が開くのでめちゃくちゃ便利です。
+きっかけ スマートロックが壊れたのでobnizを使ってハックしてみた
+上記の記事でも書いているのですが、7月の開発合宿で作りかけのまま止まっていたスマートロックの制御をしたいと思っていて、ただSesame API経由だと鍵が開くまで時間がかかりすぎる。
+その解決で前回、私はハードウエアのハックをしたわけですが、安定動作を担保するのはなかなかめんどくさいので結局本番反映はしませんでした。
+今回は安定稼働はSesameを信用し、BLEで制御をするように変更してこっちのスマートロック制御が壊れても問題ないようにしました。
+技術構成 今回はギークハウス新宿に住む3人の力を合わせて作りました。 メインの担当箇所はこんな感じです。
+@fukubaka0825 : Suica認証、Sesame開錠指示　（記事 : Raspberry pi とGoとMackerelでシェアハウスの運用しやすい鍵システムを作る  ） @retoruto_carry : Suica登録用Webページ（記事 : 【おうちハック】開発合宿で3人でシェアハウスの鍵管理システムを作った【チーム開発】） @wamisnet : Sesame開錠デバイス作成、ハードウエア（記事 : 本記事）
+全体構成はすこし大きめですが、次の画像の通りです。
+せっかくなので私の担当箇所について深堀していきます。
+Sesameハック https://qiita.com/odetarou/items/9628d66d4d94290b5f2d
+上記の方の手順を参考に設定値を取得します。
+AndroidのRoot化だったり、しれっとやってますが普通に一日がかりかかるようなやつでいろいろ私も初めてでしたが、頑張ってSesameのBLEキーを取得します。 Xposedモジュールつくるのも個人的にはハマったり…
+取得できれば、ほぼほぼ完成です。
+上記の記事だと、Macで接続していますがMacを持っていないもしくはバージョンが違うとうまく動かなかったです。（これだから…
+めんどくさいなぁ…そんなことを思っていたら、そういえばobnizもnobleライブラリ出していたなと…
+https://qiita.com/wicket/items/16622097b8e6b5758d80
+これに書かれているように、nobleを呼び出しているところを変更しました。 一応、全体のコードをGithubに上げておきましたのでぜひ。
+https://github.com/wamisnet/obniz_sesame_noble
+obniz 今回みたいなnobleで動かしたいときに、パソコンを置いておくみたいなことはなかなか難しい…
+そんなときにはobniz!!
+6000円ぐらいでNode.jsで動かせるデバイスをゲットできます。
+プログラム const crypto = require(&amp;#39;crypto&amp;#39;); const Peripheral = require(&amp;#34;obniz-noble/lib/peripheral&amp;#34;); const noble = require(&amp;#34;obniz-noble&amp;#34;)(&amp;#34;OBNIZ_ID_&amp;#34;); const events = require(&amp;#39;events&amp;#39;); const os = require(&amp;#39;os&amp;#39;); const log4js = require(&amp;#39;log4js&amp;#39;); const logger = log4js.</description>
+    </item>
+    
+    <item>
+      <title>obniz で BLEを使ってEddystoneを出してみた</title>
+      <link>https://wamisnet.github.io/blog/2019-12-14-obniz_eddystone/</link>
+      <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-12-14-obniz_eddystone/</guid>
+      <description>こんにちは、最近obnizの中の人になったわみです。
+obniz Board 1Yが明日には発売ですね！いろいろと作ったのでぜひ触ってみてください。
+今回はそんなこと関係なくBLEで遊んでいこうとおもいます。
+Eddystoneとは Googleが2015年頃に発表した、BLEを使ったビーコンやURLの配信をするための規格。
+詳しい説明は、次のようなサイトにお任せするとして、なにがいいのかというとURLを手軽に配布できるところが非常によいです。
+https://dev.classmethod.jp/smartphone/eddystone/
+obnizがJavaScriptで動かせるのでWebエンジニアでも触れるようなデバイスで、URLを手軽に配布できるのはWebエンジニア的に導線を一つ増やすことができるので非常に良いと思います。
+プログラム &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt; &amp;lt;script src=&amp;quot;https://obniz.io/js/jquery-3.2.1.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/obniz@3.0.0/obniz.js&amp;quot; crossorigin=&amp;quot;anonymous&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css&amp;quot; /&amp;gt; &amp;lt;style&amp;gt; body { margin: 2em ; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;obniz-debug&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;H1&amp;gt;Obniz Eddystone&amp;lt;/H1&amp;gt; &amp;lt;form name=&amp;quot;form_url&amp;quot;&amp;gt; &amp;lt;p&amp;gt; &amp;lt;label&amp;gt;URL &amp;lt;input class=&amp;quot;uk-textarea&amp;quot; name=&amp;quot;url&amp;quot; type=&amp;quot;text&amp;quot; value=&amp;quot;https://obniz.io/&amp;quot; size=&amp;quot;100&amp;quot; required/&amp;gt; &amp;lt;/label&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;input class=&amp;quot;uk-button uk-button-default&amp;quot; type=&amp;quot;button&amp;quot; value=&amp;quot;send&amp;quot; id=&amp;quot;sendurl&amp;quot;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;p id=&amp;quot;obniz_url&amp;quot;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;script&amp;gt; var obniz = new Obniz(&amp;quot;OBNIZ_ID&amp;quot;); obniz.</description>
+    </item>
+    
+    <item>
+      <title>obnizのサーバレスイベントでのはまりポイント＆Tips</title>
+      <link>https://wamisnet.github.io/blog/2019-11-27-obniz_serverless/</link>
+      <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-11-27-obniz_serverless/</guid>
+      <description>obnizを使っているとサーバレスイベントを活用するタイミングがあると思います。
+特に12月発売予定のobniz board 1Yではスリープが使えるようになるのでサーバレスイベントを使うと他になにも用意せずにセンシングするようなIoTのサービスをつくれます。
+https://blog.obniz.io/ja/news/obniz-board-1y-2/
+今回は私がサーバレスイベントを作るにあたってはまったポイントやTipsをまとめます。
+サーバレスイベントとは 公式ドキュメント：https://obniz.io/ja/doc/obniz_cloud/about_event
+ obnizを使うには外部にobnizを使うためのプログラムが必要ですが、obnizクラウドのイベント機能を使えばサーバーレスでプログラムを動作させられます。
+  obniz Eventはあらかじめ設定したトリガーが発生したときに登録しておいたプログラムを自動的にクラウド上で実行するサービスです。 これによりあなたは自分でプログラムを動かして無くてもトリガーとプログラムだけ設定しておくことで、何かが起きた時にクラウド内で自動的に処理を行えます。
+ 上記公式から引用しましたが私なりの言葉でまとめると、サーバを用意しなくても各自で作成したプログラムを、後述するトリガーをきっかけに実行してくるツールといった感じでしょうか？
+トリガー  Webhook（APIが生成される） 決められたある時間(11:11など) 決められた時間の間隔(1時間毎など) obnizがオンラインになったら obnizのボタンが押されたら  現在5つのトリガーがあります。 指定されたobnizIDで指定されたトリガーがあったときに、各自のプログラムが実行されます。
+制約事項 11/27現在
+ 実行できる時間は30秒以内、それ以上は終了される 1日に実行可能な回数は120回  すこし制約はありますが例えばセンサーの値を取得するプログラムであれば12分に1回はデータを貯められます。
+はまりポイント APIを使用したとき 次のようにAPIを使用するときエラーが発生することがあります。
+await fetch(&amp;#39;https://maker.ifttt.com/trigger/obniz_temp/with/key/&amp;#39;, { method: &amp;#39;POST&amp;#39;, mode: &amp;#34;no-cors&amp;#34;, body: formData }).then(()=&amp;gt;console.log(&amp;#34;success&amp;#34;)).catch((error) =&amp;gt; console.log(error)); このときにAPIの呼出し後にawait obniz.wait(1000)をいれるとエラーが発生しなくなります。
+Tips 絶対にスリープさせる センサーの値読み取りなど予期しないところでプログラムが停止してしまうなど可能性があります。
+電池稼働しているデバイスではこの問題はクリティカルなので、サーバレスイベントが終了する前にスリープをするようにします。
+（obniz board 1Yでのみ使用可能です。）
+//Timeout 25s let tid = setTimeout(()=&amp;gt;{ let dt = new Date(); dt.setMinutes(Math.floor(dt.getMinutes()/10)*10+10,0,0); obniz.</description>
+    </item>
+    
+    <item>
+      <title>スマートロックが壊れたのでobnizを使ってハックしてみた</title>
+      <link>https://wamisnet.github.io/blog/2019-08-27_smartlock/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-08-27_smartlock/</guid>
+      <description>こんにちは、わみです！
+ギークハウス新宿では住民の入れ替わりの季節で住民減です！ こういうハック的な事に興味がある人いたら私のTwitterにメッセージしてくれると！
+なにをしたのか 壊れてしまったスマートロックからモータの制御や現在のポジションを取得するために制御を乗っ取り、obnizから指示を出すプログラムを作ってみました。
+obnizでsesameをハックしてみた！ pic.twitter.com/kdtwpJw26x
+&amp;mdash; わみ@NefryとかFlutter本とか (@wamisnet) August 27, 2019  Sesameを導入した話：https://speakerdeck.com/wamisnet/sieahausunisumatorotukuwotuketemita
+きっかけ 開発合宿にてSuicaで鍵を開けるシステムを作ったときにSesameのAPIを使ったのですが待ち時間が少々長く、実際に使うときにストレスになりそうだと思いました。
+10秒ぐらいかかってましたね… かかるタイミングだと気持ち1分ぐらい待ったような…
+玄関で待ちぼうけ(´・ω・｀)
+API以外は不満がなかったのでSesameをハックできないかと思い、Sesameを開けてみることにしました。
+BLEモジュールやモータドライバーなどが取り付けられていることを確認したのち元に戻そうとしたとき…
+「じゅっ」というどこかが壊れた音がしました
+慌てて、電源を外しましたが時すでに遅し
+もう動かなくなってしまいました
+普通ならあきらめて新しいのをもう一つ買うところですが、せっかくだから思いっきりハックすることにしました！
+技術構成 上の図のように連携しています。
+ ハードウエア(Sesame) obniz (おすすめ記事) Node.js（別のサービスと連携するのでAPIを作成）  obnizを使うと何がいいのかというとわざわざハードウエアのコードを別に書かなくてもよくて、今回であればAPIとして使うためのNode.js一つだけでハードウエアの制御ができるところですね！
+せっかくなのでちょっとづつ深堀りしていきましょう。
+ハードウエア obnizにモータドライバーついているので回路はすごくシンプルでモータとソレノイドを制御する部分+鍵のポジションを取得するためのアナログ入力をそれぞれ繋いでいます。
+（はんだ付けが汚いのはご愛嬌）
+obniz モータとソレノイドの制御、アナログ入力を変換してくれます。 これがあるから、Node.jsで書くことができます。
+Node.js とりあえずで作ったコードなのでダメな部分ありますが、ご容赦を！
+https://github.com/wamisnet/key_controller/
+鍵を開ける処理（APIでリクエストがあるとき）
+ 現在位置を取得して、平均値をとる 現在位置から目的の角度に近い方にモータを回す ソレノイドを出す 目的の角度になるまで現在位置を取得し続ける 目標角度になったら、モータを止める ソレノイドを引く  といった処理を行ってます。
+まとめ こんな感じでハックしてみました。
+動画で分かるようにボタンを押してすぐ動作するようになって目標は達成しました！！
+obnizだったので回路もコードもシンプルに作ることができて便利だなと思いました。
+ただ玄関で使用するときには、無線LANが不安定過ぎてobnizに向いていなかったので実際に使うことはできなかったです( ；∀；)
+とっても悲しい
+3日ぐらいずっとこれやってたので買った方が安かった気がする…
+とはいえ自分で作れるのは楽しいですね！
+今回バラしてしまいましたがSesame優秀なので、使うときはぜひ！
+AkerunやQrio、Sesameと使ってきましたが、さらにいいデバイスがあれば教えてもらえるとうれしいです！
+ここまで読んでくれた方へ ここまで読んでくださりありがとうございます。
+いいねやコメント、SNSでの共有等をしてくださると、今後の励みになります。よろしくお願いします。
+良かったらTwitterもフォローしてね</description>
+    </item>
+    
+    <item>
+      <title>obniz OSをESP32(NefryBT)に入れて動かそう！</title>
+      <link>https://wamisnet.github.io/blog/2019-08-20-obniz_install_nefry/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-08-20-obniz_install_nefry/</guid>
+      <description>こんにちは！わみです！ 今日は先日リリースされたobnizOSを使い始めてみたので、どんな感じなのかも合わせて書いていこうと思います。
+そもそも「obniz」ってなに？って方は「arduinoとは全く違う、IoTツールobnizのしくみ」をご覧ください。
+なにができるのか NefryでobnizOS動いた！！ pic.twitter.com/YAbw8ggR5B
+&amp;mdash; わみ@NefryとかFlutter本とか (@wamisnet) August 17, 2019  HTML+JSでハードウエア(ESP32(NefryBT))を動かしてみた動画です！
+JavaScriptやpythonでハードウエアを動かすことができる「obniz」ただ、6000円近くするので少々お値段がします…
+その技術をお店で1500円ぐらいで売っているESP32のボードにインストールができるのが先日発表された「obnizOS」なのです！
+私が作っている「Nefry BT」というデバイスにインストールしてみたのでその方法とどんな感じなのかをまとめてみようと思います。 ESP32を搭載したボードであれば、同じような手順で行うことができるのでぜひお試しください。
+（ESP32-picoについては未サポート（具体例：M5stickC））
+インストール ライセンスを購入する https://obniz.io/ja/console 上記ページから「デバイス」を選択し、「obniz OSのライセンスを新規購入」をクリックします。
+ライセンスの選択画面で「Hobby」ライセンス、「新規にobnizIDを発行」、個数を選び、「金額を確認」をクリックします。 カードの情報がない場合、このタイミングで入力します。
+確認画面が表示されて、問題なければ「ライセンスを購入」を押します。
+購入が完了すると、「DeviceKey」をダウンロードできます。 これはインストール時に使用するので必ずダウンロードしておいてください。 （画像取り忘れたので公式ドキュメントの画像…）
+前提条件 obniz cliを使用しますのでpython3.4以上のものをインストールしておいてください。
+py -3 -Vでバージョン情報を確認することができます。 インストールされていれば、上記のコマンドをターミナルで実行すると次のようにバージョンが表示されます。
+表示されない場合は、インストールされているか確認したり、pathが通っているか確認してください。
+obniz_cliをインストール obniz_cliとは、簡単にobnizOSをインストールするために作られたアプリになります。それを使って、セットアップを行っていきたいと思います。
+ターミナルでpip3 install obniz_cliと入力します。
+インストールが開始されるはずです！「Successfully installed obniz_cli」とでれば大丈夫です。
+Nefry BTにobnizOSをインストール Nefry BTをPCと接続し、obnizOSをインストールしていこうと思います。
+ターミナルでobniz_cli flashosと入力します。
+ESP32を接続しているポートを選択画面がでるので、ポートの横に書かれている数字（今回なら0）を入力します。ここで選んだポート名（今回ならCOM5）を覚えておいてください。
+入力するとインストールが開始されます。
+しばらくするとインストールが完了します。
+次に無線LANの設定とライセンスの適用を行っていきます。
+ターミナルでpython -m serial.tools.miniterm ポート名 115200と入力します。
+ポート名は先ほど選んだものに変更しておいてください。
+指示に従って、次の項目を入力します。
+ DeviceKey:購入時に取得したファイルに書かれた文字列 SSID:接続したい無線LANのもの PASS:接続したい無線LANのもの 固定IP or DHCP:基本的にはDHCPの「0」を選択する  固定IPの場合 下記の項目を設定する  IP Address Subnetmask Default gateway      設定された項目が正しければ、最後に「Online」と表示されます。</description>
+    </item>
+    
+  </channel>
+</rss>

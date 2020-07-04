@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+<title>UniboとIFTTTで簡単にIoTしてみる - わみめも</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.73.0" /><meta itemprop="name" content="UniboとIFTTTで簡単にIoTしてみる">
+<meta itemprop="description" content="UniboとIFTTTで簡単にIoTしてみる">
+<meta itemprop="datePublished" content="2017-05-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-05-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="46">
+
+
+
+<meta itemprop="keywords" content="Unibo," /><meta property="og:title" content="UniboとIFTTTで簡単にIoTしてみる" />
+<meta property="og:description" content="UniboとIFTTTで簡単にIoTしてみる" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wamisnet.github.io/blog/2017-05-11-unibo_ifttt/" />
+<meta property="article:published_time" content="2017-05-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-05-11T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UniboとIFTTTで簡単にIoTしてみる"/>
+<meta name="twitter:description" content="UniboとIFTTTで簡単にIoTしてみる"/>
+<meta name="twitter:site" content="@wamisnet"/>
+<link rel="stylesheet" href="https://wamisnet.github.io/css/bundle.min.c77e84bad6f641316aaae9404d7b57577c00ac1217fc1a1e8a9d30300328d836.css" integrity="sha256-x36Eutb2QTFqqulATXtXV3wArBIX/Boeip0wMAMo2DY="><link rel="stylesheet" href="https://wamisnet.github.io/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://wamisnet.github.io/" class="nav">
+        
+          わみめも
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/" class="nav link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/about/" class="nav link"><i class='fa fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/itemized/" class="nav link"><i class='fa fa-list'></i> Product</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/business/" class="nav link"><i class='fa fa-id-card'></i> Small Business</a>
+          
+        
+      
+      
+      
+    </menu>
+    
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="https://wamisnet.github.io/"><img src="https://wamisnet.github.io/img/main/wami.jpg" class="circle" width="100" alt="wami" /></a>
+  <header>
+    <h1>わみめも</h1>
+  </header>
+  <main>
+    <p>私が作ったソフトウエアやハードウエアのはなしをします</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="https://wamisnet.github.io/blog/2017-05-11-unibo_ifttt/">UniboとIFTTTで簡単にIoTしてみる</a></h2>
+    
+    
+      <p>UniboとIFTTTで簡単にIoTしてみる</p>
+    
+  </div>
+  <div class="meta">
+    <time class="published" datetime="2017-05-11 00:00:00 &#43;0000 UTC">
+      2017-05-11
+    </time>
+    <span class="author">wami</span>
+    
+  </div>
+</header>
+
+    <section id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Unibo%e3%81%a8IFTTT%e3%81%a7%e7%b0%a1%e5%8d%98%e3%81%abIoT%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b&amp;url=https%3a%2f%2fwamisnet.github.io%2fblog%2f2017-05-11-unibo_ifttt%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwamisnet.github.io%2fblog%2f2017-05-11-unibo_ifttt%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e3%81%93%e3%81%ae%e6%8a%95%e7%a8%bf%e3%82%92%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%99%e3%82%8b wami&amp;body=https%3a%2f%2fwamisnet.github.io%2fblog%2f2017-05-11-unibo_ifttt%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </section>
+    
+
+    <div class="content">
+      <p>IFTTTは（イフト）TwitterやFacebook、SlackなどのWebサービス同士を組み合わせて簡単に連携できるサービスです。</p>
+<p>今回はそのIFTTTとUniboをつなげてUniboからSlackやTwitterなどにメッセージを送信する仕組みについて説明します。</p>
+<p>#全体図</p>
+<pre><code>[{&quot;id&quot;:&quot;1a22c6251f.020e3a&quot;,&quot;type&quot;:&quot;tab&quot;,&quot;label&quot;:&quot;IFTTT&quot;},{&quot;id&quot;:&quot;1ad734c9dd.af1808&quot;,&quot;type&quot;:&quot;http request&quot;,&quot;z&quot;:&quot;1a22c6251f.020e3a&quot;,&quot;name&quot;:&quot;IFTTTにアクセス&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;ret&quot;:&quot;txt&quot;,&quot;url&quot;:&quot;&quot;,&quot;tls&quot;:&quot;&quot;,&quot;x&quot;:586,&quot;y&quot;:440,&quot;wires&quot;:[[&quot;1a70e6eb3f.c26754&quot;]]},{&quot;id&quot;:&quot;1ad02e9d78.efebc&quot;,&quot;type&quot;:&quot;speech&quot;,&quot;z&quot;:&quot;1a22c6251f.020e3a&quot;,&quot;word&quot;:&quot;&quot;,&quot;subtitle&quot;:&quot;&quot;,&quot;name&quot;:&quot;&quot;,&quot;edit&quot;:false,&quot;language&quot;:&quot;jp&quot;,&quot;voice&quot;:&quot;yuuto&quot;,&quot;version&quot;:1,&quot;x&quot;:987,&quot;y&quot;:440,&quot;wires&quot;:[[]]},{&quot;id&quot;:&quot;1a70e6eb3f.c26754&quot;,&quot;type&quot;:&quot;function&quot;,&quot;z&quot;:&quot;1a22c6251f.020e3a&quot;,&quot;name&quot;:&quot;発話のためにコピー&quot;,&quot;edit&quot;:&quot;&quot;,&quot;func&quot;:&quot;msg.word = msg.subtitle = msg.payload;\nreturn msg;&quot;,&quot;outputs&quot;:1,&quot;dummy&quot;:&quot;1&quot;,&quot;noerr&quot;:0,&quot;x&quot;:805,&quot;y&quot;:440,&quot;wires&quot;:[[&quot;1ad02e9d78.efebc&quot;]]},{&quot;id&quot;:&quot;1a8a30f02a.12783&quot;,&quot;type&quot;:&quot;inject&quot;,&quot;z&quot;:&quot;1a22c6251f.020e3a&quot;,&quot;name&quot;:&quot;&quot;,&quot;topic&quot;:&quot;&quot;,&quot;payload&quot;:&quot;&quot;,&quot;payloadType&quot;:&quot;date&quot;,&quot;repeat&quot;:&quot;&quot;,&quot;crontab&quot;:&quot;&quot;,&quot;once&quot;:false,&quot;x&quot;:390,&quot;y&quot;:440,&quot;wires&quot;:[[&quot;1ad734c9dd.af1808&quot;]]}]
+</code></pre><p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/f41038fa-81ab-0c66-4805-9c271720cbdc.png" alt=""></p>
+<p>#手順</p>
+<p>IFTTTの登録についてはこちらの記事をご覧ください。</p>
+<blockquote>
+<p><a href="https://liginc.co.jp/263899">Webサービス同士を連携できる「IFTTT」と自作IoTデバイスを繋いで生活を便利にしてみた</a></p>
+</blockquote>
+<p>登録ができたところで、実際に連携させてみようと思います。</p>
+<h2 id="iftttでシナリオを作成してみる">IFTTTでシナリオを作成してみる</h2>
+<p><a href="https://ifttt.com/create">IFTTT</a>でUniboとLineをつなげるレシピと呼ばれるシナリオを作成していきます。
+上のリンクをクリックして作成していきましょう。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/ec9d9bc7-10fe-c0f5-0603-be8d604772b5.png" alt=""></p>
+<p>まずはMakerWebhooksをトリガーにするため”make”と検索欄に入力します。
+MakerWebhooksがあればそれをクリックします。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/da5a796b-4902-65f9-2d7f-68ab931818e4.png" alt=""></p>
+<p>MakerWebhooksはEvent単位でトリガーがかかります。今回はEventNameに&quot;Unibo&quot;と入力し”Create trigger”をクリックし作成していきます。
+今入力したEventNameはあとでUniboに入力するのでSecretKeyと合わせて覚えておきましょう。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/2628f945-0b77-0b5a-4bf2-b67b6322ca49.png" alt=""></p>
+<p>次にトリガーが起こった時にしたい動作を選択します。
+IFTTTの検索欄でLineを検索し、連携させていきます。
+ちなみに、このときにTwitterやGmailなどを選択するとそれと連携させることが出来ます。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/edcb1b20-ba42-31a1-9d82-175120889cc4.png" alt=""></p>
+<p>Recipientと書かれた欄にメッセージを送るLineのグループを選択します。
+Messageと書かれた欄に送信するメッセージを入力を入力します。Value1、Value2などがありプログラムから値を渡すことができます。これを使えば温度センサや明るさセンサーの値をプログラムから渡しメッセージに組み込むことが可能です。
+オプションですが写真のURLさえあれば、Lineに写真を投稿することができます。</p>
+<p>Create actionをクリックしてメッセージを保存します。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/e3462842-5b7a-7af6-70ac-fc7da6f2b17b.png" alt=""></p>
+<p>最後にFinishを押し、作成を完了します。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/bc80a16c-47ae-85b5-2524-6a5a8f0b1589.png" alt=""></p>
+<p><a href="https://ifttt.com/maker_webhooks">こちらのリンク</a>をクリックしDocumentationのリンクをクリックします。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/5372deac-65bd-5c73-2208-49d5c9663bae.png" alt=""></p>
+<p>クリックするとこのような画面に移動します。</p>
+<p>このときに表示される赤枠のURLをUniboにコピーします。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/173e8435-3165-7601-3369-2759769cd2a1.png" alt=""></p>
+<h2 id="uniboの準備をする">Uniboの準備をする</h2>
+<p>Uniboのスキルクリエイターに移動し、全体図の章で見せたJSONの文字列をスキルクリエイターにインポートしてください。</p>
+<p>インポートが終わったら先ほどIFTTTで取得したURLを張り付けていきます。
+http request Nodeをクリックし、赤枠の入力欄に先ほどのURLを貼り付けていきます。この時にURL中央部にある<code>{event}</code>は先ほどIFTTTに登録したイベント名に変えておきましょう。
+記事の通りに作成している場合はUniboになります。</p>
+<p>入力できたら完了を押し作成を完了します。</p>
+<p>これでDeployを押し、タイムスタンプのボタンを押せばLineにメッセージが飛ぶような仕組みが完成しました！
+<img src="https://qiita-image-store.s3.amazonaws.com/0/97208/2e4f2f7e-cfc3-fbe8-8a6b-c204c726fc57.png" alt=""></p>
+<p>余談ですが、functionNodeでhttp request Nodeの応答をUniboでしゃべらすためにメッセージ内容をコピーする処理をいれることでレスポンスをしゃべらすことができるようになります。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/03bfdae6-5813-9d9f-35fa-7b6831d74a01.png" alt=""></p>
+
+    </div>
+    <footer>
+      <ul class="stats">
+  <li class="categories">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/unibo/">Unibo</a></li>
+        
+      
+    
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/unibo/">Unibo</a></li>
+        
+      
+    
+    </ul>
+  </li>
+</ul>
+
+    </footer>
+  </article>
+  
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wamisnet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  <div class="pagination">
+  
+    <a href="https://wamisnet.github.io/blog/2017-05-10-unibo_iothub/" class="button"><div class="previous"><div>UniboでAzure IoTHubと連携させてみる</div></div></a>
+  
+  
+    <a href="https://wamisnet.github.io/blog/2017-06-11-ssd1306-image/" class="button"><div class="next"><div>SSD1306で画像表示の簡易まとめ</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/firebase_login/">Firebase使ってログインできるようになったよ！</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/">NetlifyCMSから投稿テスト</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://wamisnet.github.io/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nefry/">nefry<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99/">説明資料<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/obniz/">obniz<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86/">リンク集<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp8266/">esp8266<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot/">iot<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/arduino/">arduino<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp32/">esp32<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/firebase/">firebase<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/flutter/">flutter<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/">作品<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E7%84%A1%E7%B7%9Alan/">無線lan<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azureiothub/">azureiothub<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp-idf/">esp-idf<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/">iot可視化ツールレビュー<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nodered/">nodered<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/unibo/">unibo<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/">スマートロック<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/">技術書典<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%9C%AC/">本<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azure/">azure<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/bg96/">bg96<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/cocoabit/">cocoabit<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/m5stickc/">m5stickc<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/monacoin/">monacoin<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/react/">react<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/serverless/">serverless<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/ssd1306/">ssd1306<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/">イベント<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/">ポートフォリオ<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/">勉強会<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%A8%98%E4%BA%8B/">記事<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/">退職エントリ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。</p>
+      <footer>
+        <a href="https://wamisnet.github.io/about" class="button">もっと知る</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        わみめも
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.73.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://wamisnet.github.io/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.31224010c6a183ff135369ca15ae671b02a26296a0507f2b674d4ecd086b11da.js" integrity="sha256-MSJAEMahg/8TU2nKFa5nGwKiYpagUH8rZ01OzQhrEdo="></script>
+    <script src="https://wamisnet.github.io/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62256925-7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

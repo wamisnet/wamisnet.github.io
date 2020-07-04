@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>serverless on わみめも</title>
+    <link>https://wamisnet.github.io/categories/serverless/</link>
+    <description>Recent content in serverless on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 27 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/categories/serverless/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>obnizのサーバレスイベントでのはまりポイント＆Tips</title>
+      <link>https://wamisnet.github.io/blog/2019-11-27-obniz_serverless/</link>
+      <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-11-27-obniz_serverless/</guid>
+      <description>obnizを使っているとサーバレスイベントを活用するタイミングがあると思います。
+特に12月発売予定のobniz board 1Yではスリープが使えるようになるのでサーバレスイベントを使うと他になにも用意せずにセンシングするようなIoTのサービスをつくれます。
+https://blog.obniz.io/ja/news/obniz-board-1y-2/
+今回は私がサーバレスイベントを作るにあたってはまったポイントやTipsをまとめます。
+サーバレスイベントとは 公式ドキュメント：https://obniz.io/ja/doc/obniz_cloud/about_event
+ obnizを使うには外部にobnizを使うためのプログラムが必要ですが、obnizクラウドのイベント機能を使えばサーバーレスでプログラムを動作させられます。
+  obniz Eventはあらかじめ設定したトリガーが発生したときに登録しておいたプログラムを自動的にクラウド上で実行するサービスです。 これによりあなたは自分でプログラムを動かして無くてもトリガーとプログラムだけ設定しておくことで、何かが起きた時にクラウド内で自動的に処理を行えます。
+ 上記公式から引用しましたが私なりの言葉でまとめると、サーバを用意しなくても各自で作成したプログラムを、後述するトリガーをきっかけに実行してくるツールといった感じでしょうか？
+トリガー  Webhook（APIが生成される） 決められたある時間(11:11など) 決められた時間の間隔(1時間毎など) obnizがオンラインになったら obnizのボタンが押されたら  現在5つのトリガーがあります。 指定されたobnizIDで指定されたトリガーがあったときに、各自のプログラムが実行されます。
+制約事項 11/27現在
+ 実行できる時間は30秒以内、それ以上は終了される 1日に実行可能な回数は120回  すこし制約はありますが例えばセンサーの値を取得するプログラムであれば12分に1回はデータを貯められます。
+はまりポイント APIを使用したとき 次のようにAPIを使用するときエラーが発生することがあります。
+await fetch(&amp;#39;https://maker.ifttt.com/trigger/obniz_temp/with/key/&amp;#39;, { method: &amp;#39;POST&amp;#39;, mode: &amp;#34;no-cors&amp;#34;, body: formData }).then(()=&amp;gt;console.log(&amp;#34;success&amp;#34;)).catch((error) =&amp;gt; console.log(error)); このときにAPIの呼出し後にawait obniz.wait(1000)をいれるとエラーが発生しなくなります。
+Tips 絶対にスリープさせる センサーの値読み取りなど予期しないところでプログラムが停止してしまうなど可能性があります。
+電池稼働しているデバイスではこの問題はクリティカルなので、サーバレスイベントが終了する前にスリープをするようにします。
+（obniz board 1Yでのみ使用可能です。）
+//Timeout 25s let tid = setTimeout(()=&amp;gt;{ let dt = new Date(); dt.setMinutes(Math.floor(dt.getMinutes()/10)*10+10,0,0); obniz.</description>
+    </item>
+    
+  </channel>
+</rss>

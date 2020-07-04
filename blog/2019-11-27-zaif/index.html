@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+<title>Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる - わみめも</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.73.0" /><meta itemprop="name" content="Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる">
+<meta itemprop="description" content="Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる">
+<meta itemprop="datePublished" content="2017-12-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-12-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1774">
+
+
+
+<meta itemprop="keywords" content="nodered,monacoin,作品," /><meta property="og:title" content="Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる" />
+<meta property="og:description" content="Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wamisnet.github.io/blog/2019-11-27-zaif/" />
+<meta property="article:published_time" content="2017-12-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-12-26T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる"/>
+<meta name="twitter:description" content="Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる"/>
+<meta name="twitter:site" content="@wamisnet"/>
+<link rel="stylesheet" href="https://wamisnet.github.io/css/bundle.min.c77e84bad6f641316aaae9404d7b57577c00ac1217fc1a1e8a9d30300328d836.css" integrity="sha256-x36Eutb2QTFqqulATXtXV3wArBIX/Boeip0wMAMo2DY="><link rel="stylesheet" href="https://wamisnet.github.io/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://wamisnet.github.io/" class="nav">
+        
+          わみめも
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/" class="nav link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/about/" class="nav link"><i class='fa fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/itemized/" class="nav link"><i class='fa fa-list'></i> Product</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/business/" class="nav link"><i class='fa fa-id-card'></i> Small Business</a>
+          
+        
+      
+      
+      
+    </menu>
+    
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="https://wamisnet.github.io/"><img src="https://wamisnet.github.io/img/main/wami.jpg" class="circle" width="100" alt="wami" /></a>
+  <header>
+    <h1>わみめも</h1>
+  </header>
+  <main>
+    <p>私が作ったソフトウエアやハードウエアのはなしをします</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="https://wamisnet.github.io/blog/2019-11-27-zaif/">Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる</a></h2>
+    
+    
+      <p>Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる</p>
+    
+  </div>
+  <div class="meta">
+    <time class="published" datetime="2017-12-26 00:00:00 &#43;0000 UTC">
+      2017-12-26
+    </time>
+    <span class="author">wami</span>
+    
+  </div>
+</header>
+
+    <section id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Zaif%20Payment%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6%e3%83%93%e3%83%83%e3%83%88%e3%82%b3%e3%82%a4%e3%83%b3%ef%bc%86%e3%83%a2%e3%83%8a%e3%82%b3%e3%82%a4%e3%83%b3%e4%bb%ae%e6%83%b3%e9%80%9a%e8%b2%a8%e6%b1%ba%e6%b8%88%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e3%82%92%e3%81%a4%e3%81%8f%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b&amp;url=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-11-27-zaif%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-11-27-zaif%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e3%81%93%e3%81%ae%e6%8a%95%e7%a8%bf%e3%82%92%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%99%e3%82%8b wami&amp;body=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-11-27-zaif%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </section>
+    
+
+    <div class="content">
+      <p>最近、仮想通貨の話題を聞かない日はないようになってだいぶ浸透してきたんだなと思います。</p>
+<p>悪い面が騒がれているような気がしますが、エンジニアとしては触ってみると面白い分野なのではないかなと思っています。
+そんな仮想通貨を実際に決済システムとしてビックカメラや秋葉原の一部店舗などで取り扱われてきています、これはちょっと気になる。</p>
+<p>そんなことを思っていたら、ちょうどいい感じにZaif Paymentを見つけましたので使ってみました！！(個人利用できていい感じのサービスがあればそれでもいいかもですけどね)</p>
+<p>**<a href="http://cloud.nefry.studio:1880/nefrysetting/coin">完成版はこちら！</a>**気に入ったら何円か投げ銭してくれてもいいんですよ？</p>
+<blockquote>
+<p>2017/12/30 決済情報の表示に対応！！</p>
+</blockquote>
+<h1 id="zaif-paymentとは">Zaif Paymentとは</h1>
+<p>取引所のZaifが行っている仮想通貨決済サービスです。</p>
+<p><a href="https://zaif.jp/payment">公式サイトはこちら</a></p>
+<p><img src="../../img/2017/zaif/124_b.png" alt=""></p>
+<p>特徴</p>
+<ul>
+<li><strong>手数料無料</strong></li>
+<li>モナコインに対応している</li>
+<li>日本円で受け取ることができる</li>
+<li>仮想通貨のまま受け取ることができる</li>
+</ul>
+<p>このサービスはAPIで使って扱うことができます。</p>
+<p>今回は簡単に実装するためにAPI＋Node-Redで決済システムを作ってみようと思います。</p>
+<h1 id="決済システムをつくってみる">決済システムをつくってみる</h1>
+<p>それではNode-Redでさくっと作ってみようと思います。</p>
+<h2 id="環境">環境</h2>
+<ul>
+<li>IBM Cloud ライトアカウントなどのNode-Red環境(私はAWSにMode-Redの環境を作ってて試しています)</li>
+<li>Zaifアカウント　(本人確認済み)</li>
+</ul>
+<blockquote>
+<p><a href="https://qiita.com/KenichiSekine/items/249d2ff691b6565fb127">IBM Cloud (aka Bluemix) ライト・アカウント作成手順</a></p>
+</blockquote>
+<h2 id="サンプルコード">サンプルコード</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;f6f414ca.057578&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http request&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;method&#34;</span>:<span style="color:#e6db74">&#34;POST&#34;</span>,<span style="color:#f92672">&#34;ret&#34;</span>:<span style="color:#e6db74">&#34;obj&#34;</span>,<span style="color:#f92672">&#34;url&#34;</span>:<span style="color:#e6db74">&#34;https://api.zaif.jp/ecapi&#34;</span>,<span style="color:#f92672">&#34;tls&#34;</span>:<span style="color:#e6db74">&#34;e55e7d60.78615&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">568</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">168</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;68603af5.adebf4&#34;</span>,<span style="color:#e6db74">&#34;1670bdc2.8675b2&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;d408e881.31ac48&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;inject&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Test&#34;</span>,<span style="color:#f92672">&#34;topic&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;payload&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;payloadType&#34;</span>:<span style="color:#e6db74">&#34;date&#34;</span>,<span style="color:#f92672">&#34;repeat&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;crontab&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;once&#34;</span>:<span style="color:#66d9ef">false</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">108</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">88</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;1c02b6e3.fc9989&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;942f2d66.612c7&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;function&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;APIKey設定&#34;</span>,<span style="color:#f92672">&#34;func&#34;</span>:<span style="color:#e6db74">&#34;msg.key = \&#34;\&#34;;\nmsg.secret = \&#34;\&#34;;\nmsg.currency = msg.payload.basecoin;\nmsg.jpy = msg.coin = msg.payload.coin;\nif(msg.currency == \&#34;mona\&#34;){\n    msg.build_pay = true;\n}    \nif(msg.currency == \&#34;btc\&#34;){\n    //msg.build = true;\n}\nreturn msg;&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#f92672">&#34;noerr&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">408</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">88</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;7be80c8f.e09434&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;c0675801.ef7898&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;function&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;RequestMessage&#34;</span>,<span style="color:#f92672">&#34;func&#34;</span>:<span style="color:#e6db74">&#34;msg.header = \&#34;content-type:application/x-www-form-urlencoded\&#34;;\nmsg.payload = \&#34;method=createInvoice&amp;key=\&#34; + msg.key + \&#34;&amp;md5secret=\&#34; + msg.secret + \&#34;&amp;nonce=\&#34; + Date.now()*0.00000001 + \&#34;&amp;currency=\&#34; + msg.currency + \&#34;&amp;amount=\&#34; + msg.coin;\nif(msg.build != null)msg.payload += msg.build;\nreturn msg;&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#f92672">&#34;noerr&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">1208</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">88</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;f6f414ca.057578&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;612df29b.99377c&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http in&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;url&#34;</span>:<span style="color:#e6db74">&#34;/mona&#34;</span>,<span style="color:#f92672">&#34;method&#34;</span>:<span style="color:#e6db74">&#34;post&#34;</span>,<span style="color:#f92672">&#34;swaggerDoc&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">148</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">148</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;7ac4a796.09e858&#34;</span>,<span style="color:#e6db74">&#34;942f2d66.612c7&#34;</span>,<span style="color:#e6db74">&#34;65921b1d.60fac4&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;6797947a.87c71c&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http response&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">1068</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">168</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;52204357.90c9ac&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;template&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;HTML&#34;</span>,<span style="color:#f92672">&#34;field&#34;</span>:<span style="color:#e6db74">&#34;payload&#34;</span>,<span style="color:#f92672">&#34;fieldType&#34;</span>:<span style="color:#e6db74">&#34;msg&#34;</span>,<span style="color:#f92672">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;html&#34;</span>,<span style="color:#f92672">&#34;syntax&#34;</span>:<span style="color:#e6db74">&#34;mustache&#34;</span>,<span style="color:#f92672">&#34;template&#34;</span>:<span style="color:#e6db74">&#34;&lt;!DOCTYPE html&gt;\n&lt;html lang=\&#34;jp\&#34;&gt;\n&lt;head&gt;\n    &lt;meta charset=\&#34;UTF-8\&#34;&gt;\n    &lt;title&gt;Monacoin &amp; Bitcoin Payment Service&lt;/title&gt;\n    &lt;link href=&#39;https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;\n    &lt;link rel=\&#34;stylesheet\&#34; href=\&#34;https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css\&#34;&gt;\n\n    &lt;link rel=\&#34;stylesheet\&#34; href=\&#34;/coinstyle.css\&#34;&gt;\n\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;div class=\&#34;form\&#34;&gt;\n\n        &lt;h1&gt;Monacoin &amp; Bitcoin Payment Service&lt;/h1&gt;\n\n        &lt;img src=\&#34;http://chart.apis.google.com/chart?chs=450x450&amp;cht=qr&amp;chl={{payload.return.BIP21}}\&#34; alt=\&#34;Payment QRコード\&#34; id=\&#34;qrcode\&#34;&gt;\n\n       &lt;h1&gt;{{paycoin}}&lt;/h1&gt;\n       &lt;h1 id=\&#34;timeout\&#34;&gt;TimeOut : {{time}}&lt;/h1&gt;\n       &lt;h1 id=\&#34;state\&#34;&gt;State : new&lt;/h1&gt;\n       &lt;h1&gt;&lt;a href=\&#34;/coin\&#34;&gt;Back&lt;/a&gt;&lt;/h1&gt;\n       \n    &lt;/div&gt;\n    &lt;script src=\&#34;https://code.jquery.com/jquery-3.2.1.min.js\&#34;&gt;&lt;/script&gt;\n\n    &lt;script type=\&#34;text/javascript\&#34; src=\&#34;/jquery.periodicalupdater.js\&#34;&gt;&lt;/script&gt;\n    &lt;script type=\&#34;text/javascript\&#34;&gt;\n    $(function(){\n        $.PeriodicalUpdater(&#39;./servicestate&#39;,{\n          method: &#39;post&#39;,\n          data: {id: \&#34;{{id}}\&#34;},\n          minTimeout: 3000,\n          multiplier:1,\n          maxCalls: 0,\n          type: &#39;html&#39;\n        },\n\n        function(data,success, xhr, handle){\n          $(\&#34;#state\&#34;).text(\&#34;State : \&#34;+data);\n          if(data==\&#34;paid\&#34; || data==\&#34;confirmed\&#34; || data==\&#34;complete\&#34; || data==\&#34;expired\&#34; || data==\&#34;invalid\&#34; || data==\&#34;canceled\&#34;){\n              $(\&#34;#qrcode\&#34;).hide();\n              $(\&#34;#timeout\&#34;).hide();\n              if(data!=\&#34;paid\&#34;){\n                  handle.stop();\n              }\n          }\n        });\n    });\n    &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">928</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">168</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;6797947a.87c71c&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;7ac4a796.09e858&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;debug&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;active&#34;</span>:<span style="color:#66d9ef">true</span>,<span style="color:#f92672">&#34;console&#34;</span>:<span style="color:#e6db74">&#34;false&#34;</span>,<span style="color:#f92672">&#34;complete&#34;</span>:<span style="color:#e6db74">&#34;true&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">348</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">148</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;7e2af953.636f58&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http in&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;coinトップページ&#34;</span>,<span style="color:#f92672">&#34;url&#34;</span>:<span style="color:#e6db74">&#34;/coin&#34;</span>,<span style="color:#f92672">&#34;method&#34;</span>:<span style="color:#e6db74">&#34;get&#34;</span>,<span style="color:#f92672">&#34;swaggerDoc&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">118</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">308</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;6b1e1cde.f6a924&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;7ae2c906.83f288&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http response&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">528</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">308</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;6b1e1cde.f6a924&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;template&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;HTML&#34;</span>,<span style="color:#f92672">&#34;field&#34;</span>:<span style="color:#e6db74">&#34;payload&#34;</span>,<span style="color:#f92672">&#34;fieldType&#34;</span>:<span style="color:#e6db74">&#34;msg&#34;</span>,<span style="color:#f92672">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;handlebars&#34;</span>,<span style="color:#f92672">&#34;syntax&#34;</span>:<span style="color:#e6db74">&#34;plain&#34;</span>,<span style="color:#f92672">&#34;template&#34;</span>:<span style="color:#e6db74">&#34;&lt;!DOCTYPE html&gt;\n&lt;html lang=\&#34;jp\&#34;&gt;\n&lt;head&gt;\n    &lt;meta charset=\&#34;UTF-8\&#34;&gt;\n    &lt;title&gt;Monacoin &amp; Bitcoin Payment Service&lt;/title&gt;\n    &lt;link href=&#39;https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;\n    &lt;link rel=\&#34;stylesheet\&#34; href=\&#34;https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css\&#34;&gt;\n\n    &lt;link rel=\&#34;stylesheet\&#34; href=\&#34;/coinstyle.css\&#34;&gt;\n\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;div class=\&#34;form\&#34;&gt;\n\n        &lt;h1&gt;Monacoin &amp; Bitcoin Payment Service&lt;/h1&gt;\n\n        &lt;form action=\&#34;/mona\&#34; method=\&#34;post\&#34; name=&#39;mainForm&#39;&gt;\n            &lt;ul class=\&#34;tab-group\&#34;&gt;\n                &lt;li class=\&#34;tab active\&#34;&gt;&lt;a href=\&#34;mona\&#34;&gt;MonaCoin&lt;/a&gt;&lt;/li&gt;\n                &lt;li class=\&#34;tab\&#34;&gt;&lt;a href=\&#34;btc\&#34;&gt;BitCoin&lt;/a&gt;&lt;/li&gt;\n            &lt;/ul&gt;\n            &lt;input type=\&#34;radio\&#34; name=\&#34;basecoin\&#34; value=\&#34;mona\&#34; checked=\&#34;checked\&#34;&gt;\n            &lt;input type=\&#34;radio\&#34; name=\&#34;basecoin\&#34; value=\&#34;btc\&#34;&gt;\n            &lt;div class=\&#34;field-wrap\&#34;&gt;\n                &lt;label&gt;\n                    JPY\n                &lt;/label&gt;\n                &lt;input type=\&#34;number\&#34; name=\&#34;coin\&#34; required autocomplete=\&#34;off\&#34; /&gt;\n            &lt;/div&gt;\n            &lt;input type=\&#34;submit\&#34; class=\&#34;button button-block\&#34; value=\&#34;Pay\&#34;&gt;\n\n        &lt;/form&gt;\n\n    &lt;/div&gt;\n\n    &lt;script src=&#39;http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js&#39;&gt;&lt;/script&gt;\n\n    &lt;script type=\&#34;text/javascript\&#34;&gt;\n        $(&#39;.form&#39;).find(&#39;input, textarea&#39;).on(&#39;keyup blur focus&#39;, function (e) {\n            var $this = $(this),\n                label = $this.prev(&#39;label&#39;);\n\n            if (e.type === &#39;keyup&#39;) {\n                if ($this.val() === &#39;&#39;) {\n                    label.removeClass(&#39;active highlight&#39;);\n                } else {\n                    label.addClass(&#39;active highlight&#39;);\n                }\n            } else if (e.type === &#39;blur&#39;) {\n                if ($this.val() === &#39;&#39;) {\n                    label.removeClass(&#39;active highlight&#39;);\n                } else {\n                    label.removeClass(&#39;highlight&#39;);\n                }\n            } else if (e.type === &#39;focus&#39;) {\n\n                if ($this.val() === &#39;&#39;) {\n                    label.removeClass(&#39;highlight&#39;);\n                }\n                else if ($this.val() !== &#39;&#39;) {\n                    label.addClass(&#39;highlight&#39;);\n                }\n            }\n\n        });\n\n        $(&#39;.tab a&#39;).on(&#39;click&#39;, function (e) {\n\n            e.preventDefault();\n\n            $(this).parent().addClass(&#39;active&#39;);\n            $(this).parent().siblings().removeClass(&#39;active&#39;);\n\n            target = $(this).attr(&#39;href&#39;);\n            document.forms.mainForm.basecoin.value = target;\n\n            $(&#39;.tab-content &gt; div&#39;).not(target).hide();\n\n            $(target).fadeIn(600);\n\n        });\n    &lt;/script&gt;\n\n&lt;/body&gt;\n&lt;/html&gt;\n&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">388</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">308</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;7ae2c906.83f288&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;b56f1f7e.cc701&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http in&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;url&#34;</span>:<span style="color:#e6db74">&#34;/coinstyle.css&#34;</span>,<span style="color:#f92672">&#34;method&#34;</span>:<span style="color:#e6db74">&#34;get&#34;</span>,<span style="color:#f92672">&#34;swaggerDoc&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">168</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">368</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;4f4b57f8.ac6858&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;4f4b57f8.ac6858&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;template&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;CSS&#34;</span>,<span style="color:#f92672">&#34;field&#34;</span>:<span style="color:#e6db74">&#34;payload&#34;</span>,<span style="color:#f92672">&#34;fieldType&#34;</span>:<span style="color:#e6db74">&#34;msg&#34;</span>,<span style="color:#f92672">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;css&#34;</span>,<span style="color:#f92672">&#34;syntax&#34;</span>:<span style="color:#e6db74">&#34;plain&#34;</span>,<span style="color:#f92672">&#34;template&#34;</span>:<span style="color:#e6db74">&#34;*, *:before, *:after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n\nhtml {\n  overflow-y: scroll;\n}\n\nbody {\n  background: #c1bdba;\n  font-family: &#39;Titillium Web&#39;, sans-serif;\n}\n\na {\n  text-decoration: none;\n  color: #1ab188;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\na:hover {\n  color: #179b77;\n}\n\n.form {\n  background: rgba(19, 35, 47, 0.9);\n  padding: 40px;\n  max-width: 600px;\n  margin: 40px auto;\n  border-radius: 4px;\n  -webkit-box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);\n          box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);\n}\n\n.tab-group {\n  list-style: none;\n  padding: 0;\n  margin: 0 0 40px 0;\n}\n.tab-group:after {\n  content: \&#34;\&#34;;\n  display: table;\n  clear: both;\n}\n.tab-group li a {\n  display: block;\n  text-decoration: none;\n  padding: 15px;\n  background: rgba(160, 179, 176, 0.25);\n  color: #a0b3b0;\n  font-size: 20px;\n  float: left;\n  width: 50%;\n  text-align: center;\n  cursor: pointer;\n  -webkit-transition: .5s ease;\n  transition: .5s ease;\n}\n.tab-group li a:hover {\n  background: #179b77;\n  color: #ffffff;\n}\n.tab-group .active a {\n  background: #1ab188;\n  color: #ffffff;\n}\n\n.tab-content &gt; div:last-child {\n  display: none;\n}\n\nh1 {\n  text-align: center;\n  color: #ffffff;\n  font-weight: 300;\n  margin: 0 0 40px;\n}\n\nlabel {\n  position: absolute;\n  -webkit-transform: translateY(6px);\n          transform: translateY(6px);\n  left: 13px;\n  color: rgba(255, 255, 255, 0.5);\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  -webkit-backface-visibility: hidden;\n  pointer-events: none;\n  font-size: 22px;\n}\nlabel .req {\n  margin: 2px;\n  color: #1ab188;\n}\n\nlabel.active {\n  -webkit-transform: translateY(50px);\n          transform: translateY(50px);\n  left: 2px;\n  font-size: 14px;\n}\nlabel.active .req {\n  opacity: 0;\n}\n\nlabel.highlight {\n  color: #ffffff;\n}\n\ninput, textarea {\n  font-size: 22px;\n  display: block;\n  width: 100%;\n  height: 100%;\n  padding: 5px 10px;\n  background: none;\n  background-image: none;\n  border: 1px solid #a0b3b0;\n  color: #ffffff;\n  border-radius: 0;\n  -webkit-transition: border-color .25s ease, -webkit-box-shadow .25s ease;\n  transition: border-color .25s ease, -webkit-box-shadow .25s ease;\n  transition: border-color .25s ease, box-shadow .25s ease;\n  transition: border-color .25s ease, box-shadow .25s ease, -webkit-box-shadow .25s ease;\n}\ninput:focus, textarea:focus {\n  outline: 0;\n  border-color: #1ab188;\n}\n\ntextarea {\n  border: 2px solid #a0b3b0;\n  resize: vertical;\n}\n\n.field-wrap {\n  position: relative;\n  margin-bottom: 40px;\n}\n\n\n.button {\n  border: 0;\n  outline: none;\n  border-radius: 0;\n  padding: 15px 0;\n  font-size: 2rem;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: .1em;\n  background: #1ab188;\n  color: #ffffff;\n  -webkit-transition: all 0.5s ease;\n  transition: all 0.5s ease;\n  -webkit-appearance: none;\n}\n.button:hover, .button:focus {\n  background: #179b77;\n}\n\n.button-block {\n  display: block;\n  width: 100%;\n}\n\n#qrcode{\n display: block;\n margin-left: auto;\n margin-right: auto;\n margin-bottom:30px;\n}&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">388</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">368</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;34959b26.2c0034&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;34959b26.2c0034&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http response&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">529</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">369</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;68603af5.adebf4&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;function&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;表示データ&#34;</span>,<span style="color:#f92672">&#34;func&#34;</span>:<span style="color:#e6db74">&#34;msg.paycoin = \&#34;JPY :\&#34;+msg.jpy + \&#34; \&#34; + msg.currency + \&#34; : \&#34;;\nif(msg.currency == \&#34;mona\&#34;){\n    msg.paycoin += msg.payload.return.mona;\n}else{\n    msg.paycoin += msg.payload.return.btc;\n}\nvar date = new Date( msg.payload.return.expired*1000 + 32400000 );\nmsg.time = date.getFullYear() +\&#34;年\&#34;+(date.getMonth()+1)+\&#34;月\&#34;;\nmsg.time += date.getDate()+\&#34;日 \&#34;+date.getHours()+\&#34;:\&#34;+date.getMinutes()+\&#34;:\&#34;+date.getSeconds();\nmsg.id = msg.payload.return.invoiceId;\nreturn msg;&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#f92672">&#34;noerr&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">768</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">168</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;52204357.90c9ac&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;1670bdc2.8675b2&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;debug&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;active&#34;</span>:<span style="color:#66d9ef">true</span>,<span style="color:#f92672">&#34;console&#34;</span>:<span style="color:#e6db74">&#34;false&#34;</span>,<span style="color:#f92672">&#34;complete&#34;</span>:<span style="color:#e6db74">&#34;true&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">748</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">208</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;1c02b6e3.fc9989&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;function&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;TestData&#34;</span>,<span style="color:#f92672">&#34;func&#34;</span>:<span style="color:#e6db74">&#34;msg.payload.basecoin = \&#34;mona\&#34;;\nmsg.payload.coin  = 200;\nreturn msg;&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#f92672">&#34;noerr&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">238</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">88</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;942f2d66.612c7&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;7be80c8f.e09434&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;switch&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;property&#34;</span>:<span style="color:#e6db74">&#34;build_pay&#34;</span>,<span style="color:#f92672">&#34;propertyType&#34;</span>:<span style="color:#e6db74">&#34;msg&#34;</span>,<span style="color:#f92672">&#34;rules&#34;</span>:[{<span style="color:#f92672">&#34;t&#34;</span>:<span style="color:#e6db74">&#34;true&#34;</span>},{<span style="color:#f92672">&#34;t&#34;</span>:<span style="color:#e6db74">&#34;else&#34;</span>}],<span style="color:#f92672">&#34;checkall&#34;</span>:<span style="color:#e6db74">&#34;true&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">2</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">548</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">88</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;ee685e0d.38462&#34;</span>],[<span style="color:#e6db74">&#34;c0675801.ef7898&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;8335e3b4.14fd&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http request&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;現在の値段を取得&#34;</span>,<span style="color:#f92672">&#34;method&#34;</span>:<span style="color:#e6db74">&#34;GET&#34;</span>,<span style="color:#f92672">&#34;ret&#34;</span>:<span style="color:#e6db74">&#34;obj&#34;</span>,<span style="color:#f92672">&#34;url&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;tls&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">848</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">68</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;e792eaff.59b358&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;ee685e0d.38462&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;function&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;URL生成&#34;</span>,<span style="color:#f92672">&#34;func&#34;</span>:<span style="color:#e6db74">&#34;msg.url = \&#34;https://api.zaif.jp/api/1/last_price/\&#34; + msg.currency + \&#34;_jpy\&#34;;\nreturn msg;&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#f92672">&#34;noerr&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">678</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">68</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;8335e3b4.14fd&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;e792eaff.59b358&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;function&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;データ整形&#34;</span>,<span style="color:#f92672">&#34;func&#34;</span>:<span style="color:#e6db74">&#34;msg.coin = (msg.coin/(msg.payload.last_price-80)).toFixed(8);\nmsg.build = \&#34;&amp;billingCurrency=\&#34;+msg.currency;\nreturn msg;&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#f92672">&#34;noerr&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">1028</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">68</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;c0675801.ef7898&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;db289250.93edf&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;template&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;HTML&#34;</span>,<span style="color:#f92672">&#34;field&#34;</span>:<span style="color:#e6db74">&#34;payload&#34;</span>,<span style="color:#f92672">&#34;fieldType&#34;</span>:<span style="color:#e6db74">&#34;msg&#34;</span>,<span style="color:#f92672">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;html&#34;</span>,<span style="color:#f92672">&#34;syntax&#34;</span>:<span style="color:#e6db74">&#34;mustache&#34;</span>,<span style="color:#f92672">&#34;template&#34;</span>:<span style="color:#e6db74">&#34;&lt;!DOCTYPE html&gt;\n&lt;html lang=\&#34;jp\&#34;&gt;\n&lt;head&gt;\n    &lt;meta charset=\&#34;UTF-8\&#34;&gt;\n    &lt;title&gt;Monacoin &amp; Bitcoin Payment Service&lt;/title&gt;\n    &lt;link href=&#39;https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;\n    &lt;link rel=\&#34;stylesheet\&#34; href=\&#34;https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css\&#34;&gt;\n\n    &lt;link rel=\&#34;stylesheet\&#34; href=\&#34;/coinstyle.css\&#34;&gt;\n\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;div class=\&#34;form\&#34;&gt;\n\n        &lt;h1&gt;Monacoin &amp; Bitcoin Payment Service&lt;/h1&gt;\n        &lt;h1&gt;Error&lt;/h1&gt;\n        &lt;h1&gt;&lt;a href=\&#34;/coin\&#34;&gt;Back&lt;/a&gt;&lt;/h1&gt;\n       \n    &lt;/div&gt;\n\n&lt;/body&gt;\n&lt;/html&gt;\n&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">928</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">228</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;6797947a.87c71c&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;65921b1d.60fac4&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;delay&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;pauseType&#34;</span>:<span style="color:#e6db74">&#34;delay&#34;</span>,<span style="color:#f92672">&#34;timeout&#34;</span>:<span style="color:#e6db74">&#34;3&#34;</span>,<span style="color:#f92672">&#34;timeoutUnits&#34;</span>:<span style="color:#e6db74">&#34;seconds&#34;</span>,<span style="color:#f92672">&#34;rate&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;nbRateUnits&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;rateUnits&#34;</span>:<span style="color:#e6db74">&#34;second&#34;</span>,<span style="color:#f92672">&#34;randomFirst&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;randomLast&#34;</span>:<span style="color:#e6db74">&#34;5&#34;</span>,<span style="color:#f92672">&#34;randomUnits&#34;</span>:<span style="color:#e6db74">&#34;seconds&#34;</span>,<span style="color:#f92672">&#34;drop&#34;</span>:<span style="color:#66d9ef">false</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">358</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">228</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;db289250.93edf&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;7d6c6ff5.f636b&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http in&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;url&#34;</span>:<span style="color:#e6db74">&#34;/servicestate&#34;</span>,<span style="color:#f92672">&#34;method&#34;</span>:<span style="color:#e6db74">&#34;post&#34;</span>,<span style="color:#f92672">&#34;swaggerDoc&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">168</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">502</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;b4bb6e91.8a5ca&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;3cc4abbc.9d2fe4&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http response&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">1248</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">542</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;5b72d5ce.e9b7ec&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http in&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;url&#34;</span>:<span style="color:#e6db74">&#34;/jquery.periodicalupdater.js&#34;</span>,<span style="color:#f92672">&#34;method&#34;</span>:<span style="color:#e6db74">&#34;get&#34;</span>,<span style="color:#f92672">&#34;swaggerDoc&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">208</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">428</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;b0d39f29.b1e11&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;b0d39f29.b1e11&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;template&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;JS&#34;</span>,<span style="color:#f92672">&#34;field&#34;</span>:<span style="color:#e6db74">&#34;payload&#34;</span>,<span style="color:#f92672">&#34;fieldType&#34;</span>:<span style="color:#e6db74">&#34;msg&#34;</span>,<span style="color:#f92672">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;css&#34;</span>,<span style="color:#f92672">&#34;syntax&#34;</span>:<span style="color:#e6db74">&#34;plain&#34;</span>,<span style="color:#f92672">&#34;template&#34;</span>:<span style="color:#e6db74">&#34;/**\n* PeriodicalUpdater - jQuery plugin for timed, decaying ajax calls\n*\n* http://www.360innovate.co.uk/blog/2009/03/periodicalupdater-for-jquery/\n* http://enfranchisedmind.com/blog/posts/jquery-periodicalupdater-ajax-polling/\n*\n* Copyright (c) 2009-2012 by the following:\n*  Frank White (http://customcode.info)\n*  Robert Fischer (http://smokejumperit.com)\n*  360innovate (http://www.360innovate.co.uk)\n*\n* Dual licensed under the MIT and GPL licenses:\n* http://www.opensource.org/licenses/mit-license.php\n* http://www.gnu.org/licenses/gpl.html\n*\n*/\n\n(function ($) {\n\t\t// The free version\n\t\t$.PeriodicalUpdater = function(url, options, callback){\n\t\t\tif(!options) options = {};\n\t\t\tvar settings = jQuery.extend(true, {\n\t\t\t\t\turl: url,\t\t\t\t\t// URL of ajax request\n\t\t\t\t\tcache: false,\t\t\t// By default, don&#39;t allow caching\n\t\t\t\t\tmethod: &#39;GET&#39;,\t\t// method; get or post\n\t\t\t\t\tdata: &#39;&#39;,\t\t\t\t\t// array of values to be passed to the page - e.g. {name: \&#34;John\&#34;, greeting: \&#34;hello\&#34;}\n\t\t\t\t\tminTimeout: 1000, // starting value for the timeout in milliseconds\n\t\t\t\t\tmaxTimeout:64000, // maximum length of time between requests\n\t\t\t\t\tmultiplier: 2,\t\t// if set to 2, timerInterval will double each time the response hasn&#39;t changed (up to maxTimeout)\n\t\t\t\t\tmaxCalls: 0,\t\t\t// maximum number of calls. 0 = no limit.\n          maxCallsCallback: null, // The callback to execute when we reach our max number of calls\n\t\t\t\t\tautoStop: 0,\t\t\t// automatically stop requests after this many returns of the same data. 0 = disabled\n\t\t\t\t\tautoStopCallback: null, // The callback to execute when we autoStop\n\t\t\t\t\tcookie: false,\t\t// whether (and how) to store a cookie\n\t\t\t\t\trunatonce: false, // Whether to fire initially or wait\n\t\t\t\t\tverbose: 0\t\t\t\t// The level to be logging at: 0 = none; 1 = some; 2 = all\n\t\t\t\t}, options);\n\n\t\t\tvar pu_log = function (msg, lvl) {\n\t\t\t\tlvl = lvl || 1;\n\t\t\t\tif(settings.verbose &gt;= lvl) {\n\t\t\t\t\ttry {\n\t\t\t\t\t\t\tconsole.log(msg);\n\t\t\t\t\t} catch (err) { }\n\t\t\t\t}\n\t\t\t};\n\n\n\t\t\t\t// set some initial values, then begin\n\t\t\t\tvar timer = null;\n\t\t\t\tvar remoteData = null;\n\t\t\t\tvar prevData = null;\n\t\t\t\tvar timerInterval = settings.minTimeout;\n\t\t\t\tvar maxCalls = settings.maxCalls;\n\t\t\t\tvar autoStop = settings.autoStop;\n\t\t\t\tvar calls = 0;\n\t\t\t\tvar noChange = 0;\n\t\t\t\tvar originalMaxCalls = maxCalls;\n\n\t\t\t\t// Function to reset the timer to a given time\n\t\t\t\tvar reset_timer = function (interval) {\n\t\t\t\t\t$(function() { // Ensure we&#39;re live\n\t\t\t\t\t\tif (timer !== null) {\n\t\t\t\t\t\t\t\tclearTimeout(timer);\n\t\t\t\t\t\t}\n\t\t\t\t\t\ttimerInterval = interval;\n\t\t\t\t\t\tpu_log(&#39;resetting timer to &#39; + timerInterval + &#39;.&#39;, 2);\n\t\t\t\t\t\tif(settings.cookie &amp;&amp; $.cookie) {\n\t\t\t\t\t\t\t$.cookie(settings.cookie.name, timerInterval, settings.cookie);\n\t\t\t\t\t\t}\n\t\t\t\t\t\ttimer = setTimeout(getdata, timerInterval);\n\t\t\t\t\t});\n\t\t\t\t};\n\n\t\t\t\t// Function to boost the timer\n\t\t\t\tvar boostPeriod = function () {\n\t\t\t\t\tif (settings.multiplier &gt; 1) {\n\t\t\t\t\t\tvar before = timerInterval;\n\t\t\t\t\t\ttimerInterval = timerInterval * settings.multiplier;\n\n\t\t\t\t\t\tif (timerInterval &gt; settings.maxTimeout) {\n\t\t\t\t\t\t\t\ttimerInterval = settings.maxTimeout;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tpu_log(&#39;adjusting timer from &#39; + before + &#39; to &#39; + timerInterval + &#39;.&#39;, 2);\n\t\t\t\t\t}\n\n\t\t\t\t\treset_timer(timerInterval);\n\t\t\t\t};\n\n\t\t\t\t// Handle the cookie config\n\t\t\t\tif(settings.cookie) {\n\t\t\t\t\tif(typeof(settings.cookie) == &#39;boolean&#39;) {\n\t\t\t\t\t\tsettings.cookie = {\n\t\t\t\t\t\t\tname: url\n\t\t\t\t\t\t};\n\t\t\t\t\t} else if(typeof(settings.cookie) != &#39;object&#39;) {\n\t\t\t\t\t\tsettings.cookie = {\n\t\t\t\t\t\t\tname: settings.cookie.toString()\n\t\t\t\t\t\t};\n\t\t\t\t\t}\n\t\t\t\t\tif(!settings.cookie.name) {\n\t\t\t\t\t\tsettings.cookie.name = url;\n\t\t\t\t\t}\n\n\t\t\t\t\tif(!$.cookie) {\n\t\t\t\t\t\t$.getScript(\&#34;//rawgit.com/carhartl/jquery-cookie/master/jquery.cookie.js\&#34;, function() {\n\t\t\t\t\t\t\tpu_log(\&#34;Loaded the cookies handler script\&#34;, 2);\n\t\t\t\t\t\t\tif($.cookie(settings.cookie.name)) {\n\t\t\t\t\t\t\t\tpu_log(\&#34;Not runatonce and have cookie value\&#34;, 2);\n\t\t\t\t\t\t\t\treset_timer($.cookie(settings.cookie.name));\n\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\tpu_log(\&#34;Not runatonce, but no cookie value\&#34;, 2);\n\t\t\t\t\t\t\t\treset_timer(timerInterval);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}).fail(function() {\n\t\t\t\t\t\t\tpu_log(\&#34;Could not load the cookies handler script\&#34;, 1);\n\t\t\t\t\t\t\treset_timer(timerInterval);\n\t\t\t\t\t\t});\n\t\t\t\t\t} else {\n\t\t\t\t\t\tif($.cookie(settings.cookie.name)) {\n\t\t\t\t\t\t\treset_timer($.cookie(settings.cookie.name));\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\t// Construct the settings for $.ajax based on settings\n\t\t\t\tvar ajaxSettings = jQuery.extend(true, {}, settings);\n\t\t\t\tif (settings.type &amp;&amp; !ajaxSettings.dataType) { ajaxSettings.dataType = settings.type; }\n\t\t\t\tif (settings.sendData) { ajaxSettings.data = settings.sendData; }\n\t\t\t\tajaxSettings.type = settings.method; // &#39;type&#39; is used internally for jQuery.  Who knew?\n\t\t\t\tajaxSettings.ifModified = true;\n\n\n\t\t\t\t// Create the function to get data\n\t\t\t\tvar getdata = function(force) {\n\t\t\t\t\t\tvar toSend = jQuery.extend(true, {}, ajaxSettings); // jQuery screws with what you pass in\n\t\t\t\t\t\tif (typeof (options.data) == &#39;function&#39;) {\n\t\t\t\t\t\t\ttoSend.data = options.data();\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif (toSend.data) {\n\t\t\t\t\t\t\t// Handle transformations (only strings and objects are understood)\n\t\t\t\t\t\t\tif (typeof (toSend.data) == \&#34;number\&#34;) {\n\t\t\t\t\t\t\t\ttoSend.data = toSend.data.toString();\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\n\t\t\t\t\t\tif (force || maxCalls === 0) {\n\t\t\t\t\t\t\t\tpu_log(\&#34;Sending data\&#34;);\n\t\t\t\t\t\t\t\t$(function() { $.ajax(toSend); });\n\t\t\t\t\t\t} else if (maxCalls &gt; 0 &amp;&amp; calls &lt; maxCalls) {\n\t\t\t\t\t\t\t\tpu_log(\&#34;Sending data because we are at \&#34; + calls\t+ \&#34; of \&#34; + maxCalls + \&#34; calls\&#34;);\n\t\t\t\t\t\t\t\t$(function() { $.ajax(toSend); });\n\t\t\t\t\t\t\t\tcalls++;\n\t\t\t\t\t\t} else if(maxCalls == -1) {\n\t\t\t\t\t\t\tpu_log(\&#34;NOT sending data: stop has been called\&#34;, 1);\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\tpu_log(\&#34;NOT sending data: maximum number of calls reached - \&#34; + maxCalls, 1);\n              if (settings.maxCallsCallback) { settings.maxCallsCallback(); }\n\t\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\tvar handle = {\n\t\t\t\t\t\tboostTimer: function(mag) {\n\t\t\t\t\t\t\tif(mag &gt; 0 &amp;&amp; mag != 1) {\n\t\t\t\t\t\t\t\tpu_log(\&#34;Boosting timer by a factor of \&#34; + mag);\n\t\t\t\t\t\t\t\ttimerInterval = timerInterval * mag;\n\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\tpu_log(\&#34;Cannot boost timer by a factor of \&#34; + mag);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treset_timer(timerInterval);\n\t\t\t\t\t\t\treturn;\n\t\t\t\t\t\t},\n\t\t\t\t\t\trestart: function (newInterval) {\n\t\t\t\t\t\t\tpu_log(\&#34;Calling restart\&#34;);\n\t\t\t\t\t\t\tmaxCalls = originalMaxCalls;\n\t\t\t\t\t\t\tcalls = 0;\n\t\t\t\t\t\t\tnoChange = 0;\n\t\t\t\t\t\t\treset_timer(newInterval || timerInterval);\n\t\t\t\t\t\t\treturn;\n\t\t\t\t\t\t},\n\t\t\t\t\t\tsend: function() {\n\t\t\t\t\t\t\tpu_log(\&#34;Explicit call to send\&#34;);\n\t\t\t\t\t\t\tgetdata(true);\n\t\t\t\t\t\t\treturn;\n\t\t\t\t\t\t},\n\t\t\t\t\t\tstop: function () {\n\t\t\t\t\t\t\tpu_log(\&#34;Calling stop\&#34;);\n\t\t\t\t\t\t\tmaxCalls = -1;\n\t\t\t\t\t\t\tif(settings.cookie &amp;&amp; $.cookie) {\n\t\t\t\t\t\t\t\t$.cookie(settings.cookie.name, null, settings.cookie);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treturn;\n\t\t\t\t\t\t}\n\t\t\t\t};\n\n\t\t\t\t// Implement the tricky comparison logic\n\t\t\t\tajaxSettings.success = function (data) {\n\t\t\t\t\t\tpu_log(\&#34;Successful run! (In &#39;success&#39;)\&#34;, 2);\n\t\t\t\t\t\tremoteData = data;\n\t\t\t\t};\n\n\t\t\t\tajaxSettings.complete = function (xhr, success) {\n\t\t\t\t\t\t pu_log(\&#34;Status of call: \&#34; + success + \&#34; (In &#39;complete&#39;)\&#34;, 2);\n\t\t\t\t\t\tif (success == \&#34;success\&#34; || success == \&#34;notmodified\&#34;) {\n\t\t\t\t\t\t\t\tvar rawData = $.trim(xhr.responseText);\n\t\t\t\t\t\t\t\tif (prevData == rawData) {\n\t\t\t\t\t\t\t\t\t\tif (autoStop &gt; 0) {\n\t\t\t\t\t\t\t\t\t\t\t\tnoChange++;\n\t\t\t\t\t\t\t\t\t\t\t\tif (noChange == autoStop) {\n\t\t\t\t\t\t\t\t\t\t\t\t\t\thandle.stop();\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tif (settings.autoStopCallback) { settings.autoStopCallback(noChange); }\n\t\t\t\t\t\t\t\t\t\t\t\t\t\treturn;\n\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\tboostPeriod();\n\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\t\tnoChange = 0;\n\t\t\t\t\t\t\t\t\t\treset_timer(settings.minTimeout);\n\t\t\t\t\t\t\t\t\t\tprevData = rawData;\n\t\t\t\t\t\t\t\t\t\tif (settings.cookie) $.cookie(settings.cookie.name, prevData, settings.cookie);\n\t\t\t\t\t\t\t\t\t\tif (remoteData === null) { remoteData = rawData; }\n\t\t\t\t\t\t\t\t\t\t// jQuery 1.4+ $.ajax() automatically converts \&#34;data\&#34; into a JS Object for \&#34;type:json\&#34; requests now\n\t\t\t\t\t\t\t\t\t\t// For compatibility with 1.4+ and pre1.4 jQuery only try to parse actual strings, skip when remoteData is already an Object\n\t\t\t\t\t\t\t\t\t\tif ((ajaxSettings.dataType === &#39;json&#39;) &amp;&amp; (typeof (remoteData) === &#39;string&#39;) &amp;&amp; (success == \&#34;success\&#34;)) {\n\t\t\t\t\t\t\t\t\t\t\t\tremoteData = JSON.parse(remoteData);\n\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\tif (settings.success) { settings.success(remoteData, success, xhr, handle); }\n\t\t\t\t\t\t\t\t\t\tif (callback) { callback(remoteData, success, xhr, handle); }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif (settings.complete) { settings.complete(xhr, success); }\n\t\t\t\t\t\tremoteData = null;\n\t\t\t\t};\n\n\t\t\t\tajaxSettings.error = function (xhr, textStatus) {\n\t\t\t\t\tpu_log(\&#34;Error message: \&#34; + textStatus + \&#34; (In &#39;error&#39;)\&#34;, 2);\n\t\t\t\t\tif(textStatus != \&#34;notmodified\&#34;) {\n\t\t\t\t\t\tprevData = null;\n\t\t\t\t\t\tif(settings.cookie) $.cookie(settings.cookie.name, null, settings.cookie);\n\t\t\t\t\t\treset_timer(settings.minTimeout);\n\t\t\t\t\t}\n\t\t\t\t\tif(settings.error) { settings.error(xhr, textStatus); }\n\t\t\t\t};\n\n\t\t\t\t// Make the first call\n\t\t\t\tif (settings.runatonce) {\n\t\t\t\t\tpu_log(\&#34;Executing a call immediately\&#34;, 1);\n\t\t\t\t\tgetdata(true);\n\t\t\t\t} else if($.cookie &amp;&amp; settings.cookie &amp;&amp; $.cookie(settings.cookie.name)) {\n\t\t\t\t\t// Do nothing (already handled above)\n\t\t\t\t} else {\n\t\t\t\t\tpu_log(\&#34;Enqueing a the call for after \&#34; + timerInterval, 1);\n\t\t\t\t\treset_timer(timerInterval);\n\t\t\t\t}\n\n\t\t\t\treturn handle;\n\t\t};\n\n\t\t// The bound version\n\t\t$.fn.PeriodicalUpdater = function(url, options, callback) {\n\t\t\tvar me = this;\n\t\t\treturn $.PeriodicalUpdater(url, options, function() {\n\t\t\t\treturn callback.apply(me, arguments);\n\t\t\t});\n\t\t};\n})(jQuery);&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">468</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">428</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;c27a751.35faf88&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;c27a751.35faf88&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http response&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">608</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">428</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;b4bb6e91.8a5ca&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;switch&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;property&#34;</span>:<span style="color:#e6db74">&#34;payload.id&#34;</span>,<span style="color:#f92672">&#34;propertyType&#34;</span>:<span style="color:#e6db74">&#34;msg&#34;</span>,<span style="color:#f92672">&#34;rules&#34;</span>:[{<span style="color:#f92672">&#34;t&#34;</span>:<span style="color:#e6db74">&#34;nnull&#34;</span>},{<span style="color:#f92672">&#34;t&#34;</span>:<span style="color:#e6db74">&#34;else&#34;</span>}],<span style="color:#f92672">&#34;checkall&#34;</span>:<span style="color:#e6db74">&#34;true&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">2</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">408</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">502</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;f4590fbb.f1a05&#34;</span>],[<span style="color:#e6db74">&#34;4cf4374d.2cb008&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;4cf4374d.2cb008&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;function&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;error&#34;</span>,<span style="color:#f92672">&#34;func&#34;</span>:<span style="color:#e6db74">&#34;msg.payload = \&#34;Payment Error\&#34;;\nreturn msg;&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#f92672">&#34;noerr&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">1248</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">502</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;3cc4abbc.9d2fe4&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;f4590fbb.f1a05&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;function&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;APIKey設定&#34;</span>,<span style="color:#f92672">&#34;func&#34;</span>:<span style="color:#e6db74">&#34;msg.key = \&#34;\&#34;;\nmsg.secret = \&#34;\&#34;;\nmsg.id = msg.payload.id;\nreturn msg;&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#f92672">&#34;noerr&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">588</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">482</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;70d07c8e.c69374&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;70d07c8e.c69374&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;function&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;RequestMessage&#34;</span>,<span style="color:#f92672">&#34;func&#34;</span>:<span style="color:#e6db74">&#34;msg.header = \&#34;content-type:application/x-www-form-urlencoded\&#34;;\nmsg.payload = \&#34;method=getInvoice&amp;key=\&#34; + msg.key + \&#34;&amp;md5secret=\&#34; + msg.secret + \&#34;&amp;nonce=\&#34; + Date.now()*0.00000001 + \&#34;&amp;invoiceId=\&#34; + msg.id;\nreturn msg;&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#f92672">&#34;noerr&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">768</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">482</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;5980cdc0.a8b044&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;5980cdc0.a8b044&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;http request&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;method&#34;</span>:<span style="color:#e6db74">&#34;POST&#34;</span>,<span style="color:#f92672">&#34;ret&#34;</span>:<span style="color:#e6db74">&#34;obj&#34;</span>,<span style="color:#f92672">&#34;url&#34;</span>:<span style="color:#e6db74">&#34;https://api.zaif.jp/ecapi&#34;</span>,<span style="color:#f92672">&#34;tls&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">948</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">482</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;12eee5e5.e0da9a&#34;</span>,<span style="color:#e6db74">&#34;b0859b03.d9b5c8&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;12eee5e5.e0da9a&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;switch&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;property&#34;</span>:<span style="color:#e6db74">&#34;payload.success&#34;</span>,<span style="color:#f92672">&#34;propertyType&#34;</span>:<span style="color:#e6db74">&#34;msg&#34;</span>,<span style="color:#f92672">&#34;rules&#34;</span>:[{<span style="color:#f92672">&#34;t&#34;</span>:<span style="color:#e6db74">&#34;eq&#34;</span>,<span style="color:#f92672">&#34;v&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;vt&#34;</span>:<span style="color:#e6db74">&#34;str&#34;</span>},{<span style="color:#f92672">&#34;t&#34;</span>:<span style="color:#e6db74">&#34;eq&#34;</span>,<span style="color:#f92672">&#34;v&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>,<span style="color:#f92672">&#34;vt&#34;</span>:<span style="color:#e6db74">&#34;str&#34;</span>}],<span style="color:#f92672">&#34;checkall&#34;</span>:<span style="color:#e6db74">&#34;true&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">2</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">1128</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">482</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;430dc717.1624e8&#34;</span>],[<span style="color:#e6db74">&#34;4cf4374d.2cb008&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;430dc717.1624e8&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;function&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;success&#34;</span>,<span style="color:#f92672">&#34;func&#34;</span>:<span style="color:#e6db74">&#34;msg.payload = msg.payload.return.status;\nreturn msg;&#34;</span>,<span style="color:#f92672">&#34;outputs&#34;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#f92672">&#34;noerr&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">1258</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">462</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[[<span style="color:#e6db74">&#34;3cc4abbc.9d2fe4&#34;</span>]]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;b0859b03.d9b5c8&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;debug&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;c9e25c06.c8c0e&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;active&#34;</span>:<span style="color:#66d9ef">true</span>,<span style="color:#f92672">&#34;console&#34;</span>:<span style="color:#e6db74">&#34;false&#34;</span>,<span style="color:#f92672">&#34;complete&#34;</span>:<span style="color:#e6db74">&#34;true&#34;</span>,<span style="color:#f92672">&#34;x&#34;</span>:<span style="color:#ae81ff">1088</span>,<span style="color:#f92672">&#34;y&#34;</span>:<span style="color:#ae81ff">542</span>,<span style="color:#f92672">&#34;wires&#34;</span>:[]},{<span style="color:#f92672">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;e55e7d60.78615&#34;</span>,<span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;tls-config&#34;</span>,<span style="color:#f92672">&#34;z&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;cert&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;ca&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#f92672">&#34;verifyservercert&#34;</span>:<span style="color:#66d9ef">true</span>}]
+</code></pre></div><h2 id="全体フロー">全体フロー</h2>
+<p><img src="../../img/2017/zaif/85_a.png" alt=""></p>
+<p>上のフローがロジックの部分になります。
+下の部分がHTMLの表示部分となります。</p>
+<h2 id="設定をしよう">設定をしよう</h2>
+<p>ZaifのAPIを取得してから、Node-Redの設定をします。</p>
+<h3 id="zaifのapiを取得する">ZaifのAPIを取得する</h3>
+<p><img src="../../img/2017/zaif/137_c.png" alt=""></p>
+<p>アカウント設定から各種サービス→開発者向けAPIからAPIを発行します。</p>
+<p><strong>permsはなにも選択しない</strong>で大丈夫です。</p>
+<ul>
+<li>keyはそのままで大丈夫です。</li>
+<li>secretをmd5で変換します。</li>
+</ul>
+<blockquote>
+<p>md5変換は<a href="http://phpspot.net/php/pg%EF%BC%AD%EF%BC%A4%EF%BC%95%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E8%A8%88%E7%AE%97%E3%83%84%E3%83%BC%E3%83%AB.html">こちら</a>
+上のサイトに先ほどのsecretKeyを入力し、変換させます。</p>
+</blockquote>
+<p>keyとsecretをNode-Redに設定します。</p>
+<h3 id="node-redの設定をする">Node-Redの設定をする</h3>
+<p><img src="../../img/2017/zaif/206_9.png" alt=""></p>
+<p>このようにNode-Redが正常に起動したら、さきほどのサンプルコードを写真の手順で読み込ませます。
+無事に読み込ませられると上の全体フローと同じような画面になると思います。</p>
+<p><img src="../../img/2017/zaif/83_e.png" alt=""></p>
+<p>それでは実際に動かすためにAPIの設定を行います。
+APIKey設定のノードを選択し、必要な情報を設定します。</p>
+<p>msg.keyにzaifのkeyを入力します。
+msg.secretにmd5化したzaifのsecretを入力してください。</p>
+<p>msg.build_pay = true;をいれると仮想通貨のまま受け取るようにできます。</p>
+<p>今の写真のコードだと、モナコインのみモナコインで送金されるようになっています。
+必要な情報の入力が終わったら右上にあるデプロイボタンを押しておきましょう！</p>
+<p>これで準備は完了です！！</p>
+<h3 id="node-redの解説">Node-Redの解説</h3>
+<p>ついでにNode-Redのコードを紹介します。</p>
+<p><a href="http://techbureau-api-document.readthedocs.io/ja/latest/payment/2_individual/1_createInvoice.html">Zaif Payment</a>のAPIを見て仮想通貨→円で受け取るのは簡単にできるのですが、仮想通貨→仮想通貨でちょっと問題が発生しました。</p>
+<p>まずZaifのAPIを確認するとこのようになっています。</p>
+<blockquote>
+<p>amount	Yes	決済金額（日本円）。実際の請求対象金額。1円単位、カンマ無し</p>
+</blockquote>
+<p>仮想通貨で受け取る方法は先ほどのページの一番下にしれっと書かれています。</p>
+<blockquote>
+<p>Bitcoin建てまたはMonacoin建ての決済
+円建てではなく、Bitcoin建てまたはMonacoin建てでの決済を行うことができます。 createInvoiceのbillingCurrencyパラメータ（一覧にはないパラメータです）に”btc”または”mona”を指定して下さい。このときcurrencyパラメータも同じ暗号通貨を指定する必要があります。 返り値からrateは削除されることに注意してください。 BTCまたはMONAがそのまま決済事業者様のアカウントに精算されますので、決済手数料は完全にゼロ％になりますが、円換算を行う際の相場の変動リスクはそのまま決済事業者様が担うことになりますことにご注意ください。</p>
+</blockquote>
+<p>仮想通貨のまま受け取るようにすると本当であればAPIでamountに100円ビットコイン建てで指定した場合、0.000062btcとなるのが正しいと個人的に思うのですがZaifのAPIでは100btcの請求がされてしまいます。(このあたり本来の仕様がどちらなのか気になる)</p>
+<p>なのでmsg.build_pay = true;を入れた場合に限り今のzaifのレートを公開API取得してきて決済金額を計算するようにしています。</p>
+<p>そのフローは下の流れを見てみてください。</p>
+<p><img src="../../img/2017/zaif/360_1.png" alt=""></p>
+<p>つぎにAPIを叩くための内容を作成し、それを表示するようにします。
+表示データを作成する工程では、タイムアウトの時刻をHTMLで表示できるようにしたり、値段の表記を調整したりしています。</p>
+<p><img src="../../img/2017/zaif/206_9.png" alt=""></p>
+<p>応答がなかった時のために3秒後にエラーだと表示するようになっています。
+ちゃんとエラー管理するべきなのですが、とりあえずシンプルに作ってあります。</p>
+<h1 id="実際につかってみる">実際につかってみる</h1>
+<p>IBM cloudであればNode-Redを設定すると<code>https://【設定した名前】.mybluemix.net/red</code> というアドレスが生成されます。
+そのアドレスを少し編集して<code>/red</code>→<code>/coin</code>　と変更してみましょう。
+こんなアドレスになるはず　<code>https://【設定した名前】.mybluemix.net/coin</code>にアクセスするとこんなページが表示されるはずです。</p>
+<p><img src="../../img/2017/zaif/265_0.png" alt=""></p>
+<p><em>jsがうまく動かないとエラーが起こることがあるので注意</em></p>
+<p><img src="../../img/2017/zaif/246_b.png" alt=""></p>
+<p>ちゃんと動いていれば、ビットコインを選んだり、モナコインを選んだりすることができます。
+支払いたい方の通貨を選んだら送金したい金額を選択します。</p>
+<p>今回は100円で「pay」をクリックして支払ってみましょう。</p>
+<p><img src="../../img/2017/zaif/362_a.png" alt=""></p>
+<p>APIの設定がきちんとできている場合、QRコードが表示されます。
+タイムアウトの時間もあるのでそれ以内に支払うようにしてください。
+せっかくなのでこのQRコードをスマートフォンに見せて支払おうと思います。</p>
+<p><img src="../../img/2017/zaif/87_d.png" alt=""></p>
+<p>今回はAndroidにCoinomiという仮想通貨ウォレットをインストールして、そこから送金してみようと思います。</p>
+<p>インストール↓</p>
+<p><a href='https://play.google.com/store/apps/details?id=com.coinomi.wallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Google Play で手に入れよう'  width="300" src='https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png'/></a></p>
+<p>Zaifのアプリからでもできそうですが、試していません。
+<strong>試した方がいたらこちらにコメントしてもらえれば幸いです！
+あと他のアプリでも動いたというのも大歓迎です。</strong></p>
+<p>インストールして初期設定が終わったら、上のQRコードのロゴを選択してQRコードを読み込みモードにさせます。</p>
+<p><img src="../../img/2017/zaif/86_8.png" alt=""></p>
+<p>QRコードを読み込むモードになると画面が切り替わます。
+枠内にQRコードがはいるように読み込ませると次の画面に進みます。</p>
+<p><img src="../../img/2017/zaif/88_4.png" alt=""></p>
+<p>QRコードが読めるとQRコードに書かれているアドレスと金額が自動的に入力されます。
+地味にアプリ内のレートとzaifのレートが異なるのでちょっと金額差が出ますが、構わず送りましょう！
+初めに設定したパスワードを入力後送金されます。</p>
+<p><img src="../../img/2017/zaif/205_0.png" alt=""></p>
+<p>これで無事に仮想通貨を送ることができました！</p>
+<h2 id="決済情報表示対応版"><em>決済情報表示対応版</em></h2>
+<p><img src="../../img/2017/zaif/123_b.png" alt=""></p>
+<p>決済情報表示対応版では下の方ににStateという表示を追加しました。
+<code>State : new</code> はQRコードを生成した直後に表示され決済されるまで表示されます。</p>
+<p><img src="../../img/2017/zaif/132_9.png" alt=""></p>
+<p>上のアプリなどで決済が完了した場合、すぐに<code>State : paid</code>に切り替わり、QRコードの表示が削除され入金チェックが入ります。
+ちゃんと決済のトランザクションが承認されるとしたの表記になり、決済完了となります。</p>
+<p><img src="../../img/2017/zaif/235_5.png" alt=""></p>
+<p>この表示になるまで少々時間がかかります。ZaifのAPIを確認するとこのように書かれています。</p>
+<blockquote>
+<p>bitcoinで平均10分、monacoinで平均2分程度</p>
+</blockquote>
+<p>体感時間でもその程度になっているので大体その通りなのかなと思います。</p>
+<p><em>決済情報表示対応版ここまで</em></p>
+<p>念のためZaifの設定画面をみるとstatusが着金になっているのがわかります。
+大体翌日ぐらいには自分の手元に送られた仮想通貨をZaifからうけとることができます！</p>
+<h1 id="まとめ">まとめ</h1>
+<p>Node-Redをつかってなるべく簡単に仮想通貨決済システムを作ってみました。ぜひつかってみてください。</p>
+<p>ほんとは支払いが完了したのを受け取ってWeb画面で支払い完了表示までやりたかったのですが時間がなくて間に合いませんでした。
+もし試した方がいればそれを教えていただけるとうれしいです！</p>
+<p>個人的にはモナコイン押しなのでこういう形でもっと使えるところが増えたらいいなぁと思っています。</p>
+<p><strong><a href="http://cloud.nefry.studio:1880/nefrysetting/coin">気に入ったら投げ銭してくれてもいいんですよ？</a></strong></p>
+<p>ここまで読んでいただいてありがとうございました！！</p>
+<h1 id="追記">追記</h1>
+<h2 id="コールバックについて">コールバックについて</h2>
+<p>上の作例では決済完了時にコールバック処理が行われていません。(記事を早く公開したかった…(´・ω・｀))
+そのあたりの紹介を行います。</p>
+<p>Zaif PaymentのAPIをみると</p>
+<p><img src="../../img/2017/zaif/218_8.png" alt=""></p>
+<p>このあたりの設定をするとよさそうなのがわかります。</p>
+<blockquote>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;success&#34;</span>: <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;return&#34;</span>: {
+        <span style="color:#f92672">&#34;invoiceId&#34;</span>: <span style="color:#e6db74">&#34;d0e521f5-287a-4d24-95d2-ec83a00ce173&#34;</span>,
+        <span style="color:#f92672">&#34;invoiceUri&#34;</span>: <span style="color:#e6db74">&#34;https://zaif.jp/invoice/form/d0e521f5-287a-4d24-95d2-ec83a00ce173&#34;</span>,
+        <span style="color:#f92672">&#34;invoiceIframeUri&#34;</span>: <span style="color:#e6db74">&#34;https://zaif.jp/invoice/iframe/d0e521f5-287a-4d24-95d2-ec83a00ce173&#34;</span>,
+        <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#ae81ff">1434696670</span>,
+        <span style="color:#f92672">&#34;expired&#34;</span>: <span style="color:#ae81ff">1434698470</span>,
+        <span style="color:#f92672">&#34;amount&#34;</span>: <span style="color:#ae81ff">10000</span>,
+        <span style="color:#f92672">&#34;currency&#34;</span>: <span style="color:#e6db74">&#34;mona&#34;</span>,
+        <span style="color:#f92672">&#34;rate&#34;</span>: <span style="color:#e6db74">&#34;20.0000&#34;</span>,
+        <span style="color:#f92672">&#34;mona&#34;</span>: <span style="color:#e6db74">&#34;500.000000&#34;</span>,
+        <span style="color:#f92672">&#34;address&#34;</span>: <span style="color:#e6db74">&#34;M81ZgKgg16GCQ9a9dGzrtnSWma3dB15HDw&#34;</span>,
+        <span style="color:#f92672">&#34;BIP21&#34;</span>: <span style="color:#e6db74">&#34;monacoin:M81ZgKgg16GCQ9a9dGzrtnSWma3dB15HDw?amount=500.000000&#34;</span>,
+        <span style="color:#f92672">&#34;speed&#34;</span>: <span style="color:#e6db74">&#34;medium&#34;</span>,
+        <span style="color:#f92672">&#34;orderNumber&#34;</span>: <span style="color:#e6db74">&#34;&lt;the order number if you sent&gt;&#34;</span>
+    }
+}
+</code></pre></div><p>APIにも書いてありますが、こちらの入金フォームを開くとコールバックされるっぽいです。
+<code>&quot;invoiceUri&quot;: &quot;https://zaif.jp/invoice/form/d0e521f5-287a-4d24-95d2-ec83a00ce173&quot;,</code>
+このあたり早めに検証します。</p>
+<h2 id="決済情報表示について">決済情報表示について</h2>
+<p><img src="../../img/2017/zaif/361_5.png" alt=""></p>
+<p>決済情報を表示するためにコードを追加しました。</p>
+<p>ユーザが表示しているHTMLから３秒ごとにリクエストがかかり、決済状態をZaifのAPIを叩くような機能を追加しました。</p>
+<blockquote>
+<p><a href="http://techbureau-api-document.readthedocs.io/ja/latest/payment/2_individual/2_getInvoice.html">公式サイト getInvoice</a>
+叩いているAPI情報</p>
+</blockquote>
+<p>公式の決済ページも定期的に通信をしていたので同じような仕組みなのではないのかなと思います。</p>
+<p>APIからの情報で必要な情報のみ転送するようになっています。
+これで決済システムとしては最低限必要な機能が付いたのではないでしょうか？</p>
+
+    </div>
+    <footer>
+      <ul class="stats">
+  <li class="categories">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/nodered/">nodered</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/monacoin/">monacoin</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/%e4%bd%9c%e5%93%81/">作品</a></li>
+        
+      
+    
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/nodered/">nodered</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/monacoin/">monacoin</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/%e4%bd%9c%e5%93%81/">作品</a></li>
+        
+      
+    
+    </ul>
+  </li>
+</ul>
+
+    </footer>
+  </article>
+  
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wamisnet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  <div class="pagination">
+  
+    <a href="https://wamisnet.github.io/blog/2017-12-25-nefry_talk/" class="button"><div class="previous"><div>Nefryいろんなウラの話</div></div></a>
+  
+  
+    <a href="https://wamisnet.github.io/blog/nefry_ug_1/" class="button"><div class="next"><div>NefryUG参加レポ</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/firebase_login/">Firebase使ってログインできるようになったよ！</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/">NetlifyCMSから投稿テスト</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://wamisnet.github.io/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nefry/">nefry<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99/">説明資料<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/obniz/">obniz<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86/">リンク集<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp8266/">esp8266<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot/">iot<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/arduino/">arduino<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp32/">esp32<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/firebase/">firebase<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/flutter/">flutter<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/">作品<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E7%84%A1%E7%B7%9Alan/">無線lan<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azureiothub/">azureiothub<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp-idf/">esp-idf<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/">iot可視化ツールレビュー<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nodered/">nodered<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/unibo/">unibo<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/">スマートロック<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/">技術書典<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%9C%AC/">本<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azure/">azure<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/bg96/">bg96<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/cocoabit/">cocoabit<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/m5stickc/">m5stickc<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/monacoin/">monacoin<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/react/">react<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/serverless/">serverless<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/ssd1306/">ssd1306<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/">イベント<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/">ポートフォリオ<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/">勉強会<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%A8%98%E4%BA%8B/">記事<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/">退職エントリ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。</p>
+      <footer>
+        <a href="https://wamisnet.github.io/about" class="button">もっと知る</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        わみめも
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.73.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://wamisnet.github.io/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.31224010c6a183ff135369ca15ae671b02a26296a0507f2b674d4ecd086b11da.js" integrity="sha256-MSJAEMahg/8TU2nKFa5nGwKiYpagUH8rZ01OzQhrEdo="></script>
+    <script src="https://wamisnet.github.io/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62256925-7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

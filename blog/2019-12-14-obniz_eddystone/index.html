@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+<title>obniz で BLEを使ってEddystoneを出してみた - わみめも</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.73.0" /><meta itemprop="name" content="obniz で BLEを使ってEddystoneを出してみた">
+<meta itemprop="description" content="obniz で BLEを使ってEddystoneを出してみた">
+<meta itemprop="datePublished" content="2019-12-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="257">
+
+
+
+<meta itemprop="keywords" content="obniz," /><meta property="og:title" content="obniz で BLEを使ってEddystoneを出してみた" />
+<meta property="og:description" content="obniz で BLEを使ってEddystoneを出してみた" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wamisnet.github.io/blog/2019-12-14-obniz_eddystone/" />
+<meta property="article:published_time" content="2019-12-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="obniz で BLEを使ってEddystoneを出してみた"/>
+<meta name="twitter:description" content="obniz で BLEを使ってEddystoneを出してみた"/>
+<meta name="twitter:site" content="@wamisnet"/>
+<link rel="stylesheet" href="https://wamisnet.github.io/css/bundle.min.c77e84bad6f641316aaae9404d7b57577c00ac1217fc1a1e8a9d30300328d836.css" integrity="sha256-x36Eutb2QTFqqulATXtXV3wArBIX/Boeip0wMAMo2DY="><link rel="stylesheet" href="https://wamisnet.github.io/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://wamisnet.github.io/" class="nav">
+        
+          わみめも
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/" class="nav link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/about/" class="nav link"><i class='fa fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/itemized/" class="nav link"><i class='fa fa-list'></i> Product</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/business/" class="nav link"><i class='fa fa-id-card'></i> Small Business</a>
+          
+        
+      
+      
+      
+    </menu>
+    
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="https://wamisnet.github.io/"><img src="https://wamisnet.github.io/img/main/wami.jpg" class="circle" width="100" alt="wami" /></a>
+  <header>
+    <h1>わみめも</h1>
+  </header>
+  <main>
+    <p>私が作ったソフトウエアやハードウエアのはなしをします</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="https://wamisnet.github.io/blog/2019-12-14-obniz_eddystone/">obniz で BLEを使ってEddystoneを出してみた</a></h2>
+    
+    
+      <p>obniz で BLEを使ってEddystoneを出してみた</p>
+    
+  </div>
+  <div class="meta">
+    <time class="published" datetime="2019-12-14 00:00:00 &#43;0000 UTC">
+      2019-12-14
+    </time>
+    <span class="author">wami</span>
+    
+  </div>
+</header>
+
+    <section id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=obniz%20%e3%81%a7%20BLE%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6Eddystone%e3%82%92%e5%87%ba%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f&amp;url=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-12-14-obniz_eddystone%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-12-14-obniz_eddystone%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e3%81%93%e3%81%ae%e6%8a%95%e7%a8%bf%e3%82%92%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%99%e3%82%8b wami&amp;body=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-12-14-obniz_eddystone%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </section>
+    
+
+    <div class="content">
+      <p>こんにちは、最近obnizの中の人になったわみです。</p>
+<p>obniz Board 1Yが明日には発売ですね！いろいろと作ったのでぜひ触ってみてください。</p>
+<p>今回はそんなこと関係なくBLEで遊んでいこうとおもいます。</p>
+<h1 id="eddystoneとは">Eddystoneとは</h1>
+<p>Googleが2015年頃に発表した、BLEを使ったビーコンやURLの配信をするための規格。</p>
+<p>詳しい説明は、次のようなサイトにお任せするとして、なにがいいのかというと<strong>URL</strong>を手軽に配布できるところが非常によいです。</p>
+<p><a href="https://dev.classmethod.jp/smartphone/eddystone/">https://dev.classmethod.jp/smartphone/eddystone/</a></p>
+<p>obnizがJavaScriptで動かせるのでWebエンジニアでも触れるようなデバイスで、URLを手軽に配布できるのはWebエンジニア的に導線を一つ増やすことができるので非常に良いと思います。</p>
+<h1 id="プログラム">プログラム</h1>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;script src=&quot;https://obniz.io/js/jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://unpkg.com/obniz@3.0.0/obniz.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css&quot; /&gt;
+    &lt;style&gt;
+        body {
+            margin: 2em ;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;obniz-debug&quot;&gt;&lt;/div&gt;
+&lt;H1&gt;Obniz Eddystone&lt;/H1&gt;
+
+&lt;form name=&quot;form_url&quot;&gt;
+    &lt;p&gt;
+        &lt;label&gt;URL
+            &lt;input class=&quot;uk-textarea&quot; name=&quot;url&quot; type=&quot;text&quot; value=&quot;https://obniz.io/&quot; size=&quot;100&quot; required/&gt;
+        &lt;/label&gt;
+    &lt;/p&gt;
+
+    &lt;input class=&quot;uk-button uk-button-default&quot; type=&quot;button&quot; value=&quot;send&quot; id=&quot;sendurl&quot;&gt;
+&lt;/form&gt;
+&lt;p id=&quot;obniz_url&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    var obniz = new Obniz(&quot;OBNIZ_ID&quot;);
+    obniz.onconnect = async function () {
+        $(&quot;#sendurl&quot;).on(&quot;click&quot;, function(){
+            let url = document.form_url.url.value;
+            console.log(url)
+            if(url.length == 0){
+                alart(&quot;url length error&quot;);
+                return;
+            }
+            let advData = [0x02, 0x01, 0x06, 0x03, 0x03, 0xAA, 0xFE,
+                0x00,//length
+                0x16, 0xAA, 0xFE, 0x10, 0x00,
+                0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00];
+
+            if (url.indexOf(&quot;https://www.&quot;) == 0) {
+                advData[13] = 0x01;
+                url = url.substring(12);
+            } else if (url.indexOf(&quot;http://www.&quot;) == 0) {
+                advData[13] = 0x00;
+                url = url.substring(11);
+            } else if (url.indexOf(&quot;https://&quot;) == 0) {
+                advData[13] = 0x03;
+                url = url.substring(8);
+            } else if (url.indexOf(&quot;http://&quot;) == 0) {
+                advData[13] = 0x02;
+                url = url.substring(7);
+            } else {
+                throw new Error(&quot;URL Schema Error&quot;);
+            }
+
+            console.log(url);
+            if (url.length &gt; 17) {
+                throw new Error(&quot;URL Length Error&quot;);
+            }
+
+            for (let i = 0; i &lt; url.length; i++) {
+                advData[14 + i] = url.charCodeAt(i);
+            }
+            advData[7] = url.length + 6;
+            obniz.ble.advertisement.setAdvDataRaw(advData)
+            obniz.ble.advertisement.setScanRespData({
+                localName: &quot;obniz Eddystone&quot;,
+            });
+
+            obniz.ble.advertisement.start();
+            document.getElementById(&quot;obniz_url&quot;).innerHTML = `sending url : ${document.form_url.url.value}`;
+            obniz.display.clear();
+            obniz.display.print(&quot;Eddystone Start&quot;);
+            obniz.display.print(document.form_url.url.value);
+        });
+    }
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><img src="../../img/2019/obniz_eddystone/1_6.png" alt=""></p>
+<p>こんな感じの画面が表示されます。</p>
+<p>URLの欄に送信したいURLを入力して、「SEND」を押すとBLEで送信が始まります。
+URLの文字長は17文字までになっています。</p>
+<p>BLEの出力をAndroidから確認してみましょう。</p>
+<p><img src="../../img/2019/obniz_eddystone/1_c.png" alt=""></p>
+<p>こんな感じでアプリから確認できるでしょう！</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.bridou_n.beaconscanner&amp;hl=ja">https://play.google.com/store/apps/details?id=com.bridou_n.beaconscanner&amp;hl=ja</a></p>
+<p>昔だと、Eddystoneに近づくと通知がでたはず…うーん？</p>
+<h1 id="検索してみる">検索してみる</h1>
+<p><img src="../../img/2019/obniz_eddystone/9_4.png" alt=""></p>
+<p><a href="https://android-developers.googleblog.com/2018/10/discontinuing-support-for-android.html">https://android-developers.googleblog.com/2018/10/discontinuing-support-for-android.html</a></p>
+<p>なんということでしょう！</p>
+<p>Eddystoneは終わった規格でした。</p>
+<h1 id="まとめ">まとめ</h1>
+<ul>
+<li>obniz でBLEは簡単に出せる</li>
+<li>Eddystoneはいい規格だった</li>
+<li>流行り廃りがはやいので注意しよう</li>
+</ul>
+<p>かなしい…</p>
+
+    </div>
+    <footer>
+      <ul class="stats">
+  <li class="categories">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/obniz/">obniz</a></li>
+        
+      
+    
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/obniz/">obniz</a></li>
+        
+      
+    
+    </ul>
+  </li>
+</ul>
+
+    </footer>
+  </article>
+  
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wamisnet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  <div class="pagination">
+  
+    <a href="https://wamisnet.github.io/blog/iot_sharehouse/" class="button"><div class="previous"><div>IoT的シェアハウスのすすめ</div></div></a>
+  
+  
+    <a href="https://wamisnet.github.io/blog/2020-01-03-smartlock/" class="button"><div class="next"><div>Suicaで開けられるスマートロックを作ってみた</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/firebase_login/">Firebase使ってログインできるようになったよ！</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/">NetlifyCMSから投稿テスト</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://wamisnet.github.io/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nefry/">nefry<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99/">説明資料<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/obniz/">obniz<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86/">リンク集<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp8266/">esp8266<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot/">iot<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/arduino/">arduino<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp32/">esp32<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/firebase/">firebase<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/flutter/">flutter<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/">作品<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E7%84%A1%E7%B7%9Alan/">無線lan<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azureiothub/">azureiothub<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp-idf/">esp-idf<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/">iot可視化ツールレビュー<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nodered/">nodered<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/unibo/">unibo<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/">スマートロック<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/">技術書典<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%9C%AC/">本<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azure/">azure<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/bg96/">bg96<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/cocoabit/">cocoabit<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/m5stickc/">m5stickc<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/monacoin/">monacoin<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/react/">react<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/serverless/">serverless<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/ssd1306/">ssd1306<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/">イベント<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/">ポートフォリオ<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/">勉強会<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%A8%98%E4%BA%8B/">記事<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/">退職エントリ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。</p>
+      <footer>
+        <a href="https://wamisnet.github.io/about" class="button">もっと知る</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        わみめも
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.73.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://wamisnet.github.io/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.31224010c6a183ff135369ca15ae671b02a26296a0507f2b674d4ecd086b11da.js" integrity="sha256-MSJAEMahg/8TU2nKFa5nGwKiYpagUH8rZ01OzQhrEdo="></script>
+    <script src="https://wamisnet.github.io/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62256925-7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

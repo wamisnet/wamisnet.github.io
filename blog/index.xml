@@ -32,6 +32,59 @@ function hello(){ console.log(&amp;#34;hello world!&amp;#34;); } みたいにコ
     </item>
     
     <item>
+      <title>Suicaで開けられるスマートロックを作ってみた</title>
+      <link>https://wamisnet.github.io/blog/2020-01-03-smartlock/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2020-01-03-smartlock/</guid>
+      <description>こんにちは！わみです。
+私が住むギークハウス新宿がついにアップデートされました。
+少し前にはスマートロックを壊したこともありましたが… (その時の記事 :スマートロックが壊れたのでobnizを使ってハックしてみた)
+Sesameをもう一台新たに購入して、ついに完成をしました！
+なにをしたのか 音が鳴るよ！
+@fukubaka0825 さんと @retoruto_carry さんと作った鍵システムがついに動いたああああ！ pic.twitter.com/uQZ44INF93
+&amp;mdash; わみ@NefryとかFlutter本とか (@wamisnet) January 1, 2020  登録されていないSuicaの場合はエラー音を、登録されたSuicaの場合は効果音の後、obnizからBLE経由でSesameをコントロールします。
+早いときだとタッチして、すぐに鍵が開くのでめちゃくちゃ便利です。
+きっかけ スマートロックが壊れたのでobnizを使ってハックしてみた
+上記の記事でも書いているのですが、7月の開発合宿で作りかけのまま止まっていたスマートロックの制御をしたいと思っていて、ただSesame API経由だと鍵が開くまで時間がかかりすぎる。
+その解決で前回、私はハードウエアのハックをしたわけですが、安定動作を担保するのはなかなかめんどくさいので結局本番反映はしませんでした。
+今回は安定稼働はSesameを信用し、BLEで制御をするように変更してこっちのスマートロック制御が壊れても問題ないようにしました。
+技術構成 今回はギークハウス新宿に住む3人の力を合わせて作りました。 メインの担当箇所はこんな感じです。
+@fukubaka0825 : Suica認証、Sesame開錠指示　（記事 : Raspberry pi とGoとMackerelでシェアハウスの運用しやすい鍵システムを作る  ） @retoruto_carry : Suica登録用Webページ（記事 : 【おうちハック】開発合宿で3人でシェアハウスの鍵管理システムを作った【チーム開発】） @wamisnet : Sesame開錠デバイス作成、ハードウエア（記事 : 本記事）
+全体構成はすこし大きめですが、次の画像の通りです。
+せっかくなので私の担当箇所について深堀していきます。
+Sesameハック https://qiita.com/odetarou/items/9628d66d4d94290b5f2d
+上記の方の手順を参考に設定値を取得します。
+AndroidのRoot化だったり、しれっとやってますが普通に一日がかりかかるようなやつでいろいろ私も初めてでしたが、頑張ってSesameのBLEキーを取得します。 Xposedモジュールつくるのも個人的にはハマったり…
+取得できれば、ほぼほぼ完成です。
+上記の記事だと、Macで接続していますがMacを持っていないもしくはバージョンが違うとうまく動かなかったです。（これだから…
+めんどくさいなぁ…そんなことを思っていたら、そういえばobnizもnobleライブラリ出していたなと…
+https://qiita.com/wicket/items/16622097b8e6b5758d80
+これに書かれているように、nobleを呼び出しているところを変更しました。 一応、全体のコードをGithubに上げておきましたのでぜひ。
+https://github.com/wamisnet/obniz_sesame_noble
+obniz 今回みたいなnobleで動かしたいときに、パソコンを置いておくみたいなことはなかなか難しい…
+そんなときにはobniz!!
+6000円ぐらいでNode.jsで動かせるデバイスをゲットできます。
+プログラム const crypto = require(&amp;#39;crypto&amp;#39;); const Peripheral = require(&amp;#34;obniz-noble/lib/peripheral&amp;#34;); const noble = require(&amp;#34;obniz-noble&amp;#34;)(&amp;#34;OBNIZ_ID_&amp;#34;); const events = require(&amp;#39;events&amp;#39;); const os = require(&amp;#39;os&amp;#39;); const log4js = require(&amp;#39;log4js&amp;#39;); const logger = log4js.</description>
+    </item>
+    
+    <item>
+      <title>obniz で BLEを使ってEddystoneを出してみた</title>
+      <link>https://wamisnet.github.io/blog/2019-12-14-obniz_eddystone/</link>
+      <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-12-14-obniz_eddystone/</guid>
+      <description>こんにちは、最近obnizの中の人になったわみです。
+obniz Board 1Yが明日には発売ですね！いろいろと作ったのでぜひ触ってみてください。
+今回はそんなこと関係なくBLEで遊んでいこうとおもいます。
+Eddystoneとは Googleが2015年頃に発表した、BLEを使ったビーコンやURLの配信をするための規格。
+詳しい説明は、次のようなサイトにお任せするとして、なにがいいのかというとURLを手軽に配布できるところが非常によいです。
+https://dev.classmethod.jp/smartphone/eddystone/
+obnizがJavaScriptで動かせるのでWebエンジニアでも触れるようなデバイスで、URLを手軽に配布できるのはWebエンジニア的に導線を一つ増やすことができるので非常に良いと思います。
+プログラム &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt; &amp;lt;script src=&amp;quot;https://obniz.io/js/jquery-3.2.1.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/obniz@3.0.0/obniz.js&amp;quot; crossorigin=&amp;quot;anonymous&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css&amp;quot; /&amp;gt; &amp;lt;style&amp;gt; body { margin: 2em ; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;obniz-debug&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;H1&amp;gt;Obniz Eddystone&amp;lt;/H1&amp;gt; &amp;lt;form name=&amp;quot;form_url&amp;quot;&amp;gt; &amp;lt;p&amp;gt; &amp;lt;label&amp;gt;URL &amp;lt;input class=&amp;quot;uk-textarea&amp;quot; name=&amp;quot;url&amp;quot; type=&amp;quot;text&amp;quot; value=&amp;quot;https://obniz.io/&amp;quot; size=&amp;quot;100&amp;quot; required/&amp;gt; &amp;lt;/label&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;input class=&amp;quot;uk-button uk-button-default&amp;quot; type=&amp;quot;button&amp;quot; value=&amp;quot;send&amp;quot; id=&amp;quot;sendurl&amp;quot;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;p id=&amp;quot;obniz_url&amp;quot;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;script&amp;gt; var obniz = new Obniz(&amp;quot;OBNIZ_ID&amp;quot;); obniz.</description>
+    </item>
+    
+    <item>
       <title>IoT的シェアハウスのすすめ</title>
       <link>https://wamisnet.github.io/blog/iot_sharehouse/</link>
       <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
@@ -52,6 +105,186 @@ Sesame スマートロックの中でAPIでいろいろ制御できるのはエ�
 https://qiita.com/wamisnet/items/a07ca183dd97d2cdb483
 Google Home VUIでもろもろのIoTデバイスの状態を確認できる
 まとめ ちょっとづつだとしても、IoTを導入することで便利なシェアハウスにすることはできる</description>
+    </item>
+    
+    <item>
+      <title>obnizのサーバレスイベントでのはまりポイント＆Tips</title>
+      <link>https://wamisnet.github.io/blog/2019-11-27-obniz_serverless/</link>
+      <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-11-27-obniz_serverless/</guid>
+      <description>obnizを使っているとサーバレスイベントを活用するタイミングがあると思います。
+特に12月発売予定のobniz board 1Yではスリープが使えるようになるのでサーバレスイベントを使うと他になにも用意せずにセンシングするようなIoTのサービスをつくれます。
+https://blog.obniz.io/ja/news/obniz-board-1y-2/
+今回は私がサーバレスイベントを作るにあたってはまったポイントやTipsをまとめます。
+サーバレスイベントとは 公式ドキュメント：https://obniz.io/ja/doc/obniz_cloud/about_event
+ obnizを使うには外部にobnizを使うためのプログラムが必要ですが、obnizクラウドのイベント機能を使えばサーバーレスでプログラムを動作させられます。
+  obniz Eventはあらかじめ設定したトリガーが発生したときに登録しておいたプログラムを自動的にクラウド上で実行するサービスです。 これによりあなたは自分でプログラムを動かして無くてもトリガーとプログラムだけ設定しておくことで、何かが起きた時にクラウド内で自動的に処理を行えます。
+ 上記公式から引用しましたが私なりの言葉でまとめると、サーバを用意しなくても各自で作成したプログラムを、後述するトリガーをきっかけに実行してくるツールといった感じでしょうか？
+トリガー  Webhook（APIが生成される） 決められたある時間(11:11など) 決められた時間の間隔(1時間毎など) obnizがオンラインになったら obnizのボタンが押されたら  現在5つのトリガーがあります。 指定されたobnizIDで指定されたトリガーがあったときに、各自のプログラムが実行されます。
+制約事項 11/27現在
+ 実行できる時間は30秒以内、それ以上は終了される 1日に実行可能な回数は120回  すこし制約はありますが例えばセンサーの値を取得するプログラムであれば12分に1回はデータを貯められます。
+はまりポイント APIを使用したとき 次のようにAPIを使用するときエラーが発生することがあります。
+await fetch(&amp;#39;https://maker.ifttt.com/trigger/obniz_temp/with/key/&amp;#39;, { method: &amp;#39;POST&amp;#39;, mode: &amp;#34;no-cors&amp;#34;, body: formData }).then(()=&amp;gt;console.log(&amp;#34;success&amp;#34;)).catch((error) =&amp;gt; console.log(error)); このときにAPIの呼出し後にawait obniz.wait(1000)をいれるとエラーが発生しなくなります。
+Tips 絶対にスリープさせる センサーの値読み取りなど予期しないところでプログラムが停止してしまうなど可能性があります。
+電池稼働しているデバイスではこの問題はクリティカルなので、サーバレスイベントが終了する前にスリープをするようにします。
+（obniz board 1Yでのみ使用可能です。）
+//Timeout 25s let tid = setTimeout(()=&amp;gt;{ let dt = new Date(); dt.setMinutes(Math.floor(dt.getMinutes()/10)*10+10,0,0); obniz.</description>
+    </item>
+    
+    <item>
+      <title>BG96　開発に役立ったリンク集</title>
+      <link>https://wamisnet.github.io/blog/2019-10-11-bg96_link/</link>
+      <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-10-11-bg96_link/</guid>
+      <description>事例 https://sakura.io/blog/category/tech/
+https://eguchi.jp/blog/?p=1249
+https://sakura.io/blog/2019/07/05/%E3%80%90%E3%82%BB%E3%82%AD%E3%83%A5%E3%82%A2%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E3%82%B3%E3%83%8D%E3%82%AF%E3%83%88%E3%80%91cat-m1%E3%81%AElte%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%ABquectel-bg/
+公式PDF　 https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_TCP(IP)_AT_Commands_Manual_V1.1.pdf
+https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_AT_Commands_Manual_V2.3.pdf
+https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_QuecCell_AT_Commands_Manual_V1.0.pdf
+コード例 https://github.com/RAKWireless/WisLTE_Arduino
+https://github.com/SeeedJP/WioLTEforArduino/</description>
+    </item>
+    
+    <item>
+      <title>スマートロックが壊れたのでobnizを使ってハックしてみた</title>
+      <link>https://wamisnet.github.io/blog/2019-08-27_smartlock/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-08-27_smartlock/</guid>
+      <description>こんにちは、わみです！
+ギークハウス新宿では住民の入れ替わりの季節で住民減です！ こういうハック的な事に興味がある人いたら私のTwitterにメッセージしてくれると！
+なにをしたのか 壊れてしまったスマートロックからモータの制御や現在のポジションを取得するために制御を乗っ取り、obnizから指示を出すプログラムを作ってみました。
+obnizでsesameをハックしてみた！ pic.twitter.com/kdtwpJw26x
+&amp;mdash; わみ@NefryとかFlutter本とか (@wamisnet) August 27, 2019  Sesameを導入した話：https://speakerdeck.com/wamisnet/sieahausunisumatorotukuwotuketemita
+きっかけ 開発合宿にてSuicaで鍵を開けるシステムを作ったときにSesameのAPIを使ったのですが待ち時間が少々長く、実際に使うときにストレスになりそうだと思いました。
+10秒ぐらいかかってましたね… かかるタイミングだと気持ち1分ぐらい待ったような…
+玄関で待ちぼうけ(´・ω・｀)
+API以外は不満がなかったのでSesameをハックできないかと思い、Sesameを開けてみることにしました。
+BLEモジュールやモータドライバーなどが取り付けられていることを確認したのち元に戻そうとしたとき…
+「じゅっ」というどこかが壊れた音がしました
+慌てて、電源を外しましたが時すでに遅し
+もう動かなくなってしまいました
+普通ならあきらめて新しいのをもう一つ買うところですが、せっかくだから思いっきりハックすることにしました！
+技術構成 上の図のように連携しています。
+ ハードウエア(Sesame) obniz (おすすめ記事) Node.js（別のサービスと連携するのでAPIを作成）  obnizを使うと何がいいのかというとわざわざハードウエアのコードを別に書かなくてもよくて、今回であればAPIとして使うためのNode.js一つだけでハードウエアの制御ができるところですね！
+せっかくなのでちょっとづつ深堀りしていきましょう。
+ハードウエア obnizにモータドライバーついているので回路はすごくシンプルでモータとソレノイドを制御する部分+鍵のポジションを取得するためのアナログ入力をそれぞれ繋いでいます。
+（はんだ付けが汚いのはご愛嬌）
+obniz モータとソレノイドの制御、アナログ入力を変換してくれます。 これがあるから、Node.jsで書くことができます。
+Node.js とりあえずで作ったコードなのでダメな部分ありますが、ご容赦を！
+https://github.com/wamisnet/key_controller/
+鍵を開ける処理（APIでリクエストがあるとき）
+ 現在位置を取得して、平均値をとる 現在位置から目的の角度に近い方にモータを回す ソレノイドを出す 目的の角度になるまで現在位置を取得し続ける 目標角度になったら、モータを止める ソレノイドを引く  といった処理を行ってます。
+まとめ こんな感じでハックしてみました。
+動画で分かるようにボタンを押してすぐ動作するようになって目標は達成しました！！
+obnizだったので回路もコードもシンプルに作ることができて便利だなと思いました。
+ただ玄関で使用するときには、無線LANが不安定過ぎてobnizに向いていなかったので実際に使うことはできなかったです( ；∀；)
+とっても悲しい
+3日ぐらいずっとこれやってたので買った方が安かった気がする…
+とはいえ自分で作れるのは楽しいですね！
+今回バラしてしまいましたがSesame優秀なので、使うときはぜひ！
+AkerunやQrio、Sesameと使ってきましたが、さらにいいデバイスがあれば教えてもらえるとうれしいです！
+ここまで読んでくれた方へ ここまで読んでくださりありがとうございます。
+いいねやコメント、SNSでの共有等をしてくださると、今後の励みになります。よろしくお願いします。
+良かったらTwitterもフォローしてね</description>
+    </item>
+    
+    <item>
+      <title>obniz OSをESP32(NefryBT)に入れて動かそう！</title>
+      <link>https://wamisnet.github.io/blog/2019-08-20-obniz_install_nefry/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-08-20-obniz_install_nefry/</guid>
+      <description>こんにちは！わみです！ 今日は先日リリースされたobnizOSを使い始めてみたので、どんな感じなのかも合わせて書いていこうと思います。
+そもそも「obniz」ってなに？って方は「arduinoとは全く違う、IoTツールobnizのしくみ」をご覧ください。
+なにができるのか NefryでobnizOS動いた！！ pic.twitter.com/YAbw8ggR5B
+&amp;mdash; わみ@NefryとかFlutter本とか (@wamisnet) August 17, 2019  HTML+JSでハードウエア(ESP32(NefryBT))を動かしてみた動画です！
+JavaScriptやpythonでハードウエアを動かすことができる「obniz」ただ、6000円近くするので少々お値段がします…
+その技術をお店で1500円ぐらいで売っているESP32のボードにインストールができるのが先日発表された「obnizOS」なのです！
+私が作っている「Nefry BT」というデバイスにインストールしてみたのでその方法とどんな感じなのかをまとめてみようと思います。 ESP32を搭載したボードであれば、同じような手順で行うことができるのでぜひお試しください。
+（ESP32-picoについては未サポート（具体例：M5stickC））
+インストール ライセンスを購入する https://obniz.io/ja/console 上記ページから「デバイス」を選択し、「obniz OSのライセンスを新規購入」をクリックします。
+ライセンスの選択画面で「Hobby」ライセンス、「新規にobnizIDを発行」、個数を選び、「金額を確認」をクリックします。 カードの情報がない場合、このタイミングで入力します。
+確認画面が表示されて、問題なければ「ライセンスを購入」を押します。
+購入が完了すると、「DeviceKey」をダウンロードできます。 これはインストール時に使用するので必ずダウンロードしておいてください。 （画像取り忘れたので公式ドキュメントの画像…）
+前提条件 obniz cliを使用しますのでpython3.4以上のものをインストールしておいてください。
+py -3 -Vでバージョン情報を確認することができます。 インストールされていれば、上記のコマンドをターミナルで実行すると次のようにバージョンが表示されます。
+表示されない場合は、インストールされているか確認したり、pathが通っているか確認してください。
+obniz_cliをインストール obniz_cliとは、簡単にobnizOSをインストールするために作られたアプリになります。それを使って、セットアップを行っていきたいと思います。
+ターミナルでpip3 install obniz_cliと入力します。
+インストールが開始されるはずです！「Successfully installed obniz_cli」とでれば大丈夫です。
+Nefry BTにobnizOSをインストール Nefry BTをPCと接続し、obnizOSをインストールしていこうと思います。
+ターミナルでobniz_cli flashosと入力します。
+ESP32を接続しているポートを選択画面がでるので、ポートの横に書かれている数字（今回なら0）を入力します。ここで選んだポート名（今回ならCOM5）を覚えておいてください。
+入力するとインストールが開始されます。
+しばらくするとインストールが完了します。
+次に無線LANの設定とライセンスの適用を行っていきます。
+ターミナルでpython -m serial.tools.miniterm ポート名 115200と入力します。
+ポート名は先ほど選んだものに変更しておいてください。
+指示に従って、次の項目を入力します。
+ DeviceKey:購入時に取得したファイルに書かれた文字列 SSID:接続したい無線LANのもの PASS:接続したい無線LANのもの 固定IP or DHCP:基本的にはDHCPの「0」を選択する  固定IPの場合 下記の項目を設定する  IP Address Subnetmask Default gateway      設定された項目が正しければ、最後に「Online」と表示されます。</description>
+    </item>
+    
+    <item>
+      <title>Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】</title>
+      <link>https://wamisnet.github.io/blog/2019-07-26-regi/</link>
+      <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-07-26-regi/</guid>
+      <description>こんにちわ、ギークハウス新宿（ぎーじゅく）の住民のわみです。 先日開発合宿で作った物々交換システムができたので仕組みや機能などをまとめてみます。
+なにを作ったか こんな感じで動くよhttps://t.co/BZj1i65I0y pic.twitter.com/qtmRp2mfiH
+&amp;mdash; わみ@NefryとかFlutter本とか (@wamisnet) July 26, 2019  こんな感じのバーコードを使ったPOSシステム的なもの
+どうして作ったか シェアハウスであるある（？）な悩みの一つ、例えばカップヌードルとかドクペをまとめ買いをしてくれて、それを必要なタイミングでみんなで分けるということ。（他だと多めにカレーとかおかずを作ったりしたときにシェアしたいときもめんどい
+まとめ買いすることで安く買えるのはすごくいいのですが、それをいい感じに分けるのは至難の業。購入時にまとめてやるとか方法はいろいろあると思いますが、できたら欲しいときに分けてもらえるとよいなーと
+そんなことをしていたぎーじゅくの過去の写真がこちら
+それぞれ買ってきた人のボールにお金を入れるという方式（一番手前が私、奥のオレンジや右の封筒が入っているのは別のひとのやつ）
+数が少なければこれでもいいんですが、数が増やすと訳が分からなくなったり、新しい住民が増えたときには一からこの商品は誰々のだよといった説明が必要になってきました。
+これを解決するために一つシステムを作りました！
+物々交換システムの歴史 このシステムには少々歴史があります。
+物々交換システムv1　（2019年2月頃）の概要 Flutterで今回の下地となるAndroidアプリを作成しました。
+完成写真
+技術構成 次のような構成で作成しました。
+ バーコードリーダー タブレット（Flutterアプリ入り） Slack Node-RED(RedMobile) Elasticsearch Kibana  図にするとこんな感じです。
+問題点 ここまで3日ぐらいでつくったものでFlutterのバーコード入力処理にかなり泥臭い対応が一部あったり、Node-REDに依存する部分があったりとなかなか保守しにくいシステムになっていたり、データの作成に手動でいろいろ行わないといけない感じでした。
+手動で行わないといけない作業
+ 商品登録 商品編集 商品削除 在庫管理 取引削除 週単位で決済処理 ユーザ追加  この中でも商品登録と決済は手動で行う作業でも大変な作業でした。（2月の頭から5か月以上稼働しているのだから自動化すればいいのに…ｗ
+商品登録 Elasticsearchにデータを入れるためにNode-REDからわざわざ手打ちでJSONを作るｗ
+週単位で決済処理 毎週どれぐらい使ったかKibanaで集計されたデータを使ってユーザに人力で通知していきます。
+（数字は生々しいのでね…
+こんな感じにがんばってる
+今回作成したシステム いろいろと問題のあったFlutterとNode-REDからReactで新規に作り直しました！
+完成写真
+GIF小さいけどこんな感じ
+技術構成 次のような構成で作成しました。
+ バーコードリーダー タブレット（React PWA入り） Slack Firebase Elasticsearch(分析用　おまけ) Kibana(分析用　おまけ)  図にするとこんな感じです。</description>
+    </item>
+    
+    <item>
+      <title>ESP32のチップ情報を取得する（ESP-IDF）</title>
+      <link>https://wamisnet.github.io/blog/2019-07-17-esp32-chip/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-07-17-esp32-chip/</guid>
+      <description>ESP32のチップを判定する必要があったのでその方法をメモしておきます。
+ESP-IDFでの例になります。
+Chipの取得 #include &amp;quot;soc/soc.h&amp;quot;
+ uint32_t _chipmacid =REG_READ(DR_REG_EFUSE_BASE+12); char str[30]; sprintf(str, &amp;quot;_chipmacid:%u\n&amp;quot;, _chipmacid); console_print(str); uint8_t pkg = (_chipmacid &amp;gt;&amp;gt; 9) &amp;amp; 0x07; sprintf(str, &amp;quot;pkg:%u\n&amp;quot;, pkg);//これがChipID console_print(str); // 0: &amp;quot;ESP32D0WDQ6&amp;quot;, // 1: &amp;quot;ESP32D0WDQ5&amp;quot;, // 2: &amp;quot;ESP32D2WDQ5&amp;quot;, // 5: &amp;quot;ESP32-PICO-D4&amp;quot;, これでチップの判定をすることができます！</description>
+    </item>
+    
+    <item>
+      <title>M5StickCに書き込みができないときの確認事項</title>
+      <link>https://wamisnet.github.io/blog/2019-07-10-m5stick/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-07-10-m5stick/</guid>
+      <description>http://forum.m5stack.com/topic/814/error-on-downloading-to-m5stickc
+IDFで書き込みできない esptool.py v2.5.1 Serial port COM12 Connecting.... Chip is ESP32-PICO-D4 (revision 1) Features: WiFi, BT, Dual Core, 240MHz, Embedded Flash, VRef calibration in efuse MAC: d8:a0:1d Uploading stub... Running stub... Stub running... Changing baud rate to 921600 Changed. Configuring flash size... A fatal error occurred: Timed out waiting for packet header 原因 M5StickCがサポートするボーレートがあっていないのが原因です。
+1200〜115200、250K、500K、750K、1500K
+上記だと921600になっています。
+対応 書き込み時の通信速度を合ったもの変更することで動作するようになります。 </description>
     </item>
     
     <item>
@@ -87,6 +320,146 @@ MakerFaire Kyotoで木戸さんと話してそこに共感できたのも大き�
 個人的には、コンテスト系やハッカソンなどイベント、ハンズオンなどできたらいいなと思っています。（私が作るより、みんなが作れるようになってほしいと思う）
 もちろんハードウエアやファームウエア、サーバー側も含めいろいろ新しいものを作ってみんなが作れるモノの幅を広げるのもやっていくつもりです！
 新しい環境になるので、いろいろ上手くいかないこともあるかと思いますが全力でやっていけたらなと思ってますので宜しくお願い致します！！</description>
+    </item>
+    
+    <item>
+      <title>変わり種のESP32ボードまとめてみた</title>
+      <link>https://wamisnet.github.io/blog/2019-07-03-esp32board/</link>
+      <pubDate>Wed, 03 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-07-03-esp32board/</guid>
+      <description>変わり種のESP32ボードまとめてみた 技適がないものもあるので要注意
+ドル円 108円計算
+CW02  購入リンク： https://xinabox.cc/products/cw02 金額（ドル）：29.95 金額（円）: 3235  ソケットでセンサーやディスプレイを数珠つなぎにできる
+WEMOS LOLIN D32  購入リンク： https://www.aliexpress.com/store/product/WEMOS-LOLIN32-V1-0-0-wifi-bluetooth-board-based-ESP-32-4MB-FLASH/1331105_32808551116.html 金額（ドル）：6.50 金額（円）: 702  バッテリがつなげられる開発ボード
+LOLIN D32 Pro  購入リンク： https://www.aliexpress.com/store/product/LOLIN-D32-Pro-V2-0-0-wifi-bluetooth-board-based-ESP-32-esp32-Rev1-ESP32-WROVER/1331105_32883116057.html 金額（ドル）：8.8 金額（円）: 950  バッテリがつなげられる開発ボード
+Dongsen Technology D-duino-32 XR  購入リンク： https://www.aliexpress.com/store/product/DSTIKE-D-duino-32-XR-ESP32-OLED/2996024_32970292724.html?spm=a2g1y.12024536.productList_110843485.pic_4 金額（ドル）：7.9 金額（円）: 853  Obnizに似た開発ボード。スイッチと、ディスプレイがついている。
+ESP32 Watch DevKit  購入リンク： https://www.aliexpress.com/store/product/DSTIKE-ESP32-Watch-DevKit/2996024_32985459002.html?spm=a2g1y.12024536.productList_110843487.pic_0 金額（ドル）：39 金額（円）: 4212  腕時計にできるキット。
+Olimex ESP32-EVB  購入リンク： https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware 金額（ユーロ）：26 金額（円）: 3160  LANやいろいろなポートが付いたボード
+HARDKERNEL odroid-go  購入リンク： https://www.</description>
+    </item>
+    
+    <item>
+      <title>【IoT可視化ツールレビュー】 thinger.io</title>
+      <link>https://wamisnet.github.io/blog/2019-06-27-thingspeak/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-06-27-thingspeak/</guid>
+      <description>thinger.io 次の記事が使い方がまとまっていてわかりやすかったです。
+http://www.esploradores.com/empezando/hello-world-thinger-io-blink/
+何を目的としたサービスか IoTでよくある機能を簡単に試すことができるサービス
+データの可視化やデバイスをこのサービス経由のAPIで制御できる
+何と何ができるのか Webやアプリ上でのセンサーデータの可視化（ダッシュボード） LEDのONOFFやサーボの制御などをWebやアプリ、APIで操作できる データ保存機能（バケット） エンドポイント機能（デバイスからトリガーがあったときにメールや特定のURLを叩ける） それがいくらなのか     無料 500円/月 2500円/月     接続台数 2台 20台 100台   ダッシュボード 4 20 100   バケット（何秒に一度データを保存できるか） 60s 30s 15s   エンドポイント 4 20 100    使った感じどうだったか 接続するときにひと手間ありそうですが可視化の部分を使用できるとよさそうです。
+生のESP32で使用する際にはよいサービスだと思います。
+https://github.com/thinger-io/Arduino-Library/tree/master
+簡単にダッシュボードがつくれるところもよく、自分でインスタンス立てて制御することもできるようです。 ダッシュボードのレスポンスもよかったです。
+https://thinger.io/downloads/ Blynkに似ていますが、アプリのみでなくWebでコントロールできるところが優れています。</description>
+    </item>
+    
+    <item>
+      <title>【IoT可視化ツールレビュー】 ThingSpeak</title>
+      <link>https://wamisnet.github.io/blog/2019-06-27-thinger/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-06-27-thinger/</guid>
+      <description>ThingSpeak 何を目的としたサービスか データの保存やグラフ化できるサービス。
+MATLABとの連携がメインの特徴（むしろMATLAB使えないとほぼ意味がない）
+何と何ができるのか センサーデータの可視化（ダッシュボード） MATLAB連携 ThinhSpeakアプリ https://jp.mathworks.com/help/thingspeak/thingspeak-apps.html?s_tid=CRUX_lftnav
+それがいくらなのか     無料 約800円/月 約7300円/月     接続台数 3台 50台 50台   ダッシュボード 4 10 250   送信間隔（何秒に一度データを保存できるか） 15s 1s 1s   商用利用 不可 不可 可    使った感じどうだったか 正直MATLABを使用したい意図がない限り選択するメリットは少ないと思っています。
+フリープランだと15秒に一度しかはじかれるのでなかなか使いずらいです。
+同様なことであれば、Ambientで十分だと思います。</description>
+    </item>
+    
+    <item>
+      <title>IoT事例リンク集</title>
+      <link>https://wamisnet.github.io/blog/2019-06-14-iot_monitoring_link/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-06-14-iot_monitoring_link/</guid>
+      <description>IoTについてまとめる機会があったので、リンク集を公開します
+IoTによるモニタリング 家庭編 家で考えるモニタリング
+スマートロック https://jp.candyhouse.co/
+CANDY HOUSE SESAME mini
+いろいろと数あるスマートロックだが、（家庭向けのデバイスでは）他社製品と比べAPIで開錠で開錠できる特徴が一押し。
+スマートロックの誰の開閉かログをとったり、ゲストに開閉権限を渡すなど基礎的な機能も十分。
+室温管理 https://nest.com/
+nest
+日本では多くありませんが、海外に多くある家まるごと温度をコントロールするもの。
+人の有無を学習し、意識せずに効率よく扱えるようになるのがIoTとして優秀だと思います。
+窓管理 https://www.ykkap.co.jp/products/window/mimott/
+YKK AP株式会社 ミモット
+窓の閉め忘れを無くすことができるデバイス。技術屋としては、電池レスなのがポイントが高い。
+うっかりミスを防ぐことは難しいのでこういったデバイスが普及するとよい。
+睡眠 https://www.kddi.com/with-home/device/uss01a/
+KDDI 睡眠モニター 01
+睡眠状態をロギングできるデバイス。最近話題になっている睡眠改善に使用する。
+IoTで簡単にセンシングできるようになったからこそのデバイス
+宅配ポスト https://www.lixil.co.jp/lineup/gate_fence/smartpost/
+株式会社 LIXIL スマート宅配ポスト
+実証実験で一時期話題になった宅配ボックス。
+値段との兼ね合いでなかなかIoTに対応したデバイスが多くないがゆえに期待している。
+自動発注 https://bungu.plus.co.jp/special/st/2019/octotas/
+プラス株式会社 Octotas
+Amazonのダッシュボタンは有名ですが、重さで自動発注できるのはあまり認知されていないと思う。
+完全にユーザが意識せずにできるもので最もIoTらしいと思っています。
+ペット https://petelect.jp/lp/karikarimachinesp/
+株式会社アクセスライン カリカリマシーンSP
+家族の一員ともいえるペットの自動餌やり機、餌を与えるのはもちろんご飯を食べていないことを確認でき、なにか問題があったことに反応できる
+植物 https://foop.cestec.jp/
+アドトロンテクノロジー株式会社 foop
+水耕栽培キット、適切なタイミングをデバイスからスマートフォンに教えてくれるのでだれでも育てることができるところがよい。
+忘れ物 https://mamorio.jp/
+MAMORIO株式会社 MAMORIO
+「なくすを、なくす」というテーマで開発された落とし物を探すことができるデバイス。
+有名ですが、BLEをうまく使っていて素晴らしいと思います。
+赤ちゃん https://unkobtn.com/
+株式会社144Lab うんこボタン
+前項までのデバイスと比べると異色ですが、ボタンを押したことをメモできるデバイス。
+デバイスとしてはシンプルだが、子育てで忙しい人にピッタリ合っていてIoTである意味がある良い商品だと思います。</description>
+    </item>
+    
+    <item>
+      <title>NodeRedでHTTPリダイレクト対応したフローを作る</title>
+      <link>https://wamisnet.github.io/blog/2019-01-27-nodered_redirect/</link>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-01-27-nodered_redirect/</guid>
+      <description>NodeRedでGoogle App Scriptと通信するフローを作った時にHTTPリダイレクトが必要になりました。
+パッとぐぐっても情報を見つけられなかったので、まとめてみました。
+フロー [{&amp;#34;id&amp;#34;:&amp;#34;d7b66544.cad228&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;http request&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;method&amp;#34;:&amp;#34;GET&amp;#34;,&amp;#34;ret&amp;#34;:&amp;#34;txt&amp;#34;,&amp;#34;url&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;tls&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;x&amp;#34;:270,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;ba934f8b.bf0d1&amp;#34;,&amp;#34;34a354d5.522b7c&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;ba934f8b.bf0d1&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;debug&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;active&amp;#34;:true,&amp;#34;console&amp;#34;:&amp;#34;false&amp;#34;,&amp;#34;complete&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;x&amp;#34;:430,&amp;#34;y&amp;#34;:1200,&amp;#34;wires&amp;#34;:[]},{&amp;#34;id&amp;#34;:&amp;#34;ee827d07.60406&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;debug&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;active&amp;#34;:true,&amp;#34;console&amp;#34;:&amp;#34;false&amp;#34;,&amp;#34;complete&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;x&amp;#34;:1090,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[]},{&amp;#34;id&amp;#34;:&amp;#34;9aae099d.e37438&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;function&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;リダイレクト&amp;#34;,&amp;#34;func&amp;#34;:&amp;#34;msg.url = msg.headers.location;\ndelete msg.headers;\ndelete msg.payload;\ndelete msg.statusCode;\ndelete msg.method;\nreturn msg;&amp;#34;,&amp;#34;outputs&amp;#34;:1,&amp;#34;noerr&amp;#34;:0,&amp;#34;x&amp;#34;:600,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;c44e1561.006978&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;c44e1561.006978&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;http request&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;method&amp;#34;:&amp;#34;GET&amp;#34;,&amp;#34;ret&amp;#34;:&amp;#34;obj&amp;#34;,&amp;#34;url&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;tls&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;x&amp;#34;:790,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;f5b05c0a.c51b2&amp;#34;,&amp;#34;3ef37c00.8133a4&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;34a354d5.522b7c&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;switch&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;property&amp;#34;:&amp;#34;statusCode&amp;#34;,&amp;#34;propertyType&amp;#34;:&amp;#34;msg&amp;#34;,&amp;#34;rules&amp;#34;:[{&amp;#34;t&amp;#34;:&amp;#34;eq&amp;#34;,&amp;#34;v&amp;#34;:&amp;#34;302&amp;#34;,&amp;#34;vt&amp;#34;:&amp;#34;num&amp;#34;},{&amp;#34;t&amp;#34;:&amp;#34;eq&amp;#34;,&amp;#34;v&amp;#34;:&amp;#34;301&amp;#34;,&amp;#34;vt&amp;#34;:&amp;#34;num&amp;#34;},{&amp;#34;t&amp;#34;:&amp;#34;else&amp;#34;}],&amp;#34;checkall&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;outputs&amp;#34;:3,&amp;#34;x&amp;#34;:430,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;9aae099d.e37438&amp;#34;],[&amp;#34;9aae099d.e37438&amp;#34;],[]]},{&amp;#34;id&amp;#34;:&amp;#34;f5b05c0a.c51b2&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;switch&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;property&amp;#34;:&amp;#34;statusCode&amp;#34;,&amp;#34;propertyType&amp;#34;:&amp;#34;msg&amp;#34;,&amp;#34;rules&amp;#34;:[{&amp;#34;t&amp;#34;:&amp;#34;lt&amp;#34;,&amp;#34;v&amp;#34;:&amp;#34;300&amp;#34;,&amp;#34;vt&amp;#34;:&amp;#34;num&amp;#34;},{&amp;#34;t&amp;#34;:&amp;#34;else&amp;#34;}],&amp;#34;checkall&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;outputs&amp;#34;:2,&amp;#34;x&amp;#34;:950,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;ee827d07.60406&amp;#34;],[]]},{&amp;#34;id&amp;#34;:&amp;#34;3ef37c00.8133a4&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;debug&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;active&amp;#34;:true,&amp;#34;console&amp;#34;:&amp;#34;false&amp;#34;,&amp;#34;complete&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;x&amp;#34;:950,&amp;#34;y&amp;#34;:1200,&amp;#34;wires&amp;#34;:[]},{&amp;#34;id&amp;#34;:&amp;#34;16aa0ce6.c87ac3&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;inject&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;topic&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;payload&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;payloadType&amp;#34;:&amp;#34;date&amp;#34;,&amp;#34;repeat&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;crontab&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;once&amp;#34;:false,&amp;#34;x&amp;#34;:100,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;d7b66544.cad228&amp;#34;]]}] 解説 一つ目のHTTPRequest Nodeで通信したいURLを指定します。 次のSwitchでリダイレクトの301か302の場合、次の関数ノードに処理をつづけます。 関数ノードでは、msg.url = msg.headers.location;でヘッダーに含まれた移動先のURLを代入して次のHTTPRequest Nodeで移動先の情報を取得します。
+簡単ではありますが、このようになっています。 これで以上になります。簡単にではありますが、誰かの助けになればと思います！</description>
+    </item>
+    
+    <item>
+      <title>記事を書くのに役立ったリンク集</title>
+      <link>https://wamisnet.github.io/blog/2019-01-11-writer_editer_link/</link>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-01-11-writer_editer_link/</guid>
+      <description>動画をGIF画像に変更する http://giraf.harusamex.com/
+GIF画像を圧縮する http://ezgif.com/optimize
+png画像を圧縮する https://tinypng.com/
+スクリーンショット＆スクリーン動画 https://www.screenpresso.com/download/
+画像共有に便利 元記事 : https://relativelayout.hatenablog.com/entry/2018/06/20/001722
+Github : https://github.com/pokiiio/GooglePhotoMarkdowner</description>
+    </item>
+    
+    <item>
+      <title>2018年版　ポートフォリオ</title>
+      <link>https://wamisnet.github.io/blog/2019-01-09-portfolio/</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-01-09-portfolio/</guid>
+      <description>Nefry シリーズ dotstudioさんと共同で開発しているIoT開発ボードです。 「ネットに簡単につながる」ことを実現するために2015年から基板からファームウェア、デバイス設定用Webサイトなど一括して開発しました。
+AWSやAzureといった大きなクラウドサービスはもちろん、ほかにもIFTTTやFirebase、Milkcocoaなど様々なサービスと連携し、購入したユーザが自由に開発できるようにライブラリやドキュメントなどを作成しています。
+それ以外にもこちらでデータをより簡単に扱えるようにNefryクラウドといったクラウドサービスを開発、提供しています。
+ほかの連携例はこちらをご覧ください
+CocoaBit littleBitsというマグネット式の各モジュールをつなぎ合わせることで、電子回路を楽しく学べるもののIoT拡張モジュールを開発しました。 ワンフットシーバスさんと共同で開発しました。
+Webページで入力状態を可視化したり、スライダーで出力をコントロールすることができます。また自由にプログラムを書いて動作できます。
+参考記事：https://dotstud.io/blog/cocoabit-littlebits-milkcocoa-nefry/
+カウンティット 工場での金型の使用回数を計測するために磁気センサーを用い、センシングしたデータをサーバに送信します。 下記の画像は初版の基板で次のバージョンでは今回の初版の改善点を反映し、大幅に改善する予定です。
+電子ペーパー 電源を切っても表示が消えない、電子ペーパーを使い情報の新たな表現を模索しています。 試作中のため、こんなものも作れるというイメージを持っていただければと思います。
+その他 ELワイヤー制御基板、モータ制御基板、Arduino互換機などIoTに直接関係しないものも何個か作成しています。 簡単に写真の紹介をさせていただきます。</description>
     </item>
     
     <item>
@@ -275,6 +648,369 @@ connpassページ
 初イベントは13人の方に来ていただいて、6人の人に発表して頂きました！ ホントにありがたい限りです！
 イベントの様子の画像を何枚か貼っておきます！
 ちなみに次のイベントは来月頃の予定らしい…</description>
+    </item>
+    
+    <item>
+      <title>Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる</title>
+      <link>https://wamisnet.github.io/blog/2019-11-27-zaif/</link>
+      <pubDate>Tue, 26 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-11-27-zaif/</guid>
+      <description>最近、仮想通貨の話題を聞かない日はないようになってだいぶ浸透してきたんだなと思います。
+悪い面が騒がれているような気がしますが、エンジニアとしては触ってみると面白い分野なのではないかなと思っています。 そんな仮想通貨を実際に決済システムとしてビックカメラや秋葉原の一部店舗などで取り扱われてきています、これはちょっと気になる。
+そんなことを思っていたら、ちょうどいい感じにZaif Paymentを見つけましたので使ってみました！！(個人利用できていい感じのサービスがあればそれでもいいかもですけどね)
+**完成版はこちら！**気に入ったら何円か投げ銭してくれてもいいんですよ？
+ 2017/12/30 決済情報の表示に対応！！
+ Zaif Paymentとは 取引所のZaifが行っている仮想通貨決済サービスです。
+公式サイトはこちら
+特徴
+ 手数料無料 モナコインに対応している 日本円で受け取ることができる 仮想通貨のまま受け取ることができる  このサービスはAPIで使って扱うことができます。
+今回は簡単に実装するためにAPI＋Node-Redで決済システムを作ってみようと思います。
+決済システムをつくってみる それではNode-Redでさくっと作ってみようと思います。
+環境  IBM Cloud ライトアカウントなどのNode-Red環境(私はAWSにMode-Redの環境を作ってて試しています) Zaifアカウント　(本人確認済み)   IBM Cloud (aka Bluemix) ライト・アカウント作成手順
+ サンプルコード [{&amp;#34;id&amp;#34;:&amp;#34;f6f414ca.057578&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;http request&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;method&amp;#34;:&amp;#34;POST&amp;#34;,&amp;#34;ret&amp;#34;:&amp;#34;obj&amp;#34;,&amp;#34;url&amp;#34;:&amp;#34;https://api.zaif.jp/ecapi&amp;#34;,&amp;#34;tls&amp;#34;:&amp;#34;e55e7d60.78615&amp;#34;,&amp;#34;x&amp;#34;:568,&amp;#34;y&amp;#34;:168,&amp;#34;wires&amp;#34;:[[&amp;#34;68603af5.adebf4&amp;#34;,&amp;#34;1670bdc2.8675b2&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;d408e881.31ac48&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;inject&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;Test&amp;#34;,&amp;#34;topic&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;payload&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;payloadType&amp;#34;:&amp;#34;date&amp;#34;,&amp;#34;repeat&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;crontab&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;once&amp;#34;:false,&amp;#34;x&amp;#34;:108,&amp;#34;y&amp;#34;:88,&amp;#34;wires&amp;#34;:[[&amp;#34;1c02b6e3.fc9989&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;942f2d66.612c7&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;function&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;APIKey設定&amp;#34;,&amp;#34;func&amp;#34;:&amp;#34;msg.key = \&amp;#34;\&amp;#34;;\nmsg.secret = \&amp;#34;\&amp;#34;;\nmsg.currency = msg.payload.basecoin;\nmsg.jpy = msg.coin = msg.payload.coin;\nif(msg.currency == \&amp;#34;mona\&amp;#34;){\n msg.build_pay = true;\n} \nif(msg.currency == \&amp;#34;btc\&amp;#34;){\n //msg.build = true;\n}\nreturn msg;&amp;#34;,&amp;#34;outputs&amp;#34;:1,&amp;#34;noerr&amp;#34;:0,&amp;#34;x&amp;#34;:408,&amp;#34;y&amp;#34;:88,&amp;#34;wires&amp;#34;:[[&amp;#34;7be80c8f.e09434&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;c0675801.ef7898&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;function&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;RequestMessage&amp;#34;,&amp;#34;func&amp;#34;:&amp;#34;msg.header = \&amp;#34;content-type:application/x-www-form-urlencoded\&amp;#34;;\nmsg.payload = \&amp;#34;method=createInvoice&amp;amp;key=\&amp;#34; + msg.</description>
+    </item>
+    
+    <item>
+      <title>Nefryいろんなウラの話</title>
+      <link>https://wamisnet.github.io/blog/2017-12-25-nefry_talk/</link>
+      <pubDate>Mon, 25 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2017-12-25-nefry_talk/</guid>
+      <description>2020/7/4 追記
+  　2年前に書いた記事を振り返ってみると、実際に実現できたことも多々あって、やってこれてほんとによかったなと思います。
+  　現在、他のESP32ボードに押されてしまっていますがこういった情報の蓄積は非常に強みであり、支えていただいた皆さんには感謝の気持ちでいっぱいです。ありがとうございました。
+ Nefry AdventCalendar最終日の担当のわみです！
+まずは今日までNefry Advent Calendarを書いてくれた皆さんに感謝です！！はじめのころはちゃんと埋まるのか不安ですがみなさんのおかげで今日まで無事にこれてホントにうれしい気持ちでいっぱいです！
+最終日のテーマとして、Nefryの作者から見たNefryの過去と未来の夢の話をしようと思います。ぜひご覧ください！
+Nefryの過去話 Nefryの過去話として、作ったNefryの遍歴をぱぱっとまとめてみようと思います。
+Nefry誕生 Nefryは2015年8月9日に開催されたJS Board Shibuyaというイベントをきっかけに知り合ったMilkcocoaの中の人である川野さん、平間さん、落合さんとの会話から
+ ESP8266を簡単に触れるボードがほしい
+ というこの一言から生まれました。
+一番初期に作られたNefryの原型となるものです。
+この時はジャンパーワイヤで切り替えをしないと書き込みができないものでしたが、これでもあの当時はそれなりに便利に使えるボードでした。 switch-scienceさんのEsprシリーズすらなかった時代でした。
+まだNefryという名前すらついてないですねｗ
+Nefry (v1) このあと第2号として先ほどボードの改良版として今のNefry v2に近い形のNefry(v1)?を2015年11月ごろに作成しました。 このころのバージョンはフリスクケースを改造したケースが付属していました。結構量産が大変でフリスクを山のように食べていた思い出がありますね。
+このバージョンは60個程度つくってイベントなどで販売していました。無事に全数捌けたのがうれしかったですね。
+この時は今まで続くシリーズになるのかどうなのか確定していなくてフワフワしていたように思います。
+このころは写真に写っているMilkcocoaとどうやっていこうかと模索していたように思います。 全部私が手で半田付けとかしていたのでなかなか大変でしたね。 あとこのころにのびさんと出会ってLIGブログで記事を書くことになりましたね。そう思うとこのタイミングが今に至る転換点だったように思います。
+Nefry v2 2016年7月にNefry(v1)の改良版としてNefry v2を作成しました。 このころから中国に量産をかけるようになりました。MDFのケースが付属するようになったのもこのタイミングからですね。
+このタイミングでのびさんがLIGから独立してdotstudioになったのもこのタイミングに近いですね。 dotstudioになってからネット販売が増え、累計で150台程度販売されました。
+販売してから反省したのですが、シリアル変換を搭載すればよかったと思ってますｗ
+このタイミングから徐々にコミュニティが生まれ始めたのかなと思います。
+Nefry BT 2017年5月にクラウドファンディングをした、Nefry BTです。
+dotstudioと共同で開発、販売を行いました。これがたった３時間足らずで目標金額を達成することになるとは思いませんでした。 みなさんに支援していただけてホントによかったです。
+Facebookグループなどで最近書き込みが多くコミュニティが発展しているのはホントにうれしいです！！
+予想以上の売れ行きで現在在庫切れで申し訳ないです…(´・ω・｀)
+次のロットを量産しているので少々お待ちください！！
+Nefryの未来の夢 これまででNefryの過去話をしました。 ちょっとこれから私の思い浮かべる未来の夢のお話をしようかと思います。
+今のところのNefryは累計出荷台数をまとめてみました。
+   Year Nefryシリーズ合計出荷台数     2015 30   2016 100   2017 350   2018 400   2019 200     2019年までのものを追記</description>
+    </item>
+    
+    <item>
+      <title>SSD1306で画像表示の簡易まとめ</title>
+      <link>https://wamisnet.github.io/blog/2017-06-11-ssd1306-image/</link>
+      <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2017-06-11-ssd1306-image/</guid>
+      <description>XBMというフォーマットに合わせて作成する。
+具体的な方法 https://blog.squix.org/2015/05/esp8266-nodemcu-how-to-create-xbm.html
+変換サイト https://www.online-utility.org/image/convert/to/XBM</description>
+    </item>
+    
+    <item>
+      <title>UniboとIFTTTで簡単にIoTしてみる</title>
+      <link>https://wamisnet.github.io/blog/2017-05-11-unibo_ifttt/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2017-05-11-unibo_ifttt/</guid>
+      <description>IFTTTは（イフト）TwitterやFacebook、SlackなどのWebサービス同士を組み合わせて簡単に連携できるサービスです。
+今回はそのIFTTTとUniboをつなげてUniboからSlackやTwitterなどにメッセージを送信する仕組みについて説明します。
+#全体図
+[{&amp;quot;id&amp;quot;:&amp;quot;1a22c6251f.020e3a&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;tab&amp;quot;,&amp;quot;label&amp;quot;:&amp;quot;IFTTT&amp;quot;},{&amp;quot;id&amp;quot;:&amp;quot;1ad734c9dd.af1808&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;http request&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a22c6251f.020e3a&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;IFTTTにアクセス&amp;quot;,&amp;quot;method&amp;quot;:&amp;quot;GET&amp;quot;,&amp;quot;ret&amp;quot;:&amp;quot;txt&amp;quot;,&amp;quot;url&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;tls&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;x&amp;quot;:586,&amp;quot;y&amp;quot;:440,&amp;quot;wires&amp;quot;:[[&amp;quot;1a70e6eb3f.c26754&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1ad02e9d78.efebc&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;speech&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a22c6251f.020e3a&amp;quot;,&amp;quot;word&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;subtitle&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;edit&amp;quot;:false,&amp;quot;language&amp;quot;:&amp;quot;jp&amp;quot;,&amp;quot;voice&amp;quot;:&amp;quot;yuuto&amp;quot;,&amp;quot;version&amp;quot;:1,&amp;quot;x&amp;quot;:987,&amp;quot;y&amp;quot;:440,&amp;quot;wires&amp;quot;:[[]]},{&amp;quot;id&amp;quot;:&amp;quot;1a70e6eb3f.c26754&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;function&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a22c6251f.020e3a&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;発話のためにコピー&amp;quot;,&amp;quot;edit&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;func&amp;quot;:&amp;quot;msg.word = msg.subtitle = msg.payload;\nreturn msg;&amp;quot;,&amp;quot;outputs&amp;quot;:1,&amp;quot;dummy&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;noerr&amp;quot;:0,&amp;quot;x&amp;quot;:805,&amp;quot;y&amp;quot;:440,&amp;quot;wires&amp;quot;:[[&amp;quot;1ad02e9d78.efebc&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a8a30f02a.12783&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;inject&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a22c6251f.020e3a&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;topic&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;payload&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;payloadType&amp;quot;:&amp;quot;date&amp;quot;,&amp;quot;repeat&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;crontab&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;once&amp;quot;:false,&amp;quot;x&amp;quot;:390,&amp;quot;y&amp;quot;:440,&amp;quot;wires&amp;quot;:[[&amp;quot;1ad734c9dd.af1808&amp;quot;]]}] #手順
+IFTTTの登録についてはこちらの記事をご覧ください。
+ Webサービス同士を連携できる「IFTTT」と自作IoTデバイスを繋いで生活を便利にしてみた
+ 登録ができたところで、実際に連携させてみようと思います。
+IFTTTでシナリオを作成してみる IFTTTでUniboとLineをつなげるレシピと呼ばれるシナリオを作成していきます。 上のリンクをクリックして作成していきましょう。
+まずはMakerWebhooksをトリガーにするため”make”と検索欄に入力します。 MakerWebhooksがあればそれをクリックします。
+MakerWebhooksはEvent単位でトリガーがかかります。今回はEventNameに&amp;quot;Unibo&amp;quot;と入力し”Create trigger”をクリックし作成していきます。 今入力したEventNameはあとでUniboに入力するのでSecretKeyと合わせて覚えておきましょう。
+次にトリガーが起こった時にしたい動作を選択します。 IFTTTの検索欄でLineを検索し、連携させていきます。 ちなみに、このときにTwitterやGmailなどを選択するとそれと連携させることが出来ます。
+Recipientと書かれた欄にメッセージを送るLineのグループを選択します。 Messageと書かれた欄に送信するメッセージを入力を入力します。Value1、Value2などがありプログラムから値を渡すことができます。これを使えば温度センサや明るさセンサーの値をプログラムから渡しメッセージに組み込むことが可能です。 オプションですが写真のURLさえあれば、Lineに写真を投稿することができます。
+Create actionをクリックしてメッセージを保存します。
+最後にFinishを押し、作成を完了します。
+こちらのリンクをクリックしDocumentationのリンクをクリックします。
+クリックするとこのような画面に移動します。
+このときに表示される赤枠のURLをUniboにコピーします。
+Uniboの準備をする Uniboのスキルクリエイターに移動し、全体図の章で見せたJSONの文字列をスキルクリエイターにインポートしてください。
+インポートが終わったら先ほどIFTTTで取得したURLを張り付けていきます。 http request Nodeをクリックし、赤枠の入力欄に先ほどのURLを貼り付けていきます。この時にURL中央部にある{event}は先ほどIFTTTに登録したイベント名に変えておきましょう。 記事の通りに作成している場合はUniboになります。
+入力できたら完了を押し作成を完了します。
+これでDeployを押し、タイムスタンプのボタンを押せばLineにメッセージが飛ぶような仕組みが完成しました！ 余談ですが、functionNodeでhttp request Nodeの応答をUniboでしゃべらすためにメッセージ内容をコピーする処理をいれることでレスポンスをしゃべらすことができるようになります。</description>
+    </item>
+    
+    <item>
+      <title>UniboでAzure IoTHubと連携させてみる</title>
+      <link>https://wamisnet.github.io/blog/2017-05-10-unibo_iothub/</link>
+      <pubDate>Wed, 10 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2017-05-10-unibo_iothub/</guid>
+      <description>AzureIoTHubでメッセージを送受信してみる。 Azure IoTHubとUniboのメッセージをやりとりしてみましょう。
+##全体図
+[{&amp;quot;id&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;tab&amp;quot;,&amp;quot;label&amp;quot;:&amp;quot;iothub&amp;quot;},{&amp;quot;id&amp;quot;:&amp;quot;1adc54aae1.2cb078&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;inject&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;開始&amp;quot;,&amp;quot;topic&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;payload&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;payloadType&amp;quot;:&amp;quot;date&amp;quot;,&amp;quot;repeat&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;crontab&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;once&amp;quot;:false,&amp;quot;x&amp;quot;:320,&amp;quot;y&amp;quot;:324.888916015625,&amp;quot;wires&amp;quot;:[[&amp;quot;1a50458b29.daf934&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a5b568748.b15d28&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;azureiothub&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Azure IoT Hub&amp;quot;,&amp;quot;protocol&amp;quot;:&amp;quot;mqtt&amp;quot;,&amp;quot;x&amp;quot;:958.1041870117188,&amp;quot;y&amp;quot;:325,&amp;quot;wires&amp;quot;:[[&amp;quot;1a452ce6f4.4d1838&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a6872e007.3f029&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;template&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Azure IoTHubに接続情報&amp;quot;,&amp;quot;field&amp;quot;:&amp;quot;payload&amp;quot;,&amp;quot;fieldType&amp;quot;:&amp;quot;msg&amp;quot;,&amp;quot;format&amp;quot;:&amp;quot;json&amp;quot;,&amp;quot;syntax&amp;quot;:&amp;quot;mustache&amp;quot;,&amp;quot;template&amp;quot;:&amp;quot;{\n \&amp;quot;deviceId\&amp;quot;: \&amp;quot;unibo\&amp;quot;,\n \&amp;quot;key\&amp;quot;: \&amp;quot;SharedAccessKey=以下のものを貼る\&amp;quot;,\n \&amp;quot;protocol\&amp;quot;: \&amp;quot;mqtt\&amp;quot;,\n \&amp;quot;data\&amp;quot;: \&amp;quot;{value1: 0, value2: \\\&amp;quot;test\\\&amp;quot;}\&amp;quot;\n}&amp;quot;,&amp;quot;x&amp;quot;:718.1041870117188,&amp;quot;y&amp;quot;:325,&amp;quot;wires&amp;quot;:[[&amp;quot;1a5b568748.b15d28&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1ad307ac75.70343&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;motion&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;target&amp;quot;:&amp;quot;other&amp;quot;,&amp;quot;motion&amp;quot;:&amp;quot;happy&amp;quot;,&amp;quot;x&amp;quot;:1042.1041870117188,&amp;quot;y&amp;quot;:561,&amp;quot;wires&amp;quot;:[[]]},{&amp;quot;id&amp;quot;:&amp;quot;1a9501606e.fe849&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;debug&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;active&amp;quot;:true,&amp;quot;console&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;complete&amp;quot;:&amp;quot;payload&amp;quot;,&amp;quot;x&amp;quot;:747.1041870117188,&amp;quot;y&amp;quot;:432,&amp;quot;wires&amp;quot;:[]},{&amp;quot;id&amp;quot;:&amp;quot;1a50458b29.daf934&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;led&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;color&amp;quot;:&amp;quot;black&amp;quot;,&amp;quot;version&amp;quot;:1,&amp;quot;x&amp;quot;:499.10418701171875,&amp;quot;y&amp;quot;:325,&amp;quot;wires&amp;quot;:[[&amp;quot;1a6872e007.3f029&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a452ce6f4.4d1838&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;function&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;データ整形&amp;quot;,&amp;quot;edit&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;func&amp;quot;:&amp;quot;msg.payload = msg.payload.toString();\nreturn msg;&amp;quot;,&amp;quot;outputs&amp;quot;:1,&amp;quot;dummy&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;noerr&amp;quot;:0,&amp;quot;x&amp;quot;:336.10418701171875,&amp;quot;y&amp;quot;:485,&amp;quot;wires&amp;quot;:[[&amp;quot;1a513c662f.d3f0a8&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a513c662f.d3f0a8&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;switch&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;送受信分岐&amp;quot;,&amp;quot;property&amp;quot;:&amp;quot;payload&amp;quot;,&amp;quot;propertyType&amp;quot;:&amp;quot;msg&amp;quot;,&amp;quot;rules&amp;quot;:[{&amp;quot;t&amp;quot;:&amp;quot;eq&amp;quot;,&amp;quot;v&amp;quot;:&amp;quot;Message sent.&amp;quot;,&amp;quot;vt&amp;quot;:&amp;quot;str&amp;quot;},{&amp;quot;t&amp;quot;:&amp;quot;neq&amp;quot;,&amp;quot;v&amp;quot;:&amp;quot;Message sent.&amp;quot;,&amp;quot;vt&amp;quot;:&amp;quot;str&amp;quot;}],&amp;quot;checkall&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;outputs&amp;quot;:2,&amp;quot;x&amp;quot;:521.1041870117188,&amp;quot;y&amp;quot;:485,&amp;quot;wires&amp;quot;:[[&amp;quot;1a9501606e.fe849&amp;quot;],[&amp;quot;1a14de07ea.ded998&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a14de07ea.ded998&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;delay&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;pauseType&amp;quot;:&amp;quot;rate&amp;quot;,&amp;quot;timeout&amp;quot;:&amp;quot;5&amp;quot;,&amp;quot;timeoutUnits&amp;quot;:&amp;quot;seconds&amp;quot;,&amp;quot;rate&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;nbRateUnits&amp;quot;:&amp;quot;30&amp;quot;,&amp;quot;rateUnits&amp;quot;:&amp;quot;second&amp;quot;,&amp;quot;randomFirst&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;randomLast&amp;quot;:&amp;quot;5&amp;quot;,&amp;quot;randomUnits&amp;quot;:&amp;quot;seconds&amp;quot;,&amp;quot;drop&amp;quot;:false,&amp;quot;x&amp;quot;:764.1041870117188,&amp;quot;y&amp;quot;:526,&amp;quot;wires&amp;quot;:[[&amp;quot;1ad307ac75.70343&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a7c821ed2.91754&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;delay&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;pauseType&amp;quot;:&amp;quot;timed&amp;quot;,&amp;quot;timeout&amp;quot;:&amp;quot;5&amp;quot;,&amp;quot;timeoutUnits&amp;quot;:&amp;quot;seconds&amp;quot;,&amp;quot;rate&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;nbRateUnits&amp;quot;:&amp;quot;30&amp;quot;,&amp;quot;rateUnits&amp;quot;:&amp;quot;second&amp;quot;,&amp;quot;randomFirst&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;randomLast&amp;quot;:&amp;quot;5&amp;quot;,&amp;quot;randomUnits&amp;quot;:&amp;quot;seconds&amp;quot;,&amp;quot;drop&amp;quot;:false,&amp;quot;x&amp;quot;:771.1041870117188,&amp;quot;y&amp;quot;:621,&amp;quot;wires&amp;quot;:[[&amp;quot;1ad307ac75.70343&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;1a289d2a8d.919826&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;comment&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;AzureIoTHubで必要となる情報を入力します。&amp;quot;,&amp;quot;info&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;x&amp;quot;:736.1041870117188,&amp;quot;y&amp;quot;:275,&amp;quot;wires&amp;quot;:[]},{&amp;quot;id&amp;quot;:&amp;quot;1af14fac81.3eab5&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;comment&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;３０秒毎に順番に処理をします&amp;quot;,&amp;quot;info&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;x&amp;quot;:774.1041870117188,&amp;quot;y&amp;quot;:485,&amp;quot;wires&amp;quot;:[]},{&amp;quot;id&amp;quot;:&amp;quot;1a63ab930e.7d0b8c&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;comment&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;1a885986dc.5c17f8&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;３０秒の間に届いた最新のメッセージの処理をします&amp;quot;,&amp;quot;info&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;x&amp;quot;:767.1041870117188,&amp;quot;y&amp;quot;:672,&amp;quot;wires&amp;quot;:[]}] 前提条件  Azureに登録できていること  手順 AzureのIoTHubに登録するところから説明していきます。
+##Azure IoTHubの設定 それでは、AzureにログインしてIoTHubを実際に作っていきましょう！
+Azure ポータルを開いていきます。
+新規からモノのインターネット(IoT)をクリックして、IoTHubをクリックします。これから必要な設定を行っていきます。 無事にIoTHubが開かれると複数の入力欄が出るので写真を参考に入力欄を埋めていきましょう。 それでは、必須項目であるIoTHubの名前を入力してください。この名前はドメインでも使われますので他の方と重複するとエラーが出ます。入力欄の右端が緑のチェックが入れば大丈夫です。 次に、価格とスケールティアを変更していきます。この際にFreeを必ず選んでください。Standardを選んだまま作成してしまうと、後からFreeに変更することができず、再度作り直すことになります。
+Freeを選択したらクリックして反映させてください。
+リソースグループは既存ものがあれば、それを使って頂いてもかまいませんが、今回は初めてだという前提で、新規作成で好きなグループ名を入力してください。
+Azureサーバーがある場所を指定することができます。東日本、西日本と選べますのでお好みでどうぞ。
+ここまで問題なくできていれば、作成ボタンをクリックしてIoTHubをデプロイしていきます。 数分かかりますのでしばしお待ちを… 無事にIoTHubのデプロイが終わるとこのような画面が表示されます。 この画面では先ほど設定した内容が見れるほか、IoTHubの使用状態を確認することができます。
+デバイスを繋げるために必要な設定を行っていきます。 共有アクセスポリシーからiothubownerをクリックし、プライマリキーをコピーします。 このとき写真で示してある部分をクリックすると簡単にキーをコピーすることができます。
+このプライマリキーは次の作業で使用します。 この作業からDevice Explorerというツールを使っていきます。 このツールはWindows専用になります。MacやLinuxの場合iothub-explorerを使うようですが、今回は取り扱いません。
+###Device Explorerのダウンロード こちらの**リンク**からダウンロードしてインストールをよろしくお願いします。
+インストールが終わったところでDevice Explorerを使っていこうと思います。
+このツールでIoTHubに接続できる端末の登録、削除、ほかにはデバイスからIoTHubへの通信モニターになったり、IoTHubからデバイスにデータを送ることができるなどIoTHubに必須のものとなっております。
+説明が長くなりましたが、それではこのDevice Explorerに先ほどのプライマリキーを入力してUpdateをクリックしてください。 プライマリキーが合っていれば、このような表示がされます。この表示がでれば先ほど作ったIoTHubと連携ができるようになります。 これからIoTHubに接続できるデバイスの設定をしていこうと思います。
+この作業はデバイスごとにIDを割り振る作業になります。 ManagementからCreateをクリックします。 Createをクリックするとこのような画面が出ますので、Device IDに接続するデバイス名を入力してください。
+入力が終わったらCreateをクリックしてください。 無事にデバイスが作れると先ほどのDevice IDを持ったものが増えているはずです。 無事に作成できていれば、次はデバイスに必要な情報をコピーしておきましょう。 今回作成したDevice IDをクリックすると青色の欄が移動しますので、選択された状態で右クリックするとCopy connection string for selected deviceを選んでクリックしてください。</description>
+    </item>
+    
+    <item>
+      <title>Grove　説明資料</title>
+      <link>https://wamisnet.github.io/blog/2017-02-22-grove/</link>
+      <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2017-02-22-grove/</guid>
+      <description>Groveとは Groveとは、seeed studioが開発している統一された端子で扱えるセンサーなどがあるモジュールのことです。
+どのモジュールも端子に凹凸があるため初心者でも向きを間違えることなく扱えるメリットや手軽に差し替えることが出来るのでプロトタイピングするときにピッタリのものとなっております。
+どんなものがあるの？ 2017/2/1現在100以上もの周りの環境を取得するためのセンサ、サーボやファンなど動きのあるアクチュエータなどがあります。
+今回はその中からどのようなセンサやアクチュエータなどがあるのか解説していこうと思います。
+センサ（I2C） I2C デジタル光センサ GROVEシステムのI2C接続デジタル光センサです。
+このセンサーの特徴は明るさを照度の単位であるlux(ルクス)でとれるところです。
+アナログのセンサーでも明るさを取得する事はできますが、こちらは明確に数値として取得出来るので机の上が適切な明るさかアドバイスすることができたり、植物にちゃんと光があたっているかなど見ることができます。
+TSL2561を搭載し、光強度をデジタル信号に変換します。 検出する光のスペクトラムを、赤外線,フルスペクトラム,人間の可視光の3つのモードから選択できます。
+ 検出モード選択可能 高分解能16bitデジタル出力 400KHz I2Cファストモード ダイナミックレンジ 0.1~40,000LUX プログラム可能な割り込み機能(ユーザー設定可能な上下閾値)  I2C カラーセンサ GROVEシステムのI2C接続カラーセンサです。
+このセンサーの特徴は色を取得することが出来ることです。
+色を識別して、果物を見分ける仕組みを作ってみたり、色によって処理を分けたりするものを作成する事ができます。
+2行8列のフィルターされたフォトダイオードと16bitのADコンバータを内蔵しています。
+ 16bitデジタル出力 I2C 400KHz SYNC拡張ピンによる外部光源とのシンクロ可能  プログラム可能な割り込み機能(ユーザー設定可能な上下閾値)    I2C 三軸加速度センサ GROVEシステムの三軸加速度センサです。 ADXL345搭載。
+通信方式はI2Cです。 特徴
+ 電源電圧:3V~5V DC   高感度三軸加速度センサ     スタンバイモード時消費電力:0.1μA    センサ（アナログ） 水分センサ GROVEシステムの水分センサです。 水分量による土中の抵抗値変化に応じてアナログ電圧を出力します。
+※増幅回路やケーブルコネクタ部などがむき出しになっています。
+使用される際は、センサ部分以外が濡れないようにご注意下さい
+特徴
+ 電源電圧:3.3V~5V  音センサ GROVEシステムの音センサーです。 マイクで拾った音声をオペアンプで増幅して出力します。</description>
+    </item>
+    
+    <item>
+      <title>USB　説明資料</title>
+      <link>https://wamisnet.github.io/blog/2017-02-22-usb/</link>
+      <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2017-02-22-usb/</guid>
+      <description>USBはUSBメモリやスマートフォンの接続など様々なところで使われています。 その便利さゆえ電子工作でも多く使われています。
+規格としてのusb USBにはいろいろと規格があります。その中からよく使われるものを軽く説明していきます。
+USB2.0 現在よく使われている規格です。 今後はUSB3.0などの次の規格が普及すると思いますが、電子工作でつかわれるとしては当分USB2.0になると思います。 USB3.0とは通信速度や供給電流などが異なります。
+USB Type C 最近のスマートフォンやmacなどで採用され、普及しています。 裏表を気にすることなく扱える点が特徴です。
+USB micro B スマートフォンでよく見られる端子です。 注意点として充電専用のケーブルなどが出回っており、通信が出来ないことがあります。
+USB B プリンターやスキャナーでよく見られる端子です。 他の端子と比べ、大きいのが特徴です。
+電子工作としてのusb 電子工作でUSBを扱う理由としては、主にpcなどの外部端末と通信するためです。 どのように扱うのか注意点を併せて説明していきます。
+シリアル通信する Arduinoなどで使われてるマイクロコンピューター(マイコン)でUSBを通じてプログラムの書き換えやデバッグなどの理由で通信する際には、マイコンがUSBと直接通信できる機能を持っていないことが大半です。
+なので、USBとマイコンの間を取り持つモノが必要となります。 メジャーなのはFT232Cと呼ばれるICで通信することでPCからプログラムを書き込みが出来るようになります。
+このあたりの詳しい内容はシリアル通信のページをご覧ください。
+電源として使う USBは5Vの電圧で動いており、モバイルバッテリーなどで1Aの電流を供給することが出来ます。 しかし、PCなどと接続する際には注意が必要になります。 なぜなら、PCなどのUSBでは最大500mAの電流までしか規格上対応しておらず、過電流などの万が一の場合にはPCに対して深刻な影響を与える可能性があるので気をつけて使用してください。</description>
+    </item>
+    
+    <item>
+      <title>センサー　説明資料</title>
+      <link>https://wamisnet.github.io/blog/2017-02-22-sensor/</link>
+      <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2017-02-22-sensor/</guid>
+      <description>センサについて センサとは、人の目や耳などの代わりに機械が周りの状況を取得するために使われる部品です。 音量を取得するものや明るさを取得するものなどその種類は多種多様で人が感じられるものはもちろん、人の感知することのできない微弱な信号を取得することができます。
+1.どんなものを取得することができるのか
+先ほど例に挙げた音量や明るさなどはもちろん、手のジェスチャーを取得するものやモノの色を取得するものなど本当に多種多様です。 センサによっては簡単に入手できないものもありしますので、今回はネットや秋葉原で電子部品を販売している秋月電子通商さんで扱っているものを基準にリストにまとめてみました。
+ 音量センサ 距離センサ 方位センサ アルコールセンサ 角度センサ 圧力センサ 放射線センサ 加速度センサ カラーセンサ 明るさセンサ 温度センサ 湿度センサ ジェスチャセンサ  秋月電子通商で扱っているセンサはこれだけではありませんが、目立ったセンサだけでもこれだけあります。 一般的にはこれらのセンサからの入力を使って他のモノを制御します。
+2.センサの選び方
+次にセンサの選び方について簡単に説明します。
+例として 『大体100cm以内に人やモノが来たことを発見したい』 という前提で説明していきます。
+まずはどのようなことを取得したいかをはっきりとさせ、目的の種類のセンサを探します。 今回は距離を測る目的のため今回は距離センサのページを開きます。 距離センサといっても複数の種類があります。 80cmまでしかはかれないものや5.5mまではかれるものなど様々です。 この中から今回の目的に向いたものを選んでみましょう。
+この時に見るのがデータシートと呼ばれるセンサの性能が記載されている書類です。
+それを読むのが一番詳しいことが書いてありよいのですが、とても詳しく書かれており、その内容を理解するのはなかなか難しいです。
+もちろんデータシートを読めるようになるのは大切ですが、初心者の方にオススメする方法は秋月電子通商さんのセンサーごとのページに書かれている概要を読み、このセンサーで出来そうなモノにおおざっぱに目星を付け、センサの名前（例えば　○○） ＋ 使いたいボード（例えばArduino）で検索をかけることをお勧めします。
+そのような検索でサンプルプログラムや回路図が記載されているブログなどのサイトが見つかると思うのでその内容を読み問題なく使えそうであればよいと思われます。 全く見つからない場合はプログラムを１から作らないといけないので、そのようなものはなかなか扱えるようにするまでが大変ですのでオススメできません。 見つからない場合は、先ほどのデータシートをよく読みプログラムや回路を作成することで扱えるようになるのですが、少し難易度は上がりますので興味があれば試してみるのも面白いと思います。
+先ほどの選び方で秋月電子通商で扱っている距離センサの中から、シャープ製のGP2Y0A02YKという型番のセンサをえらんでみました。
+距離も0.2mから1.5mまで読めますし、検索すると複数のサイトが見つかりますので問題なく作成出来るでしょう。
+他にもありますがこのセンサは距離の精度やお値段も安いのでこれでいいでしょう。
+距離に精度が必要であれば別のセンサを使えばいいと思います。
+3．センサーとマイコンのつなぎ方
+センサを選んだあと、普通はセンサとマイコン(センサのデータを処理するところ)を繋げてプログラムを書き、他のモノと連携させていきます。
+その繋げるということですが、どんな風に繋げることができるのか簡単に紹介していきます。
+そもそもマイコンがなぜ必要かと言うと、様々なセンサで取得した値は電気信号であるので何らかの形で私たちが分かるようにしないと扱うことができません。 センサの値を受け取るのにお勧めなのはArduinoとよばれるマイコンボードが本やインターネットの情報が多くて困ったときに助かるので良いです。
+先ほどセンサから電気信号で出ているといいましたが、アナログの値で出力されているものやある規則に沿って通信するものもあるので順に説明していきます。
+アナログ これはシンプルな圧力センサや明るさセンサでよくみられるものです。 電圧が徐々に変化するためこの情報を取得するのには多くは指定されたアナログ入力ピンに接続するのが前提になります。
+##デジタル
+これはHIGH or LOWの2つの状態を持つセンサです。 スイッチや人感センサなどで見られます。この情報はデジタル入力ピンで取得することができます。
+I2C,SPIなど これは特定の規格で通信できるセンサで、規格によっては複数のセンサを少ない制御線で制御出来たり、アナログのセンサなどに比べて明確な数値でセンサの値を入力出来るなどメリットがあります。 しかしプログラムが少し複雑になるためセンサごとにライブラリーが出回っていることが多いです。</description>
+    </item>
+    
+    <item>
+      <title>デジタル、アナログ　説明資料</title>
+      <link>https://wamisnet.github.io/blog/2017-02-22-digital_analog/</link>
+      <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2017-02-22-digital_analog/</guid>
+      <description>アナログ、デジタルと聞いて何が思い浮かぶでしょうか？
+テレビもありますが、今回は電気的にデジタル、アナログの違いについて説明していきます。
+アナログデジタルの違いって？ 一番の違いはグラフにしたときに分かります。 これは電圧の変化のことを指します。
+デジタルはある(1)ない(0)のどちらかでの表現のためシンプルなデータになっています。 これによってあるかないかはハッキリと見て分かるのですがもともとの値がどれくらい大きかったのか、小さかったのかは分からなくなってしまいました。
+アナログであればどれだけ大きい、小さいのかは分かるのですがデータとしては大きいという状態になります。
+マイコンでみるアナログ、デジタル アナログ、デジタルがどの様なものか分かったところで、マイコン（Arduinoなど）でその値を取得する方法を説明します。
+マイコンの種類により詳細な手順は変わるので注意してください。
+アナログ、デジタルの入出力については、指定されたピンでやりとりします。
+今回のプログラムについての説明は全てArduino Unoを対象にさせていただきます。
+デジタル 入力 Arduino Unoで例えるとdigitalRead関数により、ある(HIGH)ない(LOW)を取得できます。 このときに注意しないといけないのが閾値の値です。
+Arduino Unoの場合、閾値は2.5v以上になるとHIGHになり、それ以下はLOWとなります。この閾値はマイコンより異なるので注意が必要です。
+スイッチなどを付けて、押された押されてないという状態を取得する場合、ノイズによって押していないのに押したと誤検知することがあります。 その時にはプルアップという方法をすることで誤検知を減らすことができます。
+出力 Arduino Unoで例えるとdigitalWrite関数により、ある(HIGH)ない(LOW)を出力できます。
+Arduino UnoではHIGHのとき5vが出力され、LOWのとき0vが出力されます。
+アナログ 入力 Arduino Unoで例えるとanalogRead関数により、0(0v)-1023(5v)の1024段階で値を取得できます。
+入力する電圧が5vを超える場合、抵抗で分圧をすることで入力することができます。
+分圧については、検索していただくと計算してくれるサイトなどあるので参考にしてください。
+出力 Arduino Unoではアナログ出力はできません。 しかしPWMと呼ばれる方式により、擬似的にアナログ出力をすることができます。　PWMの出力方法はanalogWrite関数により可能となります。0(0v)-255(5v)の256段階で指定することが可能です。
+それによりLEDをふんわり付けたりすることが可能です。</description>
+    </item>
+    
+    <item>
+      <title>回路図　説明資料</title>
+      <link>https://wamisnet.github.io/blog/2017-02-22-circite/</link>
+      <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2017-02-22-circite/</guid>
+      <description>回路図とは、電子部品同士をどのように繋ぐのか図解したものです。
+回路図があることで自分が見たときはもちろん、他の人に伝える時に間違えることなく電子回路を組み立てることができます。
+回路図をみてみよう 回路図にもいろいろと種類があり、線と簡単な図形で描かれたものが一般的です。
+このような回路図を読むことが出来るとインターネットにある様々な回路を組むことができます。 しかし、この様な回路図を初めて見るような方には難易度が高いです。 上の様な回路図を読みたい場合、他に説明してくれるサイトもありますのでそちらをご覧ください。
+今回は、『Frizing』と呼ばれる回路図作成ソフトの回路図を見てみようと思います。 このソフトで描かれた回路図の特徴は、電子部品をイラストで表してくれるところです。
+ボタンを押すとLEDが光る回路を組んでみました。
+実は上のシンプルな図形の回路図とこのFrizingで書いた回路図は同じ意味をもっています。 多くの場合はシンプルな図形の方で表記されるため理解できるとよいとは思いますがこの図形ってなんだっけ？と思うことがあれば検索するようにすればよいと思います。
+回路図でよくみる図    名称 回路図記号 説明     電源  電池やUSBなどから供給される電気の供給源です。プラスとマイナスがあり、回路図では横に２本線があるうちの長い方がプラス、短い方がマイナスとなります。   コンデンサ  コンデンサは電気を蓄えたり放出したりする電子部品です。プラスマイナスの極性が決まっているものもあるので注意が必要です。   抵抗  電流の流れを抑えることができます。LEDと一緒に使うことでLEDが焼けることを保護するこことができます。   スイッチ  オン、オフを切り替えすることができるものです。スイッチは様々なものがあり、どのようなことがしたいかでスイッチを変えるとよいです。   LED  小さい電力で操作でき、光らせることができます。明るいものやマトリックス状になったものなどがあります。    </description>
+    </item>
+    
+    <item>
+      <title>CocoaBitというオリジナルBitを作った話</title>
+      <link>https://wamisnet.github.io/blog/2016-12-21-cocoabit_create/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-12-21-cocoabit_create/</guid>
+      <description>CocoaBitというlittleBits拡張モジュールを作ってみて気がついたことを書き連ねておきます。
+CocoaBitとは まずはカンタンにCocoaBitについて説明していこうと思います。
+CocoaBitとは、cloudBitと呼ばれるインターネットと通信ができるモジュールが日本では技適のため使えないため、開発された拡張モジュール(拡張Bit)です。
+私が作成しているNefryをベースとしており、NefryのメリットであるWiFiやモジュールの設定を簡単に出来る点を引き継ぎ、littleBits向けにさらにカスタマイズしています。
+(CocoaBitはまだ販売されてませんが、反響があれば…
+CocoaBitのサイトはこちら
+カンタンにCloudBitがどのようなものか分かったところで作ってみて気が付いたメリットデメリットについて話してみようと思います。
+メリット 手軽に試せる なんといってもこれが一番のlittleBitsと繋げられるメリットだと思います！
+普通の電子工作であると半田付けが必要だったり、ブレッドボードにピンを何本も刺さないといけなかったりするのが、littleBitsなら繋ぐだけでいけます！磁石で繋がるので間違えることもない！
+子どもでもあそべる 向きを間違えないため、こどもに任せてしまっても問題なく作ることができます！
+子どもももちろんですが大人でもロジックBitなどもあるので充分に遊ぶことが出来ます！
+デメリット とりあえずお高い　 littleBits自体セットで販売などもされているため若干安くなったりしますが、それでもお高い…
+これは特に多数のBitがあるとより楽しめるのですが、揃えるまでが…
+ときどき接触がわるいときがある 磁石で接続しているため仕方無いのですがカンタンにとれてしまいます。それはlittleBitsの手軽に繋げられるとこと関わるので難しいところです…
+(Bitを留められるボードもあるのでそれで解決するところですが…
+bitの形に制限がある これもlittleBitsの世界なので仕方無いところですが、公式からこのようなサイズで作るといいよ、という情報が出ています。
+(これも無視して作ることも出来ますが、littleBits同士キレイに揃うといいので出来るだけ合わせましょう。
+オリジナルのBitをつくるまで！ 私の備忘録を兼ねて今回のCocoaBitを作成した流れを説明していこうと思います。
+まずは、どんなものを作るのか検討しよう。 どんなものを作るのか検討すれば、必要な部品数が判明すると思われます。その部品から必要となるであろうサイズを割り出します。
+そのサイズからその部品が収まるBitのサイズを選びます。
+こちらのサイト内にあるHDK manualのリンクをクリックします。
+ よりプロフェッショナルなTIPSについてはHDK manual やTips &amp;amp; Tricks もチェックして下さい。
+ ファイルがダウンロードされるのを待って、Design\Design Manual\PDFsの中にあるUser Interface Considerations for littleBits Module Design.pdfを開き部品が収まるサイズを探します。
+無事に見つかったら図の下にある英語の文字を覚えておきましょう。
+さくっと回路を起こしていこう eagleのテンプレートファイルがGitHubで公開されているのでそれをベースに作成するのがお勧めです。
+私はKicadの方が好きなので、採寸をまねて作成しました。 こんな感じにできれば、問題ありません。
+回路ができれば、SeeedStudioさんやElecrowさんを作成してもらいましょう！
+##　部品をそろえよう
+まずは、littleBitsの公式サイトからBITSNAPSというlittleBitsの両端を購入しましょう。
+もしくは、littleBitsのHardware Development Kitを日本の代理店であるKORGさんから購入することもできます。
+あとはほかに必要な部品を購入していてください。
+組み立てよう！ BITSNAPSともろもろの部品をつければ、無事にオリジナルの拡張Bitが出来上がりました！
+このあたりもSeeedStudioさんやElecrowさんの部品実装サービスを使うと大変便利です。 CocoaBitも作成していただいています。
+#まとめ
+そもそも、littleBitsの拡張することができるなんて思いませんでした。 BitSnaps自体がちょっと高価ではありますが、自分好みのものをつくれるメリットは大きいと思います。
+回路を作成するなど難易度は高めですが、完成度も高いので是非お勧めします！ よいlittleBitsライフを！</description>
+    </item>
+    
+    <item>
+      <title>Arduino勉強会資料</title>
+      <link>https://wamisnet.github.io/blog/2016-11-01-arduino/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-11-01-arduino/</guid>
+      <description>ArduinoIDEをダウンロードする https://www.arduino.cc/
+こちらからダウンロードしましょう
+早速Lチカしてみよう ハードウエア入門しよう
+// the setup function runs once when you press reset or power the board void setup() { // initialize digital pin 13 as an output.  pinMode(13, OUTPUT); } // the loop function runs over and over again forever void loop() { digitalWrite(13, HIGH); // turn the LED on (HIGH is the voltage level)  delay(1000); // wait for a second  digitalWrite(13, LOW); // turn the LED off by making the voltage LOW  delay(1000); // wait for a second } LEDを繋いでみよう 向きを間違えないように！</description>
+    </item>
+    
+    <item>
+      <title>Azure IoT HubをESP8266で使おう！</title>
+      <link>https://wamisnet.github.io/blog/2016-09-05-azure/</link>
+      <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-09-05-azure/</guid>
+      <description>日本での発売から一年がたち多数の作例が出てくる「ESP8266」(ESP-WROOM-02)をもっと使いこなしてみませんか？
+今回はAzureのサービスの一つであるIoTHub、それを簡単に扱えるライブラリーを作ったので紹介してみようと思います。
+ちょこっと宣伝 ところどころで出てくるESP8266の基板ですが、私が作成した「Nefry」(ねふりー)という基板を使っています。
+dotstudioさんにて販売中です！！
+USBに直接繋げられたり、Webページ上でWiFiの設定やESP8266の端末設定ができるようになっていたりとESP8266をより簡単に扱えるものになっています。
+詳しくはLigブログで記事をいくつか載せていますのでご覧ください。
+自作したオリジナルIoTデバイス「Nefry」とインターネットを繋いでみた
+Webサービス同士を連携できる「IFTTT」と自作IoTデバイスを繋いで生活を便利にしてみた
+Azure IoT Hub って？ IoT Hubは、その名の通りIoTデバイスとクラウドを繋ぐHubとなるサービスです。 似たようなサービスとして「Event Hubs」がありますが、Event Hubsとの大きな違いは2つあります。
+IoTHubの優れた点
+ デバイスとクラウドとの双方向通信が可能。(Event Hubsはデバイス→クラウドの一方のみ) デバイス毎にIDを登録して認証する為、よりセキュアに利用できる。(Event HubsはEvent Hubsごとの許可)  
+http://qiita.com/hiiyan0402/items/9c93d9673114675a57d4
+用意するもの  ESP8266(ESP-WROOM-02) Azure アカウント ArduinoIDE Arduino core for ESP8266 WiFi chip(https://github.com/esp8266/Arduino) AzureIoTHubライブラリー(https://github.com/wamisnet/Azure-iothub-mqtt-esp8266)  IoTHubで通信をしてみる 今回はESP8266からIoTHubで通信するところまでを作っていきます。
+Azure IoTHubの設定 それでは、AzureにログインしてIoTHubを実際に作っていきましょう！
+Azure ポータルを開いていきます。
+新規からモノのインターネット(IoT)をクリックして、IoTHubをクリックします。これから必要な設定を行っていきます。
+無事にIoTHubが開かれると複数の入力欄が出るので写真を参考に入力欄を埋めていきましょう。 それでは、必須項目であるIoTHubの名前を入力してください。この名前はドメインでも使われますので他の方と重複するとエラーが出ます。入力欄の右端が緑のチェックが入れば大丈夫です。 次に、価格とスケールティアを変更していきます。この際にFreeを必ず選んでください。Standardを選んだまま作成してしまうと、後からFreeに変更することができず、再度作り直すことになります。
+Freeを選択したらクリックして反映させてください。
+リソースグループは既存ものがあれば、それを使って頂いてもかまいませんが、今回は初めてだという前提で、新規作成で好きなグループ名を入力してください。
+Azureサーバーがある場所を指定することができます。東日本、西日本と選べますのでお好みでどうぞ。
+ここまで問題なくできていれば、作成ボタンをクリックしてIoTHubをデプロイしていきます。
+数分かかりますのでしばしお待ちを…
+無事にIoTHubのデプロイが終わるとこのような画面が表示されます。 この画面では先ほど設定した内容が見れるほか、IoTHubの使用状態を確認することができます。
+デバイスを繋げるために必要な設定を行っていきます。 共有アクセスポリシーからiothubownerをクリックし、プライマリキーをコピーします。 このとき写真で示してある部分をクリックすると簡単にキーをコピーすることができます。
+このプライマリキーは次の作業で使用します。 この作業からDevice Explorerというツールを使っていきます。 このツールはWindows専用になります。MacやLinuxの場合iothub-explorerを使うようですが、今回は取り扱いません。
+Device Explorerのダウンロード こちらの**リンク**からダウンロードしてインストールをよろしくお願いします。</description>
+    </item>
+    
+    <item>
+      <title>ESP8266で静的なIPをわりふってみる</title>
+      <link>https://wamisnet.github.io/blog/2016-04-27-esp8266_staticip/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-04-27-esp8266_staticip/</guid>
+      <description>家のネット環境によってはDHCPでIPアドレスを取得するより、静的（static）なIPで割り振りたいという要望を聞きましたのでソースコードを公開します。
+#表示内容
+ESP8266のlocalIP ゲートウェイのIP サブネットマスク ESP8266のmacAddress
+#コード
+#include &amp;lt;ESP8266WiFi.h&amp;gt;#define debug Serial /* IPアドレスをDHCPではなく手動で割り振ることをすることができる。 localIP:moduleのIP gateway:デフォルトゲートウエイ subnet:サブネットマスク DNSは指定しなくてよい。 config(IPAddress local_ip, IPAddress gateway, IPAddress subnet, IPAddress dns1 = (uint32_t)0x00000000, IPAddress dns2 = (uint32_t)0x00000000) */ void setup(){ debug.begin(115200); WiFi.config(IPAddress(192,168,1,2),IPAddress(192,168,1,1),IPAddress(255,255,255,0)); debug.print(&amp;#34;Local IP :&amp;#34;);debug.println(address(WiFi.localIP())); debug.print(&amp;#34;Gateway IP:&amp;#34;);debug.println(address(WiFi.gatewayIP())); debug.print(&amp;#34;SubnetMask:&amp;#34;);debug.println(address(WiFi.subnetMask())); debug.print(&amp;#34;macAddress:&amp;#34;);debug.println(WiFi.macAddress()); } void loop(){ } String address(IPAddress ip){ String ipStr = String(ip[0]) + &amp;#39;.&amp;#39; + String(ip[1]) + &amp;#39;.&amp;#39; + String(ip[2]) + &amp;#39;.&amp;#39; + String(ip[3]); return ipStr; } </description>
+    </item>
+    
+    <item>
+      <title>ESP8266でWPSを実装してみる</title>
+      <link>https://wamisnet.github.io/blog/2016-04-22-esp8266_wps/</link>
+      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-04-22-esp8266_wps/</guid>
+      <description>http://bbs.espressif.com/viewtopic.php?t=1096
+ソース元はこちら
+ESP-WROOM-02にはWPSでWiFiの設定をすることができる環境がつくられているようなのでその解説と結果を報告します。
+環境 Arduino IDE 1.6.7 Arduino core for ESP8266 WiFi chip (https://github.com/esp8266/Arduino) v2.2.0
+Arduino coreのバージョンが古いと実装されてない可能性があります。
+コード #include &amp;lt;ESP8266WiFi.h&amp;gt; void Wifi_wait(); void setup() { Serial.begin(115200); WiFi.mode(WIFI_STA); //WiFi.begin(&amp;#34;&amp;#34;,&amp;#34;&amp;#34;)このようにすることでWPSで保存したデータがある場合そちらに接続するようになる  WiFi.begin(&amp;#34;&amp;#34;, &amp;#34;&amp;#34;); Wifi_wait(); // Wifiに接続していないときにはWPSを開始します  if (WiFi.status() != WL_CONNECTED) { Serial.println(&amp;#34;\nAttempting connection ...&amp;#34;); WiFi.beginWPSConfig(); Wifi_wait(); if (WiFi.status() == WL_CONNECTED) { Serial.println(&amp;#34;Connected!&amp;#34;); Serial.println(WiFi.localIP()); Serial.println(WiFi.SSID()); Serial.println(WiFi.macAddress()); } else { Serial.println(&amp;#34;Connection failed!&amp;#34;); } } else { Serial.println(&amp;#34;\nConnection already established.&amp;#34;); } } void loop() { } void Wifi_wait() { int wait=0; Serial.</description>
     </item>
     
   </channel>

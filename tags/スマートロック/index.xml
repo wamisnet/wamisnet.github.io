@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>スマートロック on わみめも</title>
+    <link>https://wamisnet.github.io/tags/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/</link>
+    <description>Recent content in スマートロック on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/tags/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Suicaで開けられるスマートロックを作ってみた</title>
+      <link>https://wamisnet.github.io/blog/2020-01-03-smartlock/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2020-01-03-smartlock/</guid>
+      <description>こんにちは！わみです。
+私が住むギークハウス新宿がついにアップデートされました。
+少し前にはスマートロックを壊したこともありましたが… (その時の記事 :スマートロックが壊れたのでobnizを使ってハックしてみた)
+Sesameをもう一台新たに購入して、ついに完成をしました！
+なにをしたのか 音が鳴るよ！
+@fukubaka0825 さんと @retoruto_carry さんと作った鍵システムがついに動いたああああ！ pic.twitter.com/uQZ44INF93
+&amp;mdash; わみ@NefryとかFlutter本とか (@wamisnet) January 1, 2020  登録されていないSuicaの場合はエラー音を、登録されたSuicaの場合は効果音の後、obnizからBLE経由でSesameをコントロールします。
+早いときだとタッチして、すぐに鍵が開くのでめちゃくちゃ便利です。
+きっかけ スマートロックが壊れたのでobnizを使ってハックしてみた
+上記の記事でも書いているのですが、7月の開発合宿で作りかけのまま止まっていたスマートロックの制御をしたいと思っていて、ただSesame API経由だと鍵が開くまで時間がかかりすぎる。
+その解決で前回、私はハードウエアのハックをしたわけですが、安定動作を担保するのはなかなかめんどくさいので結局本番反映はしませんでした。
+今回は安定稼働はSesameを信用し、BLEで制御をするように変更してこっちのスマートロック制御が壊れても問題ないようにしました。
+技術構成 今回はギークハウス新宿に住む3人の力を合わせて作りました。 メインの担当箇所はこんな感じです。
+@fukubaka0825 : Suica認証、Sesame開錠指示　（記事 : Raspberry pi とGoとMackerelでシェアハウスの運用しやすい鍵システムを作る  ） @retoruto_carry : Suica登録用Webページ（記事 : 【おうちハック】開発合宿で3人でシェアハウスの鍵管理システムを作った【チーム開発】） @wamisnet : Sesame開錠デバイス作成、ハードウエア（記事 : 本記事）
+全体構成はすこし大きめですが、次の画像の通りです。
+せっかくなので私の担当箇所について深堀していきます。
+Sesameハック https://qiita.com/odetarou/items/9628d66d4d94290b5f2d
+上記の方の手順を参考に設定値を取得します。
+AndroidのRoot化だったり、しれっとやってますが普通に一日がかりかかるようなやつでいろいろ私も初めてでしたが、頑張ってSesameのBLEキーを取得します。 Xposedモジュールつくるのも個人的にはハマったり…
+取得できれば、ほぼほぼ完成です。
+上記の記事だと、Macで接続していますがMacを持っていないもしくはバージョンが違うとうまく動かなかったです。（これだから…
+めんどくさいなぁ…そんなことを思っていたら、そういえばobnizもnobleライブラリ出していたなと…
+https://qiita.com/wicket/items/16622097b8e6b5758d80
+これに書かれているように、nobleを呼び出しているところを変更しました。 一応、全体のコードをGithubに上げておきましたのでぜひ。
+https://github.com/wamisnet/obniz_sesame_noble
+obniz 今回みたいなnobleで動かしたいときに、パソコンを置いておくみたいなことはなかなか難しい…
+そんなときにはobniz!!
+6000円ぐらいでNode.jsで動かせるデバイスをゲットできます。
+プログラム const crypto = require(&amp;#39;crypto&amp;#39;); const Peripheral = require(&amp;#34;obniz-noble/lib/peripheral&amp;#34;); const noble = require(&amp;#34;obniz-noble&amp;#34;)(&amp;#34;OBNIZ_ID_&amp;#34;); const events = require(&amp;#39;events&amp;#39;); const os = require(&amp;#39;os&amp;#39;); const log4js = require(&amp;#39;log4js&amp;#39;); const logger = log4js.</description>
+    </item>
+    
+    <item>
+      <title>スマートロックが壊れたのでobnizを使ってハックしてみた</title>
+      <link>https://wamisnet.github.io/blog/2019-08-27_smartlock/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-08-27_smartlock/</guid>
+      <description>こんにちは、わみです！
+ギークハウス新宿では住民の入れ替わりの季節で住民減です！ こういうハック的な事に興味がある人いたら私のTwitterにメッセージしてくれると！
+なにをしたのか 壊れてしまったスマートロックからモータの制御や現在のポジションを取得するために制御を乗っ取り、obnizから指示を出すプログラムを作ってみました。
+obnizでsesameをハックしてみた！ pic.twitter.com/kdtwpJw26x
+&amp;mdash; わみ@NefryとかFlutter本とか (@wamisnet) August 27, 2019  Sesameを導入した話：https://speakerdeck.com/wamisnet/sieahausunisumatorotukuwotuketemita
+きっかけ 開発合宿にてSuicaで鍵を開けるシステムを作ったときにSesameのAPIを使ったのですが待ち時間が少々長く、実際に使うときにストレスになりそうだと思いました。
+10秒ぐらいかかってましたね… かかるタイミングだと気持ち1分ぐらい待ったような…
+玄関で待ちぼうけ(´・ω・｀)
+API以外は不満がなかったのでSesameをハックできないかと思い、Sesameを開けてみることにしました。
+BLEモジュールやモータドライバーなどが取り付けられていることを確認したのち元に戻そうとしたとき…
+「じゅっ」というどこかが壊れた音がしました
+慌てて、電源を外しましたが時すでに遅し
+もう動かなくなってしまいました
+普通ならあきらめて新しいのをもう一つ買うところですが、せっかくだから思いっきりハックすることにしました！
+技術構成 上の図のように連携しています。
+ ハードウエア(Sesame) obniz (おすすめ記事) Node.js（別のサービスと連携するのでAPIを作成）  obnizを使うと何がいいのかというとわざわざハードウエアのコードを別に書かなくてもよくて、今回であればAPIとして使うためのNode.js一つだけでハードウエアの制御ができるところですね！
+せっかくなのでちょっとづつ深堀りしていきましょう。
+ハードウエア obnizにモータドライバーついているので回路はすごくシンプルでモータとソレノイドを制御する部分+鍵のポジションを取得するためのアナログ入力をそれぞれ繋いでいます。
+（はんだ付けが汚いのはご愛嬌）
+obniz モータとソレノイドの制御、アナログ入力を変換してくれます。 これがあるから、Node.jsで書くことができます。
+Node.js とりあえずで作ったコードなのでダメな部分ありますが、ご容赦を！
+https://github.com/wamisnet/key_controller/
+鍵を開ける処理（APIでリクエストがあるとき）
+ 現在位置を取得して、平均値をとる 現在位置から目的の角度に近い方にモータを回す ソレノイドを出す 目的の角度になるまで現在位置を取得し続ける 目標角度になったら、モータを止める ソレノイドを引く  といった処理を行ってます。
+まとめ こんな感じでハックしてみました。
+動画で分かるようにボタンを押してすぐ動作するようになって目標は達成しました！！
+obnizだったので回路もコードもシンプルに作ることができて便利だなと思いました。
+ただ玄関で使用するときには、無線LANが不安定過ぎてobnizに向いていなかったので実際に使うことはできなかったです( ；∀；)
+とっても悲しい
+3日ぐらいずっとこれやってたので買った方が安かった気がする…
+とはいえ自分で作れるのは楽しいですね！
+今回バラしてしまいましたがSesame優秀なので、使うときはぜひ！
+AkerunやQrio、Sesameと使ってきましたが、さらにいいデバイスがあれば教えてもらえるとうれしいです！
+ここまで読んでくれた方へ ここまで読んでくださりありがとうございます。
+いいねやコメント、SNSでの共有等をしてくださると、今後の励みになります。よろしくお願いします。
+良かったらTwitterもフォローしてね</description>
+    </item>
+    
+  </channel>
+</rss>

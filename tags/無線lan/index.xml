@@ -28,5 +28,32 @@ Nefryがネットワークにつながらなくなっても再起動して無線
 ぜひ試してみてください！</description>
     </item>
     
+    <item>
+      <title>ESP8266で静的なIPをわりふってみる</title>
+      <link>https://wamisnet.github.io/blog/2016-04-27-esp8266_staticip/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-04-27-esp8266_staticip/</guid>
+      <description>家のネット環境によってはDHCPでIPアドレスを取得するより、静的（static）なIPで割り振りたいという要望を聞きましたのでソースコードを公開します。
+#表示内容
+ESP8266のlocalIP ゲートウェイのIP サブネットマスク ESP8266のmacAddress
+#コード
+#include &amp;lt;ESP8266WiFi.h&amp;gt;#define debug Serial /* IPアドレスをDHCPではなく手動で割り振ることをすることができる。 localIP:moduleのIP gateway:デフォルトゲートウエイ subnet:サブネットマスク DNSは指定しなくてよい。 config(IPAddress local_ip, IPAddress gateway, IPAddress subnet, IPAddress dns1 = (uint32_t)0x00000000, IPAddress dns2 = (uint32_t)0x00000000) */ void setup(){ debug.begin(115200); WiFi.config(IPAddress(192,168,1,2),IPAddress(192,168,1,1),IPAddress(255,255,255,0)); debug.print(&amp;#34;Local IP :&amp;#34;);debug.println(address(WiFi.localIP())); debug.print(&amp;#34;Gateway IP:&amp;#34;);debug.println(address(WiFi.gatewayIP())); debug.print(&amp;#34;SubnetMask:&amp;#34;);debug.println(address(WiFi.subnetMask())); debug.print(&amp;#34;macAddress:&amp;#34;);debug.println(WiFi.macAddress()); } void loop(){ } String address(IPAddress ip){ String ipStr = String(ip[0]) + &amp;#39;.&amp;#39; + String(ip[1]) + &amp;#39;.&amp;#39; + String(ip[2]) + &amp;#39;.&amp;#39; + String(ip[3]); return ipStr; } </description>
+    </item>
+    
+    <item>
+      <title>ESP8266でWPSを実装してみる</title>
+      <link>https://wamisnet.github.io/blog/2016-04-22-esp8266_wps/</link>
+      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-04-22-esp8266_wps/</guid>
+      <description>http://bbs.espressif.com/viewtopic.php?t=1096
+ソース元はこちら
+ESP-WROOM-02にはWPSでWiFiの設定をすることができる環境がつくられているようなのでその解説と結果を報告します。
+環境 Arduino IDE 1.6.7 Arduino core for ESP8266 WiFi chip (https://github.com/esp8266/Arduino) v2.2.0
+Arduino coreのバージョンが古いと実装されてない可能性があります。
+コード #include &amp;lt;ESP8266WiFi.h&amp;gt; void Wifi_wait(); void setup() { Serial.begin(115200); WiFi.mode(WIFI_STA); //WiFi.begin(&amp;#34;&amp;#34;,&amp;#34;&amp;#34;)このようにすることでWPSで保存したデータがある場合そちらに接続するようになる  WiFi.begin(&amp;#34;&amp;#34;, &amp;#34;&amp;#34;); Wifi_wait(); // Wifiに接続していないときにはWPSを開始します  if (WiFi.status() != WL_CONNECTED) { Serial.println(&amp;#34;\nAttempting connection ...&amp;#34;); WiFi.beginWPSConfig(); Wifi_wait(); if (WiFi.status() == WL_CONNECTED) { Serial.println(&amp;#34;Connected!&amp;#34;); Serial.println(WiFi.localIP()); Serial.println(WiFi.SSID()); Serial.println(WiFi.macAddress()); } else { Serial.println(&amp;#34;Connection failed!&amp;#34;); } } else { Serial.println(&amp;#34;\nConnection already established.&amp;#34;); } } void loop() { } void Wifi_wait() { int wait=0; Serial.</description>
+    </item>
+    
   </channel>
 </rss>

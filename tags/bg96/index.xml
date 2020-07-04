@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BG96 on わみめも</title>
+    <link>https://wamisnet.github.io/tags/bg96/</link>
+    <description>Recent content in BG96 on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Fri, 11 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/tags/bg96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BG96　開発に役立ったリンク集</title>
+      <link>https://wamisnet.github.io/blog/2019-10-11-bg96_link/</link>
+      <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-10-11-bg96_link/</guid>
+      <description>事例 https://sakura.io/blog/category/tech/
+https://eguchi.jp/blog/?p=1249
+https://sakura.io/blog/2019/07/05/%E3%80%90%E3%82%BB%E3%82%AD%E3%83%A5%E3%82%A2%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E3%82%B3%E3%83%8D%E3%82%AF%E3%83%88%E3%80%91cat-m1%E3%81%AElte%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%ABquectel-bg/
+公式PDF　 https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_TCP(IP)_AT_Commands_Manual_V1.1.pdf
+https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_AT_Commands_Manual_V2.3.pdf
+https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_QuecCell_AT_Commands_Manual_V1.0.pdf
+コード例 https://github.com/RAKWireless/WisLTE_Arduino
+https://github.com/SeeedJP/WioLTEforArduino/</description>
+    </item>
+    
+  </channel>
+</rss>

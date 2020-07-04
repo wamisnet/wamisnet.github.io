@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+<title>UniboでAzure IoTHubと連携させてみる - わみめも</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.73.0" /><meta itemprop="name" content="UniboでAzure IoTHubと連携させてみる">
+<meta itemprop="description" content="UniboでAzure IoTHubと連携させてみる">
+<meta itemprop="datePublished" content="2017-05-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-05-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="144">
+
+
+
+<meta itemprop="keywords" content="AzureIoTHub,Unibo," /><meta property="og:title" content="UniboでAzure IoTHubと連携させてみる" />
+<meta property="og:description" content="UniboでAzure IoTHubと連携させてみる" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wamisnet.github.io/blog/2017-05-10-unibo_iothub/" />
+<meta property="article:published_time" content="2017-05-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-05-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UniboでAzure IoTHubと連携させてみる"/>
+<meta name="twitter:description" content="UniboでAzure IoTHubと連携させてみる"/>
+<meta name="twitter:site" content="@wamisnet"/>
+<link rel="stylesheet" href="https://wamisnet.github.io/css/bundle.min.c77e84bad6f641316aaae9404d7b57577c00ac1217fc1a1e8a9d30300328d836.css" integrity="sha256-x36Eutb2QTFqqulATXtXV3wArBIX/Boeip0wMAMo2DY="><link rel="stylesheet" href="https://wamisnet.github.io/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://wamisnet.github.io/" class="nav">
+        
+          わみめも
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/" class="nav link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/about/" class="nav link"><i class='fa fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/itemized/" class="nav link"><i class='fa fa-list'></i> Product</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/business/" class="nav link"><i class='fa fa-id-card'></i> Small Business</a>
+          
+        
+      
+      
+      
+    </menu>
+    
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="https://wamisnet.github.io/"><img src="https://wamisnet.github.io/img/main/wami.jpg" class="circle" width="100" alt="wami" /></a>
+  <header>
+    <h1>わみめも</h1>
+  </header>
+  <main>
+    <p>私が作ったソフトウエアやハードウエアのはなしをします</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="https://wamisnet.github.io/blog/2017-05-10-unibo_iothub/">UniboでAzure IoTHubと連携させてみる</a></h2>
+    
+    
+      <p>UniboでAzure IoTHubと連携させてみる</p>
+    
+  </div>
+  <div class="meta">
+    <time class="published" datetime="2017-05-10 00:00:00 &#43;0000 UTC">
+      2017-05-10
+    </time>
+    <span class="author">wami</span>
+    
+  </div>
+</header>
+
+    <section id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Unibo%e3%81%a7Azure%20IoTHub%e3%81%a8%e9%80%a3%e6%90%ba%e3%81%95%e3%81%9b%e3%81%a6%e3%81%bf%e3%82%8b&amp;url=https%3a%2f%2fwamisnet.github.io%2fblog%2f2017-05-10-unibo_iothub%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwamisnet.github.io%2fblog%2f2017-05-10-unibo_iothub%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e3%81%93%e3%81%ae%e6%8a%95%e7%a8%bf%e3%82%92%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%99%e3%82%8b wami&amp;body=https%3a%2f%2fwamisnet.github.io%2fblog%2f2017-05-10-unibo_iothub%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </section>
+    
+
+    <div class="content">
+      <h1 id="azureiothubでメッセージを送受信してみる">AzureIoTHubでメッセージを送受信してみる。</h1>
+<p>Azure IoTHubとUniboのメッセージをやりとりしてみましょう。</p>
+<p>##全体図</p>
+<pre><code>[{&quot;id&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;type&quot;:&quot;tab&quot;,&quot;label&quot;:&quot;iothub&quot;},{&quot;id&quot;:&quot;1adc54aae1.2cb078&quot;,&quot;type&quot;:&quot;inject&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;開始&quot;,&quot;topic&quot;:&quot;&quot;,&quot;payload&quot;:&quot;&quot;,&quot;payloadType&quot;:&quot;date&quot;,&quot;repeat&quot;:&quot;&quot;,&quot;crontab&quot;:&quot;&quot;,&quot;once&quot;:false,&quot;x&quot;:320,&quot;y&quot;:324.888916015625,&quot;wires&quot;:[[&quot;1a50458b29.daf934&quot;]]},{&quot;id&quot;:&quot;1a5b568748.b15d28&quot;,&quot;type&quot;:&quot;azureiothub&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;Azure IoT Hub&quot;,&quot;protocol&quot;:&quot;mqtt&quot;,&quot;x&quot;:958.1041870117188,&quot;y&quot;:325,&quot;wires&quot;:[[&quot;1a452ce6f4.4d1838&quot;]]},{&quot;id&quot;:&quot;1a6872e007.3f029&quot;,&quot;type&quot;:&quot;template&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;Azure IoTHubに接続情報&quot;,&quot;field&quot;:&quot;payload&quot;,&quot;fieldType&quot;:&quot;msg&quot;,&quot;format&quot;:&quot;json&quot;,&quot;syntax&quot;:&quot;mustache&quot;,&quot;template&quot;:&quot;{\n  \&quot;deviceId\&quot;: \&quot;unibo\&quot;,\n  \&quot;key\&quot;: \&quot;SharedAccessKey=以下のものを貼る\&quot;,\n  \&quot;protocol\&quot;: \&quot;mqtt\&quot;,\n  \&quot;data\&quot;: \&quot;{value1: 0, value2: \\\&quot;test\\\&quot;}\&quot;\n}&quot;,&quot;x&quot;:718.1041870117188,&quot;y&quot;:325,&quot;wires&quot;:[[&quot;1a5b568748.b15d28&quot;]]},{&quot;id&quot;:&quot;1ad307ac75.70343&quot;,&quot;type&quot;:&quot;motion&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;&quot;,&quot;target&quot;:&quot;other&quot;,&quot;motion&quot;:&quot;happy&quot;,&quot;x&quot;:1042.1041870117188,&quot;y&quot;:561,&quot;wires&quot;:[[]]},{&quot;id&quot;:&quot;1a9501606e.fe849&quot;,&quot;type&quot;:&quot;debug&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;&quot;,&quot;active&quot;:true,&quot;console&quot;:&quot;false&quot;,&quot;complete&quot;:&quot;payload&quot;,&quot;x&quot;:747.1041870117188,&quot;y&quot;:432,&quot;wires&quot;:[]},{&quot;id&quot;:&quot;1a50458b29.daf934&quot;,&quot;type&quot;:&quot;led&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;&quot;,&quot;color&quot;:&quot;black&quot;,&quot;version&quot;:1,&quot;x&quot;:499.10418701171875,&quot;y&quot;:325,&quot;wires&quot;:[[&quot;1a6872e007.3f029&quot;]]},{&quot;id&quot;:&quot;1a452ce6f4.4d1838&quot;,&quot;type&quot;:&quot;function&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;データ整形&quot;,&quot;edit&quot;:&quot;&quot;,&quot;func&quot;:&quot;msg.payload = msg.payload.toString();\nreturn msg;&quot;,&quot;outputs&quot;:1,&quot;dummy&quot;:&quot;1&quot;,&quot;noerr&quot;:0,&quot;x&quot;:336.10418701171875,&quot;y&quot;:485,&quot;wires&quot;:[[&quot;1a513c662f.d3f0a8&quot;]]},{&quot;id&quot;:&quot;1a513c662f.d3f0a8&quot;,&quot;type&quot;:&quot;switch&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;送受信分岐&quot;,&quot;property&quot;:&quot;payload&quot;,&quot;propertyType&quot;:&quot;msg&quot;,&quot;rules&quot;:[{&quot;t&quot;:&quot;eq&quot;,&quot;v&quot;:&quot;Message sent.&quot;,&quot;vt&quot;:&quot;str&quot;},{&quot;t&quot;:&quot;neq&quot;,&quot;v&quot;:&quot;Message sent.&quot;,&quot;vt&quot;:&quot;str&quot;}],&quot;checkall&quot;:&quot;true&quot;,&quot;outputs&quot;:2,&quot;x&quot;:521.1041870117188,&quot;y&quot;:485,&quot;wires&quot;:[[&quot;1a9501606e.fe849&quot;],[&quot;1a14de07ea.ded998&quot;]]},{&quot;id&quot;:&quot;1a14de07ea.ded998&quot;,&quot;type&quot;:&quot;delay&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;&quot;,&quot;pauseType&quot;:&quot;rate&quot;,&quot;timeout&quot;:&quot;5&quot;,&quot;timeoutUnits&quot;:&quot;seconds&quot;,&quot;rate&quot;:&quot;1&quot;,&quot;nbRateUnits&quot;:&quot;30&quot;,&quot;rateUnits&quot;:&quot;second&quot;,&quot;randomFirst&quot;:&quot;1&quot;,&quot;randomLast&quot;:&quot;5&quot;,&quot;randomUnits&quot;:&quot;seconds&quot;,&quot;drop&quot;:false,&quot;x&quot;:764.1041870117188,&quot;y&quot;:526,&quot;wires&quot;:[[&quot;1ad307ac75.70343&quot;]]},{&quot;id&quot;:&quot;1a7c821ed2.91754&quot;,&quot;type&quot;:&quot;delay&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;&quot;,&quot;pauseType&quot;:&quot;timed&quot;,&quot;timeout&quot;:&quot;5&quot;,&quot;timeoutUnits&quot;:&quot;seconds&quot;,&quot;rate&quot;:&quot;1&quot;,&quot;nbRateUnits&quot;:&quot;30&quot;,&quot;rateUnits&quot;:&quot;second&quot;,&quot;randomFirst&quot;:&quot;1&quot;,&quot;randomLast&quot;:&quot;5&quot;,&quot;randomUnits&quot;:&quot;seconds&quot;,&quot;drop&quot;:false,&quot;x&quot;:771.1041870117188,&quot;y&quot;:621,&quot;wires&quot;:[[&quot;1ad307ac75.70343&quot;]]},{&quot;id&quot;:&quot;1a289d2a8d.919826&quot;,&quot;type&quot;:&quot;comment&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;AzureIoTHubで必要となる情報を入力します。&quot;,&quot;info&quot;:&quot;&quot;,&quot;x&quot;:736.1041870117188,&quot;y&quot;:275,&quot;wires&quot;:[]},{&quot;id&quot;:&quot;1af14fac81.3eab5&quot;,&quot;type&quot;:&quot;comment&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;３０秒毎に順番に処理をします&quot;,&quot;info&quot;:&quot;&quot;,&quot;x&quot;:774.1041870117188,&quot;y&quot;:485,&quot;wires&quot;:[]},{&quot;id&quot;:&quot;1a63ab930e.7d0b8c&quot;,&quot;type&quot;:&quot;comment&quot;,&quot;z&quot;:&quot;1a885986dc.5c17f8&quot;,&quot;name&quot;:&quot;３０秒の間に届いた最新のメッセージの処理をします&quot;,&quot;info&quot;:&quot;&quot;,&quot;x&quot;:767.1041870117188,&quot;y&quot;:672,&quot;wires&quot;:[]}]
+</code></pre><p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/30c4a9c2-fb76-5d1f-acc1-f07e0c0ea457.png" alt="2017-05-10_16h22_40.png"></p>
+<h2 id="前提条件">前提条件</h2>
+<ul>
+<li>Azureに登録できていること</li>
+</ul>
+<h2 id="手順">手順</h2>
+<p>AzureのIoTHubに登録するところから説明していきます。</p>
+<p>##Azure IoTHubの設定
+それでは、AzureにログインしてIoTHubを実際に作っていきましょう！</p>
+<p><a href="https://portal.azure.com/">Azure ポータル</a>を開いていきます。</p>
+<p>新規からモノのインターネット(IoT)をクリックして、IoTHubをクリックします。これから必要な設定を行っていきます。
+<img src="https://qiita-image-store.s3.amazonaws.com/0/97208/ce4352be-1343-811e-9aff-3c9564616c34.png" alt="qiita (1).png"></p>
+<p>無事にIoTHubが開かれると複数の入力欄が出るので写真を参考に入力欄を埋めていきましょう。
+それでは、必須項目であるIoTHubの名前を入力してください。この名前はドメインでも使われますので他の方と重複するとエラーが出ます。入力欄の右端が緑のチェックが入れば大丈夫です。
+次に、価格とスケールティアを変更していきます。この際に<strong>Free</strong>を必ず選んでください。Standardを選んだまま作成してしまうと、後からFreeに変更することができず、再度作り直すことになります。</p>
+<p>Freeを選択したらクリックして反映させてください。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/b6ba0433-2f3b-5880-a64a-984963454857.png" alt="qiita (2).png"></p>
+<p>リソースグループは既存ものがあれば、それを使って頂いてもかまいませんが、今回は初めてだという前提で、新規作成で好きなグループ名を入力してください。</p>
+<p>Azureサーバーがある場所を指定することができます。東日本、西日本と選べますのでお好みでどうぞ。</p>
+<p>ここまで問題なくできていれば、作成ボタンをクリックしてIoTHubをデプロイしていきます。
+<img src="https://qiita-image-store.s3.amazonaws.com/0/97208/a90ad588-662f-cef3-9a93-0a88d64a35dc.png" alt="qiita (3).png"></p>
+<p>数分かかりますのでしばしお待ちを…
+<img src="https://qiita-image-store.s3.amazonaws.com/0/97208/b1f92c09-8b7c-051b-a98c-4ec83906cf78.png" alt="qiita (4).png"></p>
+<p>無事にIoTHubのデプロイが終わるとこのような画面が表示されます。
+この画面では先ほど設定した内容が見れるほか、IoTHubの使用状態を確認することができます。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/bdb67499-38b0-1423-a67f-0b3b97ded178.png" alt="qiita (5).png"></p>
+<p>デバイスを繋げるために必要な設定を行っていきます。
+共有アクセスポリシーから<strong>iothubowner</strong>をクリックし、プライマリキーをコピーします。
+このとき写真で示してある部分をクリックすると簡単にキーをコピーすることができます。</p>
+<p>このプライマリキーは次の作業で使用します。
+<img src="https://qiita-image-store.s3.amazonaws.com/0/97208/0c2bfdd1-e227-a1f5-6cce-ca7b3c4a2293.png" alt="qiita (6).png"></p>
+<p>この作業から<strong>Device Explorer</strong>というツールを使っていきます。
+このツールはWindows専用になります。MacやLinuxの場合<strong>iothub-explorer</strong>を使うようですが、今回は取り扱いません。</p>
+<p>###Device Explorerのダウンロード
+こちらの**<a href="https://github.com/Azure/azure-iot-sdk-csharp/releases/download/2017-5-5/SetupDeviceExplorer.msi">リンク</a>**からダウンロードしてインストールをよろしくお願いします。</p>
+<p>インストールが終わったところで<strong>Device Explorer</strong>を使っていこうと思います。</p>
+<p>このツールでIoTHubに接続できる端末の登録、削除、ほかにはデバイスからIoTHubへの通信モニターになったり、IoTHubからデバイスにデータを送ることができるなどIoTHubに必須のものとなっております。</p>
+<p>説明が長くなりましたが、それではこのDevice Explorerに先ほどのプライマリキーを入力して<strong>Update</strong>をクリックしてください。
+<img src="https://qiita-image-store.s3.amazonaws.com/0/97208/807dd4d5-c20e-efe9-7762-7a25b14ddb93.png" alt="qiita (7).png"></p>
+<p>プライマリキーが合っていれば、このような表示がされます。この表示がでれば先ほど作ったIoTHubと連携ができるようになります。
+<img src="https://qiita-image-store.s3.amazonaws.com/0/97208/f292ae2d-df6a-fb4d-d840-387815e711b2.png" alt="qiita (8).png">
+これからIoTHubに接続できるデバイスの設定をしていこうと思います。</p>
+<p>この作業はデバイスごとにIDを割り振る作業になります。
+ManagementからCreateをクリックします。
+<img src="https://qiita-image-store.s3.amazonaws.com/0/97208/f4126134-e9d6-aff1-357c-87f5b8ea69ba.png" alt="qiita (9).png">
+Createをクリックするとこのような画面が出ますので、Device IDに接続するデバイス名を入力してください。</p>
+<p>入力が終わったらCreateをクリックしてください。
+<img src="https://qiita-image-store.s3.amazonaws.com/0/97208/38317460-b23e-cae6-ee33-36a893d7b596.png" alt="qiita (10).png"></p>
+<p>無事にデバイスが作れると先ほどのDevice IDを持ったものが増えているはずです。
+<img src="https://qiita-image-store.s3.amazonaws.com/0/97208/552087c4-b0e7-fe1c-a726-591d6e9a6ca2.png" alt="qiita (11).png"></p>
+<p>無事に作成できていれば、次はデバイスに必要な情報をコピーしておきましょう。
+今回作成したDevice IDをクリックすると青色の欄が移動しますので、選択された状態で右クリックすると<strong>Copy connection string for selected device</strong>を選んでクリックしてください。</p>
+<p>そうすると必要な情報がコピーされますので、その情報をUniboに登録していきます。
+<img src="https://qiita-image-store.s3.amazonaws.com/0/97208/278d5b44-99f2-afff-c4da-38a86df31fa9.png" alt="qiita (12).png"></p>
+<h2 id="スキルクリエイターの設定をしよう">スキルクリエイターの設定をしよう</h2>
+<p>前もって、スキルクリエイターにログインし、全体図の章に書いてあるjsonファイルをスキルクリエイターにインポートします。</p>
+<p>インポートができたらAzure IoTHubに接続するために必要な情報を入力していきます。</p>
+<p>今回はテンプレートNodeに必要な情報を入力します。動的に切り替えて接続先を変更することなども可能ですが今回はシンプルに作成します。</p>
+<table>
+<thead>
+<tr>
+<th align="center">タイトル</th>
+<th align="center">入力内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">deviceId</td>
+<td align="center">Device Explorerでデバイス登録時に入力したDeviceID</td>
+</tr>
+<tr>
+<td align="center">key</td>
+<td align="center">Device Explorerで取得した<strong>Copy connection string for selected device</strong>をkeyと書かれた欄に貼り付けします。一例ですが<code>HostName=unibo.azure-devices.net;DeviceId=unibo;SharedAccessKey=tIrfnS6csQ=</code>このように貼り付けされます。今回必要となるのは<strong>SharedAccessKey</strong>の部分となります。上の例であれば<code>tIrfnS6csQ=</code>となります。<strong>それ以外は削除してください。</strong></td>
+</tr>
+<tr>
+<td align="center">protocol</td>
+<td align="center">http,mqtt,AMQPから選択</td>
+</tr>
+<tr>
+<td align="center">data</td>
+<td align="center">Azure IoTHubに送信したいデータ</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/5aaa13e3-a8c7-c613-3da6-aa0039899788.png" alt="2017-05-10_17h01_08.png"></p>
+<p>次にAzure IoTHub Nodeを設定していきます。
+設定項目としては、Hostnameに必要な情報を入力します。
+先ほども使ったDevice Explorerで取得した<strong>Copy connection string for selected device</strong>をHostnameに貼り付けします。
+一例ですが<code>HostName=unibo.azure-devices.net;DeviceId=unibo;SharedAccessKey=tIrfnS6csQ=</code>このように貼り付けされます。
+今回必要となるのは<strong>HostName</strong>の部分となります。上の例であれば<code>unibo.azure-devices.net</code>となります。
+<strong>それ以外は削除してください。</strong></p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/44f3b8e3-dd51-8cea-3233-eccff7559bde.png" alt="2017-05-10_17h26_20.png"></p>
+<p>Azure IoTHubとしての設定はこれまでのもので完了です。
+あとはAzure IoTHubからのデータを受信したときにどのような動作をするのかこれから順に説明していきます。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/3acbf960-397d-bac7-2207-c5ffff7c84d6.png" alt="2017-05-10_17h47_03.png"></p>
+<p>###データ整形</p>
+<p>Azure IoTHub Nodeでは送信時と受信時にNodeを通ります。<strong>送信時にも下のNodeにイベントが行くので注意が必要となります。</strong></p>
+<p>受信時にイベントが発火する場合、データがHEXデータでくるので文字列として活用したい場合は関数Nodeで変換してください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">msg</span>.<span style="color:#a6e22e">payload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">msg</span>.<span style="color:#a6e22e">payload</span>.<span style="color:#a6e22e">toString</span>();
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">msg</span>;
+</code></pre></div><p>このように変換することで文字列として扱えるようになりました。</p>
+<p>その後、送信なのか受信なのかを判定しています。その際の判定は<code>Message sent.</code>という言葉がメッセージに含まれているかで判定することができます。
+これにより、受信時のみUniboを動かすことができるようになりました。</p>
+<h3 id="受信時の処理">受信時の処理</h3>
+<p>受信時にも注意が必要となります。
+Azure IoTHubから別々のデータがネットワークなどの影響でまとめて届く場合があります。</p>
+<p>この時に対策を取っていないと、Nodeが続々と発火する可能性があります。例としては、Uniboの動作が完了せずに終了することやUniboの発話が完了せずに終了するなど予期しない動作をする可能性があります。</p>
+<p>対策としては、delay Nodeにて「レートの制限」や「時限リリースキュー」などがあります。もしくはグローバル変数などを用いフラグ管理するなどで対応することが可能です。</p>
+<p>#まとめ</p>
+<p>UniboとAzure IoTHubを使うことで外部との連携が簡単にできるようになります。
+Azure IoTHubを使うことでハードウエアはもちろん、Webとの連携もできるのでぜひ試してみてください。</p>
+
+    </div>
+    <footer>
+      <ul class="stats">
+  <li class="categories">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/azureiothub/">AzureIoTHub</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/unibo/">Unibo</a></li>
+        
+      
+    
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/azureiothub/">AzureIoTHub</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/unibo/">Unibo</a></li>
+        
+      
+    
+    </ul>
+  </li>
+</ul>
+
+    </footer>
+  </article>
+  
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wamisnet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  <div class="pagination">
+  
+    <a href="https://wamisnet.github.io/blog/2017-02-22-grove/" class="button"><div class="previous"><div>Grove　説明資料</div></div></a>
+  
+  
+    <a href="https://wamisnet.github.io/blog/2017-05-11-unibo_ifttt/" class="button"><div class="next"><div>UniboとIFTTTで簡単にIoTしてみる</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/firebase_login/">Firebase使ってログインできるようになったよ！</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/">NetlifyCMSから投稿テスト</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://wamisnet.github.io/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nefry/">nefry<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99/">説明資料<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/obniz/">obniz<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86/">リンク集<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp8266/">esp8266<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot/">iot<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/arduino/">arduino<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp32/">esp32<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/firebase/">firebase<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/flutter/">flutter<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/">作品<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E7%84%A1%E7%B7%9Alan/">無線lan<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azureiothub/">azureiothub<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp-idf/">esp-idf<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/">iot可視化ツールレビュー<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nodered/">nodered<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/unibo/">unibo<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/">スマートロック<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/">技術書典<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%9C%AC/">本<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azure/">azure<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/bg96/">bg96<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/cocoabit/">cocoabit<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/m5stickc/">m5stickc<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/monacoin/">monacoin<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/react/">react<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/serverless/">serverless<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/ssd1306/">ssd1306<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/">イベント<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/">ポートフォリオ<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/">勉強会<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%A8%98%E4%BA%8B/">記事<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/">退職エントリ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。</p>
+      <footer>
+        <a href="https://wamisnet.github.io/about" class="button">もっと知る</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        わみめも
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.73.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://wamisnet.github.io/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.31224010c6a183ff135369ca15ae671b02a26296a0507f2b674d4ecd086b11da.js" integrity="sha256-MSJAEMahg/8TU2nKFa5nGwKiYpagUH8rZ01OzQhrEdo="></script>
+    <script src="https://wamisnet.github.io/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62256925-7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

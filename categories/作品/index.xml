@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>作品 on わみめも</title>
+    <link>https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/</link>
+    <description>Recent content in 作品 on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Fri, 26 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】</title>
+      <link>https://wamisnet.github.io/blog/2019-07-26-regi/</link>
+      <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-07-26-regi/</guid>
+      <description>こんにちわ、ギークハウス新宿（ぎーじゅく）の住民のわみです。 先日開発合宿で作った物々交換システムができたので仕組みや機能などをまとめてみます。
+なにを作ったか こんな感じで動くよhttps://t.co/BZj1i65I0y pic.twitter.com/qtmRp2mfiH
+&amp;mdash; わみ@NefryとかFlutter本とか (@wamisnet) July 26, 2019  こんな感じのバーコードを使ったPOSシステム的なもの
+どうして作ったか シェアハウスであるある（？）な悩みの一つ、例えばカップヌードルとかドクペをまとめ買いをしてくれて、それを必要なタイミングでみんなで分けるということ。（他だと多めにカレーとかおかずを作ったりしたときにシェアしたいときもめんどい
+まとめ買いすることで安く買えるのはすごくいいのですが、それをいい感じに分けるのは至難の業。購入時にまとめてやるとか方法はいろいろあると思いますが、できたら欲しいときに分けてもらえるとよいなーと
+そんなことをしていたぎーじゅくの過去の写真がこちら
+それぞれ買ってきた人のボールにお金を入れるという方式（一番手前が私、奥のオレンジや右の封筒が入っているのは別のひとのやつ）
+数が少なければこれでもいいんですが、数が増やすと訳が分からなくなったり、新しい住民が増えたときには一からこの商品は誰々のだよといった説明が必要になってきました。
+これを解決するために一つシステムを作りました！
+物々交換システムの歴史 このシステムには少々歴史があります。
+物々交換システムv1　（2019年2月頃）の概要 Flutterで今回の下地となるAndroidアプリを作成しました。
+完成写真
+技術構成 次のような構成で作成しました。
+ バーコードリーダー タブレット（Flutterアプリ入り） Slack Node-RED(RedMobile) Elasticsearch Kibana  図にするとこんな感じです。
+問題点 ここまで3日ぐらいでつくったものでFlutterのバーコード入力処理にかなり泥臭い対応が一部あったり、Node-REDに依存する部分があったりとなかなか保守しにくいシステムになっていたり、データの作成に手動でいろいろ行わないといけない感じでした。
+手動で行わないといけない作業
+ 商品登録 商品編集 商品削除 在庫管理 取引削除 週単位で決済処理 ユーザ追加  この中でも商品登録と決済は手動で行う作業でも大変な作業でした。（2月の頭から5か月以上稼働しているのだから自動化すればいいのに…ｗ
+商品登録 Elasticsearchにデータを入れるためにNode-REDからわざわざ手打ちでJSONを作るｗ
+週単位で決済処理 毎週どれぐらい使ったかKibanaで集計されたデータを使ってユーザに人力で通知していきます。
+（数字は生々しいのでね…
+こんな感じにがんばってる
+今回作成したシステム いろいろと問題のあったFlutterとNode-REDからReactで新規に作り直しました！
+完成写真
+GIF小さいけどこんな感じ
+技術構成 次のような構成で作成しました。
+ バーコードリーダー タブレット（React PWA入り） Slack Firebase Elasticsearch(分析用　おまけ) Kibana(分析用　おまけ)  図にするとこんな感じです。</description>
+    </item>
+    
+    <item>
+      <title>2018年版　ポートフォリオ</title>
+      <link>https://wamisnet.github.io/blog/2019-01-09-portfolio/</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-01-09-portfolio/</guid>
+      <description>Nefry シリーズ dotstudioさんと共同で開発しているIoT開発ボードです。 「ネットに簡単につながる」ことを実現するために2015年から基板からファームウェア、デバイス設定用Webサイトなど一括して開発しました。
+AWSやAzureといった大きなクラウドサービスはもちろん、ほかにもIFTTTやFirebase、Milkcocoaなど様々なサービスと連携し、購入したユーザが自由に開発できるようにライブラリやドキュメントなどを作成しています。
+それ以外にもこちらでデータをより簡単に扱えるようにNefryクラウドといったクラウドサービスを開発、提供しています。
+ほかの連携例はこちらをご覧ください
+CocoaBit littleBitsというマグネット式の各モジュールをつなぎ合わせることで、電子回路を楽しく学べるもののIoT拡張モジュールを開発しました。 ワンフットシーバスさんと共同で開発しました。
+Webページで入力状態を可視化したり、スライダーで出力をコントロールすることができます。また自由にプログラムを書いて動作できます。
+参考記事：https://dotstud.io/blog/cocoabit-littlebits-milkcocoa-nefry/
+カウンティット 工場での金型の使用回数を計測するために磁気センサーを用い、センシングしたデータをサーバに送信します。 下記の画像は初版の基板で次のバージョンでは今回の初版の改善点を反映し、大幅に改善する予定です。
+電子ペーパー 電源を切っても表示が消えない、電子ペーパーを使い情報の新たな表現を模索しています。 試作中のため、こんなものも作れるというイメージを持っていただければと思います。
+その他 ELワイヤー制御基板、モータ制御基板、Arduino互換機などIoTに直接関係しないものも何個か作成しています。 簡単に写真の紹介をさせていただきます。</description>
+    </item>
+    
+    <item>
+      <title>Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる</title>
+      <link>https://wamisnet.github.io/blog/2019-11-27-zaif/</link>
+      <pubDate>Tue, 26 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-11-27-zaif/</guid>
+      <description>最近、仮想通貨の話題を聞かない日はないようになってだいぶ浸透してきたんだなと思います。
+悪い面が騒がれているような気がしますが、エンジニアとしては触ってみると面白い分野なのではないかなと思っています。 そんな仮想通貨を実際に決済システムとしてビックカメラや秋葉原の一部店舗などで取り扱われてきています、これはちょっと気になる。
+そんなことを思っていたら、ちょうどいい感じにZaif Paymentを見つけましたので使ってみました！！(個人利用できていい感じのサービスがあればそれでもいいかもですけどね)
+**完成版はこちら！**気に入ったら何円か投げ銭してくれてもいいんですよ？
+ 2017/12/30 決済情報の表示に対応！！
+ Zaif Paymentとは 取引所のZaifが行っている仮想通貨決済サービスです。
+公式サイトはこちら
+特徴
+ 手数料無料 モナコインに対応している 日本円で受け取ることができる 仮想通貨のまま受け取ることができる  このサービスはAPIで使って扱うことができます。
+今回は簡単に実装するためにAPI＋Node-Redで決済システムを作ってみようと思います。
+決済システムをつくってみる それではNode-Redでさくっと作ってみようと思います。
+環境  IBM Cloud ライトアカウントなどのNode-Red環境(私はAWSにMode-Redの環境を作ってて試しています) Zaifアカウント　(本人確認済み)   IBM Cloud (aka Bluemix) ライト・アカウント作成手順
+ サンプルコード [{&amp;#34;id&amp;#34;:&amp;#34;f6f414ca.057578&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;http request&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;method&amp;#34;:&amp;#34;POST&amp;#34;,&amp;#34;ret&amp;#34;:&amp;#34;obj&amp;#34;,&amp;#34;url&amp;#34;:&amp;#34;https://api.zaif.jp/ecapi&amp;#34;,&amp;#34;tls&amp;#34;:&amp;#34;e55e7d60.78615&amp;#34;,&amp;#34;x&amp;#34;:568,&amp;#34;y&amp;#34;:168,&amp;#34;wires&amp;#34;:[[&amp;#34;68603af5.adebf4&amp;#34;,&amp;#34;1670bdc2.8675b2&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;d408e881.31ac48&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;inject&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;Test&amp;#34;,&amp;#34;topic&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;payload&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;payloadType&amp;#34;:&amp;#34;date&amp;#34;,&amp;#34;repeat&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;crontab&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;once&amp;#34;:false,&amp;#34;x&amp;#34;:108,&amp;#34;y&amp;#34;:88,&amp;#34;wires&amp;#34;:[[&amp;#34;1c02b6e3.fc9989&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;942f2d66.612c7&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;function&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;APIKey設定&amp;#34;,&amp;#34;func&amp;#34;:&amp;#34;msg.key = \&amp;#34;\&amp;#34;;\nmsg.secret = \&amp;#34;\&amp;#34;;\nmsg.currency = msg.payload.basecoin;\nmsg.jpy = msg.coin = msg.payload.coin;\nif(msg.currency == \&amp;#34;mona\&amp;#34;){\n msg.build_pay = true;\n} \nif(msg.currency == \&amp;#34;btc\&amp;#34;){\n //msg.build = true;\n}\nreturn msg;&amp;#34;,&amp;#34;outputs&amp;#34;:1,&amp;#34;noerr&amp;#34;:0,&amp;#34;x&amp;#34;:408,&amp;#34;y&amp;#34;:88,&amp;#34;wires&amp;#34;:[[&amp;#34;7be80c8f.e09434&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;c0675801.ef7898&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;function&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;RequestMessage&amp;#34;,&amp;#34;func&amp;#34;:&amp;#34;msg.header = \&amp;#34;content-type:application/x-www-form-urlencoded\&amp;#34;;\nmsg.payload = \&amp;#34;method=createInvoice&amp;amp;key=\&amp;#34; + msg.</description>
+    </item>
+    
+  </channel>
+</rss>

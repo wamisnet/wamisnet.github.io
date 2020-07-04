@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure on わみめも</title>
+    <link>https://wamisnet.github.io/tags/azure/</link>
+    <description>Recent content in Azure on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 05 Sep 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Azure IoT HubをESP8266で使おう！</title>
+      <link>https://wamisnet.github.io/blog/2016-09-05-azure/</link>
+      <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2016-09-05-azure/</guid>
+      <description>日本での発売から一年がたち多数の作例が出てくる「ESP8266」(ESP-WROOM-02)をもっと使いこなしてみませんか？
+今回はAzureのサービスの一つであるIoTHub、それを簡単に扱えるライブラリーを作ったので紹介してみようと思います。
+ちょこっと宣伝 ところどころで出てくるESP8266の基板ですが、私が作成した「Nefry」(ねふりー)という基板を使っています。
+dotstudioさんにて販売中です！！
+USBに直接繋げられたり、Webページ上でWiFiの設定やESP8266の端末設定ができるようになっていたりとESP8266をより簡単に扱えるものになっています。
+詳しくはLigブログで記事をいくつか載せていますのでご覧ください。
+自作したオリジナルIoTデバイス「Nefry」とインターネットを繋いでみた
+Webサービス同士を連携できる「IFTTT」と自作IoTデバイスを繋いで生活を便利にしてみた
+Azure IoT Hub って？ IoT Hubは、その名の通りIoTデバイスとクラウドを繋ぐHubとなるサービスです。 似たようなサービスとして「Event Hubs」がありますが、Event Hubsとの大きな違いは2つあります。
+IoTHubの優れた点
+ デバイスとクラウドとの双方向通信が可能。(Event Hubsはデバイス→クラウドの一方のみ) デバイス毎にIDを登録して認証する為、よりセキュアに利用できる。(Event HubsはEvent Hubsごとの許可)  
+http://qiita.com/hiiyan0402/items/9c93d9673114675a57d4
+用意するもの  ESP8266(ESP-WROOM-02) Azure アカウント ArduinoIDE Arduino core for ESP8266 WiFi chip(https://github.com/esp8266/Arduino) AzureIoTHubライブラリー(https://github.com/wamisnet/Azure-iothub-mqtt-esp8266)  IoTHubで通信をしてみる 今回はESP8266からIoTHubで通信するところまでを作っていきます。
+Azure IoTHubの設定 それでは、AzureにログインしてIoTHubを実際に作っていきましょう！
+Azure ポータルを開いていきます。
+新規からモノのインターネット(IoT)をクリックして、IoTHubをクリックします。これから必要な設定を行っていきます。
+無事にIoTHubが開かれると複数の入力欄が出るので写真を参考に入力欄を埋めていきましょう。 それでは、必須項目であるIoTHubの名前を入力してください。この名前はドメインでも使われますので他の方と重複するとエラーが出ます。入力欄の右端が緑のチェックが入れば大丈夫です。 次に、価格とスケールティアを変更していきます。この際にFreeを必ず選んでください。Standardを選んだまま作成してしまうと、後からFreeに変更することができず、再度作り直すことになります。
+Freeを選択したらクリックして反映させてください。
+リソースグループは既存ものがあれば、それを使って頂いてもかまいませんが、今回は初めてだという前提で、新規作成で好きなグループ名を入力してください。
+Azureサーバーがある場所を指定することができます。東日本、西日本と選べますのでお好みでどうぞ。
+ここまで問題なくできていれば、作成ボタンをクリックしてIoTHubをデプロイしていきます。
+数分かかりますのでしばしお待ちを…
+無事にIoTHubのデプロイが終わるとこのような画面が表示されます。 この画面では先ほど設定した内容が見れるほか、IoTHubの使用状態を確認することができます。
+デバイスを繋げるために必要な設定を行っていきます。 共有アクセスポリシーからiothubownerをクリックし、プライマリキーをコピーします。 このとき写真で示してある部分をクリックすると簡単にキーをコピーすることができます。
+このプライマリキーは次の作業で使用します。 この作業からDevice Explorerというツールを使っていきます。 このツールはWindows専用になります。MacやLinuxの場合iothub-explorerを使うようですが、今回は取り扱いません。
+Device Explorerのダウンロード こちらの**リンク**からダウンロードしてインストールをよろしくお願いします。</description>
+    </item>
+    
+  </channel>
+</rss>

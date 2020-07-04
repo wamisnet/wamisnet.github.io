@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IoT可視化ツールレビュー on わみめも</title>
+    <link>https://wamisnet.github.io/tags/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/</link>
+    <description>Recent content in IoT可視化ツールレビュー on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Thu, 27 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/tags/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【IoT可視化ツールレビュー】 thinger.io</title>
+      <link>https://wamisnet.github.io/blog/2019-06-27-thingspeak/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-06-27-thingspeak/</guid>
+      <description>thinger.io 次の記事が使い方がまとまっていてわかりやすかったです。
+http://www.esploradores.com/empezando/hello-world-thinger-io-blink/
+何を目的としたサービスか IoTでよくある機能を簡単に試すことができるサービス
+データの可視化やデバイスをこのサービス経由のAPIで制御できる
+何と何ができるのか Webやアプリ上でのセンサーデータの可視化（ダッシュボード） LEDのONOFFやサーボの制御などをWebやアプリ、APIで操作できる データ保存機能（バケット） エンドポイント機能（デバイスからトリガーがあったときにメールや特定のURLを叩ける） それがいくらなのか     無料 500円/月 2500円/月     接続台数 2台 20台 100台   ダッシュボード 4 20 100   バケット（何秒に一度データを保存できるか） 60s 30s 15s   エンドポイント 4 20 100    使った感じどうだったか 接続するときにひと手間ありそうですが可視化の部分を使用できるとよさそうです。
+生のESP32で使用する際にはよいサービスだと思います。
+https://github.com/thinger-io/Arduino-Library/tree/master
+簡単にダッシュボードがつくれるところもよく、自分でインスタンス立てて制御することもできるようです。 ダッシュボードのレスポンスもよかったです。
+https://thinger.io/downloads/ Blynkに似ていますが、アプリのみでなくWebでコントロールできるところが優れています。</description>
+    </item>
+    
+    <item>
+      <title>【IoT可視化ツールレビュー】 ThingSpeak</title>
+      <link>https://wamisnet.github.io/blog/2019-06-27-thinger/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-06-27-thinger/</guid>
+      <description>ThingSpeak 何を目的としたサービスか データの保存やグラフ化できるサービス。
+MATLABとの連携がメインの特徴（むしろMATLAB使えないとほぼ意味がない）
+何と何ができるのか センサーデータの可視化（ダッシュボード） MATLAB連携 ThinhSpeakアプリ https://jp.mathworks.com/help/thingspeak/thingspeak-apps.html?s_tid=CRUX_lftnav
+それがいくらなのか     無料 約800円/月 約7300円/月     接続台数 3台 50台 50台   ダッシュボード 4 10 250   送信間隔（何秒に一度データを保存できるか） 15s 1s 1s   商用利用 不可 不可 可    使った感じどうだったか 正直MATLABを使用したい意図がない限り選択するメリットは少ないと思っています。
+フリープランだと15秒に一度しかはじかれるのでなかなか使いずらいです。
+同様なことであれば、Ambientで十分だと思います。</description>
+    </item>
+    
+  </channel>
+</rss>

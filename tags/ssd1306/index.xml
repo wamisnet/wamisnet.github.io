@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSD1306 on わみめも</title>
+    <link>https://wamisnet.github.io/tags/ssd1306/</link>
+    <description>Recent content in SSD1306 on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 11 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/tags/ssd1306/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SSD1306で画像表示の簡易まとめ</title>
+      <link>https://wamisnet.github.io/blog/2017-06-11-ssd1306-image/</link>
+      <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2017-06-11-ssd1306-image/</guid>
+      <description>XBMというフォーマットに合わせて作成する。
+具体的な方法 https://blog.squix.org/2015/05/esp8266-nodemcu-how-to-create-xbm.html
+変換サイト https://www.online-utility.org/image/convert/to/XBM</description>
+    </item>
+    
+  </channel>
+</rss>

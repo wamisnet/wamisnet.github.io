@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+<title>Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】 - わみめも</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.73.0" /><meta itemprop="name" content="Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】">
+<meta itemprop="description" content="Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】">
+<meta itemprop="datePublished" content="2019-07-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="120">
+
+
+
+<meta itemprop="keywords" content="React,作品," /><meta property="og:title" content="Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】" />
+<meta property="og:description" content="Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wamisnet.github.io/blog/2019-07-26-regi/" />
+<meta property="article:published_time" content="2019-07-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-07-26T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】"/>
+<meta name="twitter:description" content="Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】"/>
+<meta name="twitter:site" content="@wamisnet"/>
+<link rel="stylesheet" href="https://wamisnet.github.io/css/bundle.min.c77e84bad6f641316aaae9404d7b57577c00ac1217fc1a1e8a9d30300328d836.css" integrity="sha256-x36Eutb2QTFqqulATXtXV3wArBIX/Boeip0wMAMo2DY="><link rel="stylesheet" href="https://wamisnet.github.io/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://wamisnet.github.io/" class="nav">
+        
+          わみめも
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/" class="nav link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/about/" class="nav link"><i class='fa fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/itemized/" class="nav link"><i class='fa fa-list'></i> Product</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/business/" class="nav link"><i class='fa fa-id-card'></i> Small Business</a>
+          
+        
+      
+      
+      
+    </menu>
+    
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="https://wamisnet.github.io/"><img src="https://wamisnet.github.io/img/main/wami.jpg" class="circle" width="100" alt="wami" /></a>
+  <header>
+    <h1>わみめも</h1>
+  </header>
+  <main>
+    <p>私が作ったソフトウエアやハードウエアのはなしをします</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="https://wamisnet.github.io/blog/2019-07-26-regi/">Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】</a></h2>
+    
+    
+      <p>Reactとタブレットでバーコード使ったシェアハウス物々交換システム作った話【個人開発】</p>
+    
+  </div>
+  <div class="meta">
+    <time class="published" datetime="2019-07-26 00:00:00 &#43;0000 UTC">
+      2019-07-26
+    </time>
+    <span class="author">wami</span>
+    
+  </div>
+</header>
+
+    <section id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=React%e3%81%a8%e3%82%bf%e3%83%96%e3%83%ac%e3%83%83%e3%83%88%e3%81%a7%e3%83%90%e3%83%bc%e3%82%b3%e3%83%bc%e3%83%89%e4%bd%bf%e3%81%a3%e3%81%9f%e3%82%b7%e3%82%a7%e3%82%a2%e3%83%8f%e3%82%a6%e3%82%b9%e7%89%a9%e3%80%85%e4%ba%a4%e6%8f%9b%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e4%bd%9c%e3%81%a3%e3%81%9f%e8%a9%b1%e3%80%90%e5%80%8b%e4%ba%ba%e9%96%8b%e7%99%ba%e3%80%91&amp;url=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-07-26-regi%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-07-26-regi%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e3%81%93%e3%81%ae%e6%8a%95%e7%a8%bf%e3%82%92%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%99%e3%82%8b wami&amp;body=https%3a%2f%2fwamisnet.github.io%2fblog%2f2019-07-26-regi%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </section>
+    
+
+    <div class="content">
+      <p>こんにちわ、ギークハウス新宿（ぎーじゅく）の住民のわみです。
+先日開発合宿で作った物々交換システムができたので仕組みや機能などをまとめてみます。</p>
+<h1 id="なにを作ったか">なにを作ったか</h1>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">こんな感じで動くよ<a href="https://t.co/BZj1i65I0y">https://t.co/BZj1i65I0y</a> <a href="https://t.co/qtmRp2mfiH">pic.twitter.com/qtmRp2mfiH</a></p>&mdash; わみ@NefryとかFlutter本とか (@wamisnet) <a href="https://twitter.com/wamisnet/status/1154748235811971073?ref_src=twsrc%5Etfw">July 26, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>こんな感じのバーコードを使ったPOSシステム的なもの</p>
+<h1 id="どうして作ったか">どうして作ったか</h1>
+<p>シェアハウスであるある（？）な悩みの一つ、例えばカップヌードルとかドクペをまとめ買いをしてくれて、それを必要なタイミングでみんなで分けるということ。（他だと多めにカレーとかおかずを作ったりしたときにシェアしたいときもめんどい</p>
+<p>まとめ買いすることで安く買えるのはすごくいいのですが、それをいい感じに分けるのは至難の業。購入時にまとめてやるとか方法はいろいろあると思いますが、できたら欲しいときに分けてもらえるとよいなーと</p>
+<p>そんなことをしていたぎーじゅくの過去の写真がこちら</p>
+<p><img src="https://wamisnet.github.io/img/2019/regi/204_7.jpeg" alt=""></p>
+<p>それぞれ買ってきた人のボールにお金を入れるという方式（一番手前が私、奥のオレンジや右の封筒が入っているのは別のひとのやつ）</p>
+<p>数が少なければこれでもいいんですが、数が増やすと訳が分からなくなったり、新しい住民が増えたときには一からこの商品は誰々のだよといった説明が必要になってきました。</p>
+<p>これを解決するために一つシステムを作りました！</p>
+<h1 id="物々交換システムの歴史">物々交換システムの歴史</h1>
+<p>このシステムには少々歴史があります。</p>
+<h2 id="物々交換システムv12019年2月頃の概要">物々交換システムv1　（2019年2月頃）の概要</h2>
+<p>Flutterで今回の下地となるAndroidアプリを作成しました。</p>
+<p>完成写真</p>
+<p><img src="https://wamisnet.github.io/img/2019/regi/93_7.jpeg" alt=""></p>
+<h3 id="技術構成">技術構成</h3>
+<p>次のような構成で作成しました。</p>
+<ul>
+<li>バーコードリーダー</li>
+<li>タブレット（Flutterアプリ入り）</li>
+<li>Slack</li>
+<li>Node-RED(RedMobile)</li>
+<li>Elasticsearch</li>
+<li>Kibana</li>
+</ul>
+<p>図にするとこんな感じです。</p>
+<p><img src="https://wamisnet.github.io/img/2019/regi/180_7.png" alt=""></p>
+<h3 id="問題点">問題点</h3>
+<p>ここまで3日ぐらいでつくったものでFlutterのバーコード入力処理にかなり泥臭い対応が一部あったり、Node-REDに依存する部分があったりとなかなか保守しにくいシステムになっていたり、データの作成に手動でいろいろ行わないといけない感じでした。</p>
+<p>手動で行わないといけない作業</p>
+<ul>
+<li><strong>商品登録</strong></li>
+<li>商品編集</li>
+<li>商品削除</li>
+<li>在庫管理</li>
+<li>取引削除</li>
+<li><strong>週単位で決済処理</strong></li>
+<li>ユーザ追加</li>
+</ul>
+<p>この中でも商品登録と決済は手動で行う作業でも大変な作業でした。（2月の頭から5か月以上稼働しているのだから自動化すればいいのに…ｗ</p>
+<h4 id="商品登録">商品登録</h4>
+<p><img src="https://wamisnet.github.io/img/2019/regi/226_7.png" alt=""></p>
+<p>Elasticsearchにデータを入れるためにNode-REDからわざわざ手打ちでJSONを作るｗ</p>
+<h4 id="週単位で決済処理">週単位で決済処理</h4>
+<p>毎週どれぐらい使ったかKibanaで集計されたデータを使ってユーザに<strong>人力</strong>で通知していきます。</p>
+<p><img src="https://wamisnet.github.io/img/2019/regi/43_1.png" alt=""></p>
+<p>（数字は生々しいのでね…</p>
+<p>こんな感じにがんばってる</p>
+<p><img src="https://wamisnet.github.io/img/2019/regi/41_8.png" alt=""></p>
+<h1 id="今回作成したシステム">今回作成したシステム</h1>
+<p>いろいろと問題のあったFlutterとNode-REDからReactで新規に作り直しました！</p>
+<p>完成写真</p>
+<p><img src="https://wamisnet.github.io/img/2019/regi/57_4.jpeg" alt=""></p>
+<p>GIF小さいけどこんな感じ</p>
+<p><img src="https://wamisnet.github.io/img/2019/regi/42_d.gif" alt=""></p>
+<h2 id="技術構成-1">技術構成</h2>
+<p>次のような構成で作成しました。</p>
+<ul>
+<li>バーコードリーダー</li>
+<li>タブレット（React PWA入り）</li>
+<li>Slack</li>
+<li>Firebase</li>
+<li>Elasticsearch(分析用　おまけ)</li>
+<li>Kibana(分析用　おまけ)</li>
+</ul>
+<p>図にするとこんな感じです。</p>
+<p><img src="https://wamisnet.github.io/img/2019/regi/46_8.png" alt=""></p>
+<p>他の人から使ってみたいという要望を聞いていたのでElasticsearchからFirebaseでまるっと作り直しました！</p>
+<p>Firebaseの使っている機能は次の通りです。</p>
+<ul>
+<li>Cloud Firestore
+<ul>
+<li>ユーザ情報</li>
+<li>商品情報</li>
+<li>取引データ</li>
+</ul>
+</li>
+<li>Auth
+<ul>
+<li>ログイン（Cloud Firestoreで個別にデータ管理するため</li>
+</ul>
+</li>
+<li>Hosting
+<ul>
+<li>Reactのホスティング</li>
+</ul>
+</li>
+</ul>
+<h2 id="改善点">改善点</h2>
+<p>今までの手動で行わないといけない作業一覧</p>
+<ul>
+<li><strong>商品登録</strong>　← サポート</li>
+<li>商品編集　← サポート</li>
+<li>商品削除</li>
+<li>在庫管理　← サポート</li>
+<li>取引削除</li>
+<li><strong>週単位で決済処理</strong>　</li>
+<li>ユーザ追加</li>
+</ul>
+<h3 id="商品登録画面">商品登録画面</h3>
+<p><img src="https://wamisnet.github.io/img/2019/regi/44_c.png" alt=""></p>
+<p>商品のバーコードを読み取ると、RakutenのAPIで商品名や登録価格の基準値を取得するようにして簡単に商品を追加できるようにしました！</p>
+<p>RakutenのAPIめっちゃ便利でよかった！つかってみて
+<a href="https://webservice.rakuten.co.jp/explorer/api/IchibaItem/Search/">https://webservice.rakuten.co.jp/explorer/api/IchibaItem/Search/</a></p>
+<p>商品登録の方法もすこしこだわっていて、バーコードの読み取りだけでこの画面の設定値を変更できるようにしているため、バーコードリーダーがあれば登録が完了するところもこだわりポイント！</p>
+<h3 id="在庫一覧画面">在庫一覧画面</h3>
+<p><img src="https://wamisnet.github.io/img/2019/regi/90_7.png" alt=""></p>
+<p>在庫管理の機能が追加されて、今の残り個数が検索できるようになりました！
+商品のバーコードを読み取るとリストが絞り込まれるようにしたところもこだわりポイント！</p>
+<p>まだサポートしてない機能もありますが、今後サポートできたらいいなと思っています。</p>
+<p>React化したときにFlutterに比べて圧倒的に拡張しやすくしたので今後は随時機能を追加していきます！</p>
+<h1 id="まとめ">まとめ</h1>
+<p>便利になったぎーじゅくの物々交換システム。</p>
+<p>みんなで持ち寄るこの感じが私はすごく好きなので「物々交換システム」という風にしました。
+物々交換システムといってますが、物々交換してないやんけっていうツッコミはなしで！</p>
+<p>完全に同じ価値のものと交換するのは大変なので一旦お金を介して交換がはかどるようになったらいいなという理想と現実の狭間な感じ</p>
+<p>他のシェアハウスでもいいだろうし、オフィスでもつかえるのではないでしょうか？</p>
+<p>タブレットとバーコードリーダー（なくてもいいけど、読み込みがカメラより早かった）があればできるところもよいかなと思います。</p>
+<p>ぎーじゅくに興味をもったり、このシステムがもっと気になったらコメントしていただけると嬉しいです！</p>
+<h1 id="ここまで読んでくれた方へ">ここまで読んでくれた方へ</h1>
+<p>ここまで読んでくださりありがとうございます。</p>
+<p>いいねやコメント、SNSでの共有等をしてくださると、今後の励みになります。よろしくお願いします。</p>
+<p>良かったら<a href="https://twitter.com/wamisnet">Twitter</a>もフォローしてね</p>
+<p>ぎーじゅくの別記事</p>
+<ul>
+<li>Node-REDでシェアハウスのお風呂を爆速でハッキングする方法 : <a href="https://qiita.com/retoruto_carry/items/00ec51a94d819925fad1">https://qiita.com/retoruto_carry/items/00ec51a94d819925fad1</a></li>
+</ul>
+
+    </div>
+    <footer>
+      <ul class="stats">
+  <li class="categories">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/react/">React</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/%e4%bd%9c%e5%93%81/">作品</a></li>
+        
+      
+    
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/react/">React</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/%e4%bd%9c%e5%93%81/">作品</a></li>
+        
+      
+    
+    </ul>
+  </li>
+</ul>
+
+    </footer>
+  </article>
+  
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wamisnet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  <div class="pagination">
+  
+    <a href="https://wamisnet.github.io/blog/2019-07-17-esp32-chip/" class="button"><div class="previous"><div>ESP32のチップ情報を取得する（ESP-IDF）</div></div></a>
+  
+  
+    <a href="https://wamisnet.github.io/blog/2019-08-20-obniz_install_nefry/" class="button"><div class="next"><div>obniz OSをESP32(NefryBT)に入れて動かそう！</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/firebase_login/">Firebase使ってログインできるようになったよ！</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/">NetlifyCMSから投稿テスト</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://wamisnet.github.io/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nefry/">nefry<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99/">説明資料<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/obniz/">obniz<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86/">リンク集<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp8266/">esp8266<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot/">iot<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/arduino/">arduino<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp32/">esp32<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/firebase/">firebase<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/flutter/">flutter<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/">作品<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E7%84%A1%E7%B7%9Alan/">無線lan<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azureiothub/">azureiothub<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp-idf/">esp-idf<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/">iot可視化ツールレビュー<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nodered/">nodered<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/unibo/">unibo<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/">スマートロック<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/">技術書典<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%9C%AC/">本<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azure/">azure<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/bg96/">bg96<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/cocoabit/">cocoabit<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/m5stickc/">m5stickc<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/monacoin/">monacoin<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/react/">react<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/serverless/">serverless<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/ssd1306/">ssd1306<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/">イベント<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/">ポートフォリオ<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/">勉強会<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%A8%98%E4%BA%8B/">記事<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/">退職エントリ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。</p>
+      <footer>
+        <a href="https://wamisnet.github.io/about" class="button">もっと知る</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        わみめも
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.73.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://wamisnet.github.io/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.31224010c6a183ff135369ca15ae671b02a26296a0507f2b674d4ecd086b11da.js" integrity="sha256-MSJAEMahg/8TU2nKFa5nGwKiYpagUH8rZ01OzQhrEdo="></script>
+    <script src="https://wamisnet.github.io/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62256925-7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

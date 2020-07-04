@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nodered on わみめも</title>
+    <link>https://wamisnet.github.io/tags/nodered/</link>
+    <description>Recent content in nodered on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/tags/nodered/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NodeRedでHTTPリダイレクト対応したフローを作る</title>
+      <link>https://wamisnet.github.io/blog/2019-01-27-nodered_redirect/</link>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-01-27-nodered_redirect/</guid>
+      <description>NodeRedでGoogle App Scriptと通信するフローを作った時にHTTPリダイレクトが必要になりました。
+パッとぐぐっても情報を見つけられなかったので、まとめてみました。
+フロー [{&amp;#34;id&amp;#34;:&amp;#34;d7b66544.cad228&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;http request&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;method&amp;#34;:&amp;#34;GET&amp;#34;,&amp;#34;ret&amp;#34;:&amp;#34;txt&amp;#34;,&amp;#34;url&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;tls&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;x&amp;#34;:270,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;ba934f8b.bf0d1&amp;#34;,&amp;#34;34a354d5.522b7c&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;ba934f8b.bf0d1&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;debug&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;active&amp;#34;:true,&amp;#34;console&amp;#34;:&amp;#34;false&amp;#34;,&amp;#34;complete&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;x&amp;#34;:430,&amp;#34;y&amp;#34;:1200,&amp;#34;wires&amp;#34;:[]},{&amp;#34;id&amp;#34;:&amp;#34;ee827d07.60406&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;debug&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;active&amp;#34;:true,&amp;#34;console&amp;#34;:&amp;#34;false&amp;#34;,&amp;#34;complete&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;x&amp;#34;:1090,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[]},{&amp;#34;id&amp;#34;:&amp;#34;9aae099d.e37438&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;function&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;リダイレクト&amp;#34;,&amp;#34;func&amp;#34;:&amp;#34;msg.url = msg.headers.location;\ndelete msg.headers;\ndelete msg.payload;\ndelete msg.statusCode;\ndelete msg.method;\nreturn msg;&amp;#34;,&amp;#34;outputs&amp;#34;:1,&amp;#34;noerr&amp;#34;:0,&amp;#34;x&amp;#34;:600,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;c44e1561.006978&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;c44e1561.006978&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;http request&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;method&amp;#34;:&amp;#34;GET&amp;#34;,&amp;#34;ret&amp;#34;:&amp;#34;obj&amp;#34;,&amp;#34;url&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;tls&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;x&amp;#34;:790,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;f5b05c0a.c51b2&amp;#34;,&amp;#34;3ef37c00.8133a4&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;34a354d5.522b7c&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;switch&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;property&amp;#34;:&amp;#34;statusCode&amp;#34;,&amp;#34;propertyType&amp;#34;:&amp;#34;msg&amp;#34;,&amp;#34;rules&amp;#34;:[{&amp;#34;t&amp;#34;:&amp;#34;eq&amp;#34;,&amp;#34;v&amp;#34;:&amp;#34;302&amp;#34;,&amp;#34;vt&amp;#34;:&amp;#34;num&amp;#34;},{&amp;#34;t&amp;#34;:&amp;#34;eq&amp;#34;,&amp;#34;v&amp;#34;:&amp;#34;301&amp;#34;,&amp;#34;vt&amp;#34;:&amp;#34;num&amp;#34;},{&amp;#34;t&amp;#34;:&amp;#34;else&amp;#34;}],&amp;#34;checkall&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;outputs&amp;#34;:3,&amp;#34;x&amp;#34;:430,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;9aae099d.e37438&amp;#34;],[&amp;#34;9aae099d.e37438&amp;#34;],[]]},{&amp;#34;id&amp;#34;:&amp;#34;f5b05c0a.c51b2&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;switch&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;property&amp;#34;:&amp;#34;statusCode&amp;#34;,&amp;#34;propertyType&amp;#34;:&amp;#34;msg&amp;#34;,&amp;#34;rules&amp;#34;:[{&amp;#34;t&amp;#34;:&amp;#34;lt&amp;#34;,&amp;#34;v&amp;#34;:&amp;#34;300&amp;#34;,&amp;#34;vt&amp;#34;:&amp;#34;num&amp;#34;},{&amp;#34;t&amp;#34;:&amp;#34;else&amp;#34;}],&amp;#34;checkall&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;outputs&amp;#34;:2,&amp;#34;x&amp;#34;:950,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;ee827d07.60406&amp;#34;],[]]},{&amp;#34;id&amp;#34;:&amp;#34;3ef37c00.8133a4&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;debug&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;active&amp;#34;:true,&amp;#34;console&amp;#34;:&amp;#34;false&amp;#34;,&amp;#34;complete&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;x&amp;#34;:950,&amp;#34;y&amp;#34;:1200,&amp;#34;wires&amp;#34;:[]},{&amp;#34;id&amp;#34;:&amp;#34;16aa0ce6.c87ac3&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;inject&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;bf7fc455.b09fc8&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;topic&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;payload&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;payloadType&amp;#34;:&amp;#34;date&amp;#34;,&amp;#34;repeat&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;crontab&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;once&amp;#34;:false,&amp;#34;x&amp;#34;:100,&amp;#34;y&amp;#34;:1160,&amp;#34;wires&amp;#34;:[[&amp;#34;d7b66544.cad228&amp;#34;]]}] 解説 一つ目のHTTPRequest Nodeで通信したいURLを指定します。 次のSwitchでリダイレクトの301か302の場合、次の関数ノードに処理をつづけます。 関数ノードでは、msg.url = msg.headers.location;でヘッダーに含まれた移動先のURLを代入して次のHTTPRequest Nodeで移動先の情報を取得します。
+簡単ではありますが、このようになっています。 これで以上になります。簡単にではありますが、誰かの助けになればと思います！</description>
+    </item>
+    
+    <item>
+      <title>Zaif Paymentを使ってビットコイン＆モナコイン仮想通貨決済システムをつくってみる</title>
+      <link>https://wamisnet.github.io/blog/2019-11-27-zaif/</link>
+      <pubDate>Tue, 26 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-11-27-zaif/</guid>
+      <description>最近、仮想通貨の話題を聞かない日はないようになってだいぶ浸透してきたんだなと思います。
+悪い面が騒がれているような気がしますが、エンジニアとしては触ってみると面白い分野なのではないかなと思っています。 そんな仮想通貨を実際に決済システムとしてビックカメラや秋葉原の一部店舗などで取り扱われてきています、これはちょっと気になる。
+そんなことを思っていたら、ちょうどいい感じにZaif Paymentを見つけましたので使ってみました！！(個人利用できていい感じのサービスがあればそれでもいいかもですけどね)
+**完成版はこちら！**気に入ったら何円か投げ銭してくれてもいいんですよ？
+ 2017/12/30 決済情報の表示に対応！！
+ Zaif Paymentとは 取引所のZaifが行っている仮想通貨決済サービスです。
+公式サイトはこちら
+特徴
+ 手数料無料 モナコインに対応している 日本円で受け取ることができる 仮想通貨のまま受け取ることができる  このサービスはAPIで使って扱うことができます。
+今回は簡単に実装するためにAPI＋Node-Redで決済システムを作ってみようと思います。
+決済システムをつくってみる それではNode-Redでさくっと作ってみようと思います。
+環境  IBM Cloud ライトアカウントなどのNode-Red環境(私はAWSにMode-Redの環境を作ってて試しています) Zaifアカウント　(本人確認済み)   IBM Cloud (aka Bluemix) ライト・アカウント作成手順
+ サンプルコード [{&amp;#34;id&amp;#34;:&amp;#34;f6f414ca.057578&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;http request&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;method&amp;#34;:&amp;#34;POST&amp;#34;,&amp;#34;ret&amp;#34;:&amp;#34;obj&amp;#34;,&amp;#34;url&amp;#34;:&amp;#34;https://api.zaif.jp/ecapi&amp;#34;,&amp;#34;tls&amp;#34;:&amp;#34;e55e7d60.78615&amp;#34;,&amp;#34;x&amp;#34;:568,&amp;#34;y&amp;#34;:168,&amp;#34;wires&amp;#34;:[[&amp;#34;68603af5.adebf4&amp;#34;,&amp;#34;1670bdc2.8675b2&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;d408e881.31ac48&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;inject&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;Test&amp;#34;,&amp;#34;topic&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;payload&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;payloadType&amp;#34;:&amp;#34;date&amp;#34;,&amp;#34;repeat&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;crontab&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;once&amp;#34;:false,&amp;#34;x&amp;#34;:108,&amp;#34;y&amp;#34;:88,&amp;#34;wires&amp;#34;:[[&amp;#34;1c02b6e3.fc9989&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;942f2d66.612c7&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;function&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;APIKey設定&amp;#34;,&amp;#34;func&amp;#34;:&amp;#34;msg.key = \&amp;#34;\&amp;#34;;\nmsg.secret = \&amp;#34;\&amp;#34;;\nmsg.currency = msg.payload.basecoin;\nmsg.jpy = msg.coin = msg.payload.coin;\nif(msg.currency == \&amp;#34;mona\&amp;#34;){\n msg.build_pay = true;\n} \nif(msg.currency == \&amp;#34;btc\&amp;#34;){\n //msg.build = true;\n}\nreturn msg;&amp;#34;,&amp;#34;outputs&amp;#34;:1,&amp;#34;noerr&amp;#34;:0,&amp;#34;x&amp;#34;:408,&amp;#34;y&amp;#34;:88,&amp;#34;wires&amp;#34;:[[&amp;#34;7be80c8f.e09434&amp;#34;]]},{&amp;#34;id&amp;#34;:&amp;#34;c0675801.ef7898&amp;#34;,&amp;#34;type&amp;#34;:&amp;#34;function&amp;#34;,&amp;#34;z&amp;#34;:&amp;#34;c9e25c06.c8c0e&amp;#34;,&amp;#34;name&amp;#34;:&amp;#34;RequestMessage&amp;#34;,&amp;#34;func&amp;#34;:&amp;#34;msg.header = \&amp;#34;content-type:application/x-www-form-urlencoded\&amp;#34;;\nmsg.payload = \&amp;#34;method=createInvoice&amp;amp;key=\&amp;#34; + msg.</description>
+    </item>
+    
+  </channel>
+</rss>

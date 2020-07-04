@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+<title>Azure IoT HubをESP8266で使おう！ - わみめも</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.73.0" /><meta itemprop="name" content="Azure IoT HubをESP8266で使おう！">
+<meta itemprop="description" content="Azure IoT HubをESP8266で使おう！">
+<meta itemprop="datePublished" content="2016-09-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-09-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="188">
+
+
+
+<meta itemprop="keywords" content="Azure,ESP8266,nefry,AzureIoTHub," /><meta property="og:title" content="Azure IoT HubをESP8266で使おう！" />
+<meta property="og:description" content="Azure IoT HubをESP8266で使おう！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wamisnet.github.io/blog/2016-09-05-azure/" />
+<meta property="article:published_time" content="2016-09-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-09-05T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Azure IoT HubをESP8266で使おう！"/>
+<meta name="twitter:description" content="Azure IoT HubをESP8266で使おう！"/>
+<meta name="twitter:site" content="@wamisnet"/>
+<link rel="stylesheet" href="https://wamisnet.github.io/css/bundle.min.c77e84bad6f641316aaae9404d7b57577c00ac1217fc1a1e8a9d30300328d836.css" integrity="sha256-x36Eutb2QTFqqulATXtXV3wArBIX/Boeip0wMAMo2DY="><link rel="stylesheet" href="https://wamisnet.github.io/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://wamisnet.github.io/" class="nav">
+        
+          わみめも
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/" class="nav link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/about/" class="nav link"><i class='fa fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/itemized/" class="nav link"><i class='fa fa-list'></i> Product</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/business/" class="nav link"><i class='fa fa-id-card'></i> Small Business</a>
+          
+        
+      
+      
+      
+    </menu>
+    
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="https://wamisnet.github.io/"><img src="https://wamisnet.github.io/img/main/wami.jpg" class="circle" width="100" alt="wami" /></a>
+  <header>
+    <h1>わみめも</h1>
+  </header>
+  <main>
+    <p>私が作ったソフトウエアやハードウエアのはなしをします</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="https://wamisnet.github.io/blog/2016-09-05-azure/">Azure IoT HubをESP8266で使おう！</a></h2>
+    
+    
+      <p>Azure IoT HubをESP8266で使おう！</p>
+    
+  </div>
+  <div class="meta">
+    <time class="published" datetime="2016-09-05 00:00:00 &#43;0000 UTC">
+      2016-09-05
+    </time>
+    <span class="author">wami</span>
+    
+  </div>
+</header>
+
+    <section id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Azure%20IoT%20Hub%e3%82%92ESP8266%e3%81%a7%e4%bd%bf%e3%81%8a%e3%81%86%ef%bc%81&amp;url=https%3a%2f%2fwamisnet.github.io%2fblog%2f2016-09-05-azure%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwamisnet.github.io%2fblog%2f2016-09-05-azure%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e3%81%93%e3%81%ae%e6%8a%95%e7%a8%bf%e3%82%92%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%99%e3%82%8b wami&amp;body=https%3a%2f%2fwamisnet.github.io%2fblog%2f2016-09-05-azure%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </section>
+    
+
+    <div class="content">
+      <p>日本での発売から一年がたち多数の作例が出てくる「ESP8266」(ESP-WROOM-02)をもっと使いこなしてみませんか？</p>
+<p>今回はAzureのサービスの一つであるIoTHub、それを簡単に扱えるライブラリーを作ったので紹介してみようと思います。</p>
+<h3 id="ちょこっと宣伝">ちょこっと宣伝</h3>
+<p>ところどころで出てくるESP8266の基板ですが、私が作成した「Nefry」(ねふりー)という基板を使っています。</p>
+<p><strong><a href="https://dotstud.io/projects/nefry-connect-internet/">dotstudio</a>さんにて販売中です！！</strong></p>
+<p><img src="../../img/2016/azure/397_4.jpeg" alt=""></p>
+<p>USBに直接繋げられたり、Webページ上でWiFiの設定やESP8266の端末設定ができるようになっていたりとESP8266をより簡単に扱えるものになっています。</p>
+<p>詳しくはLigブログで記事をいくつか載せていますのでご覧ください。</p>
+<p><a href="http://liginc.co.jp/236620">自作したオリジナルIoTデバイス「Nefry」とインターネットを繋いでみた</a></p>
+<p><a href="http://liginc.co.jp/263899">Webサービス同士を連携できる「IFTTT」と自作IoTデバイスを繋いで生活を便利にしてみた</a></p>
+<h1 id="azure-iot-hub-って">Azure IoT Hub って？</h1>
+<p>IoT Hubは、その名の通りIoTデバイスとクラウドを繋ぐHubとなるサービスです。
+似たようなサービスとして「Event Hubs」がありますが、Event Hubsとの大きな違いは2つあります。</p>
+<p>IoTHubの優れた点</p>
+<ul>
+<li>デバイスとクラウドとの双方向通信が可能。(Event Hubsはデバイス→クラウドの一方のみ)</li>
+<li>デバイス毎にIDを登録して認証する為、よりセキュアに利用できる。(Event HubsはEvent Hubsごとの許可)</li>
+</ul>
+<p><a href="http://qiita.com/hiiyan0402/items/9c93d9673114675a57d4"><img src="../../img/2016/azure/271_9.png" alt=""></a></p>
+<p><a href="http://qiita.com/hiiyan0402/items/9c93d9673114675a57d4">http://qiita.com/hiiyan0402/items/9c93d9673114675a57d4</a></p>
+<h1 id="用意するもの">用意するもの</h1>
+<ul>
+<li>ESP8266(ESP-WROOM-02)</li>
+<li>Azure アカウント</li>
+<li>ArduinoIDE</li>
+<li>Arduino core for ESP8266 WiFi chip(<a href="https://github.com/esp8266/Arduino">https://github.com/esp8266/Arduino</a>)</li>
+<li>AzureIoTHubライブラリー(<a href="https://github.com/wamisnet/Azure-iothub-mqtt-esp8266">https://github.com/wamisnet/Azure-iothub-mqtt-esp8266</a>)</li>
+</ul>
+<h1 id="iothubで通信をしてみる">IoTHubで通信をしてみる</h1>
+<p>今回はESP8266からIoTHubで通信するところまでを作っていきます。</p>
+<h2 id="azure-iothubの設定">Azure IoTHubの設定</h2>
+<p>それでは、AzureにログインしてIoTHubを実際に作っていきましょう！</p>
+<p>Azure ポータルを開いていきます。</p>
+<p>新規からモノのインターネット(IoT)をクリックして、IoTHubをクリックします。これから必要な設定を行っていきます。</p>
+<p><img src="../../img/2016/azure/266_6.png" alt=""></p>
+<p>無事にIoTHubが開かれると複数の入力欄が出るので写真を参考に入力欄を埋めていきましょう。
+それでは、必須項目であるIoTHubの名前を入力してください。この名前はドメインでも使われますので他の方と重複するとエラーが出ます。入力欄の右端が緑のチェックが入れば大丈夫です。
+次に、価格とスケールティアを変更していきます。この際に<strong>Free</strong>を必ず選んでください。Standardを選んだまま作成してしまうと、後からFreeに変更することができず、再度作り直すことになります。</p>
+<p>Freeを選択したらクリックして反映させてください。</p>
+<p><img src="../../img/2016/azure/267_3.png" alt=""></p>
+<p>リソースグループは既存ものがあれば、それを使って頂いてもかまいませんが、今回は初めてだという前提で、新規作成で好きなグループ名を入力してください。</p>
+<p>Azureサーバーがある場所を指定することができます。東日本、西日本と選べますのでお好みでどうぞ。</p>
+<p>ここまで問題なくできていれば、作成ボタンをクリックしてIoTHubをデプロイしていきます。</p>
+<p><img src="../../img/2016/azure/268_3.png" alt=""></p>
+<p>数分かかりますのでしばしお待ちを…</p>
+<p><img src="../../img/2016/azure/270_4.png" alt=""></p>
+<p>無事にIoTHubのデプロイが終わるとこのような画面が表示されます。
+この画面では先ほど設定した内容が見れるほか、IoTHubの使用状態を確認することができます。</p>
+<p><img src="../../img/2016/azure/273_9.png" alt=""></p>
+<p>デバイスを繋げるために必要な設定を行っていきます。
+共有アクセスポリシーから<strong>iothubowner</strong>をクリックし、プライマリキーをコピーします。
+このとき写真で示してある部分をクリックすると簡単にキーをコピーすることができます。</p>
+<p>このプライマリキーは次の作業で使用します。
+<img src="../../img/2016/azure/275_3.png" alt=""></p>
+<p>この作業から<strong>Device Explorer</strong>というツールを使っていきます。
+このツールはWindows専用になります。MacやLinuxの場合<strong>iothub-explorer</strong>を使うようですが、今回は取り扱いません。</p>
+<h3 id="device-explorerのダウンロード">Device Explorerのダウンロード</h3>
+<p>こちらの**<a href="https://github.com/Azure/azure-iot-sdk-csharp/releases/download/2017-5-5/SetupDeviceExplorer.msi">リンク</a>**からダウンロードしてインストールをよろしくお願いします。</p>
+<p>インストールが終わったところで<strong>Device Explorer</strong>を使っていこうと思います。</p>
+<p>このツールでIoTHubに接続できる端末の登録、削除、ほかにはデバイスからIoTHubへの通信モニターになったり、IoTHubからデバイスにデータを送ることができるなどIoTHubに必須のものとなっております。</p>
+<p>説明が長くなりましたが、それではこのDevice Explorerに先ほどのプライマリキーを入力して<strong>Update</strong>をクリックしてください。</p>
+<p><img src="../../img/2016/azure/276_7.png" alt=""></p>
+<p>プライマリキーが合っていれば、このような表示がされます。この表示がでれば先ほど作ったIoTHubと連携ができるようになります。</p>
+<p><img src="../../img/2016/azure/279_e.png" alt=""></p>
+<p>これからIoTHubに接続できるデバイスの設定をしていこうと思います。</p>
+<p>この作業はデバイスごとにIDを割り振る作業になります。
+ManagementからCreateをクリックします。</p>
+<p><img src="../../img/2016/azure/274_9.png" alt=""></p>
+<p>Createをクリックするとこのような画面が出ますので、Device IDに接続するデバイス名を入力してください。</p>
+<p>入力が終わったらCreateをクリックしてください。</p>
+<p><img src="../../img/2016/azure/272_1.png" alt=""></p>
+<p>無事にデバイスが作れると先ほどのDevice IDを持ったものが増えているはずです。</p>
+<p><img src="../../img/2016/azure/269_9.png" alt=""></p>
+<p>無事に作成できていれば、次はデバイスに必要な情報をコピーしておきましょう。
+今回作成したDevice IDをクリックすると青色の欄が移動しますので、選択された状態で右クリックすると<strong>Copy connection string for selected device</strong>を選んでクリックしてください。</p>
+<p>そうすると必要な情報がコピーされますので、その情報をESP8266に書き込むプログラムに貼り付けます。</p>
+<p><img src="../../img/2016/azure/278_0.png" alt=""></p>
+<h2 id="デバイスの設定">デバイスの設定</h2>
+<p>ArduinoIDEとArduino core for ESP8266 WiFi chip(<a href="https://github.com/esp8266/Arduino">https://github.com/esp8266/Arduino</a>) の導入が終わっている前提で解説していきます。
+導入が済んでなければ、Qiitaに情報がありますのでそちらをご覧ください。</p>
+<p>それでは、AzureIoTHubライブラリー(<a href="https://github.com/wamisnet/Azure-iothub-mqtt-esp8266">https://github.com/wamisnet/Azure-iothub-mqtt-esp8266</a>) をこちらのリンクから移動して写真を参考にZipでダウンロードしてください。</p>
+<p><img src="../../img/2016/azure/280_0.png" alt=""></p>
+<p>ダウンロード終わりましたら、ArduinoIDEを開いてスケッチ→ライブラリーをインクルード→.zip形式のライブラリーをインストールをクリックし、先ほどダウンロードしたファイルを選んでください。そうすると自動的にライブラリーのインストールが始まります。</p>
+<p><img src="../../img/2016/azure/358_8.png" alt=""></p>
+<p>問題なくライブラリーのインストールが完了すると**ライブラリーが追加されました。**と表示されます。</p>
+<p><img src="../../img/2016/azure/354_4.png" alt=""></p>
+<p>ライブラリーがインストールしたところで実際に使ってみようと思います。</p>
+<p>ファイル→スケッチの例→AzureIoTHubの中にあるAzure-iothub-mqtt-esp8266が選択できますので選択してください。</p>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/97208/d8bec667-8d50-9262-08d4-6de10f0fd2b6.png" alt="qiita Arduino (3).png"></p>
+<p>サンプルプログラムが表示されますので、それを使ってAzureIoTHubに接続してみようと思います。</p>
+<p>それでは、サンプルプログラムの内容の紹介と変更部分を説明していきます。</p>
+<p>ESP8266が接続するWiFiアクセスポイントの設定をWiFi.beginにSSID,Passwordをそれぞれ入力してください。
+Azure.beginには、先ほどDevice Explorerで取得したキーを張り付けてください。
+例：<code>Azure.begin(&quot;HostName=YourHost.azure-devices.net;DeviceId=YourDevice;SharedAccessKey=&quot;);</code>
+注意としては、張り付けたときに両端に**&quot;**(ダブルクォーテーション)を必ずつけてあることを確認してください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp:Azure-iothub-mqtt-esp8266.ino" data-lang="cpp:Azure-iothub-mqtt-esp8266.ino">
+  <span style="color:#a6e22e">WiFi</span>.<span style="color:#a6e22e">begin</span>(<span style="color:#e6db74">&#34;SSID&#34;</span>, <span style="color:#e6db74">&#34;PASS&#34;</span>);
+  Azure.<span style="color:#a6e22e">begin</span>(<span style="color:#e6db74">&#34;Your Key&#34;</span>); <span style="color:#75715e">//YourKey Example:&#34;HostName=YourHost.azure-devices.net;DeviceId=YourDevice;SharedAccessKey=&#34;
+</span><span style="color:#75715e"></span> 
+</code></pre></div><p>Azureからのデータの取得はこの関数で行います。
+<code>Azure.setCallback(azureCallback);</code>
+このazureCallbackは別で関数宣言してください。引数はStringでAzureから届いたデータを渡されますのでそのデータを活用してみてください。
+サンプルプログラムでは、シリアルで表示するようになっています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp:Azure-iothub-mqtt-esp8266.ino" data-lang="cpp:Azure-iothub-mqtt-esp8266.ino">
+  Azure.setCallback(azureCallback);
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">azureCallback</span>(<span style="color:#66d9ef">String</span> s) {
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;azure Message arrived [&#34;</span>);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(s);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;] &#34;</span>);
+}
+</code></pre></div><p>簡単ではありますが、2点を注意して書き換えてください。</p>
+<p><img src="../../img/2016/azure/277_6.png" alt=""></p>
+<p>続いて、loopの中を簡単に解説していきます。</p>
+<p>WiFiに接続できたとき、Azureと通信を開始します。
+<code>Azure.connect()</code>にてAzure IoTHubと接続する処理を行ってます。
+<code>Azure.push(&amp;a);</code>にてAzure IoTHubにデータ送信処理を行ってます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp:Azure-iothub-mqtt-esp8266.ino" data-lang="cpp:Azure-iothub-mqtt-esp8266.ino"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">WiFi</span>.status() <span style="color:#f92672">==</span> WL_CONNECTED) {
+    Azure.<span style="color:#a6e22e">connect</span>();
+    DataElement a <span style="color:#f92672">=</span> DataElement();<span style="color:#75715e">//Azureに送るデータをJsonで作っていきます。
+</span><span style="color:#75715e"></span>    a.setValue(<span style="color:#e6db74">&#34;EspAnalog&#34;</span>, <span style="color:#a6e22e">analogRead</span>(A0));
+    Azure.push(<span style="color:#f92672">&amp;</span>a);
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;pushed&#34;</span>);
+    <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">2000</span>);
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Not connected to the Internet&#34;</span>);
+    <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">250</span>);
+  }
+}
+</code></pre></div><h1 id="実際に動かしてみよう">実際に動かしてみよう</h1>
+<h2 id="azureiothubnefry">AzureIoTHub→Nefry</h2>
+<p>これはAzureIoTHub(Device explorer)からNefry(ESP8266が中に入ってる)へデータを送っています。届いたときにLEDが点滅するようになっています。
+そこまでラグなく点滅しているのが見えると思います。</p>
+<p><img src="../../img/2016/azure/282_1.gif" alt=""></p>
+<p>こちらはAzureIoTHub(Device explorer)とNefryのコンソール画面になりますが、ほとんどクリックしたタイミングでデータが届いていると思います。</p>
+<p><img src="../../img/2016/azure/324_f.gif" alt=""></p>
+<h2 id="nefryazureiothub">Nefry→AzureIoTHub</h2>
+<p>こちらはNefry(ESP8266)からAzureIoTHubにデータを送っています。
+<a href="https://www.switch-science.com/catalog/884/">GROVEのジョイスティック</a>をつかってアナログ値をAzureIoTHubへデータを1秒ごとに送っています。</p>
+<p><img src="../../img/2016/azure/281_e.gif" alt=""></p>
+<p>Device explorerにて届いた値を見ることができます。
+今回はESPAnalogという項目にデータが入っているのが見ずらいですがわかると思います。</p>
+<p><img src="../../img/2016/azure/283_7.gif" alt=""></p>
+<h1 id="まとめ">まとめ</h1>
+<p>今回このライブラリーを作るまで、お世話になりました@matsujirushi さん、@onoche　さんこの場を借りて御礼を申し上げます。</p>
+<p>IoTHub×ESP8266の情報があまり多くなく四苦八苦しましたが、このライブラリーを使ってAzureにある機械学習やPower BIなど様々な仕組みと組み合わせて面白いものを作ってもらえたらうれしいです。</p>
+
+    </div>
+    <footer>
+      <ul class="stats">
+  <li class="categories">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/azure/">Azure</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/esp8266/">ESP8266</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/nefry/">nefry</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/azureiothub/">AzureIoTHub</a></li>
+        
+      
+    
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/azure/">Azure</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/esp8266/">ESP8266</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/nefry/">nefry</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/azureiothub/">AzureIoTHub</a></li>
+        
+      
+    
+    </ul>
+  </li>
+</ul>
+
+    </footer>
+  </article>
+  
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wamisnet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  <div class="pagination">
+  
+    <a href="https://wamisnet.github.io/blog/2016-04-27-esp8266_staticip/" class="button"><div class="previous"><div>ESP8266で静的なIPをわりふってみる</div></div></a>
+  
+  
+    <a href="https://wamisnet.github.io/blog/2016-11-01-arduino/" class="button"><div class="next"><div>Arduino勉強会資料</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/firebase_login/">Firebase使ってログインできるようになったよ！</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/">NetlifyCMSから投稿テスト</a></h2>
+          <time class="published" datetime="">2020-07-03</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://wamisnet.github.io/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nefry/">nefry<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99/">説明資料<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/obniz/">obniz<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86/">リンク集<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp8266/">esp8266<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot/">iot<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/arduino/">arduino<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp32/">esp32<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/firebase/">firebase<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/flutter/">flutter<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/">作品<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E7%84%A1%E7%B7%9Alan/">無線lan<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azureiothub/">azureiothub<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp-idf/">esp-idf<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/">iot可視化ツールレビュー<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nodered/">nodered<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/unibo/">unibo<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/">スマートロック<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/">技術書典<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%9C%AC/">本<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azure/">azure<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/bg96/">bg96<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/cocoabit/">cocoabit<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/m5stickc/">m5stickc<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/monacoin/">monacoin<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/react/">react<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/serverless/">serverless<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/ssd1306/">ssd1306<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/">イベント<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/">ポートフォリオ<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/">勉強会<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%A8%98%E4%BA%8B/">記事<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/">退職エントリ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。</p>
+      <footer>
+        <a href="https://wamisnet.github.io/about" class="button">もっと知る</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        わみめも
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.73.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://wamisnet.github.io/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.31224010c6a183ff135369ca15ae671b02a26296a0507f2b674d4ecd086b11da.js" integrity="sha256-MSJAEMahg/8TU2nKFa5nGwKiYpagUH8rZ01OzQhrEdo="></script>
+    <script src="https://wamisnet.github.io/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62256925-7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

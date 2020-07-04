@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>esp32 on わみめも</title>
+    <link>https://wamisnet.github.io/categories/esp32/</link>
+    <description>Recent content in esp32 on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/categories/esp32/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ESP32のチップ情報を取得する（ESP-IDF）</title>
+      <link>https://wamisnet.github.io/blog/2019-07-17-esp32-chip/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-07-17-esp32-chip/</guid>
+      <description>ESP32のチップを判定する必要があったのでその方法をメモしておきます。
+ESP-IDFでの例になります。
+Chipの取得 #include &amp;quot;soc/soc.h&amp;quot;
+ uint32_t _chipmacid =REG_READ(DR_REG_EFUSE_BASE+12); char str[30]; sprintf(str, &amp;quot;_chipmacid:%u\n&amp;quot;, _chipmacid); console_print(str); uint8_t pkg = (_chipmacid &amp;gt;&amp;gt; 9) &amp;amp; 0x07; sprintf(str, &amp;quot;pkg:%u\n&amp;quot;, pkg);//これがChipID console_print(str); // 0: &amp;quot;ESP32D0WDQ6&amp;quot;, // 1: &amp;quot;ESP32D0WDQ5&amp;quot;, // 2: &amp;quot;ESP32D2WDQ5&amp;quot;, // 5: &amp;quot;ESP32-PICO-D4&amp;quot;, これでチップの判定をすることができます！</description>
+    </item>
+    
+    <item>
+      <title>M5StickCに書き込みができないときの確認事項</title>
+      <link>https://wamisnet.github.io/blog/2019-07-10-m5stick/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-07-10-m5stick/</guid>
+      <description>http://forum.m5stack.com/topic/814/error-on-downloading-to-m5stickc
+IDFで書き込みできない esptool.py v2.5.1 Serial port COM12 Connecting.... Chip is ESP32-PICO-D4 (revision 1) Features: WiFi, BT, Dual Core, 240MHz, Embedded Flash, VRef calibration in efuse MAC: d8:a0:1d Uploading stub... Running stub... Stub running... Changing baud rate to 921600 Changed. Configuring flash size... A fatal error occurred: Timed out waiting for packet header 原因 M5StickCがサポートするボーレートがあっていないのが原因です。
+1200〜115200、250K、500K、750K、1500K
+上記だと921600になっています。
+対応 書き込み時の通信速度を合ったもの変更することで動作するようになります。 </description>
+    </item>
+    
+    <item>
+      <title>変わり種のESP32ボードまとめてみた</title>
+      <link>https://wamisnet.github.io/blog/2019-07-03-esp32board/</link>
+      <pubDate>Wed, 03 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2019-07-03-esp32board/</guid>
+      <description>変わり種のESP32ボードまとめてみた 技適がないものもあるので要注意
+ドル円 108円計算
+CW02  購入リンク： https://xinabox.cc/products/cw02 金額（ドル）：29.95 金額（円）: 3235  ソケットでセンサーやディスプレイを数珠つなぎにできる
+WEMOS LOLIN D32  購入リンク： https://www.aliexpress.com/store/product/WEMOS-LOLIN32-V1-0-0-wifi-bluetooth-board-based-ESP-32-4MB-FLASH/1331105_32808551116.html 金額（ドル）：6.50 金額（円）: 702  バッテリがつなげられる開発ボード
+LOLIN D32 Pro  購入リンク： https://www.aliexpress.com/store/product/LOLIN-D32-Pro-V2-0-0-wifi-bluetooth-board-based-ESP-32-esp32-Rev1-ESP32-WROVER/1331105_32883116057.html 金額（ドル）：8.8 金額（円）: 950  バッテリがつなげられる開発ボード
+Dongsen Technology D-duino-32 XR  購入リンク： https://www.aliexpress.com/store/product/DSTIKE-D-duino-32-XR-ESP32-OLED/2996024_32970292724.html?spm=a2g1y.12024536.productList_110843485.pic_4 金額（ドル）：7.9 金額（円）: 853  Obnizに似た開発ボード。スイッチと、ディスプレイがついている。
+ESP32 Watch DevKit  購入リンク： https://www.aliexpress.com/store/product/DSTIKE-ESP32-Watch-DevKit/2996024_32985459002.html?spm=a2g1y.12024536.productList_110843487.pic_0 金額（ドル）：39 金額（円）: 4212  腕時計にできるキット。
+Olimex ESP32-EVB  購入リンク： https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware 金額（ユーロ）：26 金額（円）: 3160  LANやいろいろなポートが付いたボード
+HARDKERNEL odroid-go  購入リンク： https://www.</description>
+    </item>
+    
+  </channel>
+</rss>
