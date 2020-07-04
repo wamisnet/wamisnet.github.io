@@ -6,7 +6,7 @@ description: NetlifyCMSから投稿できるかためしてみます
 こんな感じのエディタから入力して、記事を投稿できるんだよ！
 めっちゃええやん？
 
-![](/img/e7ivview_400x400.jpg)
+![](/img/blog/e7ivview_400x400.jpg)
 
 こんな感じで画像をいれたり
 
