@@ -25,11 +25,13 @@ collections:
         name: "tags"
         widget: "list"
         allow_add: true
+        required: false
       - label: "categories"
         name: "Categories"
         widget: "list"
         allow_add: true
-      - { label: "Slug", name: "slug", widget: "string"}
+        required: false
+      - { label: "Slug", name: "slug", widget: "string",required: false}
   - name: 'product'
     label: 'Product'
     folder: 'content/itemized'
