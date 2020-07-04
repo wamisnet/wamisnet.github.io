@@ -39,7 +39,7 @@ highlightjsLang = [
   "c++"
 ]
 viewMorePostsLink = "/blog/"
-readingTime = true
+readingTime = false
 socialShare = [
   "twitter",
   "facebook",
