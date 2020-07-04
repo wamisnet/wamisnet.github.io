@@ -1,5 +1,8 @@
 #!/bin/sh
+git submodule update
+
 hugo version
+
 hugo
 git clone https://github.com/wamisnet/wamisnet.github.io.git
 
