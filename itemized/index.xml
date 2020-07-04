@@ -41,7 +41,7 @@
 I2Cでモーターの速度をそれぞれコントロールする事ができます！
 仕様          電源電圧範囲 7V以下   最大連続駆動電流 1A   モータへの動作電源電圧範囲 2.75V～6.8V   通信方法 I2C   使用IC DRV8830    ICについての詳細情報
 サンプルプログラム DRV8830ドライバーはこちらからダウンロードしてください
-#include &amp;lt;Arduino.h&amp;gt;#include &amp;lt;Wire.h&amp;gt;#include &amp;lt;DRV8830MotorDriver.h&amp;gt;DRV8830MotorDriver motor1(DRV8830_A1_A0_0_0);DRV8830MotorDriver motor2(DRV8830_A1_A0_0_1);DRV8830MotorDriver motor3(DRV8830_A1_A0_1_1);DRV8830MotorDriver motor4(DRV8830_A1_A0_1_0);#define FAULTn 7void setup(){Serial.begin(115200);Wire.begin();Serial.println(&amp;quot;Hello,DRV8830 I2C MotorDriver&amp;quot;);motor1.setSpeed(0);motor2.setSpeed(0);motor3.setSpeed(0);motor4.setSpeed(0);}int spd = 0;void loop(){char c;if (Serial.</description>
+#include &amp;lt;Arduino.h&amp;gt; #include &amp;lt;Wire.h&amp;gt; #include &amp;lt;DRV8830MotorDriver.h&amp;gt; DRV8830MotorDriver motor1(DRV8830_A1_A0_0_0); DRV8830MotorDriver motor2(DRV8830_A1_A0_0_1); DRV8830MotorDriver motor3(DRV8830_A1_A0_1_1); DRV8830MotorDriver motor4(DRV8830_A1_A0_1_0); #define FAULTn 7 void setup() { Serial.begin(115200); Wire.begin(); Serial.println(&amp;quot;Hello,DRV8830 I2C MotorDriver&amp;quot;); motor1.setSpeed(0); motor2.setSpeed(0); motor3.setSpeed(0); motor4.setSpeed(0); } int spd = 0; void loop() { char c; if (Serial.</description>
     </item>
     
     <item>

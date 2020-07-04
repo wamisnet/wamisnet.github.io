@@ -34,7 +34,7 @@ function hello(){ console.log(&amp;#34;hello world!&amp;#34;); } みたいにコ
     <item>
       <title>IoT的シェアハウスのすすめ</title>
       <link>https://wamisnet.github.io/blog/iot_sharehouse/</link>
-      <pubDate>Sat, 07 Dec 2019 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/iot_sharehouse/</guid>
       <description>12/24 ハンズオン資料はこちら
@@ -57,7 +57,7 @@ Google Home VUIでもろもろのIoTデバイスの状態を確認できる
     <item>
       <title>ロボットからobnizをつくりにいきます！「退職エントリ」</title>
       <link>https://wamisnet.github.io/blog/jobchange/</link>
-      <pubDate>Sun, 07 Jul 2019 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/jobchange/</guid>
       <description>全然更新していないですが、お久しぶりです、わみです。
@@ -92,23 +92,23 @@ MakerFaire Kyotoで木戸さんと話してそこに共感できたのも大き�
     <item>
       <title>Flutter Meetup Tokyo #5いってきた</title>
       <link>https://wamisnet.github.io/blog/flutter_meetup_tokyo_5/</link>
-      <pubDate>Wed, 17 Oct 2018 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/flutter_meetup_tokyo_5/</guid>
       <description>前回の技術書典5でFlutter本を書いたのもあり、今回「Flutter Meetup Tokyo #5」に参加しました。 本を書いている間ずっと気になってたので今回来れてよかったです。
  一応、本の販売リンクを張っておきます！！！よろしければ！！！
 ちょっと仕事が終わらなくて、初めから参加できなかったのですが、YouTubeのほうで配信していたので（マジ神）ちらちら見ながら会場に向かえましたｗ
 配信再開しました。 #flutter_meetup_tokyohttps://t.co/NrMci2I5FE
-&amp;mdash; Flutter Tokyo (@FlutterTokyo) 2018年10月17日Flutterまだまだ情報少ないのでこういう勉強会で情報を得ていきたいですね。
+&amp;mdash; Flutter Tokyo (@FlutterTokyo) 2018年10月17日  Flutterまだまだ情報少ないのでこういう勉強会で情報を得ていきたいですね。
 発表資料 個人でFlutterアプリをリリースした所感 @ shogo.yamada 今日の発表資料になります！
 もし見にくかったらこちらをご覧ください。https://t.co/Oyku6rCby6
 #flutter_meetup_tokyo
-&amp;mdash; shogo.yamada@Flutterが好き (@yshogo87) 2018年10月17日Redux in Flutter: An Introduction @ Jeroen Meijer 資料見つけられず…
+&amp;mdash; shogo.yamada@Flutterが好き (@yshogo87) 2018年10月17日  Redux in Flutter: An Introduction @ Jeroen Meijer 資料見つけられず…
 Flutter Engineことはじめ @ nankiti 資料みつけられず…
 画像取得とpermission @ txmn パーミッション周りまだ作り込んだことないので聞けてよかった
 これから発表するスライドになります。
 緊張していますが、よろしくお願いいたしますm(__)mhttps://t.co/Ir61jKIdvd#flutter_meetup_tokyo
-&amp;mdash; taxman (@_txmn) 2018年10月17日Flutterのlifecycle @ slime_a ライフサイクルの話あまりきかないので、すごく為になった！
+&amp;mdash; taxman (@_txmn) 2018年10月17日  Flutterのlifecycle @ slime_a ライフサイクルの話あまりきかないので、すごく為になった！
 資料これから…？
 Flutterを広めるために技術同人誌を作った話 @ ota42y 私の横のサークルでFlutter本販売していたサークルさんの発表！ いろんな情報を配信していってほしい。
 今日の資料です！！！ “ Flutterを広めるために技術同人誌を作った話 - Speaker Deck https://t.</description>
@@ -117,7 +117,7 @@ Flutterを広めるために技術同人誌を作った話 @ ota42y 私の横の
     <item>
       <title>技術書典5で発注ミスをしましたｗ＆Flutter本振り返り</title>
       <link>https://wamisnet.github.io/blog/techbooks5/</link>
-      <pubDate>Mon, 15 Oct 2018 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/techbooks5/</guid>
       <description>技術書典5おつかれさまです！
@@ -153,7 +153,7 @@ Flutterを広めるために技術同人誌を作った話 @ ota42y 私の横の
     <item>
       <title>Nefry生誕祭3周年デコレーションケーキを発注してみた</title>
       <link>https://wamisnet.github.io/blog/nefry_cake/</link>
-      <pubDate>Fri, 12 Oct 2018 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 12 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/nefry_cake/</guid>
       <description>すごく今更なんですが、備忘録がてらちょっとまとめておきます。
@@ -171,15 +171,15 @@ Flutterを広めるために技術同人誌を作った話 @ ota42y 私の横の
 イベントでケーキを振舞うと、中には酸味がほどよい果物が入っていて誕生日以外にケーキを食べることのない私にとって、めちゃくちゃおいしくて次に頼む機会があればまた頼みたいと思うぐらいでした。
 最後に実際に振舞ったときのツイートを何個か貼っておこうかと思います。
 再現性高すぎ❗️#iotlt #nefry pic.twitter.com/uJWhQbtM75
-&amp;mdash; hayakumi (@hayakumi8893) 2018年9月18日入刀 #iotlt pic.twitter.com/856BTJTiSD
-&amp;mdash; 早川@初心者かも (@Askaiot0162) 2018年9月18日Nefryのバースデーケーキ…！！！ #iotlt pic.twitter.com/bfcQd6EfsG
-&amp;mdash; 田中みそ@技術書典5-う28/スマートスピーカーを遊びたおす本 (@miso_develop) 2018年9月18日</description>
+&amp;mdash; hayakumi (@hayakumi8893) 2018年9月18日  入刀 #iotlt pic.twitter.com/856BTJTiSD
+&amp;mdash; 早川@初心者かも (@Askaiot0162) 2018年9月18日  Nefryのバースデーケーキ…！！！ #iotlt pic.twitter.com/bfcQd6EfsG
+&amp;mdash; 田中みそ@技術書典5-う28/スマートスピーカーを遊びたおす本 (@miso_develop) 2018年9月18日  </description>
     </item>
     
     <item>
       <title>Nefry Tips 無線LAN接続について</title>
       <link>https://wamisnet.github.io/blog/nefry_tips_2018_08_28/</link>
-      <pubDate>Tue, 28 Aug 2018 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/nefry_tips_2018_08_28/</guid>
       <description>Nefryを使ったいろんな作品が見られて幸せなわみさんです。
