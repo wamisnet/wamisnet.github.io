@@ -22,10 +22,10 @@
     
     <item>
       <title>NetlifyCMSから投稿テスト</title>
-      <link>https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/</link>
+      <link>https://wamisnet.github.io/blog/2020-07-03-netlifycms/</link>
       <pubDate>Fri, 03 Jul 2020 12:24:48 +0000</pubDate>
       
-      <guid>https://wamisnet.github.io/blog/2020-07-03-netlifycms%E3%81%8B%E3%82%89%E6%8A%95%E7%A8%BF%E3%83%86%E3%82%B9%E3%83%88/</guid>
+      <guid>https://wamisnet.github.io/blog/2020-07-03-netlifycms/</guid>
       <description>こんな感じのエディタから入力して、記事を投稿できるんだよ！ めっちゃええやん？
 こんな感じで画像をいれたり
 function hello(){ console.log(&amp;#34;hello world!&amp;#34;); } みたいにコードいれたりいろいろできるっぽい</description>
