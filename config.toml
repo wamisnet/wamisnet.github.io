@@ -23,7 +23,7 @@ home = [
 ]
 
 [params]
-description = "私が作ったコードやハードウエアのはなし"
+description = "NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人のサイト"
 images = ["/img/main/wami.jpg"]
 navbarTitle = "わみめも"
 viewMorePostLink = "/blog/"
