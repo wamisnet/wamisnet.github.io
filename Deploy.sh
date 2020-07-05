@@ -1,11 +1,13 @@
 #!/bin/sh
-git submodule init
-git submodule update
 
+sudo apt-get install nodejs npm
 cd node
 npm i
 node index.js &
 cd ..
+
+git submodule init
+git submodule update
 
 hugo version
 
@@ -22,5 +24,5 @@ git config --global user.email "wamiwami@live.jp"
 git config --global user.name "wami"
 
 git add --all
-git commit -m "Update [ci skip]"
+git commit -m "Update Site"
 git push origin master
