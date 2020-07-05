@@ -8,6 +8,7 @@ tags:
 Categories:
   - hugo
   - shortcode
+slug: 2020-07-05-hugo_shortcode
 ---
 下記のサイトを参考にshortcodeをつくってみました。
 
