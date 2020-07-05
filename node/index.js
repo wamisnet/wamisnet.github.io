@@ -3,6 +3,7 @@ const app = require('express')();
 
 app.get("/getogp", (expressRequest, expressResponse, expressNext) => {
     const url = expressRequest.query.url;
+    console.log(url);
     client.fetch(url, (err, $, res, body) => {
         if (err) {
             expressNext(err)
