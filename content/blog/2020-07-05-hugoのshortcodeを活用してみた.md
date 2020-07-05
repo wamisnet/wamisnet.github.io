@@ -29,9 +29,9 @@ slug: 2020-07-05-hugo_shortcode
 こんなコードを書いたら、上のようにきれいにしてくれちゃうんです。
 
 ```
-{{< warning >}}
+<!--{{< warning >}}
 各自の環境で同様に動作する保証はありません。
-{{< /warning >}}
+{{< /warning >}}-->
 ```
 
 # link card
@@ -45,5 +45,5 @@ slug: 2020-07-05-hugo_shortcode
 ちょっとの一工夫でいい感じにできるのはとても便利ですね
 
 ```
-{{< linkcard "https://www.zaico.co.jp/">}}
+<!--{{< linkcard "https://www.zaico.co.jp/">}}-->
 ```
