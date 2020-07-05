@@ -17,7 +17,7 @@
       <pubDate>Sat, 04 Jul 2020 15:01:35 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/2020-07-05-site_info/</guid>
-      <description>warning Warning  各自の環境で同様に動作する保証はありません。   使用技術 このサイトでは下記の技術を使用して構成されています。
+      <description>warning Warning 各自の環境で同様に動作する保証はありません。   使用技術 このサイトでは下記の技術を使用して構成されています。
   Hugo
  テンプレート: hugo-future-imperfect-slim    CircleCi
  Docker    Netlify CMS
