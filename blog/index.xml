@@ -21,7 +21,7 @@
 ショートコード作成の解説 | Hugo 入門 / 解説 | nasust dev blog  こんにちはnasustです。 今回は、Hugoでショートコード作成の解説をします。 ショートコードとは Markdown文章中に {{&amp;lt; ショートコードテ...  https://nasust.com/hugo/tips/shortcode/     Hugoでブログカードに対応する | Hugo 入門 / 解説 | nasust dev blog  こんにちはnasustです。 今回は、Hugoでブログカードに対応する方法を紹介します。 私のもう1つのブログは、はてなブログを使用しています。...  https://nasust.com/hugo/shortcode/blogcard/     2つのshortcodeを追加しました。
 warning 警告文を出すようのものですね
 warning Warning 各自の環境で同様に動作する保証はありません。   こんなコードを書いたら、上のようにきれいにしてくれちゃうんです。
-warning Warning 各自の環境で同様に動作する保証はありません。   link card リンクですね、リンク先に深い意図はないです。
+&amp;lt;!--warning Warning 各自の環境で同様に動作する保証はありません。   --&amp;gt; link card リンクですね、リンク先に深い意図はないです。
 いい感じに画像が見えたので使わせてもらいました。
 ZAICO | クラウド在庫管理ソフト iPhone・Android・API対応  無料から使えるクラウド在庫管理ソフトです。スマートフォン(iPhone, iPad, Android)アプリとWebアプリがあり、Mac・Windowsのどちらでも使えます。データ同期・共有機能で複数人・複数拠点で最新の在庫・備品情報を手元で簡単に確認できます。APIによるシステム連携も可能です。  https://www.</description>
     </item>
