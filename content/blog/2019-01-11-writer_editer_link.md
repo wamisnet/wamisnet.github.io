@@ -17,22 +17,22 @@ type = "post"
 
 # 動画をGIF画像に変更する
 
-http://giraf.harusamex.com/
+{{< linkcard "http://giraf.harusamex.com/">}}
 
 # GIF画像を圧縮する
 
-http://ezgif.com/optimize
+{{< linkcard "http://ezgif.com/optimize">}}
 
 # png画像を圧縮する
 
-https://tinypng.com/
+{{< linkcard "https://tinypng.com/">}}
 
 # スクリーンショット＆スクリーン動画
 
-https://www.screenpresso.com/download/
+{{< linkcard "https://www.screenpresso.com/download/">}}
 
 # 画像共有に便利
 
-元記事 : https://relativelayout.hatenablog.com/entry/2018/06/20/001722
+元記事 : {{< linkcard "https://relativelayout.hatenablog.com/entry/2018/06/20/001722">}}
 
-Github : https://github.com/pokiiio/GooglePhotoMarkdowner
+Github : {{< linkcard "https://github.com/pokiiio/GooglePhotoMarkdowner">}}

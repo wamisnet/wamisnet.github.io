@@ -22,7 +22,8 @@ IoTについてまとめる機会があったので、リンク集を公開し�
 家で考えるモニタリング
 
 ### スマートロック
-https://jp.candyhouse.co/
+
+{{< linkcard "https://jp.candyhouse.co/">}}
 
 CANDY HOUSE
 SESAME mini
@@ -32,7 +33,7 @@ SESAME mini
 スマートロックの誰の開閉かログをとったり、ゲストに開閉権限を渡すなど基礎的な機能も十分。
 
 ### 室温管理
-https://nest.com/
+{{< linkcard "https://nest.com/">}}
 
 nest
 
@@ -41,7 +42,7 @@ nest
 人の有無を学習し、意識せずに効率よく扱えるようになるのがIoTとして優秀だと思います。
 
 ### 窓管理
-https://www.ykkap.co.jp/products/window/mimott/
+{{< linkcard "https://www.ykkap.co.jp/products/window/mimott/">}}
 
 YKK AP株式会社
 ミモット
@@ -51,7 +52,7 @@ YKK AP株式会社
 うっかりミスを防ぐことは難しいのでこういったデバイスが普及するとよい。
 
 ### 睡眠
-https://www.kddi.com/with-home/device/uss01a/
+{{< linkcard "https://www.kddi.com/with-home/device/uss01a/">}}
 
 KDDI
 睡眠モニター 01
@@ -61,7 +62,7 @@ KDDI
 IoTで簡単にセンシングできるようになったからこそのデバイス
 
 ### 宅配ポスト
-https://www.lixil.co.jp/lineup/gate_fence/smartpost/
+{{< linkcard "https://www.lixil.co.jp/lineup/gate_fence/smartpost/">}}
 
 株式会社 LIXIL
 スマート宅配ポスト
@@ -71,7 +72,7 @@ https://www.lixil.co.jp/lineup/gate_fence/smartpost/
 値段との兼ね合いでなかなかIoTに対応したデバイスが多くないがゆえに期待している。
 
 ### 自動発注
-https://bungu.plus.co.jp/special/st/2019/octotas/
+{{< linkcard "https://bungu.plus.co.jp/special/st/2019/octotas/">}}
 
 プラス株式会社
 Octotas
@@ -81,7 +82,7 @@ Amazonのダッシュボタンは有名ですが、重さで自動発注でき�
 完全にユーザが意識せずにできるもので最もIoTらしいと思っています。
 
 ### ペット
-https://petelect.jp/lp/karikarimachinesp/
+{{< linkcard "https://petelect.jp/lp/karikarimachinesp/">}}
 
 株式会社アクセスライン
 カリカリマシーンSP
@@ -89,7 +90,7 @@ https://petelect.jp/lp/karikarimachinesp/
 家族の一員ともいえるペットの自動餌やり機、餌を与えるのはもちろんご飯を食べていないことを確認でき、なにか問題があったことに反応できる
 
 ### 植物
-https://foop.cestec.jp/
+{{< linkcard "https://foop.cestec.jp/">}}
 
 アドトロンテクノロジー株式会社
 foop
@@ -98,7 +99,7 @@ foop
 
 ### 忘れ物
 
-https://mamorio.jp/
+{{< linkcard "https://mamorio.jp/">}}
 
 MAMORIO株式会社
 MAMORIO
@@ -109,7 +110,7 @@ MAMORIO
 
 ### 赤ちゃん
 
-https://unkobtn.com/
+{{< linkcard "https://unkobtn.com/">}}
 
 株式会社144Lab
 うんこボタン
