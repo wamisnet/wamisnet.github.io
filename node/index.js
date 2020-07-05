@@ -19,9 +19,7 @@ function checkExt(url)
 
 app.get("/getogp", (expressRequest, expressResponse, expressNext) => {
     const url = expressRequest.query.url;
-    console.log(url);
     if(checkExt(url)) {
-        console.log("getweb")
         client.fetch(url, (err, $, res, body) => {
             if (err) {
                 expressNext(err)
@@ -56,7 +54,6 @@ app.get("/getogp", (expressRequest, expressResponse, expressNext) => {
             expressResponse.json(result);
         });
     }else{
-        console.log("getlocal")
         const result = {
             exists: false,
             title: url.slice(url.lastIndexOf('/') + 1),
