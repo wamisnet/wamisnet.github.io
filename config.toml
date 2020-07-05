@@ -24,6 +24,7 @@ home = [
 
 [params]
 description = "私が作ったコードやハードウエアのはなし"
+images = ["/img/main/wami.jpg"]
 navbarTitle = "わみめも"
 viewMorePostLink = "/blog/"
 enableCDN = false
