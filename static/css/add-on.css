@@ -41,12 +41,27 @@
 
 .link-card__site_url{
     font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .link-card__description{
     font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.link-card__description{
+.link-card__title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
+.link-card__eyecache img{
+    max-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
