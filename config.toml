@@ -48,7 +48,7 @@ socialShare = [
 ]
 
   [params.meta]
-  description = "NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。"
+  description = "NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人のサイト"
   author = "wami"
   favicon = false
   svg = true
@@ -65,7 +65,7 @@ socialShare = [
 
   [params.intro]
   header = "わみめも"
-  paragraph = "私が作ったソフトウエアやハードウエアのはなしをします"
+  paragraph = "NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人のサイト"
   rssIntro = true
   socialIntro = true
   hideWhenSingleColumn = false
@@ -78,7 +78,7 @@ socialShare = [
     alt = "wami"
 
   [params.sidebar]
-  about = "NefryやSofmoなどのエンジニア向けのハードウエアの作成をしてます。他にAndroidアプリなどの開発もしています。"
+  about = "NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人<br>やってること<br>・ IoTデバイスNefryシリーズの開発、販売<br>・ 基板やファームを含むハードウエアやWeb、Androidアプリの受託開発<br>・ 専門学校やハンズオンなどの講師<br>・「同人ハードウェアmeetup」 #dhwmu や名古屋版IoTLTなどイベントの主催"
   postAmount = 8.0
   categories = true
   categoriesByCount = true
