@@ -36,15 +36,13 @@ slug: 2020-07-05-hugo_shortcode
 
 # link card
 
-リンクですね、リンク先に深い意図はないです。
+リンクですね、Notionみたいに横並びにしようか悩みましたが、縦ならびでもよさそうなので、これで。
 
-いい感じに画像が見えたので使わせてもらいました。
-
-{{< linkcard "https://www.zaico.co.jp/">}}
+{{< linkcard "https://wamisnet.github.io/">}}
 
 
 ```text
-{{</* linkcard "https://www.zaico.co.jp/"*/>}}
+{{</* linkcard "https://wamisnet.github.io/"*/>}}
 ```
 
 ちょっとの一工夫でいい感じにできるのはとても便利ですね
