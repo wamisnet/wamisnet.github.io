@@ -4,6 +4,7 @@ sudo apt-get install nodejs npm
 cd node
 npm i
 node index.js &
+sleep 10
 cd ..
 
 git submodule init
