@@ -17,7 +17,7 @@
       <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/2019-10-11-bg96_link/</guid>
-      <description>事例 テクノロジー アーカイブ - さくらのIoTブログ  https://sakura.io/blog/category/tech/    Wio LTE M1/NB1(BG96)の接続を速くしたい。 | シエロ工房(Cielo Studio)    【セキュアモバイルコネクト】cat.M1のLTEモジュール(Quectel BG96)でドコモ回線に接続できることを確認しました - さくらのIoTブログ  IoTチームの矢野です。 2月の記事でcat.M1対応LTEモジュールにセキュアモバイルコネクトを挿して通信できることをご紹介しました。当時はドコモ回線による接続を確認することができませんでしたが、現在は接続及び通信が行 …  https://sakura.io/blog/2019/07/05/%e3%80%90%e3%82%bb%e3%82%ad%e3%83%a5%e3%82%a2%e3%83%a2%e3%83%90%e3%82%a4%e3%83%ab%e3%82%b3%e3%83%8d%e3%82%af%e3%83%88%e3%80%91cat-m1%e3%81%aelte%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%abquectel-bg/    公式PDF　          コード例 RAKWireless/WisLTE_Arduino  WisLTE,WisCellular,Arduino Library,BG96,RAKWireless,RAK - RAKWireless/WisLTE_Arduino  https://github.com/RAKWireless/WisLTE_Arduino     SeeedJP/WioLTEforArduino  Contribute to SeeedJP/WioLTEforArduino development by creating an account on GitHub.  https://github.com/SeeedJP/WioLTEforArduino     </description>
+      <description>事例 テクノロジー アーカイブ - さくらのIoTブログ  https://sakura.io/blog/category/tech/    Wio LTE M1/NB1(BG96)の接続を速くしたい。 | シエロ工房(Cielo Studio)  https://eguchi.jp/blog/?p=1249    【セキュアモバイルコネクト】cat.M1のLTEモジュール(Quectel BG96)でドコモ回線に接続できることを確認しました - さくらのIoTブログ  IoTチームの矢野です。 2月の記事でcat.M1対応LTEモジュールにセキュアモバイルコネクトを挿して通信できることをご紹介しました。当時はドコモ回線による接続を確認することができませんでしたが、現在は接続及び通信が行 …  https://sakura.io/blog/2019/07/05/%E3%80%90%E3%82%BB%E3%82%AD%E3%83%A5%E3%82%A2%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E3%82%B3%E3%83%8D%E3%82%AF%E3%83%88%E3%80%91cat-m1%E3%81%AElte%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%ABquectel-bg/    公式PDF　  https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_TCP(IP)_AT_Commands_Manual_V1.1.pdf     https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_AT_Commands_Manual_V2.3.pdf     https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_QuecCell_AT_Commands_Manual_V1.0.pdf    コード例 RAKWireless/WisLTE_Arduino  WisLTE,WisCellular,Arduino Library,BG96,RAKWireless,RAK - RAKWireless/WisLTE_Arduino  https://github.com/RAKWireless/WisLTE_Arduino     SeeedJP/WioLTEforArduino  Contribute to SeeedJP/WioLTEforArduino development by creating an account on GitHub.</description>
     </item>
     
     <item>
@@ -48,10 +48,10 @@ IoTによるモニタリング 家庭編 家で考えるモニタリング
 スマートロック セサミ スマートロック | CANDY HOUSE JAPAN  あなたは家を出る時に何を持つ?鍵、財布、スマホ...?「SESAME(セサミ)」はスマホで家の鍵を開閉出来るスマートロックです。取付も簡単で鍵も簡単にシェア。Google HomeやAlexa、IFTTT対応で可能性は無限大！あなたの暮らしにセサミを。By キャンディハウス  https://jp.candyhouse.co/    CANDY HOUSE SESAME mini
 いろいろと数あるスマートロックだが、（家庭向けのデバイスでは）他社製品と比べAPIで開錠で開錠できる特徴が一押し。
 スマートロックの誰の開閉かログをとったり、ゲストに開閉権限を渡すなど基礎的な機能も十分。
-室温管理 Create a Connected Home  Discover connected home devices from Nest – thermostats, indoor and outdoor security cameras, smoke and carbon monoxide alarm, security system, video doorbell and more.  https://www.nest.com/     nest
+室温管理 Create a Connected Home  Discover connected home devices from Nest – thermostats, indoor and outdoor security cameras, smoke and carbon monoxide alarm, security system, video doorbell and more.  https://nest.com/     nest
 日本では多くありませんが、海外に多くある家まるごと温度をコントロールするもの。
 人の有無を学習し、意識せずに効率よく扱えるようになるのがIoTとして優秀だと思います。
-窓管理 戸締り安心システム「ミモット」 | YKK AP株式会社  戸締り安心システム「ミモット」は、窓やドアの鍵の締め忘れをスマートフォンにお知らせする商品です。  http://www.</description>
+窓管理 戸締り安心システム「ミモット」 | YKK AP株式会社  戸締り安心システム「ミモット」は、窓やドアの鍵の締め忘れをスマートフォンにお知らせする商品です。  https://www.</description>
     </item>
     
     <item>
@@ -60,7 +60,7 @@ IoTによるモニタリング 家庭編 家で考えるモニタリング
       <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/2019-01-11-writer_editer_link/</guid>
-      <description>動画をGIF画像に変更する Giraf  Powerful &amp;amp; Free GIF Creator  http://giraf.harusamex.com/     GIF画像を圧縮する Animated GIF optimizer (free online tool)  Online tool for optimizing animated GIF images to reduce the file size. Compress gifs by reducing colormaps, dropping duplicate frames or enable LZW compression.  https://ezgif.com/optimize     png画像を圧縮する TinyPNG – Compress PNG images while preserving transparency  Make your website faster and save bandwidth. TinyPNG optimizes your PNG images by 50-80% while preserving full transparency!</description>
+      <description>動画をGIF画像に変更する Giraf  Powerful &amp;amp; Free GIF Creator  http://giraf.harusamex.com/     GIF画像を圧縮する Animated GIF optimizer (free online tool)  Online tool for optimizing animated GIF images to reduce the file size. Compress gifs by reducing colormaps, dropping duplicate frames or enable LZW compression.  http://ezgif.com/optimize     png画像を圧縮する TinyPNG – Compress PNG images while preserving transparency  Make your website faster and save bandwidth. TinyPNG optimizes your PNG images by 50-80% while preserving full transparency!</description>
     </item>
     
     <item>
