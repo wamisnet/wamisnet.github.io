@@ -17,10 +17,10 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'タイトル', name: 'title', widget: 'string' }
+      - { label: '公開日時', name: 'date', widget: 'datetime' }
+      - { label: '説明文', name: 'description', widget: 'string' }
+      - { label: '本文', name: 'body', widget: 'markdown' }
       - label: "Tags"
         name: "tags"
         widget: "list"
@@ -31,7 +31,9 @@ collections:
         widget: "list"
         allow_add: true
         required: false
-      - { label: "Slug", name: "slug", widget: "string",required: false}
+      - { label: "ファイル名【初回のみ】", name: "slug", widget: "string",required: false}
+      - { label: "アイキャッチ画像", name: "featured", widget: "image",required: false}
+      - { label: "アイキャッチ画像説明文", name: "featuredalt", widget: "string",required: false}
   - name: 'product'
     label: 'Product'
     folder: 'content/itemized'
