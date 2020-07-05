@@ -6,9 +6,8 @@ author = "wami"
 categories = ["技術書典","本","Flutter","Firebase"]
 tags = ["技術書典","本","技術書典5","Flutter","Firebase"]
 description = "Nefry生誕3周年記念にデコレーションケーキを発注してみたのでまとめてみました！"
-featured = "cake.jpg"
+featured = "img/2018/nefry_cake/cake.jpg"
 featuredalt = ""
-featuredpath = "2018/nefry_cake"
 linktitle = "Nefry生誕祭3周年デコレーションケーキを発注してみた"
 type = "post"
 

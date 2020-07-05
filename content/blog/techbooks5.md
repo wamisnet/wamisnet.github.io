@@ -6,9 +6,8 @@ author = "wami"
 categories = ["技術書典","本","Flutter","Firebase"]
 tags = ["技術書典","本","技術書典5","Flutter","Firebase"]
 description = "技術書典5の振り返りをします"
-featured = "booth.jpg"
+featured = "img/2018/techbooks5/booth.jpg"
 featuredalt = ""
-featuredpath = "2018/techbooks5"
 linktitle = "技術書典5で発注ミスをしましたｗ＆振り返り"
 type = "post"
 
@@ -22,7 +21,7 @@ type = "post"
 技術書典5で前回のNefry本の経験を活かしながら、前回と違うメンツで「Flutter×Firebaseで始めるモバイルアプリ開発」の本を書きました。
 同じギークハウスに住んでいる私を含めた3人でサークル出展をし、Flutter本の執筆は私としもぱたさんで行いました。
 
-[![販売リンク](../../img/2018/techbooks5/flutter.png)](https://booth.pm/ja/items/1040806)
+[![販売リンク](/img/2018/techbooks5/flutter.png)](https://booth.pm/ja/items/1040806)
 
 [販売リンク](https://booth.pm/ja/items/1040806)を張っておくのでぜひ！！！
 
@@ -54,7 +53,7 @@ Flutterというワードが嵌ったのかなんなのかわかりませんが�
 
 「これはよいのでは！！」とワクワクしていたこのひと時…事件は既に手遅れな状態になっていたのです。
 
-![](../../img/2018/techbooks5/check.png)
+![](/img/2018/techbooks5/check.png)
 
 ## 事件発覚
 

@@ -6,9 +6,8 @@ author = "wami"
 categories = ["勉強会"]
 tags = ["勉強会"]
 description = "公民館での勉強会をメモがてらおすすめしてみます！"
-featured = "1.png"
+featured = "img/2018/study_mokumoku_8_11/1.png"
 featuredalt = "集合写真"
-featuredpath = "2018/study_mokumoku_8_11"
 linktitle = "公民館勉強会のすすめ"
 type = "post"
 
@@ -20,7 +19,7 @@ type = "post"
 
 いま私が住んでいるギークハウス新宿では、時々住民同士でプチ勉強会を開催しています。
 
-![](../../img/2018/study_mokumoku_8_11/3.jpg)
+![](/img/2018/study_mokumoku_8_11/3.jpg)
 
 大体やるときはリビングなのですが、ちょっとみんなで集まって作業するには少々つらいことがありました。
 だからといって、コワーキングスペースを使うとなるとそれなりに費用も掛かるのでちょっと二の足を踏んでいました。
@@ -59,7 +58,7 @@ type = "post"
 
 空いてるかは、下記の画像のカレンダで確認することができます。
 （ものすごいアナログ）
-![](../../img/2018/study_mokumoku_8_11/4.jpg)
+![](/img/2018/study_mokumoku_8_11/4.jpg)
 
 さっそく日時を決めて枠を取ります。
 直接、会場に行って使用料を支払います。
@@ -78,7 +77,7 @@ type = "post"
 
 55人入る会場なだけあってめっちゃ広い
 
-![](../../img/2018/study_mokumoku_8_11/2.jpg)
+![](/img/2018/study_mokumoku_8_11/2.jpg)
 
 この会場が1000円か…
 

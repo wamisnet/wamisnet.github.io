@@ -6,9 +6,8 @@ author = "wami"
 categories = ["Nefry"]
 tags = ["Nefry"]
 description = "9月2日にNefryユーザグループ もくもく会イベントを開催します！！"
-featured = "1.png"
+featured = "img/2018/nefry_ug_2/1.png"
 featuredalt = "集合写真"
-featuredpath = "2018/nefry_ug_2"
 linktitle = "9/2 NefryUGもくもく会イベント開催"
 type = "post"
 
