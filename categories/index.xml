@@ -6,10 +6,28 @@
     <description>Recent content in Categories on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 04 Jul 2020 15:01:35 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2020 05:59:12 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hugo</title>
+      <link>https://wamisnet.github.io/categories/hugo/</link>
+      <pubDate>Sun, 05 Jul 2020 05:59:12 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shortcode</title>
+      <link>https://wamisnet.github.io/categories/shortcode/</link>
+      <pubDate>Sun, 05 Jul 2020 05:59:12 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/shortcode/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>circleci</title>
@@ -17,15 +35,6 @@
       <pubDate>Sat, 04 Jul 2020 15:01:35 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/categories/circleci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://wamisnet.github.io/categories/hugo/</link>
-      <pubDate>Sat, 04 Jul 2020 15:01:35 +0000</pubDate>
-      
-      <guid>https://wamisnet.github.io/categories/hugo/</guid>
       <description></description>
     </item>
     

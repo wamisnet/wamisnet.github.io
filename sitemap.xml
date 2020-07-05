@@ -4,12 +4,47 @@
   
   <url>
     <loc>https://wamisnet.github.io/blog/</loc>
-    <lastmod>2020-07-04T15:01:35+00:00</lastmod>
+    <lastmod>2020-07-05T05:59:12+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://wamisnet.github.io/categories/</loc>
-    <lastmod>2020-07-04T15:01:35+00:00</lastmod>
+    <lastmod>2020-07-05T05:59:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/tags/hugo/</loc>
+    <lastmod>2020-07-05T05:59:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/categories/hugo/</loc>
+    <lastmod>2020-07-05T05:59:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/blog/2020-07-05-hugo_shortcode/</loc>
+    <lastmod>2020-07-05T05:59:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/tags/shortcode/</loc>
+    <lastmod>2020-07-05T05:59:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/categories/shortcode/</loc>
+    <lastmod>2020-07-05T05:59:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/tags/</loc>
+    <lastmod>2020-07-05T05:59:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/</loc>
+    <lastmod>2020-07-05T05:59:12+00:00</lastmod>
   </url>
   
   <url>
@@ -23,27 +58,7 @@
   </url>
   
   <url>
-    <loc>https://wamisnet.github.io/tags/hugo/</loc>
-    <lastmod>2020-07-04T15:01:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wamisnet.github.io/categories/hugo/</loc>
-    <lastmod>2020-07-04T15:01:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wamisnet.github.io/tags/</loc>
-    <lastmod>2020-07-04T15:01:35+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://wamisnet.github.io/blog/2020-07-05-site_info/</loc>
-    <lastmod>2020-07-04T15:01:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wamisnet.github.io/</loc>
     <lastmod>2020-07-04T15:01:35+00:00</lastmod>
   </url>
   
