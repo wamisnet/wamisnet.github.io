@@ -17,14 +17,7 @@
       <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/2019-10-11-bg96_link/</guid>
-      <description>事例 https://sakura.io/blog/category/tech/
-https://eguchi.jp/blog/?p=1249
-https://sakura.io/blog/2019/07/05/%E3%80%90%E3%82%BB%E3%82%AD%E3%83%A5%E3%82%A2%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E3%82%B3%E3%83%8D%E3%82%AF%E3%83%88%E3%80%91cat-m1%E3%81%AElte%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%ABquectel-bg/
-公式PDF　 https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_TCP(IP)_AT_Commands_Manual_V1.1.pdf
-https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_AT_Commands_Manual_V2.3.pdf
-https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_QuecCell_AT_Commands_Manual_V1.0.pdf
-コード例 https://github.com/RAKWireless/WisLTE_Arduino
-https://github.com/SeeedJP/WioLTEforArduino/</description>
+      <description>事例 テクノロジー アーカイブ - さくらのIoTブログ  https://sakura.io/blog/category/tech/    Wio LTE M1/NB1(BG96)の接続を速くしたい。 | シエロ工房(Cielo Studio)    【セキュアモバイルコネクト】cat.M1のLTEモジュール(Quectel BG96)でドコモ回線に接続できることを確認しました - さくらのIoTブログ  IoTチームの矢野です。 2月の記事でcat.M1対応LTEモジュールにセキュアモバイルコネクトを挿して通信できることをご紹介しました。当時はドコモ回線による接続を確認することができませんでしたが、現在は接続及び通信が行 …  https://sakura.io/blog/2019/07/05/%e3%80%90%e3%82%bb%e3%82%ad%e3%83%a5%e3%82%a2%e3%83%a2%e3%83%90%e3%82%a4%e3%83%ab%e3%82%b3%e3%83%8d%e3%82%af%e3%83%88%e3%80%91cat-m1%e3%81%aelte%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%abquectel-bg/    公式PDF　          コード例 RAKWireless/WisLTE_Arduino  WisLTE,WisCellular,Arduino Library,BG96,RAKWireless,RAK - RAKWireless/WisLTE_Arduino  https://github.com/RAKWireless/WisLTE_Arduino     SeeedJP/WioLTEforArduino  Contribute to SeeedJP/WioLTEforArduino development by creating an account on GitHub.  https://github.com/SeeedJP/WioLTEforArduino     </description>
     </item>
     
   </channel>

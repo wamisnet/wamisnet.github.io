@@ -32,7 +32,7 @@ ZAICO | クラウド在庫管理ソフト iPhone・Android・API対応  無料�
       <pubDate>Sat, 04 Jul 2020 15:01:35 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/2020-07-05-site_info/</guid>
-      <description>warning Warning 各自の環境で同様に動作する保証はありません。   ZAICO | クラウド在庫管理ソフト iPhone・Android・API対応  無料から使えるクラウド在庫管理ソフトです。スマートフォン(iPhone, iPad, Android)アプリとWebアプリがあり、Mac・Windowsのどちらでも使えます。データ同期・共有機能で複数人・複数拠点で最新の在庫・備品情報を手元で簡単に確認できます。APIによるシステム連携も可能です。  https://www.zaico.co.jp/     使用技術 このサイトでは下記の技術を使用して構成されています。
+      <description>warning Warning 各自の環境で同様に動作する保証はありません。   使用技術 このサイトでは下記の技術を使用して構成されています。
   Hugo
  テンプレート: hugo-future-imperfect-slim    CircleCi
  Docker    Netlify CMS
@@ -46,7 +46,12 @@ Netlify CMS 別の記事で軽く書きましたが、WordPressのようなコ�
 認証にFirebaseを使っています。
 auto save的なものがあるといいなぁ
 GitHub マークダウンやホームページの配布までまるっとやってもらっています。
-GitHubが使えるということは差分やプルリクで管理するといったこともできます。</description>
+GitHubが使えるということは差分やプルリクで管理するといったこともできます。
+いつもと同じ感じに記事がかけるって便利ですね
+こんな感じの構成になっています。
+次の項目でどういう手順でいろんなものが連動して動いているのか確認しておこうと思います。
+動作手順(私から見た動作)  Netlify CMSにログインして、記事を書く 記事を書き終えたら、Netlify CMSの公開ボタンを押す ホームページで記事が公開される  めちゃくちゃ普通のサービスと一緒ですね
+動作手順(サービス側の動作)  Netlify CMSにログインして、記事を書く 保存を押すと、記事用のブランチが生成されてGitHubにコミットされる 記事を書き終えたら、Netlify CMSの公開ボタンを押す GitHubにプルリクエストが生成され、自動的に承認される CircleCIが特定のブランチが更新されたのを確認し、Hugoのビルドを開始する ビルドされたものをGitHubにコミットする GitHub Pagesでコミットされた内容でホームページが更新される  裏側ではいろいろ動いてくれますが、なにも気にしなくてOKです！</description>
     </item>
     
     <item>
@@ -176,14 +181,7 @@ Tips 絶対にスリープさせる センサーの値読み取りなど予期�
       <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/2019-10-11-bg96_link/</guid>
-      <description>事例 https://sakura.io/blog/category/tech/
-https://eguchi.jp/blog/?p=1249
-https://sakura.io/blog/2019/07/05/%E3%80%90%E3%82%BB%E3%82%AD%E3%83%A5%E3%82%A2%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E3%82%B3%E3%83%8D%E3%82%AF%E3%83%88%E3%80%91cat-m1%E3%81%AElte%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%ABquectel-bg/
-公式PDF　 https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_TCP(IP)_AT_Commands_Manual_V1.1.pdf
-https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_AT_Commands_Manual_V2.3.pdf
-https://www.quectel.com/UploadImage/Downlad/Quectel_BG96_QuecCell_AT_Commands_Manual_V1.0.pdf
-コード例 https://github.com/RAKWireless/WisLTE_Arduino
-https://github.com/SeeedJP/WioLTEforArduino/</description>
+      <description>事例 テクノロジー アーカイブ - さくらのIoTブログ  https://sakura.io/blog/category/tech/    Wio LTE M1/NB1(BG96)の接続を速くしたい。 | シエロ工房(Cielo Studio)    【セキュアモバイルコネクト】cat.M1のLTEモジュール(Quectel BG96)でドコモ回線に接続できることを確認しました - さくらのIoTブログ  IoTチームの矢野です。 2月の記事でcat.M1対応LTEモジュールにセキュアモバイルコネクトを挿して通信できることをご紹介しました。当時はドコモ回線による接続を確認することができませんでしたが、現在は接続及び通信が行 …  https://sakura.io/blog/2019/07/05/%e3%80%90%e3%82%bb%e3%82%ad%e3%83%a5%e3%82%a2%e3%83%a2%e3%83%90%e3%82%a4%e3%83%ab%e3%82%b3%e3%83%8d%e3%82%af%e3%83%88%e3%80%91cat-m1%e3%81%aelte%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%abquectel-bg/    公式PDF　          コード例 RAKWireless/WisLTE_Arduino  WisLTE,WisCellular,Arduino Library,BG96,RAKWireless,RAK - RAKWireless/WisLTE_Arduino  https://github.com/RAKWireless/WisLTE_Arduino     SeeedJP/WioLTEforArduino  Contribute to SeeedJP/WioLTEforArduino development by creating an account on GitHub.  https://github.com/SeeedJP/WioLTEforArduino     </description>
     </item>
     
     <item>
@@ -416,44 +414,13 @@ MATLABとの連携がメインの特徴（むしろMATLAB使えないとほぼ�
       <guid>https://wamisnet.github.io/blog/2019-06-14-iot_monitoring_link/</guid>
       <description>IoTについてまとめる機会があったので、リンク集を公開します
 IoTによるモニタリング 家庭編 家で考えるモニタリング
-スマートロック https://jp.candyhouse.co/
-CANDY HOUSE SESAME mini
+スマートロック セサミ スマートロック | CANDY HOUSE JAPAN  あなたは家を出る時に何を持つ?鍵、財布、スマホ...?「SESAME(セサミ)」はスマホで家の鍵を開閉出来るスマートロックです。取付も簡単で鍵も簡単にシェア。Google HomeやAlexa、IFTTT対応で可能性は無限大！あなたの暮らしにセサミを。By キャンディハウス  https://jp.candyhouse.co/    CANDY HOUSE SESAME mini
 いろいろと数あるスマートロックだが、（家庭向けのデバイスでは）他社製品と比べAPIで開錠で開錠できる特徴が一押し。
 スマートロックの誰の開閉かログをとったり、ゲストに開閉権限を渡すなど基礎的な機能も十分。
-室温管理 https://nest.com/
-nest
+室温管理 Create a Connected Home  Discover connected home devices from Nest – thermostats, indoor and outdoor security cameras, smoke and carbon monoxide alarm, security system, video doorbell and more.  https://www.nest.com/     nest
 日本では多くありませんが、海外に多くある家まるごと温度をコントロールするもの。
 人の有無を学習し、意識せずに効率よく扱えるようになるのがIoTとして優秀だと思います。
-窓管理 https://www.ykkap.co.jp/products/window/mimott/
-YKK AP株式会社 ミモット
-窓の閉め忘れを無くすことができるデバイス。技術屋としては、電池レスなのがポイントが高い。
-うっかりミスを防ぐことは難しいのでこういったデバイスが普及するとよい。
-睡眠 https://www.kddi.com/with-home/device/uss01a/
-KDDI 睡眠モニター 01
-睡眠状態をロギングできるデバイス。最近話題になっている睡眠改善に使用する。
-IoTで簡単にセンシングできるようになったからこそのデバイス
-宅配ポスト https://www.lixil.co.jp/lineup/gate_fence/smartpost/
-株式会社 LIXIL スマート宅配ポスト
-実証実験で一時期話題になった宅配ボックス。
-値段との兼ね合いでなかなかIoTに対応したデバイスが多くないがゆえに期待している。
-自動発注 https://bungu.plus.co.jp/special/st/2019/octotas/
-プラス株式会社 Octotas
-Amazonのダッシュボタンは有名ですが、重さで自動発注できるのはあまり認知されていないと思う。
-完全にユーザが意識せずにできるもので最もIoTらしいと思っています。
-ペット https://petelect.jp/lp/karikarimachinesp/
-株式会社アクセスライン カリカリマシーンSP
-家族の一員ともいえるペットの自動餌やり機、餌を与えるのはもちろんご飯を食べていないことを確認でき、なにか問題があったことに反応できる
-植物 https://foop.cestec.jp/
-アドトロンテクノロジー株式会社 foop
-水耕栽培キット、適切なタイミングをデバイスからスマートフォンに教えてくれるのでだれでも育てることができるところがよい。
-忘れ物 https://mamorio.jp/
-MAMORIO株式会社 MAMORIO
-「なくすを、なくす」というテーマで開発された落とし物を探すことができるデバイス。
-有名ですが、BLEをうまく使っていて素晴らしいと思います。
-赤ちゃん https://unkobtn.com/
-株式会社144Lab うんこボタン
-前項までのデバイスと比べると異色ですが、ボタンを押したことをメモできるデバイス。
-デバイスとしてはシンプルだが、子育てで忙しい人にピッタリ合っていてIoTである意味がある良い商品だと思います。</description>
+窓管理 戸締り安心システム「ミモット」 | YKK AP株式会社  戸締り安心システム「ミモット」は、窓やドアの鍵の締め忘れをスマートフォンにお知らせする商品です。  http://www.</description>
     </item>
     
     <item>
@@ -474,12 +441,7 @@ MAMORIO株式会社 MAMORIO
       <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/2019-01-11-writer_editer_link/</guid>
-      <description>動画をGIF画像に変更する http://giraf.harusamex.com/
-GIF画像を圧縮する http://ezgif.com/optimize
-png画像を圧縮する https://tinypng.com/
-スクリーンショット＆スクリーン動画 https://www.screenpresso.com/download/
-画像共有に便利 元記事 : https://relativelayout.hatenablog.com/entry/2018/06/20/001722
-Github : https://github.com/pokiiio/GooglePhotoMarkdowner</description>
+      <description>動画をGIF画像に変更する Giraf  Powerful &amp;amp; Free GIF Creator  http://giraf.harusamex.com/     GIF画像を圧縮する Animated GIF optimizer (free online tool)  Online tool for optimizing animated GIF images to reduce the file size. Compress gifs by reducing colormaps, dropping duplicate frames or enable LZW compression.  https://ezgif.com/optimize     png画像を圧縮する TinyPNG – Compress PNG images while preserving transparency  Make your website faster and save bandwidth. TinyPNG optimizes your PNG images by 50-80% while preserving full transparency!</description>
     </item>
     
     <item>
@@ -753,8 +715,7 @@ Nefryの未来の夢 これまででNefryの過去話をしました。 ちょ�
       
       <guid>https://wamisnet.github.io/blog/2017-06-11-ssd1306-image/</guid>
       <description>XBMというフォーマットに合わせて作成する。
-具体的な方法 https://blog.squix.org/2015/05/esp8266-nodemcu-how-to-create-xbm.html
-変換サイト https://www.online-utility.org/image/convert/to/XBM</description>
+具体的な方法 ESP8266, NodeMCU: how to create xbm images for displaying on OLED 128x64 I2C Displays - Squix - TechBlog  Do you know these wonderfully cheap SSD1306 based OLED displays with the crispy display? For a while now the NodeMCU Lua firmware for the ESP8266 supports them and has a rich feature set to draw lines, circles and even bitmaps. One way to draw bitmaps ... Read More  https://blog.</description>
     </item>
     
     <item>

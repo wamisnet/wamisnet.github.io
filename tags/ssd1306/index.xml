@@ -18,8 +18,7 @@
       
       <guid>https://wamisnet.github.io/blog/2017-06-11-ssd1306-image/</guid>
       <description>XBMというフォーマットに合わせて作成する。
-具体的な方法 https://blog.squix.org/2015/05/esp8266-nodemcu-how-to-create-xbm.html
-変換サイト https://www.online-utility.org/image/convert/to/XBM</description>
+具体的な方法 ESP8266, NodeMCU: how to create xbm images for displaying on OLED 128x64 I2C Displays - Squix - TechBlog  Do you know these wonderfully cheap SSD1306 based OLED displays with the crispy display? For a while now the NodeMCU Lua firmware for the ESP8266 supports them and has a rich feature set to draw lines, circles and even bitmaps. One way to draw bitmaps ... Read More  https://blog.</description>
     </item>
     
   </channel>
