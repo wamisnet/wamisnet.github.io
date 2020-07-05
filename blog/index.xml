@@ -17,7 +17,7 @@
       <pubDate>Sat, 04 Jul 2020 15:01:35 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/2020-07-05-site_info/</guid>
-      <description>warning Warning 各自の環境で同様に動作する保証はありません。   使用技術 このサイトでは下記の技術を使用して構成されています。
+      <description>warning Warning 各自の環境で同様に動作する保証はありません。      使用技術 このサイトでは下記の技術を使用して構成されています。
   Hugo
  テンプレート: hugo-future-imperfect-slim    CircleCi
  Docker    Netlify CMS
@@ -35,8 +35,7 @@ GitHubが使えるということは差分やプルリクで管理するとい�
 いつもと同じ感じに記事がかけるって便利ですね
 こんな感じの構成になっています。
 次の項目でどういう手順でいろんなものが連動して動いているのか確認しておこうと思います。
-動作手順(私から見た動作)  Netlify CMSにログインして、記事を書く 記事を書き終えたら、Netlify CMSの公開ボタンを押す ホームページで記事が公開される  めちゃくちゃ普通のサービスと一緒ですね
-動作手順(サービス側の動作)  Netlify CMSにログインして、記事を書く 保存を押すと、記事用のブランチが生成されてGitHubにコミットされる 記事を書き終えたら、Netlify CMSの公開ボタンを押す GitHubにプルリクエストが生成され、自動的に承認される CircleCIが特定のブランチが更新されたのを確認し、Hugoのビルドを開始する ビルドされたものをGitHubにコミットする GitHub Pagesでコミットされた内容でホームページが更新される  裏側ではいろいろ動いてくれますが、なにも気にしなくてOKです！</description>
+動作手順(私から見た動作)  Netlify CMSにログインして、記事を書く 記事を書き終えたら、Netlify CMSの公開ボタンを押す ホームページで記事が公開される  めちゃくちゃ普通のサービスと一緒ですね</description>
     </item>
     
     <item>
