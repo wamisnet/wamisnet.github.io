@@ -9,6 +9,8 @@ Categories:
   - hugo
   - shortcode
 slug: 2020-07-05-hugo_shortcode
+featured: /img/blog/linkcard.jpg
+featuredalt: HugoのShortcodeでLinkCardを作成
 ---
 下記のサイトを参考にshortcodeをつくってみました。
 
