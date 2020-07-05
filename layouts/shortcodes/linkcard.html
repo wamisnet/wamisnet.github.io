@@ -1,0 +1,27 @@
+{{ $url := .Get 0 }}
+{{ $getURL := printf "http://localhost:6060/getogp?%s" (querify "url" $url ) }}
+{{ $json := getJSON $getURL }}
+
+<a href="{{$json.url | safeHTMLAttr }}">
+    <div class="card link-card">
+        <div class="link-card__title">
+            {{ $json.title }}
+        </div>
+        {{ with $json.description }}
+        <div class="link-card__description">
+            {{.}}
+        </div>
+        {{ end }}
+        {{ with $json.url }}
+        <div class="link-card__site_url">
+            {{.}}
+        </div>
+        {{ end }}
+        {{ with $json.image }}
+        <div class="link-card__eyecache">
+            <img src="{{ .  | safeHTMLAttr }}" />
+        </div>
+        {{ end }}
+    </div>
+</a>
+

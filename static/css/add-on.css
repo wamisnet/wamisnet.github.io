@@ -4,3 +4,49 @@
   is an official part of the theme (ex. Pull Requests) should be included in main.css
   and follow the formatting and style given.
 */
+@font-face {
+    font-family: 'material icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v53/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.card {
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid rgba(55, 53, 47, 0.16);
+}
+
+.link-card:hover{
+    background: rgba(55,53,47,0.05);
+}
+
+.warning__message {
+    padding: 1rem;
+}
+
+.warning .material-icons {
+    position: relative;
+    font-size: 1.5rem;
+    top: 5px;
+    color: red;
+}
+
+.material-icons {
+    font-family: material icons;
+    font-style: normal;
+}
+
+.link-card__site_url{
+    font-size: 12px;
+}
+
+.link-card__description{
+    font-size: 12px;
+}
+
+.link-card__description{
+
+}

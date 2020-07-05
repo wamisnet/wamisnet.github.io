@@ -2,6 +2,11 @@
 git submodule init
 git submodule update
 
+cd node
+npm i
+node index.js &
+cd ..
+
 hugo version
 
 hugo
