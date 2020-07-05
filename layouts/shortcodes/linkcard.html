@@ -12,11 +12,9 @@
             {{.}}
         </div>
         {{ end }}
-        {{ with $json.url }}
         <div class="link-card__site_url">
-            {{.}}
+            {{$url}}
         </div>
-        {{ end }}
         {{ with $json.image }}
         <div class="link-card__eyecache">
             <img src="{{ .  | safeHTMLAttr }}" />
