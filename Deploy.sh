@@ -14,7 +14,7 @@ hugo version
 
 hugo
 git clone https://github.com/wamisnet/wamisnet.github.io.git
-
+git checkout master
 cp -rp public/* wamisnet.github.io/
 
 cd wamisnet.github.io
