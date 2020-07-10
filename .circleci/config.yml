@@ -1,0 +1,10 @@
+
+version: 2
+jobs:
+  build:
+    branches:
+      only:
+        - write
+    steps:
+      - checkout
+
