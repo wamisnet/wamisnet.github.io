@@ -4,17 +4,37 @@
   
   <url>
     <loc>https://wamisnet.github.io/blog/</loc>
-    <lastmod>2020-07-10T17:15:28+00:00</lastmod>
+    <lastmod>2020-07-14T06:45:39+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://wamisnet.github.io/categories/</loc>
-    <lastmod>2020-07-10T17:15:28+00:00</lastmod>
+    <lastmod>2020-07-14T06:45:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/tags/esp32/</loc>
+    <lastmod>2020-07-14T06:45:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/categories/esp32/</loc>
+    <lastmod>2020-07-14T06:45:39+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://wamisnet.github.io/tags/</loc>
-    <lastmod>2020-07-10T17:15:28+00:00</lastmod>
+    <lastmod>2020-07-14T06:45:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/</loc>
+    <lastmod>2020-07-14T06:45:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wamisnet.github.io/blog/2020-07-14-esp32-backtrace/</loc>
+    <lastmod>2020-07-14T06:45:39+00:00</lastmod>
   </url>
   
   <url>
@@ -29,11 +49,6 @@
   
   <url>
     <loc>https://wamisnet.github.io/blog/2020-07-11-wi_sun/</loc>
-    <lastmod>2020-07-10T17:15:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wamisnet.github.io/</loc>
     <lastmod>2020-07-10T17:15:28+00:00</lastmod>
   </url>
   
@@ -254,16 +269,6 @@
   
   <url>
     <loc>https://wamisnet.github.io/categories/esp-idf/</loc>
-    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wamisnet.github.io/tags/esp32/</loc>
-    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wamisnet.github.io/categories/esp32/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
   </url>
   

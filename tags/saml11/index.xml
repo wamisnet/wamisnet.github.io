@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SAML11 on わみめも</title>
+    <link>https://wamisnet.github.io/tags/saml11/</link>
+    <description>Recent content in SAML11 on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 06 Jul 2020 16:45:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/tags/saml11/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ArmマイコンのSAML11を触り始めた</title>
+      <link>https://wamisnet.github.io/blog/2020-07-07-saml11_started/</link>
+      <pubDate>Mon, 06 Jul 2020 16:45:05 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2020-07-07-saml11_started/</guid>
+      <description>下記の開発ボードを購入した。
+SAML11 Xplained Pro Evaluation Kit  https://www.microchip.com/DevelopmentTools/ProductDetails/dm320205    Atmel Studioをインストールして、開発をしていくみたい。
+開発ボードのドキュメントに始め方のPDFがあったのでそれを見ながら作業している
+Getting-Started-with-SAM%20L10L11-Xplained-Pro-DS00002722A.pdf  http://ww1.microchip.com/downloads/en/Appnotes/Getting-Started-with-SAM%20L10L11-Xplained-Pro-DS00002722A.pdf    セキュアに機能を動かせるのが面白くて試してみたいと思って購入した。
+まだLチカしかできていないが遊んでいきたい</description>
+    </item>
+    
+  </channel>
+</rss>

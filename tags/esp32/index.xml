@@ -6,10 +6,20 @@
     <description>Recent content in esp32 on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2020 06:45:39 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/tags/esp32/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>開発時以外でESP32のシリアルログからバックトレースする方法</title>
+      <link>https://wamisnet.github.io/blog/2020-07-14-esp32-backtrace/</link>
+      <pubDate>Tue, 14 Jul 2020 06:45:39 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2020-07-14-esp32-backtrace/</guid>
+      <description>IDF Monitor - ESP32 - — ESP-IDF Programming Guide latest documentation  https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-monitor.html    ESP32ではエラーがでるとこんな感じのログが吐かれます。
+Guru Meditation Error of type StoreProhibited occurred on core 0. Exception was unhandled.Register dump:PC : 0x400f360d PS : 0x00060330 A0 : 0x800dbf56 A1 : 0x3ffb7e00A2 : 0x3ffb136c A3 : 0x00000005 A4 : 0x00000000 A5 : 0x00000000A6 : 0x00000000 A7 : 0x00000080 A8 : 0x00000000 A9 : 0x3ffb7dd0A10 : 0x00000003 A11 : 0x00060f23 A12 : 0x00060f20 A13 : 0x3ffba6d0A14 : 0x00000047 A15 : 0x0000000f SAR : 0x00000019 EXCCAUSE: 0x0000001dEXCVADDR: 0x00000000 LBEG : 0x4000c46c LEND : 0x4000c477 LCOUNT : 0x00000000Backtrace: 0x400f360d:0x3ffb7e00 0x400dbf56:0x3ffb7e20 0x400dbf5e:0x3ffb7e40 0x400dbf82:0x3ffb7e60 0x400d071d:0x3ffb7e90 この部分をバックトレースします。</description>
+    </item>
     
     <item>
       <title>ESP32のチップ情報を取得する（ESP-IDF）</title>

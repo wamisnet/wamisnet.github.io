@@ -6,10 +6,37 @@
     <description>Recent content in Tags on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 05 Jul 2020 05:59:12 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2020 06:45:39 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>esp32</title>
+      <link>https://wamisnet.github.io/tags/esp32/</link>
+      <pubDate>Tue, 14 Jul 2020 06:45:39 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/tags/esp32/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wi-SUN</title>
+      <link>https://wamisnet.github.io/tags/wi-sun/</link>
+      <pubDate>Fri, 10 Jul 2020 17:15:28 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/tags/wi-sun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SAML11</title>
+      <link>https://wamisnet.github.io/tags/saml11/</link>
+      <pubDate>Mon, 06 Jul 2020 16:45:05 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/tags/saml11/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>
@@ -143,15 +170,6 @@
       <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/tags/esp-idf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>esp32</title>
-      <link>https://wamisnet.github.io/tags/esp32/</link>
-      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://wamisnet.github.io/tags/esp32/</guid>
       <description></description>
     </item>
     

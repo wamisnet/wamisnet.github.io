@@ -2,22 +2,31 @@
 <html lang="ja">
   <head>
   <meta charset="utf-8">
-<title>serverless - わみめも</title>
+<title>開発時以外でESP32のシリアルログからバックトレースする方法 - わみめも</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.74.1" /><meta itemprop="name" content="serverless">
-<meta itemprop="description" content="NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人のサイト"><meta property="og:title" content="serverless" />
-<meta property="og:description" content="NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人のサイト" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wamisnet.github.io/categories/serverless/" />
+<meta name="generator" content="Hugo 0.74.1" /><meta itemprop="name" content="開発時以外でESP32のシリアルログからバックトレースする方法">
+<meta itemprop="description" content="ESP32の環境では、開発時は勝手にバックトレースしてどこのコードか教えてくれますが、その時以外の方法を残しておきます">
+<meta itemprop="datePublished" content="2020-07-14T06:45:39&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-14T06:45:39&#43;00:00" />
+<meta itemprop="wordCount" content="130">
+<meta itemprop="image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
+
+
+
+<meta itemprop="keywords" content="esp32," /><meta property="og:title" content="開発時以外でESP32のシリアルログからバックトレースする方法" />
+<meta property="og:description" content="ESP32の環境では、開発時は勝手にバックトレースしてどこのコードか教えてくれますが、その時以外の方法を残しておきます" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wamisnet.github.io/blog/2020-07-14-esp32-backtrace/" />
 <meta property="og:image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
-<meta property="og:updated_time" content="2019-11-27T00:00:00+00:00" />
+<meta property="article:published_time" content="2020-07-14T06:45:39+00:00" />
+<meta property="article:modified_time" content="2020-07-14T06:45:39+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
 
-<meta name="twitter:title" content="serverless"/>
-<meta name="twitter:description" content="NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人のサイト"/>
+<meta name="twitter:title" content="開発時以外でESP32のシリアルログからバックトレースする方法"/>
+<meta name="twitter:description" content="ESP32の環境では、開発時は勝手にバックトレースしてどこのコードか教えてくれますが、その時以外の方法を残しておきます"/>
 <meta name="twitter:site" content="@wamisnet"/>
 <link rel="stylesheet" href="https://wamisnet.github.io/css/bundle.min.c77e84bad6f641316aaae9404d7b57577c00ac1217fc1a1e8a9d30300328d836.css" integrity="sha256-x36Eutb2QTFqqulATXtXV3wArBIX/Boeip0wMAMo2DY="><link rel="stylesheet" href="https://wamisnet.github.io/css/add-on.css">
 </head>
@@ -104,8 +113,6 @@
     <footer>
       <ul class="socnet-icons">
         
-    <li><a href="https://wamisnet.github.io/categories/serverless/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
-
 
         <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
 
@@ -156,42 +163,101 @@
 
       <main id="site-main">
         
-  
-  
-    <article class="post">
-  <header>
+  <article class="post">
+    <header>
   <div class="title">
     
-      <h2><a href="https://wamisnet.github.io/blog/2019-11-27-obniz_serverless/">obnizのサーバレスイベントでのはまりポイント＆Tips</a></h2>
+      <h2><a href="https://wamisnet.github.io/blog/2020-07-14-esp32-backtrace/">開発時以外でESP32のシリアルログからバックトレースする方法</a></h2>
     
     
-      <p>obnizのサーバレスイベントでのはまりポイント＆Tips</p>
+      <p>ESP32の環境では、開発時は勝手にバックトレースしてどこのコードか教えてくれますが、その時以外の方法を残しておきます</p>
     
   </div>
   <div class="meta">
-    <time class="published" datetime="2019-11-27 00:00:00 &#43;0000 UTC">
-      2019-11-27
+    <time class="published" datetime="2020-07-14 06:45:39.009 &#43;0000 UTC">
+      2020-07-14
     </time>
-    <span class="author">wami</span>
+    <span class="author"></span>
     
   </div>
 </header>
 
+    <section id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%e9%96%8b%e7%99%ba%e6%99%82%e4%bb%a5%e5%a4%96%e3%81%a7ESP32%e3%81%ae%e3%82%b7%e3%83%aa%e3%82%a2%e3%83%ab%e3%83%ad%e3%82%b0%e3%81%8b%e3%82%89%e3%83%90%e3%83%83%e3%82%af%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b9%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fwamisnet.github.io%2fblog%2f2020-07-14-esp32-backtrace%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
   
 
   
-  <p>obnizを使っているとサーバレスイベントを活用するタイミングがあると思います。</p>
-  <footer>
-    <a href="https://wamisnet.github.io/blog/2019-11-27-obniz_serverless/" class="button big">続きを読む</a>
-    <ul class="stats">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwamisnet.github.io%2fblog%2f2020-07-14-esp32-backtrace%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e3%81%93%e3%81%ae%e6%8a%95%e7%a8%bf%e3%82%92%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%99%e3%82%8b %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2fwamisnet.github.io%2fblog%2f2020-07-14-esp32-backtrace%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </section>
+    
+
+    <div class="content">
+      
+
+
+
+<a href="">
+    <div class="card link-card">
+        <div class="link-card__title">
+            IDF Monitor - ESP32 -  — ESP-IDF Programming Guide latest documentation
+        </div>
+        
+        <div class="link-card__site_url">
+            https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-monitor.html
+        </div>
+        
+    </div>
+</a>
+
+
+<p>ESP32ではエラーがでるとこんな感じのログが吐かれます。</p>
+<pre><code>Guru Meditation Error of type StoreProhibited occurred on core  0. Exception was unhandled.
+Register dump:
+PC      : 0x400f360d  PS      : 0x00060330  A0      : 0x800dbf56  A1      : 0x3ffb7e00
+A2      : 0x3ffb136c  A3      : 0x00000005  A4      : 0x00000000  A5      : 0x00000000
+A6      : 0x00000000  A7      : 0x00000080  A8      : 0x00000000  A9      : 0x3ffb7dd0
+A10     : 0x00000003  A11     : 0x00060f23  A12     : 0x00060f20  A13     : 0x3ffba6d0
+A14     : 0x00000047  A15     : 0x0000000f  SAR     : 0x00000019  EXCCAUSE: 0x0000001d
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000
+
+Backtrace: 0x400f360d:0x3ffb7e00 0x400dbf56:0x3ffb7e20 0x400dbf5e:0x3ffb7e40 0x400dbf82:0x3ffb7e60 0x400d071d:0x3ffb7e90
+</code></pre><p>この部分をバックトレースします。</p>
+<pre><code>Backtrace: 0x400f360d:0x3ffb7e00 0x400dbf56:0x3ffb7e20 0x400dbf5e:0x3ffb7e40 0x400dbf82:0x3ffb7e60 0x400d071d:0x3ffb7e90
+</code></pre><p><code>0x400f360d:0x3ffb7e00</code> , <code>0x400dbf56:0x3ffb7e20</code> 2つで一つのアドレスデータになっています。</p>
+<p>ビルドしたときの<code>elf</code>ファイルを用意し、先ほどのアドレスを下記のコマンドのように入れコマンドを実行するとバックトレースされます</p>
+<pre><code>xtensa-esp32-elf-addr2line -pfiaC -e arduino.elf 0x400f360d:0x3ffb7e00
+</code></pre><p>こんなふうに応答があり、どこのファイルのどの行なのかを確認できます。</p>
+<pre><code>0x400f360d: nvs::nvs_flash_read(unsigned int, void*, unsigned int) at ...src/nvs_ops.cpp:70
+</code></pre>
+    </div>
+    <footer>
+      <ul class="stats">
   <li class="categories">
     <ul>
     
       
         
-          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/serverless/">serverless</a></li>
-        
-          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/obniz/">obniz</a></li>
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/esp32/">esp32</a></li>
         
       
     
@@ -202,9 +268,7 @@
     
       
         
-          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/serverless/">serverless</a></li>
-        
-          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/obniz/">obniz</a></li>
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/esp32/">esp32</a></li>
         
       
     
@@ -212,12 +276,38 @@
   </li>
 </ul>
 
-  </footer>
-</article>
+    </footer>
+  </article>
+  
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wamisnet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
 
+
+
+
+  <div class="pagination">
   
-  
-<div class="pagination">
+    <a href="https://wamisnet.github.io/blog/2020-07-11-wi_sun/" class="button"><div class="previous"><div>Wi-SUNについてしらべてみた</div></div></a>
   
   
 </div>
@@ -549,8 +639,6 @@
   
       <ul class="socnet-icons">
         
-    <li><a href="https://wamisnet.github.io/categories/serverless/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
-
 
         <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
 

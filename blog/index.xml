@@ -6,10 +6,50 @@
     <description>Recent content in Blog on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 05 Jul 2020 05:59:12 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2020 06:45:39 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>開発時以外でESP32のシリアルログからバックトレースする方法</title>
+      <link>https://wamisnet.github.io/blog/2020-07-14-esp32-backtrace/</link>
+      <pubDate>Tue, 14 Jul 2020 06:45:39 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2020-07-14-esp32-backtrace/</guid>
+      <description>IDF Monitor - ESP32 - — ESP-IDF Programming Guide latest documentation  https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-monitor.html    ESP32ではエラーがでるとこんな感じのログが吐かれます。
+Guru Meditation Error of type StoreProhibited occurred on core 0. Exception was unhandled.Register dump:PC : 0x400f360d PS : 0x00060330 A0 : 0x800dbf56 A1 : 0x3ffb7e00A2 : 0x3ffb136c A3 : 0x00000005 A4 : 0x00000000 A5 : 0x00000000A6 : 0x00000000 A7 : 0x00000080 A8 : 0x00000000 A9 : 0x3ffb7dd0A10 : 0x00000003 A11 : 0x00060f23 A12 : 0x00060f20 A13 : 0x3ffba6d0A14 : 0x00000047 A15 : 0x0000000f SAR : 0x00000019 EXCCAUSE: 0x0000001dEXCVADDR: 0x00000000 LBEG : 0x4000c46c LEND : 0x4000c477 LCOUNT : 0x00000000Backtrace: 0x400f360d:0x3ffb7e00 0x400dbf56:0x3ffb7e20 0x400dbf5e:0x3ffb7e40 0x400dbf82:0x3ffb7e60 0x400d071d:0x3ffb7e90 この部分をバックトレースします。</description>
+    </item>
+    
+    <item>
+      <title>Wi-SUNについてしらべてみた</title>
+      <link>https://wamisnet.github.io/blog/2020-07-11-wi_sun/</link>
+      <pubDate>Fri, 10 Jul 2020 17:15:28 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2020-07-11-wi_sun/</guid>
+      <description>Wi-SUNを使うのであれば、BP35C0-J11を使うのがよさそう
+Enhanced HANというプロファイルがあり、スリープとかできてzigbeeのように扱えるっぽい
+Wi-SUNの規格について| スマートメーターBルートブログ  Wi-SUNの規格について  http://route-b.iij.ad.jp/archives/1521    程よく飛んでくれそうな感じもする。
+Lora系よりも通信の自由度がありそうで、zigbeeより飛ぶっぽい
+消費電力とか見ていると意外とすくない
+ 送信時：47mA 受信時：27mA スリープ時：4uA  外形寸法 [mm] 15.0x19.0x3.0
+Wi-SUN Enhanced HAN対応無線モジュール - BP35C0-J11 | ローム株式会社 - ROHM Semiconductor  「BP35C0-J11」は、業界トップクラスの受信感度を持つ920MHz帯無線通信機能（RF）とマイコン、Wi-SUNに最適な大容量メモリを内蔵するラピスセミコンダクタ製無線通信LSI「ML7416N」を搭載した、アンテナ外付けの小型面実装Wi-SUNモジュールです。Wi-SUN ProfileのBルートとEnhanced HANに対応し、業界最小クラスの15mm×19mmサイズを実現しているため、HEMSコントローラーや各種家電への採用に最適です。もちろん日本の電波法認証取得済みの製品となっています。BP35C0-J11は、Wi-SUN通信の基準器（CTBU）です。様々なWi-SUN機器との高い接続信頼性を持っています。独自機能の「FOTA（Firmware update Over The Air）」を搭載しており、遠隔からのファームウェア更新が可能です。「BP35C0-J11」を評価していただく方向けに、基板実装したアダプターボード「BP35C0-J11-T01」をネット商社から販売中です。一個から購入可能で、簡単に評価を行うことができます。ファームウェアの更新情報をお届け！メール通知の設定方法(PDF)  https://www.rohm.co.jp/products/wireless-communication/specified-low-power-radio-modules/bp35c0-j11-product    アンテナは外付けなので適当にみて検索した感じだとマルツで取り扱ってるみたい
+bp35c0_antennalist_an-j.pdf  https://fscdn.rohm.com/jp/products/databook/applinote/module/wireless/bp35c0_antennalist_an-j.pdf    100個買えば400円らしい
+1018-456A(T18-018-1098) 板金アンテナ 1018-456A｜電子部品・半導体通販のマルツ  【1018-456A】1018-456A(T18-018-1098) 板金アンテナ 800.00円 スタッフ株式会社製|18:00までのご注文を翌日お届け、3,000円以上購入で送料無料。LPWA(920MHz)、3G/LTE(4G)、GNSS L1などに使用できる高性能な板金アンテナです。【仕様】・対応周波数：814MHz〜960MHz/1575.42MHz〜2170MHz・形式：単  https://www.marutsu.co.jp/pc/i/1556732/     安いのか高いのかいまいち相場がよくわからん。</description>
+    </item>
+    
+    <item>
+      <title>ArmマイコンのSAML11を触り始めた</title>
+      <link>https://wamisnet.github.io/blog/2020-07-07-saml11_started/</link>
+      <pubDate>Mon, 06 Jul 2020 16:45:05 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2020-07-07-saml11_started/</guid>
+      <description>下記の開発ボードを購入した。
+SAML11 Xplained Pro Evaluation Kit  https://www.microchip.com/DevelopmentTools/ProductDetails/dm320205    Atmel Studioをインストールして、開発をしていくみたい。
+開発ボードのドキュメントに始め方のPDFがあったのでそれを見ながら作業している
+Getting-Started-with-SAM%20L10L11-Xplained-Pro-DS00002722A.pdf  http://ww1.microchip.com/downloads/en/Appnotes/Getting-Started-with-SAM%20L10L11-Xplained-Pro-DS00002722A.pdf    セキュアに機能を動かせるのが面白くて試してみたいと思って購入した。
+まだLチカしかできていないが遊んでいきたい</description>
+    </item>
     
     <item>
       <title>HugoのShortcodeを活用してみた</title>
