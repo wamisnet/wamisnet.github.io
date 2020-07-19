@@ -22,7 +22,15 @@ app.get("/getogp", (expressRequest, expressResponse, expressNext) => {
         try {
             client.fetch(url, (err, $, res, body) => {
                 if (err) {
-                    expressNext(err);
+                    expressResponse.json({
+                        exists: false,
+                        title: url.slice(url.lastIndexOf('/') + 1),
+                        description: "",
+                        url: url,
+                        image: "",
+                        site_name: "",
+                        type: "",
+                    });
                     return;
                 }
 
