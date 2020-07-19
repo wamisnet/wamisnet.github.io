@@ -1,4 +1,4 @@
-#　概要
+# 概要
 
 このレポジトリは、[http://wamisnet.github.io/](http://wamisnet.github.io/)を構成するレポジトリになります。
 
