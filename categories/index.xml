@@ -6,10 +6,37 @@
     <description>Recent content in Categories on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 14 Jul 2020 06:45:39 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2020 07:44:34 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://wamisnet.github.io/categories/javascript/</link>
+      <pubDate>Sun, 19 Jul 2020 07:44:34 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>obniz</title>
+      <link>https://wamisnet.github.io/categories/obniz/</link>
+      <pubDate>Sun, 19 Jul 2020 07:44:34 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/obniz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>太陽光発電</title>
+      <link>https://wamisnet.github.io/categories/%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB/</link>
+      <pubDate>Sun, 19 Jul 2020 07:44:34 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>esp32</title>
@@ -71,15 +98,6 @@
       <pubDate>Fri, 03 Jul 2020 12:24:48 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/categories/netlifycms/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>obniz</title>
-      <link>https://wamisnet.github.io/categories/obniz/</link>
-      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://wamisnet.github.io/categories/obniz/</guid>
       <description></description>
     </item>
     
