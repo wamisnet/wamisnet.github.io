@@ -24,7 +24,7 @@ app.get("/getogp", (expressRequest, expressResponse, expressNext) => {
                 if (err) {
                     expressResponse.json({
                         exists: false,
-                        title: url.slice(url.lastIndexOf('/') + 1),
+                        title: "",
                         description: "",
                         url: url,
                         image: "",
@@ -38,7 +38,7 @@ app.get("/getogp", (expressRequest, expressResponse, expressNext) => {
                     exists: false,
                     title: "",
                     description: "",
-                    url: "",
+                    url: url,
                     image: "",
                     site_name: "",
                     type: "",
@@ -64,7 +64,7 @@ app.get("/getogp", (expressRequest, expressResponse, expressNext) => {
         }catch (e) {
             expressResponse.json({
                 exists: false,
-                title: url.slice(url.lastIndexOf('/') + 1),
+                title: "",
                 description: "",
                 url: url,
                 image: "",
