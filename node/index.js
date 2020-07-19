@@ -1,7 +1,7 @@
 const client = require( 'cheerio-httpcli');
 const app = require('express')();
 
-var disAllow_exts = new Array('jpg', 'jpeg', 'png','pdf',"mp4","mp3","txt","zip","gif");
+const disAllow_exts = ['jpg', 'jpeg', 'png','pdf',"mp4","mp3","txt","zip","gif"];
 
 function getExt(url)
 {
@@ -13,46 +13,57 @@ function getExt(url)
 function checkExt(url)
 {
     const ext = getExt(url).toLowerCase();
-    if (disAllow_exts.indexOf(ext) === -1) return true;
-    return false;
+    return disAllow_exts.indexOf(ext) === -1;
 }
 
 app.get("/getogp", (expressRequest, expressResponse, expressNext) => {
     const url = expressRequest.query.url;
     if(checkExt(url)) {
-        client.fetch(url, (err, $, res, body) => {
-            if (err) {
-                expressNext(err)
-                return;
-            }
+        try {
+            client.fetch(url, (err, $, res, body) => {
+                if (err) {
+                    expressNext(err);
+                    return;
+                }
 
-            const result = {
+                const result = {
+                    exists: false,
+                    title: "",
+                    description: "",
+                    url: "",
+                    image: "",
+                    site_name: "",
+                    type: "",
+                };
+
+                const ogTitleQuery = $("meta[property='og:title']");
+
+                if (ogTitleQuery.length > 0) {
+                    result.exists = true;
+                    result.title = $("meta[property='og:title']").attr("content");
+                    result.description = $("meta[property='og:description']").attr("content");
+                    result.url = $("meta[property='og:url']").attr("content");
+                    result.image = $("meta[property='og:image']").attr("content");
+                    result.site_name = $("meta[property='og:site_name']").attr("content");
+                    result.type = $("meta[property='og:type']").attr("content");
+                } else {
+                    result.title = $("head title").text();
+                    result.description = $("meta[name='description']").attr("content");
+                }
+
+                expressResponse.json(result);
+            });
+        }catch (e) {
+            expressResponse.json({
                 exists: false,
-                title: "",
+                title: url.slice(url.lastIndexOf('/') + 1),
                 description: "",
-                url: "",
+                url: url,
                 image: "",
                 site_name: "",
                 type: "",
-            }
-
-            const ogTitleQuery = $("meta[property='og:title']");
-
-            if (ogTitleQuery.length > 0) {
-                result.exists = true;
-                result.title = $("meta[property='og:title']").attr("content");
-                result.description = $("meta[property='og:description']").attr("content");
-                result.url = $("meta[property='og:url']").attr("content");
-                result.image = $("meta[property='og:image']").attr("content");
-                result.site_name = $("meta[property='og:site_name']").attr("content");
-                result.type = $("meta[property='og:type']").attr("content");
-            } else {
-                result.title = $("head title").text()
-                result.description = $("meta[name='description']").attr("content");
-            }
-
-            expressResponse.json(result);
-        });
+            });
+        }
     }else{
         const result = {
             exists: false,
@@ -62,10 +73,9 @@ app.get("/getogp", (expressRequest, expressResponse, expressNext) => {
             image: "",
             site_name: "",
             type: "",
-        }
+        };
         expressResponse.json(result);
     }
-
-})
+});
 
 app.listen(6060, () => console.log('Listening on port 6060'));
