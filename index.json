@@ -1,4 +1,10 @@
 [{
+    "title": "残機が 1up できそうな音を鳴らしてみた",
+    "date": "2020-07-24",
+    "description": "ESP32で残機を 1up できそうな音をブザーで鳴らしてみます！",
+    "body": "残機が 1up できそうな音楽鳴らしてみた\n耳コピなので違ってもご容赦をｗ\n1up できそうな効果音をブザーでならしてみた pic.twitter.com/HwPZjwZ6ZA\n\u0026mdash; わみ (@wamisnet) July 24, 2020  必要な部材  ESP32 Buzzer  プログラム #define PIN_BUZZER 22 void setup(){ ledcSetup(1, 12000, 8); ledcAttachPin(PIN_BUZZER, 1); } void loop(){ ledcWriteTone(1, 1318.510); //ミ  delay(125); ledcWriteTone(1, 1567.982); //ソ  delay(125); ledcWriteTone(1, 2637.020); //ミ  delay(125); ledcWriteTone(1, 2093.005); //ド  delay(125); ledcWriteTone(1, 2349.318); //レ  delay(125); ledcWriteTone(1, 3135.963); //ソ  delay(125); ledcWriteTone(1, 0); delay(10000); } ",
+    "ref": "/blog/2020-07-25-buzzer/"
+  },{
     "title": "太陽光発電の遠隔監視システムを簡単につくってみた",
     "date": "2020-07-19",
     "description": "Google スプレッドシートにセンサーで取得したバッテリーの電圧や電流を送って可視化するものを作っていきます",

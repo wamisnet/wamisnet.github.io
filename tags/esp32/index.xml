@@ -6,10 +6,22 @@
     <description>Recent content in esp32 on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 14 Jul 2020 06:45:39 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2020 16:41:21 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/tags/esp32/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>残機が 1up できそうな音を鳴らしてみた</title>
+      <link>https://wamisnet.github.io/blog/2020-07-25-buzzer/</link>
+      <pubDate>Fri, 24 Jul 2020 16:41:21 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2020-07-25-buzzer/</guid>
+      <description>残機が 1up できそうな音楽鳴らしてみた
+耳コピなので違ってもご容赦をｗ
+1up できそうな効果音をブザーでならしてみた pic.twitter.com/HwPZjwZ6ZA
+&amp;mdash; わみ (@wamisnet) July 24, 2020  必要な部材  ESP32 Buzzer  プログラム #define PIN_BUZZER 22 void setup(){ ledcSetup(1, 12000, 8); ledcAttachPin(PIN_BUZZER, 1); } void loop(){ ledcWriteTone(1, 1318.510); //ミ  delay(125); ledcWriteTone(1, 1567.982); //ソ  delay(125); ledcWriteTone(1, 2637.020); //ミ  delay(125); ledcWriteTone(1, 2093.005); //ド  delay(125); ledcWriteTone(1, 2349.318); //レ  delay(125); ledcWriteTone(1, 3135.963); //ソ  delay(125); ledcWriteTone(1, 0); delay(10000); } </description>
+    </item>
     
     <item>
       <title>開発時以外でESP32のシリアルログからバックトレースする方法</title>

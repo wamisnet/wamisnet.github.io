@@ -6,10 +6,19 @@
     <description>Recent content in Categories on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 19 Jul 2020 07:44:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2020 16:41:21 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>esp32</title>
+      <link>https://wamisnet.github.io/categories/esp32/</link>
+      <pubDate>Fri, 24 Jul 2020 16:41:21 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/esp32/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>JavaScript</title>
@@ -35,15 +44,6 @@
       <pubDate>Sun, 19 Jul 2020 07:44:34 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/categories/%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>esp32</title>
-      <link>https://wamisnet.github.io/categories/esp32/</link>
-      <pubDate>Tue, 14 Jul 2020 06:45:39 +0000</pubDate>
-      
-      <guid>https://wamisnet.github.io/categories/esp32/</guid>
       <description></description>
     </item>
     
