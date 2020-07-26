@@ -6,7 +6,7 @@
     <description>Recent content in Categories on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 24 Jul 2020 16:41:21 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 07:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,36 @@
     <item>
       <title>esp32</title>
       <link>https://wamisnet.github.io/categories/esp32/</link>
-      <pubDate>Fri, 24 Jul 2020 16:41:21 +0000</pubDate>
+      <pubDate>Sun, 26 Jul 2020 07:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/categories/esp32/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iot</title>
+      <link>https://wamisnet.github.io/categories/iot/</link>
+      <pubDate>Sun, 26 Jul 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/iot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>obniz</title>
+      <link>https://wamisnet.github.io/categories/obniz/</link>
+      <pubDate>Sun, 26 Jul 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/obniz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>おうちハック</title>
+      <link>https://wamisnet.github.io/categories/%E3%81%8A%E3%81%86%E3%81%A1%E3%83%8F%E3%83%83%E3%82%AF/</link>
+      <pubDate>Sun, 26 Jul 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/categories/%E3%81%8A%E3%81%86%E3%81%A1%E3%83%8F%E3%83%83%E3%82%AF/</guid>
       <description></description>
     </item>
     
@@ -26,15 +53,6 @@
       <pubDate>Sun, 19 Jul 2020 07:44:34 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/categories/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>obniz</title>
-      <link>https://wamisnet.github.io/categories/obniz/</link>
-      <pubDate>Sun, 19 Jul 2020 07:44:34 +0000</pubDate>
-      
-      <guid>https://wamisnet.github.io/categories/obniz/</guid>
       <description></description>
     </item>
     
@@ -107,15 +125,6 @@
       <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/categories/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iot</title>
-      <link>https://wamisnet.github.io/categories/iot/</link>
-      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://wamisnet.github.io/categories/iot/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+<title>【おうちハック】【プログラム編】筋トレしないとお家に入れないようにしてみた【筋トレハック】 - わみめも</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.74.3" /><meta itemprop="name" content="【おうちハック】【プログラム編】筋トレしないとお家に入れないようにしてみた【筋トレハック】">
+<meta itemprop="description" content="Twitterのつぶやきから始まった筋トレしないとお家に入れないアイデアのプログラムの説明編">
+<meta itemprop="datePublished" content="2020-07-26T07:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-07-26T07:00:00+00:00" />
+<meta itemprop="wordCount" content="191">
+<meta itemprop="image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
+
+
+
+<meta itemprop="keywords" content="ESP32,IoT,おうちハック,obniz," />
+<meta property="og:title" content="【おうちハック】【プログラム編】筋トレしないとお家に入れないようにしてみた【筋トレハック】" />
+<meta property="og:description" content="Twitterのつぶやきから始まった筋トレしないとお家に入れないアイデアのプログラムの説明編" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wamisnet.github.io/blog/2020-07-26-chin_up_program/" />
+<meta property="og:image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
+<meta property="article:published_time" content="2020-07-26T07:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-26T07:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
+
+<meta name="twitter:title" content="【おうちハック】【プログラム編】筋トレしないとお家に入れないようにしてみた【筋トレハック】"/>
+<meta name="twitter:description" content="Twitterのつぶやきから始まった筋トレしないとお家に入れないアイデアのプログラムの説明編"/>
+<meta name="twitter:site" content="@wamisnet"/>
+<link rel="stylesheet" href="https://wamisnet.github.io/css/bundle.min.c77e84bad6f641316aaae9404d7b57577c00ac1217fc1a1e8a9d30300328d836.css" integrity="sha256-x36Eutb2QTFqqulATXtXV3wArBIX/Boeip0wMAMo2DY="><link rel="stylesheet" href="https://wamisnet.github.io/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://wamisnet.github.io/" class="nav">
+        
+          わみめも
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/" class="nav link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/about/" class="nav link"><i class='fa fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/itemized/" class="nav link"><i class='fa fa-list'></i> Product</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://wamisnet.github.io/business/" class="nav link"><i class='fa fa-id-card'></i> Small Business</a>
+          
+        
+      
+      
+      
+    </menu>
+    
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="https://wamisnet.github.io/"><img src="https://wamisnet.github.io/img/main/wami.jpg" class="circle" width="100" alt="wami" /></a>
+  <header>
+    <h1>わみめも</h1>
+  </header>
+  <main>
+    <p>NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人のサイト</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="https://wamisnet.github.io/blog/2020-07-26-chin_up_program/">【おうちハック】【プログラム編】筋トレしないとお家に入れないようにしてみた【筋トレハック】</a></h2>
+    
+    
+      <p>Twitterのつぶやきから始まった筋トレしないとお家に入れないアイデアのプログラムの説明編</p>
+    
+  </div>
+  <div class="meta">
+    <time class="published" datetime="2020-07-26 07:00:00 &#43;0000 UTC">
+      2020-07-26
+    </time>
+    <span class="author"></span>
+    
+  </div>
+</header>
+
+    <section id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%e3%80%90%e3%81%8a%e3%81%86%e3%81%a1%e3%83%8f%e3%83%83%e3%82%af%e3%80%91%e3%80%90%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0%e7%b7%a8%e3%80%91%e7%ad%8b%e3%83%88%e3%83%ac%e3%81%97%e3%81%aa%e3%81%84%e3%81%a8%e3%81%8a%e5%ae%b6%e3%81%ab%e5%85%a5%e3%82%8c%e3%81%aa%e3%81%84%e3%82%88%e3%81%86%e3%81%ab%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%e3%80%90%e7%ad%8b%e3%83%88%e3%83%ac%e3%83%8f%e3%83%83%e3%82%af%e3%80%91&amp;url=https%3a%2f%2fwamisnet.github.io%2fblog%2f2020-07-26-chin_up_program%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwamisnet.github.io%2fblog%2f2020-07-26-chin_up_program%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e3%81%93%e3%81%ae%e6%8a%95%e7%a8%bf%e3%82%92%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%99%e3%82%8b %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2fwamisnet.github.io%2fblog%2f2020-07-26-chin_up_program%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </section>
+    
+
+    <div class="content">
+      <p>こんにちは！わみ(<a href="https://twitter.com/wamisnet">@wamisnet</a>)です。</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">私の住んでるシェアハウス、入り口にチンニングバーがあって10回懸垂しないと家に入れない仕組みになってるんですよ、逆に10回懸垂すれば誰でも入れるのでぜひ、ギークハウス新宿ってところです <a href="https://t.co/ykQcSFxvdK">pic.twitter.com/ykQcSFxvdK</a></p>&mdash; ウルトラ天丼パラダイス (@otinpoloniex) <a href="https://twitter.com/otinpoloniex/status/1285502451643105280?ref_src=twsrc%5Etfw">July 21, 2020</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>【懸垂しないと家に入れないお家】
+そんなおかしなアイデアをテクノロジーで実現させちゃったお話です。</p>
+<p>この記事は裏話的なプログラム編として、どんな風にこれができているのか紹介していきます。</p>
+<p>どんなものを作ったのかは下記の記事をご覧ください！</p>
+
+
+
+
+<a href="https://qiita.com/wamisnet/items/c7fc9215a4aa4dbe0d08">
+    <div class="card link-card">
+        <div class="link-card__title">
+            
+        </div>
+        
+        <div class="link-card__site_url">
+            https://qiita.com/wamisnet/items/c7fc9215a4aa4dbe0d08
+        </div>
+        
+    </div>
+</a>
+
+
+<h1 id="プログラム解説">プログラム解説</h1>
+<p>さて、早速ですがプログラムの説明をしていきましょう。</p>
+<h2 id="ハードウエア">ハードウエア</h2>
+<p>コード全体については下記のリンクよりご覧ください。</p>
+<p><a href="https://github.com/wamisnet/chin-up-counter/blob/master/chin-up-counter.ino">https://github.com/wamisnet/chin-up-counter/blob/master/chin-up-counter.ino</a></p>
+<p>Arduinoのライブラリを活用して距離センサーを使用します。</p>
+<p>Arduinoはいろんなセンサーのライブラリが多数あるのがとても便利ですね。</p>
+<p>後で出てくる「obniz」は簡単にIoTをつくることができるのですが、対応しているセンサーはそれなりにあり、普段使うようなセンサーなどは簡単に扱えるようになっています。</p>
+<p>ただ、対応していないセンサーについては、少々obnizの知識が必要になるので、ちょっと開発が面倒です。</p>
+<p>その欠陥も、今回使用している「obniz plug-in」ではArduinoのメリットとobnizのメリットをどっちも使うことができるんです！</p>
+<p>そんなわけで、これからの説明でメインとなるのは、obniz plug-inの説明になります。</p>
+<p>obniz plug-inをつかった初めての解説記事かもしれません？</p>
+<h3 id="データの受信">データの受信</h3>
+<pre><code>void onCommand(uint8_t* data, uint16_t length) {
+  if (length &gt; 2 &amp;&amp; data[0] == 'm' &amp;&amp; data[1] == 'd' &amp;&amp; data[1] == 'c') {
+    count_clear();
+  } else {
+    chin_up_finish = data[0];
+  }
+}
+</code></pre><p>まず受信する関数を用意します。</p>
+<pre><code>obniz.commandReceive(onCommand);
+</code></pre><p><code>obniz.commandReceive</code>関数の引数に、先ほど用意した関数名を入れます。これでコマンドを受け取ったら上記の関数名の関数が呼び出され処理します。</p>
+<p><code>void onCommand(uint8_t* data, uint16_t length)</code>では、<code>data</code>にjavascriptから送信された内容が入っています。lengthはその<code>data</code>のデータ長が入っています。</p>
+<p>今回ではこのような形で、Webページからカウントをクリアする指示と懸垂の上限回数の指示を受け取れるようにします。</p>
+<p>ちなみに、<code>if (length &gt; 2 &amp;&amp; data[0] == 'm' &amp;&amp; data[1] == 'd' &amp;&amp; data[1] == 'c')</code>でいろんなコマンドを送れるようにしようと思いましたが、一個しか利用しなかったですｗ</p>
+<h3 id="データの送信">データの送信</h3>
+<p>Webページに懸垂の回数を送信する部分を作っていきます。</p>
+<pre><code>void sendCommand(uint8_t chin_up_count,bool finish_flg,uint8_t chin_up_finish,bool up_flg){
+  char message[100];
+  sprintf(message,&quot;{\&quot;count\&quot;:%d,\&quot;max_count\&quot;:%d,\&quot;finish\&quot;:%s,\&quot;mode\&quot;:&quot;&quot;\&quot;%s\&quot;}&quot;,chin_up_count, chin_up_finish, finish_flg?&quot;true&quot;:&quot;false&quot;, up_flg?&quot;up&quot;:&quot;down&quot;);
+  if (!obniz.commandSend((uint8_t *)message, strlen(message))) {
+    Serial.printf(&quot;send message : %s\n&quot;, message);
+  }
+}
+</code></pre><p><code>obniz.commandSend(送信したいデータ, 送信したいデータ長)</code>このような形でjavascriptに送信したいデータを準備します。</p>
+<p>今回は<code>obniz.commandSend</code>関数でWebページにsprintfで生成したJSONフォーマットの文字列を送信します。</p>
+<h3 id="obnizosの開始">obnizOSの開始</h3>
+<p><code>obniz.start();</code>でobnizOSを開始させて、ネットワークの接続などを行います。</p>
+<h3 id="その他">その他</h3>
+<pre><code>uint16_t meter = sensor.readRangeContinuousMillimeters();
+if (meter &gt; 2000 ) return;
+</code></pre><p>ここで、距離センサーからデータを取得します。0-2000mmで距離を取得できるので、それ以外はエラーなので、再度センサーの値を取得するようにしています。</p>
+<p>それ以外のコードはカウントアップ用のIF文なので読めばわかると思います。</p>
+<h2 id="webjavascript">Web　(javascript)</h2>
+<p>コード全体については下記のリンクよりご覧ください。</p>
+<p><a href="https://github.com/wamisnet/chin-up-counter/blob/master/web/index.html">https://github.com/wamisnet/chin-up-counter/blob/master/web/index.html</a></p>
+<h3 id="データ送信">データ送信</h3>
+<pre><code>obniz.plugin.send(&quot;mdc&quot;);
+</code></pre><pre><code>obniz.plugin.send(Number($(&quot;#finish_input&quot;).val()));
+</code></pre><p>ここで送信したものが、先に説明したハードウエア側の受信で取得できます。</p>
+<p>シンプルですね</p>
+<h3 id="データ受信">データ受信</h3>
+<pre><code>obniz.plugin.onreceive = data =&gt; {
+    let str = &quot;&quot;;
+    for (const dt of data) {
+        str += String.fromCharCode(dt);
+    }
+    const json = JSON.parse(str);
+    console.log(json);
+}
+</code></pre><p>受信にはちょいと一工夫が必要です。</p>
+<p>バイナリのデータが届くので、今回はJsonのフォーマットのデータとして使いたいので、文字列化してからJsonParseを通して扱いやすいようにしています。</p>
+<p>javascriptで扱うならJsonが一番扱いやすいのではないのでしょうか？</p>
+<p>一つしかデータを扱わないのであれば、そのままバイナリで扱うのもよいでしょう。</p>
+<h3 id="その他-1">その他</h3>
+<p>あとは、受信したJsonを基準にどの画像を表示するか切り替えます。</p>
+<p>シンプルなjavascriptのコードかなと思います。</p>
+<h1 id="まとめ">まとめ</h1>
+<p>obniz plug-inを活用することでシンプルなコードで作れました。</p>
+<p>ハードウエアとWebのコードはそれぞれ100行に収まり、意図も簡単にIoTのデバイスを作れるようになりました。</p>
+<p>便利な世の中ですね。</p>
+<p>別の関連記事もありますので、ぜひご覧ください。</p>
+
+
+
+
+<a href="https://qiita.com/wamisnet/items/c7fc9215a4aa4dbe0d08">
+    <div class="card link-card">
+        <div class="link-card__title">
+            
+        </div>
+        
+        <div class="link-card__site_url">
+            https://qiita.com/wamisnet/items/c7fc9215a4aa4dbe0d08
+        </div>
+        
+    </div>
+</a>
+
+
+
+
+
+
+<a href="https://qiita.com/wamisnet/items/b8a3f204dc604124ea34">
+    <div class="card link-card">
+        <div class="link-card__title">
+            Suicaで開けられるスマートロックを作ってみた - Qiita
+        </div>
+        
+        <div class="link-card__description">
+            こんにちは！わみです。
+
+私が住むギークハウス新宿がついにアップデートされました。
+
+少し前にはスマートロックを壊したこともありましたが…
+(その時の記事 :
+スマートロックが壊れたのでobnizを使ってハックしてみた)
+
+Sesam...
+        </div>
+        
+        <div class="link-card__site_url">
+            https://qiita.com/wamisnet/items/b8a3f204dc604124ea34
+        </div>
+        
+        <div class="link-card__eyecache">
+            <img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fcdn.qiita.com%2Fassets%2Fpublic%2Farticle-ogp-background-1150d8b18a7c15795b701a55ae908f94.png?ixlib=rb-1.2.2&amp;w=1200&amp;mark=https%3A%2F%2Fqiita-user-contents.imgix.net%2F~text%3Fixlib%3Drb-1.2.2%26w%3D840%26h%3D380%26txt%3DSuica%25E3%2581%25A7%25E9%2596%258B%25E3%2581%2591%25E3%2582%2589%25E3%2582%258C%25E3%2582%258B%25E3%2582%25B9%25E3%2583%259E%25E3%2583%25BC%25E3%2583%2588%25E3%2583%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2582%2592%25E4%25BD%259C%25E3%2581%25A3%25E3%2581%25A6%25E3%2581%25BF%25E3%2581%259F%26txt-color%3D%2523333%26txt-font%3DAvenir-Black%26txt-size%3D54%26txt-clip%3Dellipsis%26txt-align%3Dcenter%252Cmiddle%26s%3D96c89d09885cb952dae51e612b494cc7&amp;mark-align=center%2Cmiddle&amp;blend=https%3A%2F%2Fqiita-user-contents.imgix.net%2F~text%3Fixlib%3Drb-1.2.2%26w%3D840%26h%3D500%26txt%3D%2540wamisnet%26txt-color%3D%2523333%26txt-font%3DAvenir-Black%26txt-size%3D45%26txt-align%3Dright%252Cbottom%26s%3De810c0dde5c545f41ca8dd7cdb4fef52&amp;blend-align=center%2Cmiddle&amp;blend-mode=normal&amp;s=6ec38df4ab7bc345da1133c60513ab8c" />
+        </div>
+        
+    </div>
+</a>
+
+
+
+    </div>
+    <footer>
+      <ul class="stats">
+  <li class="categories">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/esp32/">ESP32</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/iot/">IoT</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/%e3%81%8a%e3%81%86%e3%81%a1%e3%83%8f%e3%83%83%e3%82%af/">おうちハック</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/categories/obniz/">obniz</a></li>
+        
+      
+    
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/esp32/">ESP32</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/iot/">IoT</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/%e3%81%8a%e3%81%86%e3%81%a1%e3%83%8f%e3%83%83%e3%82%af/">おうちハック</a></li>
+        
+          <li><a class="article-terms-link" href="https://wamisnet.github.io/tags/obniz/">obniz</a></li>
+        
+      
+    
+    </ul>
+  </li>
+</ul>
+
+    </footer>
+  </article>
+  
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wamisnet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  <div class="pagination">
+  
+    <a href="https://wamisnet.github.io/blog/2020-07-25-buzzer/" class="button"><div class="previous"><div>残機が 1up できそうな音を鳴らしてみた</div></div></a>
+  
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-26-chin_up_program/">【おうちハック】【プログラム編】筋トレしないとお家に入れないようにしてみた【筋トレハック】</a></h2>
+          <time class="published" datetime="">2020-07-26</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-25-buzzer/">残機が 1up できそうな音を鳴らしてみた</a></h2>
+          <time class="published" datetime="">2020-07-24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://wamisnet.github.io/blog/2020-07-19-obniz_powerchecker/" class="image featured">
+    <img src="https://wamisnet.github.io/img/blog/chart.png" alt="">
+  </a>
+
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-19-obniz_powerchecker/">太陽光発電の遠隔監視システムを簡単につくってみた</a></h2>
+          <time class="published" datetime="">2020-07-19</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-14-esp32-backtrace/">開発時以外でESP32のシリアルログからバックトレースする方法</a></h2>
+          <time class="published" datetime="">2020-07-14</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://wamisnet.github.io/blog/2020-07-11-wi_sun/" class="image featured">
+    <img src="https://wamisnet.github.io/img/blog/iot%E9%80%9A%E4%BF%A1%E6%8A%80%E8%A1%93%E6%AF%94%E8%BC%83.png" alt="">
+  </a>
+
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-11-wi_sun/">Wi-SUNについてしらべてみた</a></h2>
+          <time class="published" datetime="">2020-07-10</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-07-saml11_started/">ArmマイコンのSAML11を触り始めた</a></h2>
+          <time class="published" datetime="">2020-07-06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://wamisnet.github.io/blog/2020-07-05-hugo_shortcode/" class="image featured">
+    <img src="https://wamisnet.github.io/img/blog/linkcard.jpg" alt="HugoのShortcodeでLinkCardを作成">
+  </a>
+
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-05-hugo_shortcode/">HugoのShortcodeを活用してみた</a></h2>
+          <time class="published" datetime="">2020-07-05</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="https://wamisnet.github.io/blog/2020-07-05-site_info/">このサイトの構成について</a></h2>
+          <time class="published" datetime="">2020-07-04</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="https://wamisnet.github.io/blog/" class="button">続きを見る</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://wamisnet.github.io/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nefry/">nefry<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/obniz/">obniz<span class="count">7</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp32/">esp32<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99/">説明資料<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot/">iot<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86/">リンク集<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp8266/">esp8266<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/arduino/">arduino<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/firebase/">firebase<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/flutter/">flutter<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/">作品<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E7%84%A1%E7%B7%9Alan/">無線lan<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azureiothub/">azureiothub<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/esp-idf/">esp-idf<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/hugo/">hugo<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/">iot可視化ツールレビュー<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/nodered/">nodered<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/unibo/">unibo<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/">スマートロック<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/">技術書典<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E6%9C%AC/">本<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/azure/">azure<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/bg96/">bg96<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/circleci/">circleci<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/cocoabit/">cocoabit<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/javascript/">javascript<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/m5stickc/">m5stickc<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/monacoin/">monacoin<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/netlifycms/">netlifycms<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/react/">react<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/saml11/">saml11<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/serverless/">serverless<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/shortcode/">shortcode<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/ssd1306/">ssd1306<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/wi-sun/">wi-sun<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%81%8A%E3%81%86%E3%81%A1%E3%83%8F%E3%83%83%E3%82%AF/">おうちハック<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/">イベント<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/">ポートフォリオ<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/">勉強会<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB/">太陽光発電<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E8%A8%98%E4%BA%8B/">記事<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/">退職エントリ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人<br>やってること<br>・ IoTデバイスNefryシリーズの開発、販売<br>・ 基板やファームを含むハードウエアやWeb、Androidアプリの受託開発<br>・ 専門学校やハンズオンなどの講師<br>・「同人ハードウェアmeetup」 #dhwmu や名古屋版IoTLTなどイベントの主催</p>
+      <footer>
+        <a href="https://wamisnet.github.io/about" class="button">もっと知る</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/wamisnet" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/wamisnet" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:wamiwami@live.jp" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        わみめも
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.74.3' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://wamisnet.github.io/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.31224010c6a183ff135369ca15ae671b02a26296a0507f2b674d4ecd086b11da.js" integrity="sha256-MSJAEMahg/8TU2nKFa5nGwKiYpagUH8rZ01OzQhrEdo="></script>
+    <script src="https://wamisnet.github.io/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62256925-7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

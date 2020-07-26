@@ -6,10 +6,35 @@
     <description>Recent content in iot on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 07 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 07:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/tags/iot/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>【おうちハック】【プログラム編】筋トレしないとお家に入れないようにしてみた【筋トレハック】</title>
+      <link>https://wamisnet.github.io/blog/2020-07-26-chin_up_program/</link>
+      <pubDate>Sun, 26 Jul 2020 07:00:00 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2020-07-26-chin_up_program/</guid>
+      <description>こんにちは！わみ(@wamisnet)です。
+私の住んでるシェアハウス、入り口にチンニングバーがあって10回懸垂しないと家に入れない仕組みになってるんですよ、逆に10回懸垂すれば誰でも入れるのでぜひ、ギークハウス新宿ってところです pic.twitter.com/ykQcSFxvdK
+&amp;mdash; ウルトラ天丼パラダイス (@otinpoloniex) July 21, 2020  【懸垂しないと家に入れないお家】 そんなおかしなアイデアをテクノロジーで実現させちゃったお話です。
+この記事は裏話的なプログラム編として、どんな風にこれができているのか紹介していきます。
+どんなものを作ったのかは下記の記事をご覧ください！
+ https://qiita.com/wamisnet/items/c7fc9215a4aa4dbe0d08    プログラム解説 さて、早速ですがプログラムの説明をしていきましょう。
+ハードウエア コード全体については下記のリンクよりご覧ください。
+https://github.com/wamisnet/chin-up-counter/blob/master/chin-up-counter.ino
+Arduinoのライブラリを活用して距離センサーを使用します。
+Arduinoはいろんなセンサーのライブラリが多数あるのがとても便利ですね。
+後で出てくる「obniz」は簡単にIoTをつくることができるのですが、対応しているセンサーはそれなりにあり、普段使うようなセンサーなどは簡単に扱えるようになっています。
+ただ、対応していないセンサーについては、少々obnizの知識が必要になるので、ちょっと開発が面倒です。
+その欠陥も、今回使用している「obniz plug-in」ではArduinoのメリットとobnizのメリットをどっちも使うことができるんです！
+そんなわけで、これからの説明でメインとなるのは、obniz plug-inの説明になります。
+obniz plug-inをつかった初めての解説記事かもしれません？
+データの受信 void onCommand(uint8_t* data, uint16_t length) {if (length &amp;gt; 2 &amp;amp;&amp;amp; data[0] == &#39;m&#39; &amp;amp;&amp;amp; data[1] == &#39;d&#39; &amp;amp;&amp;amp; data[1] == &#39;c&#39;) {count_clear();} else {chin_up_finish = data[0];}} まず受信する関数を用意します。
+obniz.commandReceive(onCommand); obniz.commandReceive関数の引数に、先ほど用意した関数名を入れます。これでコマンドを受け取ったら上記の関数名の関数が呼び出され処理します。</description>
+    </item>
     
     <item>
       <title>IoT的シェアハウスのすすめ</title>
