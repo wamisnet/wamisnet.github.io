@@ -6,15 +6,15 @@
     <description>Recent content in obniz on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 26 Jul 2020 07:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2020 11:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/categories/obniz/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>【おうちハック】【プログラム編】筋トレしないとお家に入れないようにしてみた【筋トレハック】</title>
+      <title>ダイエットを続けるために玄関で懸垂しないと家の鍵が開かない仕組みを爆速でつくってみた【プログラム編】</title>
       <link>https://wamisnet.github.io/blog/2020-07-26-chin_up_program/</link>
-      <pubDate>Sun, 26 Jul 2020 07:00:00 +0000</pubDate>
+      <pubDate>Thu, 30 Jul 2020 11:00:00 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/2020-07-26-chin_up_program/</guid>
       <description>こんにちは！わみ(@wamisnet)です。
@@ -22,7 +22,10 @@
 &amp;mdash; ウルトラ天丼パラダイス (@otinpoloniex) July 21, 2020  【懸垂しないと家に入れないお家】 そんなおかしなアイデアをテクノロジーで実現させちゃったお話です。
 この記事は裏話的なプログラム編として、どんな風にこれができているのか紹介していきます。
 どんなものを作ったのかは下記の記事をご覧ください！
- https://qiita.com/wamisnet/items/c7fc9215a4aa4dbe0d08    プログラム解説 さて、早速ですがプログラムの説明をしていきましょう。
+ダイエットを続けるために玄関で懸垂しないと家の鍵が開かない仕組みを爆速でつくってみた - Qiita  こんにちは！わみ(@wamisnet)です。 ダイエットって続かないですよね… みんな続けられてたらライザップみたいなものはないので同志はいっぱいいると思います（思いたい そんなことをふんわりとおもっていたらこんなツイートを...  https://qiita.com/wamisnet/items/ebba2b90e0a9e3a62233     つくったもの ダイエットを頑張れないあなたに！
+筋トレしないと玄関の鍵が開かないシステム作ってみた
+いいねとかRTで広めてくれると次とか作るときの励みになるのでお願いします！！#ダイエット #筋トレハック pic.twitter.com/P4hNkEJUVj
+&amp;mdash; わみ (@wamisnet) July 30, 2020  プログラム解説 さて、早速ですがプログラムの説明をしていきましょう。
 ハードウエア コード全体については下記のリンクよりご覧ください。
 https://github.com/wamisnet/chin-up-counter/blob/master/chin-up-counter.ino
 Arduinoのライブラリを活用して距離センサーを使用します。
@@ -32,8 +35,7 @@ Arduinoはいろんなセンサーのライブラリが多数あるのがとて�
 その欠陥も、今回使用している「obniz plug-in」ではArduinoのメリットとobnizのメリットをどっちも使うことができるんです！
 そんなわけで、これからの説明でメインとなるのは、obniz plug-inの説明になります。
 obniz plug-inをつかった初めての解説記事かもしれません？
-データの受信 void onCommand(uint8_t* data, uint16_t length) {if (length &amp;gt; 2 &amp;amp;&amp;amp; data[0] == &#39;m&#39; &amp;amp;&amp;amp; data[1] == &#39;d&#39; &amp;amp;&amp;amp; data[1] == &#39;c&#39;) {count_clear();} else {chin_up_finish = data[0];}} まず受信する関数を用意します。
-obniz.commandReceive(onCommand); obniz.commandReceive関数の引数に、先ほど用意した関数名を入れます。これでコマンドを受け取ったら上記の関数名の関数が呼び出され処理します。</description>
+データの受信 void onCommand(uint8_t* data, uint16_t length) {if (length &amp;gt; 2 &amp;amp;&amp;amp; data[0] == &#39;m&#39; &amp;amp;&amp;amp; data[1] == &#39;d&#39; &amp;amp;&amp;amp; data[1] == &#39;c&#39;) {count_clear();} else {chin_up_finish = data[0];}} まず受信する関数を用意します。</description>
     </item>
     
     <item>
