@@ -6,10 +6,19 @@
     <description>Recent content in Tags on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 30 Jul 2020 11:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 09:25:22 +0000</lastBuildDate>
     
 	<atom:link href="https://wamisnet.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>退職エントリー</title>
+      <link>https://wamisnet.github.io/tags/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC/</link>
+      <pubDate>Wed, 02 Sep 2020 09:25:22 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/tags/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>esp32</title>

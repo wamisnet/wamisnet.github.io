@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>退職エントリー on わみめも</title>
+    <link>https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC/</link>
+    <description>Recent content in 退職エントリー on わみめも</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 02 Sep 2020 09:25:22 +0000</lastBuildDate>
+    
+	<atom:link href="https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>退職エントリー &#43; 会社をつくりました！</title>
+      <link>https://wamisnet.github.io/blog/2020-09-02-create_hirameq/</link>
+      <pubDate>Wed, 02 Sep 2020 09:25:22 +0000</pubDate>
+      
+      <guid>https://wamisnet.github.io/blog/2020-09-02-create_hirameq/</guid>
+      <description>退職エントリー お久しぶりです、わみです。
+世界に大きな変化が起こっているさなか、私もちょっと変化を起こしてみようと思います。
+そんなわけで、去年の8月から正社員として働き始めたCambrianroboticsを8月末で退職します。
+2度目の退職エントリーになります。
+以前の退職エントリーは下記の通りです。
+ロボットからobnizをつくりにいきます！「退職エントリ」  ロボットからobnizに転職するきっかけと今までなにをしてたかまとめました  https://wamisnet.github.io/blog/jobchange/     よろしければご覧ください！！
+Cambrianroboticsでのお仕事内容 さて転職して何をしていたのか簡単に思い返していきます。
+基本的にはファームウェアの開発をメインに行っていました。
+関連するものであればobniz.jsのコードの作成もしていました。
+obniz/obniz  obniz SDK for javascript. Contribute to obniz/obniz development by creating an account on GitHub.  https://github.com/obniz/obniz/graphs/contributors     obniz.jsのコミットを見るとそれなりにコミットしているのがわかるかと思います。
+他には、obniz Starter Kitという入門キットの開発やプラグインの開発をさせてもらったりしました。
+1年と1ヶ月という短い期間でしたが、いろんなことを経験できました。
+私以外の評価として少しでも貢献できていたとなっていたらうれしいですね。
+退職のきっかけ 最近複数の受託案件を個人的にいただいて、開発して納品を何件か行ってきました。
+その中でさまざまな可能性を感じ、それを私の時間をかけて大きく育てていくことができるのではないかと考えるようになりました。
+例えば、山間部に獣を検知したら連動して複数デバイスが稼働し、音の壁を作ることで獣が山から下りてこれないようにする基板とファームウェアの開発を行いました。
+これは福井にある仁愛大学とexMediaさんで共同して研究されているものなのですが、正社員をしている合間になかなか福井の実証実験が気になったとしても時間を割くことができず歯痒い思いをしました。
+正社員ではなく個人で活動できる時間を増やすことができれば、このようなことがあっても調整することができるのではと考えることがありました。
+また、この時期にありがたいことに最近複数の案件をいただけたり、売上も上がり、その踏ん切りをつけるタイミングなのでは？と思いこの夏に新しく独立してみようと決めました。
+これからのこと デバイスを開発していて少なくとも法人でないと取引できないところが複数でてきたので、9月中に法人を作成する予定です。
+法人というものを一度作ってみたかったのでいいきっかけかなと思っています。
+会社名は、合同会社HirameQ（ひらめく）です。
+ 「それぞれが持つアイデアはとても素晴らしく、ワクワクすること、楽しいこと、新しいことがひらめき、未来を拓いていくような世界をつくるためにサポートをする会社」
+ 上の言葉をテーマにやっていきます。
+これからどうなるか全くわからない世界ですが、そんな中でも楽しいことをできたらなと思っています。
+そんなわけでこれから独立してやっていくので気軽に相談していただけると助かります！
+大体こんなことなら対応できるよってことを書いておきます。
+ そもそもこういうのを作りたいんだけどという相談 IoTデバイスの相談 ハードウエアの開発 ソフトウエア（Web、Android）の開発  割と最近は工場系のものをよくやっていますが、今はこれといったものに絞るよりいろんな可能性を増やしたいので、いろんな話が聞けるととてもうれしいです。</description>
+    </item>
+    
+  </channel>
+</rss>
