@@ -6,11 +6,7 @@
     <description>Recent content in SAML11 on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 06 Jul 2020 16:45:05 +0000</lastBuildDate>
-    
-	<atom:link href="https://wamisnet.github.io/categories/saml11/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 06 Jul 2020 16:45:05 +0000</lastBuildDate><atom:link href="https://wamisnet.github.io/categories/saml11/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ArmマイコンのSAML11を触り始めた</title>
       <link>https://wamisnet.github.io/blog/2020-07-07-saml11_started/</link>

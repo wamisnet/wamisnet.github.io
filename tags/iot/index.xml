@@ -6,11 +6,7 @@
     <description>Recent content in iot on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 30 Jul 2020 11:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://wamisnet.github.io/tags/iot/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 30 Jul 2020 11:00:00 +0000</lastBuildDate><atom:link href="https://wamisnet.github.io/tags/iot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ダイエットを続けるために玄関で懸垂しないと家の鍵が開かない仕組みを爆速でつくってみた【プログラム編】</title>
       <link>https://wamisnet.github.io/blog/2020-07-26-chin_up_program/</link>
@@ -19,7 +15,7 @@
       <guid>https://wamisnet.github.io/blog/2020-07-26-chin_up_program/</guid>
       <description>こんにちは！わみ(@wamisnet)です。
 私の住んでるシェアハウス、入り口にチンニングバーがあって10回懸垂しないと家に入れない仕組みになってるんですよ、逆に10回懸垂すれば誰でも入れるのでぜひ、ギークハウス新宿ってところです pic.twitter.com/ykQcSFxvdK
-&amp;mdash; ウルトラ天丼パラダイス (@otinpoloniex) July 21, 2020  【懸垂しないと家に入れないお家】 そんなおかしなアイデアをテクノロジーで実現させちゃったお話です。
+&amp;mdash; awa (@VITAMIN_DOSUKOI) July 21, 2020  【懸垂しないと家に入れないお家】 そんなおかしなアイデアをテクノロジーで実現させちゃったお話です。
 この記事は裏話的なプログラム編として、どんな風にこれができているのか紹介していきます。
 どんなものを作ったのかは下記の記事をご覧ください！
 ダイエットを続けるために玄関で懸垂しないと家の鍵が開かない仕組みを爆速でつくってみた - Qiita  こんにちは！わみ(@wamisnet)です。 ダイエットって続かないですよね… みんな続けられてたらライザップみたいなものはないので同志はいっぱいいると思います（思いたい そんなことをふんわりとおもっていたらこんなツイートを...  https://qiita.com/wamisnet/items/ebba2b90e0a9e3a62233     つくったもの ダイエットを頑張れないあなたに！
@@ -103,10 +99,13 @@ IoTによるモニタリング 家庭編 家で考えるモニタリング
 スマートロック セサミ スマートロック | CANDY HOUSE JAPAN  あなたは家を出る時に何を持つ?鍵、財布、スマホ...?「SESAME(セサミ)」はスマホで家の鍵を開閉出来るスマートロックです。取付も簡単で鍵も簡単にシェア。Google HomeやAlexa、IFTTT対応で可能性は無限大！あなたの暮らしにセサミを。By キャンディハウス  https://jp.candyhouse.co/    CANDY HOUSE SESAME mini
 いろいろと数あるスマートロックだが、（家庭向けのデバイスでは）他社製品と比べAPIで開錠で開錠できる特徴が一押し。
 スマートロックの誰の開閉かログをとったり、ゲストに開閉権限を渡すなど基礎的な機能も十分。
-室温管理 Create a Connected Home  Discover connected home devices from Nest – thermostats, indoor and outdoor security cameras, smoke and carbon monoxide alarm, security system, video doorbell and more.  https://nest.com/     nest
+室温管理 Google Nest Connected Home  Command the thoughtful devices that connect your home.  https://nest.com/     nest
 日本では多くありませんが、海外に多くある家まるごと温度をコントロールするもの。
 人の有無を学習し、意識せずに効率よく扱えるようになるのがIoTとして優秀だと思います。
-窓管理 戸締り安心システム「ミモット」 | YKK AP株式会社  戸締り安心システム「ミモット」は、窓やドアの鍵の締め忘れをスマートフォンにお知らせする商品です。  https://www.</description>
+窓管理 戸締り安心システム「ミモット」 | YKK AP株式会社  窓やドアの鍵の締め忘れをスマートフォンにお知らせする戸締り安心システム「ミモット」のご紹介です。窓とドア、インテリアからエクステリアまで、住空間を快適に創造するYKK AP。「ミモット」のトップページです。  https://www.ykkap.co.jp/products/window/mimott/     YKK AP株式会社 ミモット
+窓の閉め忘れを無くすことができるデバイス。技術屋としては、電池レスなのがポイントが高い。
+うっかりミスを防ぐことは難しいのでこういったデバイスが普及するとよい。
+睡眠  https://www.</description>
     </item>
     
   </channel>

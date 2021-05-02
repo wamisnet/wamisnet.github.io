@@ -6,11 +6,7 @@
     <description>Recent content in nefry on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 20 Aug 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://wamisnet.github.io/categories/nefry/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 20 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://wamisnet.github.io/categories/nefry/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>obniz OSをESP32(NefryBT)に入れて動かそう！</title>
       <link>https://wamisnet.github.io/blog/2019-08-20-obniz_install_nefry/</link>

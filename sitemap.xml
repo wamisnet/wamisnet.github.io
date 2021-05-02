@@ -1,769 +1,472 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>https://wamisnet.github.io/blog/2021-05-02-25%E6%AD%B3%E3%81%AE%E8%AA%95%E7%94%9F%E6%97%A5%E3%82%92%E8%BF%8E%E3%81%88%E3%81%9F%E3%81%AE%E3%81%A7%E4%B8%80%E5%B9%B4%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A/</loc>
+    <lastmod>2021-05-02T07:12:37+00:00</lastmod>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/</loc>
-    <lastmod>2020-09-02T09:25:22+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-05-02T07:12:37+00:00</lastmod>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/</loc>
-    <lastmod>2020-09-02T09:25:22+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-05-02T07:12:37+00:00</lastmod>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/</loc>
-    <lastmod>2020-09-02T09:25:22+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-05-02T07:12:37+00:00</lastmod>
+  </url><url>
     <loc>https://wamisnet.github.io/</loc>
-    <lastmod>2020-09-02T09:25:22+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-05-02T07:12:37+00:00</lastmod>
+  </url><url>
+    <loc>https://wamisnet.github.io/tags/%E4%B8%80%E5%B9%B4%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A/</loc>
+    <lastmod>2021-05-02T07:12:37+00:00</lastmod>
+  </url><url>
+    <loc>https://wamisnet.github.io/categories/%E4%B8%80%E5%B9%B4%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A/</loc>
+    <lastmod>2021-05-02T07:12:37+00:00</lastmod>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC/</loc>
     <lastmod>2020-09-02T09:25:22+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC/</loc>
     <lastmod>2020-09-02T09:25:22+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2020-09-02-create_hirameq/</loc>
     <lastmod>2020-09-02T09:25:22+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/esp32/</loc>
     <lastmod>2020-07-30T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/esp32/</loc>
     <lastmod>2020-07-30T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/iot/</loc>
     <lastmod>2020-07-30T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/iot/</loc>
     <lastmod>2020-07-30T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/obniz/</loc>
     <lastmod>2020-07-30T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/obniz/</loc>
     <lastmod>2020-07-30T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E3%81%8A%E3%81%86%E3%81%A1%E3%83%8F%E3%83%83%E3%82%AF/</loc>
     <lastmod>2020-07-30T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E3%81%8A%E3%81%86%E3%81%A1%E3%83%8F%E3%83%83%E3%82%AF/</loc>
     <lastmod>2020-07-30T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2020-07-26-chin_up_program/</loc>
     <lastmod>2020-07-30T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2020-07-25-buzzer/</loc>
     <lastmod>2020-07-24T16:41:21+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/javascript/</loc>
     <lastmod>2020-07-19T07:44:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/javascript/</loc>
     <lastmod>2020-07-19T07:44:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB/</loc>
     <lastmod>2020-07-19T07:44:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB/</loc>
     <lastmod>2020-07-19T07:44:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2020-07-19-obniz_powerchecker/</loc>
     <lastmod>2020-07-19T07:44:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2020-07-14-esp32-backtrace/</loc>
     <lastmod>2020-07-14T06:45:39+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/wi-sun/</loc>
     <lastmod>2020-07-10T17:15:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/wi-sun/</loc>
     <lastmod>2020-07-10T17:15:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2020-07-11-wi_sun/</loc>
     <lastmod>2020-07-10T17:15:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2020-07-07-saml11_started/</loc>
     <lastmod>2020-07-06T16:45:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/saml11/</loc>
     <lastmod>2020-07-06T16:45:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/saml11/</loc>
     <lastmod>2020-07-06T16:45:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/hugo/</loc>
     <lastmod>2020-07-05T05:59:12+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/hugo/</loc>
     <lastmod>2020-07-05T05:59:12+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2020-07-05-hugo_shortcode/</loc>
     <lastmod>2020-07-05T05:59:12+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/shortcode/</loc>
     <lastmod>2020-07-05T05:59:12+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/shortcode/</loc>
     <lastmod>2020-07-05T05:59:12+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/circleci/</loc>
     <lastmod>2020-07-04T15:01:35+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/circleci/</loc>
     <lastmod>2020-07-04T15:01:35+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2020-07-05-site_info/</loc>
     <lastmod>2020-07-04T15:01:35+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/firebase/</loc>
     <lastmod>2020-07-03T14:54:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/firebase_login/</loc>
     <lastmod>2020-07-03T14:54:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/netlifycms/</loc>
     <lastmod>2020-07-03T12:24:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/netlifycms/</loc>
     <lastmod>2020-07-03T12:24:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2020-07-03-netlifycms/</loc>
     <lastmod>2020-07-03T12:24:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2020-01-03-smartlock/</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF/</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-12-14-obniz_eddystone/</loc>
     <lastmod>2019-12-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/iot_sharehouse/</loc>
     <lastmod>2019-12-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-11-27-obniz_serverless/</loc>
     <lastmod>2019-11-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/serverless/</loc>
     <lastmod>2019-11-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/serverless/</loc>
     <lastmod>2019-11-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/bg96/</loc>
     <lastmod>2019-10-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/bg96/</loc>
     <lastmod>2019-10-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-10-11-bg96_link/</loc>
     <lastmod>2019-10-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86/</loc>
     <lastmod>2019-10-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86/</loc>
     <lastmod>2019-10-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-08-27_smartlock/</loc>
     <lastmod>2019-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/nefry/</loc>
     <lastmod>2019-08-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/nefry/</loc>
     <lastmod>2019-08-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-08-20-obniz_install_nefry/</loc>
     <lastmod>2019-08-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/react/</loc>
     <lastmod>2019-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/react/</loc>
     <lastmod>2019-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-07-26-regi/</loc>
     <lastmod>2019-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E4%BD%9C%E5%93%81/</loc>
     <lastmod>2019-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E4%BD%9C%E5%93%81/</loc>
     <lastmod>2019-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/esp-idf/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/esp-idf/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-07-17-esp32-chip/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/m5stickc/</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/m5stickc/</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-07-10-m5stick/</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/jobchange/</loc>
     <lastmod>2019-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/</loc>
     <lastmod>2019-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E9%80%80%E8%81%B7%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA/</loc>
     <lastmod>2019-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-07-03-esp32board/</loc>
     <lastmod>2019-07-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/</loc>
     <lastmod>2019-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/iot%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/</loc>
     <lastmod>2019-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-06-27-thingspeak/</loc>
     <lastmod>2019-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-06-27-thinger/</loc>
     <lastmod>2019-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-06-14-iot_monitoring_link/</loc>
     <lastmod>2019-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/nodered/</loc>
     <lastmod>2019-01-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/nodered/</loc>
     <lastmod>2019-01-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-01-27-nodered_redirect/</loc>
     <lastmod>2019-01-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E8%A8%98%E4%BA%8B/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E8%A8%98%E4%BA%8B/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-01-11-writer_editer_link/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-01-09-portfolio/</loc>
     <lastmod>2019-01-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/</loc>
     <lastmod>2019-01-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA/</loc>
     <lastmod>2019-01-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/flutter/</loc>
     <lastmod>2018-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/flutter/</loc>
     <lastmod>2018-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/flutter_meetup_tokyo_5/</loc>
     <lastmod>2018-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/</loc>
     <lastmod>2018-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/</loc>
     <lastmod>2018-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/firebase/</loc>
     <lastmod>2018-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/</loc>
     <lastmod>2018-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/</loc>
     <lastmod>2018-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B85/</loc>
     <lastmod>2018-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/techbooks5/</loc>
     <lastmod>2018-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E6%9C%AC/</loc>
     <lastmod>2018-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E6%9C%AC/</loc>
     <lastmod>2018-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/nefry_cake/</loc>
     <lastmod>2018-10-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/nefry_tips_2018_08_28/</loc>
     <lastmod>2018-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E7%84%A1%E7%B7%9Alan/</loc>
     <lastmod>2018-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E7%84%A1%E7%B7%9Alan/</loc>
     <lastmod>2018-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/nefry-bt/</loc>
     <lastmod>2018-08-14T02:45:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/nefry_firebase_repo/</loc>
     <lastmod>2018-08-14T02:45:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/study_mokumoku_8_11/</loc>
     <lastmod>2018-08-12T01:27:19+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E5%8B%89%E5%BC%B7%E4%BC%9A/</loc>
     <lastmod>2018-08-12T01:27:19+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E5%8B%89%E5%BC%B7%E4%BC%9A/</loc>
     <lastmod>2018-08-12T01:27:19+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/nefry_ug_2/</loc>
     <lastmod>2018-08-11T00:40:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/about/</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/business/</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/newsite/</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/nefry_ug_1/</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/itemized/</loc>
     <lastmod>2018-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/itemized/nefry/</loc>
     <lastmod>2018-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/itemized/sofmo/</loc>
     <lastmod>2018-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/itemized/motor/</loc>
     <lastmod>2018-08-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/itemized/usbtypec/</loc>
     <lastmod>2018-08-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/monacoin/</loc>
     <lastmod>2017-12-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/monacoin/</loc>
     <lastmod>2017-12-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2019-11-27-zaif/</loc>
     <lastmod>2017-12-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2017-12-25-nefry_talk/</loc>
     <lastmod>2017-12-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/ssd1306/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/ssd1306/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2017-06-11-ssd1306-image/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/unibo/</loc>
     <lastmod>2017-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/unibo/</loc>
     <lastmod>2017-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2017-05-11-unibo_ifttt/</loc>
     <lastmod>2017-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/azureiothub/</loc>
     <lastmod>2017-05-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/azureiothub/</loc>
     <lastmod>2017-05-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2017-05-10-unibo_iothub/</loc>
     <lastmod>2017-05-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2017-02-22-grove/</loc>
     <lastmod>2017-02-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2017-02-22-usb/</loc>
     <lastmod>2017-02-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2017-02-22-sensor/</loc>
     <lastmod>2017-02-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2017-02-22-digital_analog/</loc>
     <lastmod>2017-02-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2017-02-22-circite/</loc>
     <lastmod>2017-02-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99/</loc>
     <lastmod>2017-02-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99/</loc>
     <lastmod>2017-02-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/arduino/</loc>
     <lastmod>2016-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/arduino/</loc>
     <lastmod>2016-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/cocoabit/</loc>
     <lastmod>2016-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/cocoabit/</loc>
     <lastmod>2016-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2016-12-21-cocoabit_create/</loc>
     <lastmod>2016-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/esp8266/</loc>
     <lastmod>2016-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/esp8266/</loc>
     <lastmod>2016-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2016-11-01-arduino/</loc>
     <lastmod>2016-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/tags/azure/</loc>
     <lastmod>2016-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/categories/azure/</loc>
     <lastmod>2016-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2016-09-05-azure/</loc>
     <lastmod>2016-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2016-04-27-esp8266_staticip/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/blog/2016-04-22-esp8266_wps/</loc>
     <lastmod>2016-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wamisnet.github.io/contact/</loc>
   </url>
-  
 </urlset>

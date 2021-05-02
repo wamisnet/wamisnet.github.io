@@ -6,11 +6,7 @@
     <description>Recent content in hugo on わみめも</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 05 Jul 2020 05:59:12 +0000</lastBuildDate>
-    
-	<atom:link href="https://wamisnet.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 05 Jul 2020 05:59:12 +0000</lastBuildDate><atom:link href="https://wamisnet.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HugoのShortcodeを活用してみた</title>
       <link>https://wamisnet.github.io/blog/2020-07-05-hugo_shortcode/</link>
@@ -18,11 +14,11 @@
       
       <guid>https://wamisnet.github.io/blog/2020-07-05-hugo_shortcode/</guid>
       <description>下記のサイトを参考にshortcodeをつくってみました。
-ショートコード作成の解説 | Hugo 入門 / 解説 | nasust dev blog  こんにちはnasustです。 今回は、Hugoでショートコード作成の解説をします。 ショートコードとは Markdown文章中に {{&amp;lt; ショートコードテ...  https://nasust.com/hugo/tips/shortcode/     Hugoでブログカードに対応する | Hugo 入門 / 解説 | nasust dev blog  こんにちはnasustです。 今回は、Hugoでブログカードに対応する方法を紹介します。 私のもう1つのブログは、はてなブログを使用しています。...  https://nasust.com/hugo/shortcode/blogcard/     2つのshortcodeを追加しました。
+ショートコード作成の解説 | Hugo | nasust dev blog  https://nasust.com/hugo/tips/shortcode/     Hugoでブログカードに対応する | Hugo | nasust dev blog  https://nasust.com/hugo/shortcode/blogcard/     2つのshortcodeを追加しました。
 warning 警告文を出すようのものですね
 warning Warning 各自の環境で同様に動作する保証はありません。   こんなコードを書いたら、上のようにきれいにしてくれちゃうんです。
 {{&amp;lt; warning &amp;gt;}} 各自の環境で同様に動作する保証はありません。 {{&amp;lt; /warning &amp;gt;}} link card リンクですね、Notionみたいに横並びにしようか悩みましたが、縦ならびでもよさそうなので、これで。
-わみめも  NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人のサイト  https://wamisnet.github.io/     {{&amp;lt; linkcard &amp;#34;https://wamisnet.</description>
+わみめも  NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人のサイト  https://wamisnet.github.io/     {{&amp;lt; linkcard &amp;#34;https://wamisnet.github.io/&amp;#34;&amp;gt;}} ちょっとの一工夫でいい感じにできるのはとても便利ですね</description>
     </item>
     
     <item>
