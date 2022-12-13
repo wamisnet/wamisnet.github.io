@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "dependencies": {
     "cheerio-httpcli": "^0.8.1",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   }
 }
