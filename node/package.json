@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "1.0.0",
   "dependencies": {
-    "cheerio-httpcli": "^0.8.1",
-    "express": "^4.17.1"
+    "cheerio-httpcli": "^0.8.3",
+    "express": "^4.19.2"
   }
 }
