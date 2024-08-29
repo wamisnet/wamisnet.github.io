@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.83.0" /><meta itemprop="name" content="開発時以外でESP32のシリアルログからバックトレースする方法">
-<meta itemprop="description" content="ESP32の環境では、開発時は勝手にバックトレースしてどこのコードか教えてくれますが、その時以外の方法を残しておきます"><meta itemprop="datePublished" content="2020-07-14T06:45:39&#43;00:00" />
-<meta itemprop="dateModified" content="2020-07-14T06:45:39&#43;00:00" />
-<meta itemprop="wordCount" content="130"><meta itemprop="image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
+<meta name="generator" content="Hugo 0.96.0" /><meta itemprop="name" content="開発時以外でESP32のシリアルログからバックトレースする方法">
+<meta itemprop="description" content="ESP32の環境では、開発時は勝手にバックトレースしてどこのコードか教えてくれますが、その時以外の方法を残しておきます"><meta itemprop="datePublished" content="2020-07-14T06:45:39+00:00" />
+<meta itemprop="dateModified" content="2020-07-14T06:45:39+00:00" />
+<meta itemprop="wordCount" content="119"><meta itemprop="image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
 <meta itemprop="keywords" content="esp32," /><meta property="og:title" content="開発時以外でESP32のシリアルログからバックトレースする方法" />
 <meta property="og:description" content="ESP32の環境では、開発時は勝手にバックトレースしてどこのコードか教えてくれますが、その時以外の方法を残しておきます" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wamisnet.github.io/blog/2020-07-14-esp32-backtrace/" /><meta property="og:image" content="https://wamisnet.github.io/img/main/wami.jpg"/><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2020-07-14T06:45:39&#43;00:00" />
-<meta property="article:modified_time" content="2020-07-14T06:45:39&#43;00:00" />
+<meta property="article:published_time" content="2020-07-14T06:45:39+00:00" />
+<meta property="article:modified_time" content="2020-07-14T06:45:39+00:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
@@ -211,10 +211,10 @@
 
 
 
-<a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-monitor.html">
+<a href="">
     <div class="card link-card">
         <div class="link-card__title">
-            IDF Monitor - ESP32 -  — ESP-IDF Programming Guide latest documentation
+            
         </div>
         
         <div class="link-card__site_url">
@@ -226,7 +226,7 @@
 
 
 <p>ESP32ではエラーがでるとこんな感じのログが吐かれます。</p>
-<pre><code>Guru Meditation Error of type StoreProhibited occurred on core  0. Exception was unhandled.
+<pre tabindex="0"><code>Guru Meditation Error of type StoreProhibited occurred on core  0. Exception was unhandled.
 Register dump:
 PC      : 0x400f360d  PS      : 0x00060330  A0      : 0x800dbf56  A1      : 0x3ffb7e00
 A2      : 0x3ffb136c  A3      : 0x00000005  A4      : 0x00000000  A5      : 0x00000000
@@ -237,12 +237,12 @@ EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00
 
 Backtrace: 0x400f360d:0x3ffb7e00 0x400dbf56:0x3ffb7e20 0x400dbf5e:0x3ffb7e40 0x400dbf82:0x3ffb7e60 0x400d071d:0x3ffb7e90
 </code></pre><p>この部分をバックトレースします。</p>
-<pre><code>Backtrace: 0x400f360d:0x3ffb7e00 0x400dbf56:0x3ffb7e20 0x400dbf5e:0x3ffb7e40 0x400dbf82:0x3ffb7e60 0x400d071d:0x3ffb7e90
+<pre tabindex="0"><code>Backtrace: 0x400f360d:0x3ffb7e00 0x400dbf56:0x3ffb7e20 0x400dbf5e:0x3ffb7e40 0x400dbf82:0x3ffb7e60 0x400d071d:0x3ffb7e90
 </code></pre><p><code>0x400f360d:0x3ffb7e00</code> , <code>0x400dbf56:0x3ffb7e20</code> 2つで一つのアドレスデータになっています。</p>
 <p>ビルドしたときの<code>elf</code>ファイルを用意し、先ほどのアドレスを下記のコマンドのように入れコマンドを実行するとバックトレースされます</p>
-<pre><code>xtensa-esp32-elf-addr2line -pfiaC -e arduino.elf 0x400f360d:0x3ffb7e00
+<pre tabindex="0"><code>xtensa-esp32-elf-addr2line -pfiaC -e arduino.elf 0x400f360d:0x3ffb7e00
 </code></pre><p>こんなふうに応答があり、どこのファイルのどの行なのかを確認できます。</p>
-<pre><code>0x400f360d: nvs::nvs_flash_read(unsigned int, void*, unsigned int) at ...src/nvs_ops.cpp:70
+<pre tabindex="0"><code>0x400f360d: nvs::nvs_flash_read(unsigned int, void*, unsigned int) at ...src/nvs_ops.cpp:70
 </code></pre>
     </div>
     <footer>
@@ -277,7 +277,7 @@ Backtrace: 0x400f360d:0x3ffb7e00 0x400dbf56:0x3ffb7e20 0x400dbf5e:0x3ffb7e40 0x4
   <article class="post">
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -732,13 +732,13 @@ Backtrace: 0x400f360d:0x3ffb7e00 0x400dbf56:0x3ffb7e20 0x400dbf5e:0x3ffb7e40 0x4
         わみめも
       
     . <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.83.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.96.0' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="https://wamisnet.github.io/js/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.336550d8e009c18d720d05dd81e53d04688d26595fc7932aecd4fc25e6ab2da4.js" integrity="sha256-M2VQ2OAJwY1yDQXdgeU9BGiNJllfx5Mq7NT8JearLaQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.4671d4407d6dd33183ab226d17f5ae603de26dd451ec62649354c7ec1b7cf4c7.js" integrity="sha256-RnHUQH1t0zGDqyJtF/WuYD3ibdRR7GJkk1TH7Bt89Mc="></script>
     <script src="https://wamisnet.github.io/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

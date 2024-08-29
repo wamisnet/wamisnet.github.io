@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.83.0" /><meta itemprop="name" content="HugoのShortcodeを活用してみた">
-<meta itemprop="description" content="Hugoにはshortcodeという機能があり簡単な手順で機能を追加できます"><meta itemprop="datePublished" content="2020-07-05T05:59:12&#43;00:00" />
-<meta itemprop="dateModified" content="2020-07-05T05:59:12&#43;00:00" />
-<meta itemprop="wordCount" content="41"><meta itemprop="image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
+<meta name="generator" content="Hugo 0.96.0" /><meta itemprop="name" content="HugoのShortcodeを活用してみた">
+<meta itemprop="description" content="Hugoにはshortcodeという機能があり簡単な手順で機能を追加できます"><meta itemprop="datePublished" content="2020-07-05T05:59:12+00:00" />
+<meta itemprop="dateModified" content="2020-07-05T05:59:12+00:00" />
+<meta itemprop="wordCount" content="25"><meta itemprop="image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
 <meta itemprop="keywords" content="hugo,shortcode," /><meta property="og:title" content="HugoのShortcodeを活用してみた" />
 <meta property="og:description" content="Hugoにはshortcodeという機能があり簡単な手順で機能を追加できます" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wamisnet.github.io/blog/2020-07-05-hugo_shortcode/" /><meta property="og:image" content="https://wamisnet.github.io/img/main/wami.jpg"/><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2020-07-05T05:59:12&#43;00:00" />
-<meta property="article:modified_time" content="2020-07-05T05:59:12&#43;00:00" />
+<meta property="article:published_time" content="2020-07-05T05:59:12+00:00" />
+<meta property="article:modified_time" content="2020-07-05T05:59:12+00:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
@@ -216,18 +216,14 @@
 
 
 
-<a href="https://nasust.com/hugo/1e9f801b-3b6c-40e4-803a-993950f28e8a">
+<a href="">
     <div class="card link-card">
         <div class="link-card__title">
-            ショートコード作成の解説 | Hugo | nasust dev blog
+            
         </div>
         
         <div class="link-card__site_url">
             https://nasust.com/hugo/tips/shortcode/
-        </div>
-        
-        <div class="link-card__eyecache">
-            <img src="https://nasust.com/static/7b1d8743e0f11a5d173431b09ee2ac7d/e642c/hugo_eyecache.png" />
         </div>
         
     </div>
@@ -238,18 +234,14 @@
 
 
 
-<a href="https://nasust.com/hugo/441d661c-139c-4820-ae78-26b7521473bd">
+<a href="">
     <div class="card link-card">
         <div class="link-card__title">
-            Hugoでブログカードに対応する | Hugo | nasust dev blog
+            
         </div>
         
         <div class="link-card__site_url">
             https://nasust.com/hugo/shortcode/blogcard/
-        </div>
-        
-        <div class="link-card__eyecache">
-            <img src="https://nasust.com/static/7b1d8743e0f11a5d173431b09ee2ac7d/e642c/hugo_eyecache.png" />
         </div>
         
     </div>
@@ -267,39 +259,31 @@
 </div>
 
 <p>こんなコードを書いたら、上のようにきれいにしてくれちゃうんです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">{{&lt; warning &gt;}}
-各自の環境で同様に動作する保証はありません。
-{{&lt; /warning &gt;}}
-</code></pre></div><h1 id="link-card">link card</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{{&lt; warning &gt;}}
+</span></span><span style="display:flex;"><span>各自の環境で同様に動作する保証はありません。
+</span></span><span style="display:flex;"><span>{{&lt; /warning &gt;}}
+</span></span></code></pre></div><h1 id="link-card">link card</h1>
 <p>リンクですね、Notionみたいに横並びにしようか悩みましたが、縦ならびでもよさそうなので、これで。</p>
 
 
 
 
-<a href="https://wamisnet.github.io/">
+<a href="">
     <div class="card link-card">
         <div class="link-card__title">
-            わみめも
-        </div>
-        
-        <div class="link-card__description">
-            NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人のサイト
+            
         </div>
         
         <div class="link-card__site_url">
             https://wamisnet.github.io/
         </div>
         
-        <div class="link-card__eyecache">
-            <img src="https://wamisnet.github.io/img/main/wami.jpg" />
-        </div>
-        
     </div>
 </a>
 
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">{{&lt; linkcard &#34;https://wamisnet.github.io/&#34;&gt;}}
-</code></pre></div><p>ちょっとの一工夫でいい感じにできるのはとても便利ですね</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{{&lt; linkcard &#34;https://wamisnet.github.io/&#34;&gt;}}
+</span></span></code></pre></div><p>ちょっとの一工夫でいい感じにできるのはとても便利ですね</p>
 
     </div>
     <footer>
@@ -338,7 +322,7 @@
   <article class="post">
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -793,13 +777,13 @@
         わみめも
       
     . <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.83.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.96.0' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="https://wamisnet.github.io/js/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.336550d8e009c18d720d05dd81e53d04688d26595fc7932aecd4fc25e6ab2da4.js" integrity="sha256-M2VQ2OAJwY1yDQXdgeU9BGiNJllfx5Mq7NT8JearLaQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.4671d4407d6dd33183ab226d17f5ae603de26dd451ec62649354c7ec1b7cf4c7.js" integrity="sha256-RnHUQH1t0zGDqyJtF/WuYD3ibdRR7GJkk1TH7Bt89Mc="></script>
     <script src="https://wamisnet.github.io/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

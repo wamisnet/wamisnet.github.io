@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.83.0" /><meta itemprop="name" content="Azure IoT HubをESP8266で使おう！">
-<meta itemprop="description" content="Azure IoT HubをESP8266で使おう！"><meta itemprop="datePublished" content="2016-09-05T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2016-09-05T00:00:00&#43;00:00" />
+<meta name="generator" content="Hugo 0.96.0" /><meta itemprop="name" content="Azure IoT HubをESP8266で使おう！">
+<meta itemprop="description" content="Azure IoT HubをESP8266で使おう！"><meta itemprop="datePublished" content="2016-09-05T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-09-05T00:00:00+00:00" />
 <meta itemprop="wordCount" content="188"><meta itemprop="image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
 <meta itemprop="keywords" content="Azure,ESP8266,nefry,AzureIoTHub," /><meta property="og:title" content="Azure IoT HubをESP8266で使おう！" />
 <meta property="og:description" content="Azure IoT HubをESP8266で使おう！" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wamisnet.github.io/blog/2016-09-05-azure/" /><meta property="og:image" content="https://wamisnet.github.io/img/main/wami.jpg"/><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2016-09-05T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2016-09-05T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2016-09-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-09-05T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
@@ -302,42 +302,42 @@ ManagementからCreateをクリックします。</p>
 Azure.beginには、先ほどDevice Explorerで取得したキーを張り付けてください。
 例：<code>Azure.begin(&quot;HostName=YourHost.azure-devices.net;DeviceId=YourDevice;SharedAccessKey=&quot;);</code>
 注意としては、張り付けたときに両端に**&quot;**(ダブルクォーテーション)を必ずつけてあることを確認してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp:Azure-iothub-mqtt-esp8266.ino" data-lang="cpp:Azure-iothub-mqtt-esp8266.ino">
-  <span style="color:#a6e22e">WiFi</span>.<span style="color:#a6e22e">begin</span>(<span style="color:#e6db74">&#34;SSID&#34;</span>, <span style="color:#e6db74">&#34;PASS&#34;</span>);
-  Azure.<span style="color:#a6e22e">begin</span>(<span style="color:#e6db74">&#34;Your Key&#34;</span>); <span style="color:#75715e">//YourKey Example:&#34;HostName=YourHost.azure-devices.net;DeviceId=YourDevice;SharedAccessKey=&#34;
-</span><span style="color:#75715e"></span> 
-</code></pre></div><p>Azureからのデータの取得はこの関数で行います。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp:Azure-iothub-mqtt-esp8266.ino" data-lang="cpp:Azure-iothub-mqtt-esp8266.ino"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">WiFi</span>.<span style="color:#a6e22e">begin</span>(<span style="color:#e6db74">&#34;SSID&#34;</span>, <span style="color:#e6db74">&#34;PASS&#34;</span>);
+</span></span><span style="display:flex;"><span>  Azure.<span style="color:#a6e22e">begin</span>(<span style="color:#e6db74">&#34;Your Key&#34;</span>); <span style="color:#75715e">//YourKey Example:&#34;HostName=YourHost.azure-devices.net;DeviceId=YourDevice;SharedAccessKey=&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> 
+</span></span></code></pre></div><p>Azureからのデータの取得はこの関数で行います。
 <code>Azure.setCallback(azureCallback);</code>
 このazureCallbackは別で関数宣言してください。引数はStringでAzureから届いたデータを渡されますのでそのデータを活用してみてください。
 サンプルプログラムでは、シリアルで表示するようになっています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp:Azure-iothub-mqtt-esp8266.ino" data-lang="cpp:Azure-iothub-mqtt-esp8266.ino">
-  Azure.setCallback(azureCallback);
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">azureCallback</span>(<span style="color:#66d9ef">String</span> s) {
-  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;azure Message arrived [&#34;</span>);
-  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(s);
-  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;] &#34;</span>);
-}
-</code></pre></div><p>簡単ではありますが、2点を注意して書き換えてください。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp:Azure-iothub-mqtt-esp8266.ino" data-lang="cpp:Azure-iothub-mqtt-esp8266.ino"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Azure.setCallback(azureCallback);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">azureCallback</span>(<span style="color:#66d9ef">String</span> s) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;azure Message arrived [&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(s);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;] &#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>簡単ではありますが、2点を注意して書き換えてください。</p>
 <p><img src="../../img/2016/azure/277_6.png" alt=""></p>
 <p>続いて、loopの中を簡単に解説していきます。</p>
 <p>WiFiに接続できたとき、Azureと通信を開始します。
 <code>Azure.connect()</code>にてAzure IoTHubと接続する処理を行ってます。
 <code>Azure.push(&amp;a);</code>にてAzure IoTHubにデータ送信処理を行ってます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp:Azure-iothub-mqtt-esp8266.ino" data-lang="cpp:Azure-iothub-mqtt-esp8266.ino"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">WiFi</span>.status() <span style="color:#f92672">==</span> WL_CONNECTED) {
-    Azure.<span style="color:#a6e22e">connect</span>();
-    DataElement a <span style="color:#f92672">=</span> DataElement();<span style="color:#75715e">//Azureに送るデータをJsonで作っていきます。
-</span><span style="color:#75715e"></span>    a.setValue(<span style="color:#e6db74">&#34;EspAnalog&#34;</span>, <span style="color:#a6e22e">analogRead</span>(A0));
-    Azure.push(<span style="color:#f92672">&amp;</span>a);
-    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;pushed&#34;</span>);
-    <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">2000</span>);
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Not connected to the Internet&#34;</span>);
-    <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">250</span>);
-  }
-}
-</code></pre></div><h1 id="実際に動かしてみよう">実際に動かしてみよう</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp:Azure-iothub-mqtt-esp8266.ino" data-lang="cpp:Azure-iothub-mqtt-esp8266.ino"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">WiFi</span>.status() <span style="color:#f92672">==</span> WL_CONNECTED) {
+</span></span><span style="display:flex;"><span>    Azure.<span style="color:#a6e22e">connect</span>();
+</span></span><span style="display:flex;"><span>    DataElement a <span style="color:#f92672">=</span> DataElement();<span style="color:#75715e">//Azureに送るデータをJsonで作っていきます。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    a.setValue(<span style="color:#e6db74">&#34;EspAnalog&#34;</span>, <span style="color:#a6e22e">analogRead</span>(A0));
+</span></span><span style="display:flex;"><span>    Azure.push(<span style="color:#f92672">&amp;</span>a);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;pushed&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">2000</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Not connected to the Internet&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">250</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="実際に動かしてみよう">実際に動かしてみよう</h1>
 <h2 id="azureiothubnefry">AzureIoTHub→Nefry</h2>
 <p>これはAzureIoTHub(Device explorer)からNefry(ESP8266が中に入ってる)へデータを送っています。届いたときにLEDが点滅するようになっています。
 そこまでラグなく点滅しているのが見えると思います。</p>
@@ -400,7 +400,7 @@ Azure.beginには、先ほどDevice Explorerで取得したキーを張り付け
   <article class="post">
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -855,13 +855,13 @@ Azure.beginには、先ほどDevice Explorerで取得したキーを張り付け
         わみめも
       
     . <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.83.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.96.0' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="https://wamisnet.github.io/js/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.336550d8e009c18d720d05dd81e53d04688d26595fc7932aecd4fc25e6ab2da4.js" integrity="sha256-M2VQ2OAJwY1yDQXdgeU9BGiNJllfx5Mq7NT8JearLaQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.4671d4407d6dd33183ab226d17f5ae603de26dd451ec62649354c7ec1b7cf4c7.js" integrity="sha256-RnHUQH1t0zGDqyJtF/WuYD3ibdRR7GJkk1TH7Bt89Mc="></script>
     <script src="https://wamisnet.github.io/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

@@ -25,11 +25,11 @@ https://blog.obniz.io/ja/news/obniz-board-1y-2/
 制約事項 11/27現在
  実行できる時間は30秒以内、それ以上は終了される 1日に実行可能な回数は120回  すこし制約はありますが例えばセンサーの値を取得するプログラムであれば12分に1回はデータを貯められます。
 はまりポイント APIを使用したとき 次のようにAPIを使用するときエラーが発生することがあります。
-await fetch(&amp;#39;https://maker.ifttt.com/trigger/obniz_temp/with/key/&amp;#39;, { method: &amp;#39;POST&amp;#39;, mode: &amp;#34;no-cors&amp;#34;, body: formData }).then(()=&amp;gt;console.log(&amp;#34;success&amp;#34;)).catch((error) =&amp;gt; console.log(error)); このときにAPIの呼出し後にawait obniz.wait(1000)をいれるとエラーが発生しなくなります。
+await fetch(&amp;#39;https://maker.ifttt.com/trigger/obniz_temp/with/key/&amp;#39;, {  method: &amp;#39;POST&amp;#39;,  mode: &amp;#34;no-cors&amp;#34;,  body: formData }).then(()=&amp;gt;console.log(&amp;#34;success&amp;#34;)).catch((error) =&amp;gt; console.log(error)); このときにAPIの呼出し後にawait obniz.wait(1000)をいれるとエラーが発生しなくなります。
 Tips 絶対にスリープさせる センサーの値読み取りなど予期しないところでプログラムが停止してしまうなど可能性があります。
 電池稼働しているデバイスではこの問題はクリティカルなので、サーバレスイベントが終了する前にスリープをするようにします。
 （obniz board 1Yでのみ使用可能です。）
-//Timeout 25s let tid = setTimeout(()=&amp;gt;{ let dt = new Date(); dt.setMinutes(Math.floor(dt.getMinutes()/10)*10+10,0,0); obniz.</description>
+ //Timeout 25s let tid = setTimeout(()=&amp;gt;{  let dt = new Date();  dt.</description>
     </item>
     
   </channel>

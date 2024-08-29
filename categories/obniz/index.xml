@@ -18,7 +18,7 @@
 &amp;mdash; awa (@VITAMIN_DOSUKOI) July 21, 2020  【懸垂しないと家に入れないお家】 そんなおかしなアイデアをテクノロジーで実現させちゃったお話です。
 この記事は裏話的なプログラム編として、どんな風にこれができているのか紹介していきます。
 どんなものを作ったのかは下記の記事をご覧ください！
-ダイエットを続けるために玄関で懸垂しないと家の鍵が開かない仕組みを爆速でつくってみた - Qiita  こんにちは！わみ(@wamisnet)です。 ダイエットって続かないですよね… みんな続けられてたらライザップみたいなものはないので同志はいっぱいいると思います（思いたい そんなことをふんわりとおもっていたらこんなツイートを...  https://qiita.com/wamisnet/items/ebba2b90e0a9e3a62233     つくったもの ダイエットを頑張れないあなたに！
+ https://qiita.com/wamisnet/items/ebba2b90e0a9e3a62233    つくったもの ダイエットを頑張れないあなたに！
 筋トレしないと玄関の鍵が開かないシステム作ってみた
 いいねとかRTで広めてくれると次とか作るときの励みになるのでお願いします！！#ダイエット #筋トレハック pic.twitter.com/P4hNkEJUVj
 &amp;mdash; わみ (@wamisnet) July 30, 2020  プログラム解説 さて、早速ですがプログラムの説明をしていきましょう。
@@ -31,7 +31,7 @@ Arduinoはいろんなセンサーのライブラリが多数あるのがとて�
 その欠陥も、今回使用している「obniz plug-in」ではArduinoのメリットとobnizのメリットをどっちも使うことができるんです！
 そんなわけで、これからの説明でメインとなるのは、obniz plug-inの説明になります。
 obniz plug-inをつかった初めての解説記事かもしれません？
-データの受信 void onCommand(uint8_t* data, uint16_t length) {if (length &amp;gt; 2 &amp;amp;&amp;amp; data[0] == &#39;m&#39; &amp;amp;&amp;amp; data[1] == &#39;d&#39; &amp;amp;&amp;amp; data[1] == &#39;c&#39;) {count_clear();} else {chin_up_finish = data[0];}} まず受信する関数を用意します。</description>
+データの受信 void onCommand(uint8_t* data, uint16_t length) {if (length &amp;gt; 2 &amp;amp;&amp;amp; data[0] == &amp;#39;m&amp;#39; &amp;amp;&amp;amp; data[1] == &amp;#39;d&amp;#39; &amp;amp;&amp;amp; data[1] == &amp;#39;c&amp;#39;) {count_clear();} else {chin_up_finish = data[0];}} まず受信する関数を用意します。</description>
     </item>
     
     <item>
@@ -44,7 +44,11 @@ obniz plug-inをつかった初めての解説記事かもしれません？
 Google スプレッドシートにセンサーで取得したバッテリーの電圧や電流を送って可視化するものを作っていきます。
 定期的に電圧が上がって充電できているのが確認できます！
 充電しているときは電流がマイナス側に流れて、放電するときには電流がプラス側に流れます。
-必要な部材  太陽光パネルとコントローラー Amazon | 単結晶 ソーラーパネル 40W＋10Aチャージコントローラーセット！12V蓄電に | 太陽光パネル  単結晶 ソーラーパネル 40W＋10Aチャージコントローラーセット！12V蓄電にが太陽光パネルストアでいつでもお買い得。当日お急ぎ便対象商品は、当日お届け可能です。アマゾン配送商品は、通常配送無料（一部除く）。  https://www.amazon.co.jp/dp/B075W67Q8C/ref=cm_sw_r_tw_dp_x_Ma8eFb6VZMMYX     バッテリー Amazon | LONG 12V 12Ah 高性能シールドバッテリー WP12-12 WP12-12 | バイクバッテリー | 車＆バイク  LONG 12V 12Ah 高性能シールドバッテリー WP12-12 WP12-12がバイクバッテリーストアでいつでもお買い得。当日お急ぎ便対象商品は、当日お届け可能です。アマゾン配送商品は、通常配送無料（一部除く）。  https://www.amazon.co.jp/dp/B01KO9LQJA/ref=cm_sw_r_tw_dp_x_7.7eFb59S42SR     obniz Amazon.com: obniz Board - Unlimited Cloud License Included - IoT PoC Javascript HTML5 Python Microprocessor Industrial Block Program stem Education DIY Electronics Wi-Fi BLE UART SPI I2C Motor Driver Robot: Toys &amp;amp; Games  Amazon.</description>
+必要な部材  太陽光パネルとコントローラー  https://www.amazon.co.jp/dp/B075W67Q8C/ref=cm_sw_r_tw_dp_x_Ma8eFb6VZMMYX     バッテリー  https://www.amazon.co.jp/dp/B01KO9LQJA/ref=cm_sw_r_tw_dp_x_7.7eFb59S42SR     obniz  https://www.amazon.com/gp/product/B07DD6FK8G/ref=ox_sc_act_title_1?smid=A215VXJW7Q8EUM     電圧、電流計測モジュール（絶縁タイプじゃないと配線違う）  https://strawberry-linux.com/catalog/items?code=11226      回路 バッテリを制御する端子の+側に電圧、電流計測するためのセンサーを取り付けます。
+センサーをobnizにつなげば準備は完了です！
+プログラム 全文は下記のgistにあげてありますので簡単に説明します。
+下記の関数によって、センサーから電流値と電圧値がそれぞれ取得できます。
+let v = Math.round(await getData(INA226PRC_BUSV_REG)* 0.0125) / 10; let ma = await getData(INA226PRC_SHUNTV_REG) *1.25;  async function getData(command){  obniz.i2c0.write(0x40, [command]);  let ret = await obniz.i2c0.readWait(0x40, 2);  let data =new DataView(new ArrayBuffer(2));  data.</description>
     </item>
     
     <item>
@@ -97,7 +101,7 @@ Eddystoneとは Googleが2015年頃に発表した、BLEを使ったビーコン
 詳しい説明は、次のようなサイトにお任せするとして、なにがいいのかというとURLを手軽に配布できるところが非常によいです。
 https://dev.classmethod.jp/smartphone/eddystone/
 obnizがJavaScriptで動かせるのでWebエンジニアでも触れるようなデバイスで、URLを手軽に配布できるのはWebエンジニア的に導線を一つ増やすことができるので非常に良いと思います。
-プログラム &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt; &amp;lt;script src=&amp;quot;https://obniz.io/js/jquery-3.2.1.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/obniz@3.0.0/obniz.js&amp;quot; crossorigin=&amp;quot;anonymous&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css&amp;quot; /&amp;gt; &amp;lt;style&amp;gt; body { margin: 2em ; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;obniz-debug&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;H1&amp;gt;Obniz Eddystone&amp;lt;/H1&amp;gt; &amp;lt;form name=&amp;quot;form_url&amp;quot;&amp;gt; &amp;lt;p&amp;gt; &amp;lt;label&amp;gt;URL &amp;lt;input class=&amp;quot;uk-textarea&amp;quot; name=&amp;quot;url&amp;quot; type=&amp;quot;text&amp;quot; value=&amp;quot;https://obniz.io/&amp;quot; size=&amp;quot;100&amp;quot; required/&amp;gt; &amp;lt;/label&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;input class=&amp;quot;uk-button uk-button-default&amp;quot; type=&amp;quot;button&amp;quot; value=&amp;quot;send&amp;quot; id=&amp;quot;sendurl&amp;quot;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;p id=&amp;quot;obniz_url&amp;quot;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;script&amp;gt; var obniz = new Obniz(&amp;quot;OBNIZ_ID&amp;quot;); obniz.</description>
+プログラム &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://obniz.io/js/jquery-3.2.1.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://unpkg.com/obniz@3.0.0/obniz.js&amp;#34; crossorigin=&amp;#34;anonymous&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css&amp;#34; /&amp;gt; &amp;lt;style&amp;gt; body { margin: 2em ; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;obniz-debug&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;H1&amp;gt;Obniz Eddystone&amp;lt;/H1&amp;gt; &amp;lt;form name=&amp;#34;form_url&amp;#34;&amp;gt; &amp;lt;p&amp;gt; &amp;lt;label&amp;gt;URL &amp;lt;input class=&amp;#34;uk-textarea&amp;#34; name=&amp;#34;url&amp;#34; type=&amp;#34;text&amp;#34; value=&amp;#34;https://obniz.io/&amp;#34; size=&amp;#34;100&amp;#34; required/&amp;gt; &amp;lt;/label&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;input class=&amp;#34;uk-button uk-button-default&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;send&amp;#34; id=&amp;#34;sendurl&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;p id=&amp;#34;obniz_url&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;script&amp;gt; var obniz = new Obniz(&amp;#34;OBNIZ_ID&amp;#34;); obniz.</description>
     </item>
     
     <item>
@@ -118,11 +122,11 @@ https://blog.obniz.io/ja/news/obniz-board-1y-2/
 制約事項 11/27現在
  実行できる時間は30秒以内、それ以上は終了される 1日に実行可能な回数は120回  すこし制約はありますが例えばセンサーの値を取得するプログラムであれば12分に1回はデータを貯められます。
 はまりポイント APIを使用したとき 次のようにAPIを使用するときエラーが発生することがあります。
-await fetch(&amp;#39;https://maker.ifttt.com/trigger/obniz_temp/with/key/&amp;#39;, { method: &amp;#39;POST&amp;#39;, mode: &amp;#34;no-cors&amp;#34;, body: formData }).then(()=&amp;gt;console.log(&amp;#34;success&amp;#34;)).catch((error) =&amp;gt; console.log(error)); このときにAPIの呼出し後にawait obniz.wait(1000)をいれるとエラーが発生しなくなります。
+await fetch(&amp;#39;https://maker.ifttt.com/trigger/obniz_temp/with/key/&amp;#39;, {  method: &amp;#39;POST&amp;#39;,  mode: &amp;#34;no-cors&amp;#34;,  body: formData }).then(()=&amp;gt;console.log(&amp;#34;success&amp;#34;)).catch((error) =&amp;gt; console.log(error)); このときにAPIの呼出し後にawait obniz.wait(1000)をいれるとエラーが発生しなくなります。
 Tips 絶対にスリープさせる センサーの値読み取りなど予期しないところでプログラムが停止してしまうなど可能性があります。
 電池稼働しているデバイスではこの問題はクリティカルなので、サーバレスイベントが終了する前にスリープをするようにします。
 （obniz board 1Yでのみ使用可能です。）
-//Timeout 25s let tid = setTimeout(()=&amp;gt;{ let dt = new Date(); dt.setMinutes(Math.floor(dt.getMinutes()/10)*10+10,0,0); obniz.</description>
+ //Timeout 25s let tid = setTimeout(()=&amp;gt;{  let dt = new Date();  dt.</description>
     </item>
     
     <item>

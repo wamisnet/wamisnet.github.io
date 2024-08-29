@@ -18,7 +18,7 @@
 &amp;mdash; awa (@VITAMIN_DOSUKOI) July 21, 2020  【懸垂しないと家に入れないお家】 そんなおかしなアイデアをテクノロジーで実現させちゃったお話です。
 この記事は裏話的なプログラム編として、どんな風にこれができているのか紹介していきます。
 どんなものを作ったのかは下記の記事をご覧ください！
-ダイエットを続けるために玄関で懸垂しないと家の鍵が開かない仕組みを爆速でつくってみた - Qiita  こんにちは！わみ(@wamisnet)です。 ダイエットって続かないですよね… みんな続けられてたらライザップみたいなものはないので同志はいっぱいいると思います（思いたい そんなことをふんわりとおもっていたらこんなツイートを...  https://qiita.com/wamisnet/items/ebba2b90e0a9e3a62233     つくったもの ダイエットを頑張れないあなたに！
+ https://qiita.com/wamisnet/items/ebba2b90e0a9e3a62233    つくったもの ダイエットを頑張れないあなたに！
 筋トレしないと玄関の鍵が開かないシステム作ってみた
 いいねとかRTで広めてくれると次とか作るときの励みになるのでお願いします！！#ダイエット #筋トレハック pic.twitter.com/P4hNkEJUVj
 &amp;mdash; わみ (@wamisnet) July 30, 2020  プログラム解説 さて、早速ですがプログラムの説明をしていきましょう。
@@ -31,7 +31,7 @@ Arduinoはいろんなセンサーのライブラリが多数あるのがとて�
 その欠陥も、今回使用している「obniz plug-in」ではArduinoのメリットとobnizのメリットをどっちも使うことができるんです！
 そんなわけで、これからの説明でメインとなるのは、obniz plug-inの説明になります。
 obniz plug-inをつかった初めての解説記事かもしれません？
-データの受信 void onCommand(uint8_t* data, uint16_t length) {if (length &amp;gt; 2 &amp;amp;&amp;amp; data[0] == &#39;m&#39; &amp;amp;&amp;amp; data[1] == &#39;d&#39; &amp;amp;&amp;amp; data[1] == &#39;c&#39;) {count_clear();} else {chin_up_finish = data[0];}} まず受信する関数を用意します。</description>
+データの受信 void onCommand(uint8_t* data, uint16_t length) {if (length &amp;gt; 2 &amp;amp;&amp;amp; data[0] == &amp;#39;m&amp;#39; &amp;amp;&amp;amp; data[1] == &amp;#39;d&amp;#39; &amp;amp;&amp;amp; data[1] == &amp;#39;c&amp;#39;) {count_clear();} else {chin_up_finish = data[0];}} まず受信する関数を用意します。</description>
     </item>
     
     <item>
@@ -96,16 +96,25 @@ MATLABとの連携がメインの特徴（むしろMATLAB使えないとほぼ�
       <guid>https://wamisnet.github.io/blog/2019-06-14-iot_monitoring_link/</guid>
       <description>IoTについてまとめる機会があったので、リンク集を公開します
 IoTによるモニタリング 家庭編 家で考えるモニタリング
-スマートロック セサミ スマートロック | CANDY HOUSE JAPAN  あなたは家を出る時に何を持つ?鍵、財布、スマホ...?「SESAME(セサミ)」はスマホで家の鍵を開閉出来るスマートロックです。取付も簡単で鍵も簡単にシェア。Google HomeやAlexa、IFTTT対応で可能性は無限大！あなたの暮らしにセサミを。By キャンディハウス  https://jp.candyhouse.co/    CANDY HOUSE SESAME mini
+スマートロック  https://jp.candyhouse.co/    CANDY HOUSE SESAME mini
 いろいろと数あるスマートロックだが、（家庭向けのデバイスでは）他社製品と比べAPIで開錠で開錠できる特徴が一押し。
 スマートロックの誰の開閉かログをとったり、ゲストに開閉権限を渡すなど基礎的な機能も十分。
-室温管理 Google Nest Connected Home  Command the thoughtful devices that connect your home.  https://nest.com/     nest
+室温管理  https://nest.com/    nest
 日本では多くありませんが、海外に多くある家まるごと温度をコントロールするもの。
 人の有無を学習し、意識せずに効率よく扱えるようになるのがIoTとして優秀だと思います。
-窓管理 戸締り安心システム「ミモット」 | YKK AP株式会社  窓やドアの鍵の締め忘れをスマートフォンにお知らせする戸締り安心システム「ミモット」のご紹介です。窓とドア、インテリアからエクステリアまで、住空間を快適に創造するYKK AP。「ミモット」のトップページです。  https://www.ykkap.co.jp/products/window/mimott/     YKK AP株式会社 ミモット
+窓管理  https://www.ykkap.co.jp/products/window/mimott/    YKK AP株式会社 ミモット
 窓の閉め忘れを無くすことができるデバイス。技術屋としては、電池レスなのがポイントが高い。
 うっかりミスを防ぐことは難しいのでこういったデバイスが普及するとよい。
-睡眠  https://www.</description>
+睡眠  https://www.kddi.com/with-home/device/uss01a/    KDDI 睡眠モニター 01
+睡眠状態をロギングできるデバイス。最近話題になっている睡眠改善に使用する。
+IoTで簡単にセンシングできるようになったからこそのデバイス
+宅配ポスト  https://www.lixil.co.jp/lineup/gate_fence/smartpost/    株式会社 LIXIL スマート宅配ポスト
+実証実験で一時期話題になった宅配ボックス。
+値段との兼ね合いでなかなかIoTに対応したデバイスが多くないがゆえに期待している。
+自動発注  https://bungu.plus.co.jp/special/st/2019/octotas/    プラス株式会社 Octotas
+Amazonのダッシュボタンは有名ですが、重さで自動発注できるのはあまり認知されていないと思う。
+完全にユーザが意識せずにできるもので最もIoTらしいと思っています。
+ペット  https://petelect.</description>
     </item>
     
   </channel>

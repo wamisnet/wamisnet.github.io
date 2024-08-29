@@ -16,7 +16,7 @@
       <description>ESP32のチップを判定する必要があったのでその方法をメモしておきます。
 ESP-IDFでの例になります。
 Chipの取得 #include &amp;quot;soc/soc.h&amp;quot;
- uint32_t _chipmacid =REG_READ(DR_REG_EFUSE_BASE+12); char str[30]; sprintf(str, &amp;quot;_chipmacid:%u\n&amp;quot;, _chipmacid); console_print(str); uint8_t pkg = (_chipmacid &amp;gt;&amp;gt; 9) &amp;amp; 0x07; sprintf(str, &amp;quot;pkg:%u\n&amp;quot;, pkg);//これがChipID console_print(str); // 0: &amp;quot;ESP32D0WDQ6&amp;quot;, // 1: &amp;quot;ESP32D0WDQ5&amp;quot;, // 2: &amp;quot;ESP32D2WDQ5&amp;quot;, // 5: &amp;quot;ESP32-PICO-D4&amp;quot;, これでチップの判定をすることができます！</description>
+ uint32_t _chipmacid =REG_READ(DR_REG_EFUSE_BASE+12); char str[30]; sprintf(str, &amp;#34;_chipmacid:%u\n&amp;#34;, _chipmacid); console_print(str); uint8_t pkg = (_chipmacid &amp;gt;&amp;gt; 9) &amp;amp; 0x07; sprintf(str, &amp;#34;pkg:%u\n&amp;#34;, pkg);//これがChipID console_print(str); // 0: &amp;#34;ESP32D0WDQ6&amp;#34;, // 1: &amp;#34;ESP32D0WDQ5&amp;#34;, // 2: &amp;#34;ESP32D2WDQ5&amp;#34;, // 5: &amp;#34;ESP32-PICO-D4&amp;#34;, これでチップの判定をすることができます！</description>
     </item>
     
     <item>

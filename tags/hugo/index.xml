@@ -14,11 +14,11 @@
       
       <guid>https://wamisnet.github.io/blog/2020-07-05-hugo_shortcode/</guid>
       <description>下記のサイトを参考にshortcodeをつくってみました。
-ショートコード作成の解説 | Hugo | nasust dev blog  https://nasust.com/hugo/tips/shortcode/     Hugoでブログカードに対応する | Hugo | nasust dev blog  https://nasust.com/hugo/shortcode/blogcard/     2つのshortcodeを追加しました。
+ https://nasust.com/hugo/tips/shortcode/     https://nasust.com/hugo/shortcode/blogcard/    2つのshortcodeを追加しました。
 warning 警告文を出すようのものですね
 warning Warning 各自の環境で同様に動作する保証はありません。   こんなコードを書いたら、上のようにきれいにしてくれちゃうんです。
 {{&amp;lt; warning &amp;gt;}} 各自の環境で同様に動作する保証はありません。 {{&amp;lt; /warning &amp;gt;}} link card リンクですね、Notionみたいに横並びにしようか悩みましたが、縦ならびでもよさそうなので、これで。
-わみめも  NefryやSofmoといった開発者向けボードを作ったり、AndroidやFlutterアプリ作ったり、Webで遊んでみたり、手当たり次第になんでもやっちゃう人のサイト  https://wamisnet.github.io/     {{&amp;lt; linkcard &amp;#34;https://wamisnet.github.io/&amp;#34;&amp;gt;}} ちょっとの一工夫でいい感じにできるのはとても便利ですね</description>
+ https://wamisnet.github.io/    {{&amp;lt; linkcard &amp;#34;https://wamisnet.github.io/&amp;#34;&amp;gt;}} ちょっとの一工夫でいい感じにできるのはとても便利ですね</description>
     </item>
     
     <item>

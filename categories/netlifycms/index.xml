@@ -15,7 +15,7 @@
       <guid>https://wamisnet.github.io/blog/2020-07-03-netlifycms/</guid>
       <description>こんな感じのエディタから入力して、記事を投稿できるんだよ！ めっちゃええやん？
 こんな感じで画像をいれたり
-function hello(){ console.log(&amp;#34;hello world!&amp;#34;); } みたいにコードいれたりいろいろできるっぽい</description>
+function hello(){  console.log(&amp;#34;hello world!&amp;#34;); } みたいにコードいれたりいろいろできるっぽい</description>
     </item>
     
   </channel>

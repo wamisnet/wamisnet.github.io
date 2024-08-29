@@ -18,7 +18,7 @@
 &amp;mdash; awa (@VITAMIN_DOSUKOI) July 21, 2020  【懸垂しないと家に入れないお家】 そんなおかしなアイデアをテクノロジーで実現させちゃったお話です。
 この記事は裏話的なプログラム編として、どんな風にこれができているのか紹介していきます。
 どんなものを作ったのかは下記の記事をご覧ください！
-ダイエットを続けるために玄関で懸垂しないと家の鍵が開かない仕組みを爆速でつくってみた - Qiita  こんにちは！わみ(@wamisnet)です。 ダイエットって続かないですよね… みんな続けられてたらライザップみたいなものはないので同志はいっぱいいると思います（思いたい そんなことをふんわりとおもっていたらこんなツイートを...  https://qiita.com/wamisnet/items/ebba2b90e0a9e3a62233     つくったもの ダイエットを頑張れないあなたに！
+ https://qiita.com/wamisnet/items/ebba2b90e0a9e3a62233    つくったもの ダイエットを頑張れないあなたに！
 筋トレしないと玄関の鍵が開かないシステム作ってみた
 いいねとかRTで広めてくれると次とか作るときの励みになるのでお願いします！！#ダイエット #筋トレハック pic.twitter.com/P4hNkEJUVj
 &amp;mdash; わみ (@wamisnet) July 30, 2020  プログラム解説 さて、早速ですがプログラムの説明をしていきましょう。
@@ -31,7 +31,7 @@ Arduinoはいろんなセンサーのライブラリが多数あるのがとて�
 その欠陥も、今回使用している「obniz plug-in」ではArduinoのメリットとobnizのメリットをどっちも使うことができるんです！
 そんなわけで、これからの説明でメインとなるのは、obniz plug-inの説明になります。
 obniz plug-inをつかった初めての解説記事かもしれません？
-データの受信 void onCommand(uint8_t* data, uint16_t length) {if (length &amp;gt; 2 &amp;amp;&amp;amp; data[0] == &#39;m&#39; &amp;amp;&amp;amp; data[1] == &#39;d&#39; &amp;amp;&amp;amp; data[1] == &#39;c&#39;) {count_clear();} else {chin_up_finish = data[0];}} まず受信する関数を用意します。</description>
+データの受信 void onCommand(uint8_t* data, uint16_t length) {if (length &amp;gt; 2 &amp;amp;&amp;amp; data[0] == &amp;#39;m&amp;#39; &amp;amp;&amp;amp; data[1] == &amp;#39;d&amp;#39; &amp;amp;&amp;amp; data[1] == &amp;#39;c&amp;#39;) {count_clear();} else {chin_up_finish = data[0];}} まず受信する関数を用意します。</description>
     </item>
     
     <item>
@@ -43,7 +43,7 @@ obniz plug-inをつかった初めての解説記事かもしれません？
       <description>残機が 1up できそうな音楽鳴らしてみた
 耳コピなので違ってもご容赦をｗ
 1up できそうな効果音をブザーでならしてみた pic.twitter.com/HwPZjwZ6ZA
-&amp;mdash; わみ (@wamisnet) July 24, 2020  必要な部材  ESP32 Buzzer  プログラム #define PIN_BUZZER 22 void setup(){ ledcSetup(1, 12000, 8); ledcAttachPin(PIN_BUZZER, 1); } void loop(){ ledcWriteTone(1, 1318.510); //ミ  delay(125); ledcWriteTone(1, 1567.982); //ソ  delay(125); ledcWriteTone(1, 2637.020); //ミ  delay(125); ledcWriteTone(1, 2093.005); //ド  delay(125); ledcWriteTone(1, 2349.318); //レ  delay(125); ledcWriteTone(1, 3135.963); //ソ  delay(125); ledcWriteTone(1, 0); delay(10000); } </description>
+&amp;mdash; わみ (@wamisnet) July 24, 2020  必要な部材  ESP32 Buzzer  プログラム #define PIN_BUZZER 22 void setup(){  ledcSetup(1, 12000, 8);  ledcAttachPin(PIN_BUZZER, 1); }  void loop(){  ledcWriteTone(1, 1318.510); //ミ  delay(125);  ledcWriteTone(1, 1567.982); //ソ  delay(125);  ledcWriteTone(1, 2637.020); //ミ  delay(125);  ledcWriteTone(1, 2093.005); //ド  delay(125);  ledcWriteTone(1, 2349.318); //レ  delay(125);  ledcWriteTone(1, 3135.963); //ソ  delay(125);  ledcWriteTone(1, 0);  delay(10000); } </description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@ obniz plug-inをつかった初めての解説記事かもしれません？
       <pubDate>Tue, 14 Jul 2020 06:45:39 +0000</pubDate>
       
       <guid>https://wamisnet.github.io/blog/2020-07-14-esp32-backtrace/</guid>
-      <description>IDF Monitor - ESP32 - — ESP-IDF Programming Guide latest documentation  https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-monitor.html    ESP32ではエラーがでるとこんな感じのログが吐かれます。
+      <description>https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-monitor.html    ESP32ではエラーがでるとこんな感じのログが吐かれます。
 Guru Meditation Error of type StoreProhibited occurred on core 0. Exception was unhandled.Register dump:PC : 0x400f360d PS : 0x00060330 A0 : 0x800dbf56 A1 : 0x3ffb7e00A2 : 0x3ffb136c A3 : 0x00000005 A4 : 0x00000000 A5 : 0x00000000A6 : 0x00000000 A7 : 0x00000080 A8 : 0x00000000 A9 : 0x3ffb7dd0A10 : 0x00000003 A11 : 0x00060f23 A12 : 0x00060f20 A13 : 0x3ffba6d0A14 : 0x00000047 A15 : 0x0000000f SAR : 0x00000019 EXCCAUSE: 0x0000001dEXCVADDR: 0x00000000 LBEG : 0x4000c46c LEND : 0x4000c477 LCOUNT : 0x00000000Backtrace: 0x400f360d:0x3ffb7e00 0x400dbf56:0x3ffb7e20 0x400dbf5e:0x3ffb7e40 0x400dbf82:0x3ffb7e60 0x400d071d:0x3ffb7e90 この部分をバックトレースします。</description>
     </item>
     
@@ -65,7 +65,7 @@ Guru Meditation Error of type StoreProhibited occurred on core 0. Exception was 
       <description>ESP32のチップを判定する必要があったのでその方法をメモしておきます。
 ESP-IDFでの例になります。
 Chipの取得 #include &amp;quot;soc/soc.h&amp;quot;
- uint32_t _chipmacid =REG_READ(DR_REG_EFUSE_BASE+12); char str[30]; sprintf(str, &amp;quot;_chipmacid:%u\n&amp;quot;, _chipmacid); console_print(str); uint8_t pkg = (_chipmacid &amp;gt;&amp;gt; 9) &amp;amp; 0x07; sprintf(str, &amp;quot;pkg:%u\n&amp;quot;, pkg);//これがChipID console_print(str); // 0: &amp;quot;ESP32D0WDQ6&amp;quot;, // 1: &amp;quot;ESP32D0WDQ5&amp;quot;, // 2: &amp;quot;ESP32D2WDQ5&amp;quot;, // 5: &amp;quot;ESP32-PICO-D4&amp;quot;, これでチップの判定をすることができます！</description>
+ uint32_t _chipmacid =REG_READ(DR_REG_EFUSE_BASE+12); char str[30]; sprintf(str, &amp;#34;_chipmacid:%u\n&amp;#34;, _chipmacid); console_print(str); uint8_t pkg = (_chipmacid &amp;gt;&amp;gt; 9) &amp;amp; 0x07; sprintf(str, &amp;#34;pkg:%u\n&amp;#34;, pkg);//これがChipID console_print(str); // 0: &amp;#34;ESP32D0WDQ6&amp;#34;, // 1: &amp;#34;ESP32D0WDQ5&amp;#34;, // 2: &amp;#34;ESP32D2WDQ5&amp;#34;, // 5: &amp;#34;ESP32-PICO-D4&amp;#34;, これでチップの判定をすることができます！</description>
     </item>
     
     <item>

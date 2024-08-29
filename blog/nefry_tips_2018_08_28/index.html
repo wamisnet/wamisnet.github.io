@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.83.0" /><meta itemprop="name" content="Nefry Tips 無線LAN接続について">
-<meta itemprop="description" content="NefryのTips紹介します！今回は無線LANのプチTips"><meta itemprop="datePublished" content="2018-08-28T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-08-28T00:00:00&#43;00:00" />
+<meta name="generator" content="Hugo 0.96.0" /><meta itemprop="name" content="Nefry Tips 無線LAN接続について">
+<meta itemprop="description" content="NefryのTips紹介します！今回は無線LANのプチTips"><meta itemprop="datePublished" content="2018-08-28T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-08-28T00:00:00+00:00" />
 <meta itemprop="wordCount" content="27"><meta itemprop="image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
 <meta itemprop="keywords" content="Nefry,無線LAN," /><meta property="og:title" content="Nefry Tips 無線LAN接続について" />
 <meta property="og:description" content="NefryのTips紹介します！今回は無線LANのプチTips" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wamisnet.github.io/blog/nefry_tips_2018_08_28/" /><meta property="og:image" content="https://wamisnet.github.io/img/main/wami.jpg"/><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2018-08-28T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2018-08-28T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2018-08-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-08-28T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
@@ -212,18 +212,18 @@
 <p>Nefryには、Webページ上で設定した無線LANから自動的にもっとも電波強度が強いものに接続するような機能があります。</p>
 <p>ただ、基本的には起動時に接続しにいくのみで、起動したあとに切断された場合再接続処理が上手くいかず接続できないことがあります。</p>
 <p>デモのような短時間の動作であれば上記のような現象は気にならないと思いますが、長時間のモニタリングなどでなってしまうとなかなか辛いことがあると思いますので今回のTipsを試してもらえればと思います！</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;Nefry.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
-  <span style="color:#75715e">// 何か処理
-</span><span style="color:#75715e"></span>}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
-  <span style="color:#75715e">// なんか処理a
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(WiFi.status() <span style="color:#f92672">!=</span> WL_CONNECTED){
-    <span style="color:#75715e">//無線LANが接続されていないとき
-</span><span style="color:#75715e"></span>    Nefry.reset();
-  }
-}</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;Nefry.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 何か処理
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// なんか処理a
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(WiFi.status() <span style="color:#f92672">!=</span> WL_CONNECTED){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//無線LANが接続されていないとき
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Nefry.reset();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 <p>上記のコードが今回のTipsです。</p>
 <p>無線LANに接続していないときにNefryをリセットするコードになります。</p>
 <p>Nefryがネットワークにつながらなくなっても再起動して無線LAN接続が正常に行えるはずです！！</p>
@@ -266,7 +266,7 @@
   <article class="post">
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -721,13 +721,13 @@
         わみめも
       
     . <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.83.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.96.0' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="https://wamisnet.github.io/js/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.336550d8e009c18d720d05dd81e53d04688d26595fc7932aecd4fc25e6ab2da4.js" integrity="sha256-M2VQ2OAJwY1yDQXdgeU9BGiNJllfx5Mq7NT8JearLaQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.4671d4407d6dd33183ab226d17f5ae603de26dd451ec62649354c7ec1b7cf4c7.js" integrity="sha256-RnHUQH1t0zGDqyJtF/WuYD3ibdRR7GJkk1TH7Bt89Mc="></script>
     <script src="https://wamisnet.github.io/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

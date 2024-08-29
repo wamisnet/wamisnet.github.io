@@ -18,7 +18,7 @@
 Nefryには、Webページ上で設定した無線LANから自動的にもっとも電波強度が強いものに接続するような機能があります。
 ただ、基本的には起動時に接続しにいくのみで、起動したあとに切断された場合再接続処理が上手くいかず接続できないことがあります。
 デモのような短時間の動作であれば上記のような現象は気にならないと思いますが、長時間のモニタリングなどでなってしまうとなかなか辛いことがあると思いますので今回のTipsを試してもらえればと思います！
-#include&amp;lt;Nefry.h&amp;gt;void setup() { // 何か処理 } void loop() { // なんか処理a  if(WiFi.status() != WL_CONNECTED){ //無線LANが接続されていないとき  Nefry.reset(); } } 上記のコードが今回のTipsです。
+#include&amp;lt;Nefry.h&amp;gt;void setup() {  // 何か処理 }  void loop() {  // なんか処理a  if(WiFi.status() != WL_CONNECTED){  //無線LANが接続されていないとき  Nefry.reset();  } } 上記のコードが今回のTipsです。
 無線LANに接続していないときにNefryをリセットするコードになります。
 Nefryがネットワークにつながらなくなっても再起動して無線LAN接続が正常に行えるはずです！！
 ぜひ試してみてください！</description>
@@ -34,7 +34,7 @@ Nefryがネットワークにつながらなくなっても再起動して無線
 #表示内容
 ESP8266のlocalIP ゲートウェイのIP サブネットマスク ESP8266のmacAddress
 #コード
-#include &amp;lt;ESP8266WiFi.h&amp;gt;#define debug Serial /* IPアドレスをDHCPではなく手動で割り振ることをすることができる。 localIP:moduleのIP gateway:デフォルトゲートウエイ subnet:サブネットマスク DNSは指定しなくてよい。 config(IPAddress local_ip, IPAddress gateway, IPAddress subnet, IPAddress dns1 = (uint32_t)0x00000000, IPAddress dns2 = (uint32_t)0x00000000) */ void setup(){ debug.begin(115200); WiFi.config(IPAddress(192,168,1,2),IPAddress(192,168,1,1),IPAddress(255,255,255,0)); debug.print(&amp;#34;Local IP :&amp;#34;);debug.println(address(WiFi.localIP())); debug.print(&amp;#34;Gateway IP:&amp;#34;);debug.println(address(WiFi.gatewayIP())); debug.print(&amp;#34;SubnetMask:&amp;#34;);debug.println(address(WiFi.subnetMask())); debug.print(&amp;#34;macAddress:&amp;#34;);debug.println(WiFi.macAddress()); } void loop(){ } String address(IPAddress ip){ String ipStr = String(ip[0]) + &amp;#39;.&amp;#39; + String(ip[1]) + &amp;#39;.&amp;#39; + String(ip[2]) + &amp;#39;.&amp;#39; + String(ip[3]); return ipStr; } </description>
+#include &amp;lt;ESP8266WiFi.h&amp;gt;#define debug Serial /* IPアドレスをDHCPではなく手動で割り振ることをすることができる。 localIP:moduleのIP gateway:デフォルトゲートウエイ subnet:サブネットマスク DNSは指定しなくてよい。 config(IPAddress local_ip, IPAddress gateway, IPAddress subnet, IPAddress dns1 = (uint32_t)0x00000000, IPAddress dns2 = (uint32_t)0x00000000) */ void setup(){  debug.begin(115200);  WiFi.config(IPAddress(192,168,1,2),IPAddress(192,168,1,1),IPAddress(255,255,255,0));  debug.print(&amp;#34;Local IP :&amp;#34;);debug.println(address(WiFi.localIP()));  debug.print(&amp;#34;Gateway IP:&amp;#34;);debug.println(address(WiFi.gatewayIP()));  debug.print(&amp;#34;SubnetMask:&amp;#34;);debug.println(address(WiFi.subnetMask()));  debug.print(&amp;#34;macAddress:&amp;#34;);debug.println(WiFi.macAddress()); }  void loop(){  } String address(IPAddress ip){  String ipStr = String(ip[0]) + &amp;#39;.&amp;#39; + String(ip[1]) + &amp;#39;.&amp;#39; + String(ip[2]) + &amp;#39;.</description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ ESP8266のlocalIP ゲートウェイのIP サブネットマスク ESP8266のmac
 ESP-WROOM-02にはWPSでWiFiの設定をすることができる環境がつくられているようなのでその解説と結果を報告します。
 環境 Arduino IDE 1.6.7 Arduino core for ESP8266 WiFi chip (https://github.com/esp8266/Arduino) v2.2.0
 Arduino coreのバージョンが古いと実装されてない可能性があります。
-コード #include &amp;lt;ESP8266WiFi.h&amp;gt; void Wifi_wait(); void setup() { Serial.begin(115200); WiFi.mode(WIFI_STA); //WiFi.begin(&amp;#34;&amp;#34;,&amp;#34;&amp;#34;)このようにすることでWPSで保存したデータがある場合そちらに接続するようになる  WiFi.begin(&amp;#34;&amp;#34;, &amp;#34;&amp;#34;); Wifi_wait(); // Wifiに接続していないときにはWPSを開始します  if (WiFi.status() != WL_CONNECTED) { Serial.println(&amp;#34;\nAttempting connection ...&amp;#34;); WiFi.beginWPSConfig(); Wifi_wait(); if (WiFi.status() == WL_CONNECTED) { Serial.println(&amp;#34;Connected!&amp;#34;); Serial.println(WiFi.localIP()); Serial.println(WiFi.SSID()); Serial.println(WiFi.macAddress()); } else { Serial.println(&amp;#34;Connection failed!&amp;#34;); } } else { Serial.println(&amp;#34;\nConnection already established.&amp;#34;); } } void loop() { } void Wifi_wait() { int wait=0; Serial.</description>
+コード #include &amp;lt;ESP8266WiFi.h&amp;gt; void Wifi_wait(); void setup() {  Serial.begin(115200);  WiFi.mode(WIFI_STA);  //WiFi.begin(&amp;#34;&amp;#34;,&amp;#34;&amp;#34;)このようにすることでWPSで保存したデータがある場合そちらに接続するようになる  WiFi.begin(&amp;#34;&amp;#34;, &amp;#34;&amp;#34;);  Wifi_wait();  // Wifiに接続していないときにはWPSを開始します  if (WiFi.status() != WL_CONNECTED) {  Serial.println(&amp;#34;\nAttempting connection ...&amp;#34;);  WiFi.beginWPSConfig();  Wifi_wait();  if (WiFi.status() == WL_CONNECTED) {  Serial.println(&amp;#34;Connected!&amp;#34;);  Serial.println(WiFi.localIP());  Serial.println(WiFi.SSID());  Serial.println(WiFi.macAddress());  } else {  Serial.</description>
     </item>
     
   </channel>

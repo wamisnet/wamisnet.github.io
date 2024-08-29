@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.83.0" /><meta itemprop="name" content="4モータ制御ドライバー">
-<meta itemprop="description" content="DRV8830使用したモータドライバー"><meta itemprop="datePublished" content="2018-08-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-08-06T00:00:00&#43;00:00" />
+<meta name="generator" content="Hugo 0.96.0" /><meta itemprop="name" content="4モータ制御ドライバー">
+<meta itemprop="description" content="DRV8830使用したモータドライバー"><meta itemprop="datePublished" content="2018-08-06T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-08-06T00:00:00+00:00" />
 <meta itemprop="wordCount" content="121"><meta itemprop="image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="4モータ制御ドライバー" />
 <meta property="og:description" content="DRV8830使用したモータドライバー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wamisnet.github.io/itemized/motor/" /><meta property="og:image" content="https://wamisnet.github.io/img/main/wami.jpg"/><meta property="article:section" content="itemized" />
-<meta property="article:published_time" content="2018-08-06T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2018-08-06T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2018-08-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-08-06T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://wamisnet.github.io/img/main/wami.jpg"/>
@@ -249,7 +249,7 @@
 <p><a href="https://strawberry-linux.com/pub/drv8830j.pdf">ICについての詳細情報</a></p>
 <h2 id="サンプルプログラム">サンプルプログラム</h2>
 <p><a href="./driver/DRV8830MotorDriver.zip">DRV8830ドライバーはこちらからダウンロードしてください</a></p>
-<pre><code>#include &lt;Arduino.h&gt;
+<pre tabindex="0"><code>#include &lt;Arduino.h&gt;
 #include &lt;Wire.h&gt;
 #include &lt;DRV8830MotorDriver.h&gt;
 
@@ -264,7 +264,7 @@ void setup()
 {
   Serial.begin(115200);
   Wire.begin();
-  Serial.println(&quot;Hello,DRV8830 I2C MotorDriver&quot;);
+  Serial.println(&#34;Hello,DRV8830 I2C MotorDriver&#34;);
 
   motor1.setSpeed(0);
   motor2.setSpeed(0);
@@ -281,7 +281,7 @@ void loop()
   if (Serial.available())
   {
     c = Serial.read();
-    if (c == '+')
+    if (c == &#39;+&#39;)
     {
       spd++;
       motor1.setSpeed(spd);
@@ -291,7 +291,7 @@ void loop()
       spd = motor1.getSpeed();
       Serial.println(spd);
     }
-    else if (c == '-')
+    else if (c == &#39;-&#39;)
     {
       spd--;
       motor1.setSpeed(spd);
@@ -301,7 +301,7 @@ void loop()
       spd = motor1.getSpeed();
       Serial.println(spd);
     }
-    else if (c == 'b')
+    else if (c == &#39;b&#39;)
     {
       spd = 0;
       motor1.setSpeed(spd);
@@ -352,7 +352,7 @@ void loop()
   <article class="post">
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -807,13 +807,13 @@ void loop()
         わみめも
       
     . <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.83.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.96.0' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="https://wamisnet.github.io/js/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.336550d8e009c18d720d05dd81e53d04688d26595fc7932aecd4fc25e6ab2da4.js" integrity="sha256-M2VQ2OAJwY1yDQXdgeU9BGiNJllfx5Mq7NT8JearLaQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://wamisnet.github.io/js/bundle.min.4671d4407d6dd33183ab226d17f5ae603de26dd451ec62649354c7ec1b7cf4c7.js" integrity="sha256-RnHUQH1t0zGDqyJtF/WuYD3ibdRR7GJkk1TH7Bt89Mc="></script>
     <script src="https://wamisnet.github.io/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

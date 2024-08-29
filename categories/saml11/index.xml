@@ -14,9 +14,9 @@
       
       <guid>https://wamisnet.github.io/blog/2020-07-07-saml11_started/</guid>
       <description>下記の開発ボードを購入した。
-SAML11 Xplained Pro Evaluation Kit  https://www.microchip.com/DevelopmentTools/ProductDetails/dm320205    Atmel Studioをインストールして、開発をしていくみたい。
+ https://www.microchip.com/DevelopmentTools/ProductDetails/dm320205    Atmel Studioをインストールして、開発をしていくみたい。
 開発ボードのドキュメントに始め方のPDFがあったのでそれを見ながら作業している
-Getting-Started-with-SAM%20L10L11-Xplained-Pro-DS00002722A.pdf  http://ww1.microchip.com/downloads/en/Appnotes/Getting-Started-with-SAM%20L10L11-Xplained-Pro-DS00002722A.pdf    セキュアに機能を動かせるのが面白くて試してみたいと思って購入した。
+ http://ww1.microchip.com/downloads/en/Appnotes/Getting-Started-with-SAM%20L10L11-Xplained-Pro-DS00002722A.pdf    セキュアに機能を動かせるのが面白くて試してみたいと思って購入した。
 まだLチカしかできていないが遊んでいきたい</description>
     </item>
     
