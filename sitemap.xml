@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://wamisnet.github.io/blog/2021-05-02-25%E6%AD%B3%E3%81%AE%E8%AA%95%E7%94%9F%E6%97%A5%E3%82%92%E8%BF%8E%E3%81%88%E3%81%9F%E3%81%AE%E3%81%A7%E4%B8%80%E5%B9%B4%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A/</loc>
-    <lastmod>2021-05-02T07:12:37+00:00</lastmod>
-  </url><url>
     <loc>https://wamisnet.github.io/blog/</loc>
-    <lastmod>2021-05-02T07:12:37+00:00</lastmod>
+    <lastmod>2024-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://wamisnet.github.io/categories/</loc>
-    <lastmod>2021-05-02T07:12:37+00:00</lastmod>
+    <lastmod>2024-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://wamisnet.github.io/tags/hirameq/</loc>
+    <lastmod>2024-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://wamisnet.github.io/categories/hirameq/</loc>
+    <lastmod>2024-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://wamisnet.github.io/tags/</loc>
-    <lastmod>2021-05-02T07:12:37+00:00</lastmod>
+    <lastmod>2024-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://wamisnet.github.io/</loc>
+    <lastmod>2024-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://wamisnet.github.io/blog/2024-08-29-%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F/</loc>
+    <lastmod>2024-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://wamisnet.github.io/blog/2021-05-02-25%E6%AD%B3%E3%81%AE%E8%AA%95%E7%94%9F%E6%97%A5%E3%82%92%E8%BF%8E%E3%81%88%E3%81%9F%E3%81%AE%E3%81%A7%E4%B8%80%E5%B9%B4%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A/</loc>
     <lastmod>2021-05-02T07:12:37+00:00</lastmod>
   </url><url>
     <loc>https://wamisnet.github.io/tags/%E4%B8%80%E5%B9%B4%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A/</loc>
